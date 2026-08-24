@@ -1,0 +1,4 @@
+# Keep repository automation inside the project and require approval for
+# operations that need broader access. Personal model choices stay global.
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
