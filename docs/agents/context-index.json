@@ -1,0 +1,465 @@
+{
+  "$schema": "./context-index.schema.json",
+  "schemaVersion": 1,
+  "project": {
+    "name": "winwork-sales-demo",
+    "kind": "deterministic-static-sales-presentation",
+    "runtime": "React 19 + TypeScript + Vite + React Router + Tailwind CSS + Motion",
+    "packageManager": "pnpm@11",
+    "node": ">=24 <25",
+    "entrypoints": [
+      "AGENTS.md",
+      "src/main.tsx",
+      "src/app/router.tsx",
+      "src/presentation/engine/Presentation.tsx"
+    ]
+  },
+  "sourcePriority": [
+    {
+      "rank": 1,
+      "status": "authoritative",
+      "paths": [
+        "src",
+        "public/enterprise-slides",
+        "public/small-slides",
+        "public/winwork-logo.svg",
+        "public/favicon.svg",
+        "package.json",
+        "pnpm-lock.yaml",
+        ".node-version",
+        ".github/workflows/ci.yml",
+        "vite.config.ts",
+        "tsconfig.json",
+        "tsconfig.app.json",
+        "tsconfig.node.json",
+        "eslint.config.js",
+        "prettier.config.mjs",
+        "vercel.json"
+      ]
+    },
+    {
+      "rank": 2,
+      "status": "current",
+      "paths": ["AGENTS.md", "README.md", "docs"]
+    },
+    {
+      "rank": 3,
+      "status": "reference",
+      "paths": ["pencil", "design-qa.md"]
+    },
+    {
+      "rank": 4,
+      "status": "historical",
+      "paths": ["base_documentation"]
+    }
+  ],
+  "commands": {
+    "install": "pnpm install --frozen-lockfile",
+    "develop": "pnpm dev",
+    "docsCheck": "pnpm docs:check",
+    "formatCheck": "pnpm format:check",
+    "lint": "pnpm lint",
+    "typecheck": "pnpm typecheck",
+    "build": "pnpm build",
+    "fullGate": "pnpm check"
+  },
+  "routes": [
+    {
+      "path": "/enterprise",
+      "trackId": "enterprise",
+      "status": "implemented",
+      "firstSceneId": "ent-01",
+      "configPath": "src/presentation/config/enterprise.ts"
+    },
+    {
+      "path": "/api",
+      "trackId": "api",
+      "status": "placeholder",
+      "firstSceneId": "intro",
+      "configPath": "src/presentation/config/api.ts"
+    },
+    {
+      "path": "/small",
+      "trackId": "small",
+      "status": "implemented",
+      "firstSceneId": "smb-01",
+      "configPath": "src/presentation/config/small.ts"
+    }
+  ],
+  "invariants": [
+    {
+      "id": "static-demo-only",
+      "rule": "No real backend, authentication, database, analytics, production API, secrets, or real personal/customer data."
+    },
+    {
+      "id": "shared-engine",
+      "rule": "All tracks use one router and the shared presentation engine; track configs remain data-defined."
+    },
+    {
+      "id": "url-scene-state",
+      "rule": "The scene query parameter is the active-scene source of truth; stable IDs, unrelated query parameters, and browser history are preserved."
+    },
+    {
+      "id": "resettable-local-state",
+      "rule": "Presentation and flow reset remount local UI; demo state is deterministic and cannot leak between scenes or openings."
+    },
+    {
+      "id": "semantic-demo-ui",
+      "rule": "Interactive product demos use semantic React controls; PNG screenshots are QA references only."
+    },
+    {
+      "id": "keyboard-and-focus",
+      "rule": "Editable controls and open dialogs are isolated from presentation shortcuts; focus trap/restore, Escape close, focus visibility, and reduced motion are preserved."
+    },
+    {
+      "id": "approved-content",
+      "rule": "Do not invent WinWork design or sales claims; use approved Pencil/design inputs and synthetic demo content."
+    },
+    {
+      "id": "asset-separation",
+      "rule": "Runtime exports live under public; editable Pencil sources and ephemeral QA evidence are never runtime dependencies."
+    }
+  ],
+  "assets": {
+    "runtimePaths": [
+      "public/enterprise-slides",
+      "public/small-slides",
+      "public/winwork-logo.svg",
+      "public/favicon.svg"
+    ],
+    "referencePaths": ["public/demo-flows", "pencil", "design-qa.md"],
+    "historicalPaths": ["base_documentation"]
+  },
+  "taskAreas": [
+    {
+      "id": "orientation-and-scope",
+      "intent": "Understand repository purpose, current readiness, boundaries, and source precedence.",
+      "triggers": [
+        "orientation",
+        "scope",
+        "repository overview",
+        "what is implemented"
+      ],
+      "readFirst": ["AGENTS.md", "README.md", "docs/architecture.md"],
+      "changeWith": ["docs/agents/context-index.json"],
+      "invariantIds": ["static-demo-only", "approved-content"],
+      "verification": ["pnpm docs:check"]
+    },
+    {
+      "id": "routes-and-track-selector",
+      "intent": "Add or change a public presentation route, landing card, track readiness label, or not-found behavior.",
+      "triggers": [
+        "route",
+        "track",
+        "landing",
+        "selector",
+        "not found",
+        "fullscreen entry"
+      ],
+      "readFirst": [
+        "src/app/router.tsx",
+        "src/app/TrackSelector.tsx",
+        "src/presentation/engine/types.ts"
+      ],
+      "changeWith": [
+        "src/presentation/config",
+        "vercel.json",
+        "README.md",
+        "docs/agents/context-index.json"
+      ],
+      "invariantIds": ["shared-engine", "url-scene-state", "approved-content"],
+      "verification": [
+        "pnpm check",
+        "Verify /enterprise, /api, /small, direct refresh, and the changed route in a browser."
+      ]
+    },
+    {
+      "id": "presentation-runtime",
+      "intent": "Change scene navigation, URL normalization, browser history, reset, transitions, controls, shortcuts, or fullscreen.",
+      "triggers": [
+        "navigation",
+        "scene query",
+        "history",
+        "reset",
+        "keyboard",
+        "fullscreen",
+        "transition"
+      ],
+      "readFirst": [
+        "src/presentation/engine/Presentation.tsx",
+        "src/presentation/engine/PresentationControls.tsx",
+        "src/presentation/engine/SceneRenderer.tsx",
+        "src/presentation/engine/types.ts"
+      ],
+      "changeWith": [
+        "src/styles/globals.css",
+        "src/presentation/scenes",
+        "docs/architecture.md"
+      ],
+      "invariantIds": [
+        "shared-engine",
+        "url-scene-state",
+        "resettable-local-state",
+        "keyboard-and-focus"
+      ],
+      "verification": [
+        "pnpm check",
+        "Verify all tracks, valid and invalid scene IDs, Back/Forward, ArrowLeft/ArrowRight, F, reset, and modal keyboard isolation."
+      ]
+    },
+    {
+      "id": "exported-track-slides",
+      "intent": "Change Enterprise or Small Business scene order, titles, Pencil frame metadata, HTML exports, or adjacent runtime images.",
+      "triggers": [
+        "enterprise slide",
+        "small business slide",
+        "Pencil export",
+        "frameId",
+        "ent-NN",
+        "smb-NN",
+        "slide copy",
+        "slide image"
+      ],
+      "readFirst": [
+        "src/presentation/config/enterprise.ts",
+        "src/presentation/config/small.ts",
+        "src/presentation/scenes/SlideScene.tsx",
+        "src/presentation/slides/PencilSlide.tsx"
+      ],
+      "changeWith": [
+        "public/enterprise-slides",
+        "public/small-slides",
+        "pencil/preesentation_big_business.pen",
+        "pencil/preesentation_small_business.pen",
+        "docs/agents/file-map.md"
+      ],
+      "invariantIds": [
+        "url-scene-state",
+        "approved-content",
+        "asset-separation"
+      ],
+      "verification": [
+        "pnpm check",
+        "Verify the direct scene URL, neighbouring scenes, 1920x1080 scaling, iframe console, and relative assets."
+      ]
+    },
+    {
+      "id": "enterprise-demo-wiring",
+      "intent": "Add or change a track slide hotspot, demo flow ID, modal behavior, reused flow, or dispatcher binding.",
+      "triggers": [
+        "hotspot",
+        "demo flow",
+        "flow ID",
+        "modal",
+        "demo trigger",
+        "dispatch",
+        "reused flow"
+      ],
+      "readFirst": [
+        "src/demos/flows/enterprise.ts",
+        "src/presentation/engine/types.ts",
+        "src/presentation/flows/DemoProduct.tsx",
+        "src/presentation/flows/DemoFlowModal.tsx"
+      ],
+      "changeWith": [
+        "src/presentation/config/enterprise.ts",
+        "src/presentation/config/small.ts",
+        "src/presentation/slides/PencilSlide.tsx",
+        "src/styles/globals.css"
+      ],
+      "invariantIds": [
+        "resettable-local-state",
+        "semantic-demo-ui",
+        "keyboard-and-focus"
+      ],
+      "verification": [
+        "pnpm check",
+        "Verify hotspot alignment, open, reset, close/reopen, Escape, focus restoration, and presentation-key isolation."
+      ]
+    },
+    {
+      "id": "desktop-product-demos",
+      "intent": "Change create-object, create-activity, document-template, or single-task desktop product behavior.",
+      "triggers": [
+        "desktop demo",
+        "object",
+        "activity",
+        "document template",
+        "single task",
+        "drawer",
+        "product modal"
+      ],
+      "readFirst": [
+        "src/presentation/flows/DesktopDemos.tsx",
+        "src/presentation/flows/ProductUI.tsx",
+        "src/styles/demo-product.css"
+      ],
+      "changeWith": [
+        "public/demo-flows",
+        "design-qa.md",
+        "src/presentation/flows/useTransientMessage.ts"
+      ],
+      "invariantIds": [
+        "static-demo-only",
+        "resettable-local-state",
+        "semantic-demo-ui",
+        "approved-content"
+      ],
+      "verification": [
+        "pnpm check",
+        "Exercise the changed primary flow, reset, close/reopen, semantic inputs, and same-viewport visual comparison."
+      ]
+    },
+    {
+      "id": "manager-mobile-demo",
+      "intent": "Change the manager login, orders, task, payment, settings, notifications, or chat flow.",
+      "triggers": [
+        "manager app",
+        "mobile demo",
+        "orders",
+        "payment",
+        "notifications",
+        "chat",
+        "430x812"
+      ],
+      "readFirst": [
+        "src/presentation/flows/ManagerAppDemo.tsx",
+        "src/styles/demo-product.css"
+      ],
+      "changeWith": [
+        "public/demo-flows",
+        "design-qa.md",
+        "src/presentation/flows/useTransientMessage.ts"
+      ],
+      "invariantIds": [
+        "static-demo-only",
+        "resettable-local-state",
+        "semantic-demo-ui",
+        "keyboard-and-focus"
+      ],
+      "verification": [
+        "pnpm check",
+        "Exercise nested Back/main navigation, changed flow, reset, transient messages, 430x812 viewport, and narrow host."
+      ]
+    },
+    {
+      "id": "api-placeholders-and-generic-scenes",
+      "intent": "Change API placeholder content, generic fixture scenes, media placeholders, or promote the API track to approved content.",
+      "triggers": ["api track", "placeholder", "fixture", "media scene"],
+      "readFirst": [
+        "src/presentation/config/api.ts",
+        "src/presentation/config/shared.ts",
+        "src/presentation/scenes/DemoScene.tsx",
+        "src/presentation/scenes/MediaScene.tsx"
+      ],
+      "changeWith": [
+        "src/demos/fixtures",
+        "src/presentation/engine/types.ts",
+        "src/app/TrackSelector.tsx"
+      ],
+      "invariantIds": [
+        "shared-engine",
+        "static-demo-only",
+        "resettable-local-state",
+        "approved-content"
+      ],
+      "verification": [
+        "pnpm check",
+        "Verify the affected route, direct scene URL, navigation, and reset."
+      ]
+    },
+    {
+      "id": "styling-accessibility-and-visual-qa",
+      "intent": "Change application styling, responsive behavior, product visual fidelity, focus, dialog accessibility, or reduced motion.",
+      "triggers": [
+        "CSS",
+        "responsive",
+        "visual",
+        "design QA",
+        "accessibility",
+        "focus",
+        "reduced motion"
+      ],
+      "readFirst": [
+        "src/styles/globals.css",
+        "src/styles/demo-product.css",
+        "design-qa.md"
+      ],
+      "changeWith": [
+        "src/presentation/flows/ProductUI.tsx",
+        "src/presentation/flows/DemoFlowModal.tsx",
+        "public/demo-flows",
+        "pencil/flows.pen"
+      ],
+      "invariantIds": [
+        "semantic-demo-ui",
+        "keyboard-and-focus",
+        "approved-content",
+        "asset-separation"
+      ],
+      "verification": [
+        "pnpm check",
+        "Compare the same state and viewport to approved references and exercise keyboard/focus/reduced-motion behavior."
+      ]
+    },
+    {
+      "id": "toolchain-deployment-and-ci",
+      "intent": "Change dependencies, Node/pnpm versions, Vite, TypeScript, lint/format, CI, build, or Vercel SPA routing.",
+      "triggers": [
+        "dependency",
+        "package",
+        "Vite",
+        "TypeScript",
+        "lint",
+        "CI",
+        "build",
+        "Vercel"
+      ],
+      "readFirst": [
+        "package.json",
+        "vite.config.ts",
+        "tsconfig.app.json",
+        "eslint.config.js",
+        ".github/workflows/ci.yml",
+        "vercel.json"
+      ],
+      "changeWith": ["pnpm-lock.yaml", "README.md", "AGENTS.md"],
+      "invariantIds": ["static-demo-only", "shared-engine"],
+      "verification": [
+        "pnpm check",
+        "Verify direct SPA route refresh when routing or deployment config changes."
+      ]
+    },
+    {
+      "id": "agent-documentation",
+      "intent": "Change agent instructions, current architecture documentation, task routing, path ownership, or documentation validation.",
+      "triggers": [
+        "AGENTS.md",
+        "agent docs",
+        "documentation",
+        "context index",
+        "file map",
+        "playbook"
+      ],
+      "readFirst": [
+        "AGENTS.md",
+        "docs/agents/README.md",
+        "docs/agents/context-index.json",
+        "scripts/check-docs.mjs"
+      ],
+      "changeWith": [
+        "docs/agents/context-index.schema.json",
+        "docs/agents/file-map.md",
+        "docs/agents/change-playbooks.md",
+        "docs/architecture.md",
+        "README.md"
+      ],
+      "invariantIds": ["approved-content", "asset-separation"],
+      "verification": [
+        "pnpm docs:check",
+        "pnpm format:check",
+        "git diff --check"
+      ]
+    }
+  ]
+}

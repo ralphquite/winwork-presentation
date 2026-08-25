@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://winwork.local/schemas/agent-context-index.schema.json",
+  "title": "WinWork agent context index",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "project",
+    "sourcePriority",
+    "commands",
+    "routes",
+    "invariants",
+    "assets",
+    "taskAreas"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "kind",
+        "runtime",
+        "packageManager",
+        "node",
+        "entrypoints"
+      ],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "kind": { "type": "string", "minLength": 1 },
+        "runtime": { "type": "string", "minLength": 1 },
+        "packageManager": { "type": "string", "minLength": 1 },
+        "node": { "type": "string", "minLength": 1 },
+        "entrypoints": { "$ref": "#/$defs/pathList" }
+      }
+    },
+    "sourcePriority": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["rank", "status", "paths"],
+        "properties": {
+          "rank": { "type": "integer", "minimum": 1 },
+          "status": {
+            "enum": ["authoritative", "current", "reference", "historical"]
+          },
+          "paths": { "$ref": "#/$defs/pathList" }
+        }
+      }
+    },
+    "commands": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": { "type": "string", "minLength": 1 }
+    },
+    "routes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "trackId", "status", "firstSceneId", "configPath"],
+        "properties": {
+          "path": { "type": "string", "pattern": "^/" },
+          "trackId": { "type": "string", "minLength": 1 },
+          "status": { "enum": ["implemented", "placeholder"] },
+          "firstSceneId": { "type": "string", "minLength": 1 },
+          "configPath": { "$ref": "#/$defs/repositoryPath" }
+        }
+      }
+    },
+    "invariants": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "rule"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "rule": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "assets": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["runtimePaths", "referencePaths", "historicalPaths"],
+      "properties": {
+        "runtimePaths": { "$ref": "#/$defs/pathList" },
+        "referencePaths": { "$ref": "#/$defs/pathList" },
+        "historicalPaths": { "$ref": "#/$defs/pathList" }
+      }
+    },
+    "taskAreas": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "intent",
+          "triggers",
+          "readFirst",
+          "changeWith",
+          "invariantIds",
+          "verification"
+        ],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "intent": { "type": "string", "minLength": 1 },
+          "triggers": { "$ref": "#/$defs/stringList" },
+          "readFirst": { "$ref": "#/$defs/pathList" },
+          "changeWith": { "$ref": "#/$defs/pathList" },
+          "invariantIds": { "$ref": "#/$defs/stringList" },
+          "verification": { "$ref": "#/$defs/stringList" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "repositoryPath": {
+      "type": "string",
+      "minLength": 1,
+      "not": { "pattern": "^(?:/|[a-zA-Z]+:)" }
+    },
+    "pathList": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/repositoryPath" }
+    },
+    "stringList": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    }
+  }
+}
