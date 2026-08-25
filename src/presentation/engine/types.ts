@@ -8,6 +8,12 @@ type SceneBase = {
 
 export type SlideSceneDefinition = SceneBase & {
   type: 'slide';
+  pencil?: {
+    documentPath: string;
+    frameId: string;
+    height: 1080;
+    width: 1920;
+  };
 };
 
 export type DemoSceneDefinition = SceneBase & {

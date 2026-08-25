@@ -28,11 +28,11 @@ export function SceneRenderer({ revision, scene }: SceneRendererProps) {
   const motionDuration = prefersReducedMotion ? 0 : 0.18;
 
   return (
-    <div className="min-h-0 flex-1 overflow-auto" aria-live="polite">
+    <div className="min-h-0 flex-1 overflow-hidden" aria-live="polite">
       <AnimatePresence initial={false} mode="wait">
         <motion.div
           animate={{ opacity: 1, y: 0 }}
-          className="h-full min-h-[28rem]"
+          className="h-full"
           exit={{ opacity: prefersReducedMotion ? 1 : 0, y: -motionOffset }}
           initial={{ opacity: prefersReducedMotion ? 1 : 0, y: motionOffset }}
           key={`${scene.id}:${revision}`}

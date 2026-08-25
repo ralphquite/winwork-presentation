@@ -1,15 +1,16 @@
-import { createBrowserRouter, Navigate } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 
 import { apiPresentation } from '../presentation/config/api';
 import { enterprisePresentation } from '../presentation/config/enterprise';
 import { smallPresentation } from '../presentation/config/small';
 import { Presentation } from '../presentation/engine/Presentation';
 import { NotFound } from './NotFound';
+import { TrackSelector } from './TrackSelector';
 
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <Navigate to="/enterprise" replace />,
+    element: <TrackSelector />,
   },
   {
     path: '/enterprise',

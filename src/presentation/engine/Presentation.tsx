@@ -136,7 +136,7 @@ export function Presentation({ config }: PresentationProps) {
   }, [goToNextScene, goToPreviousScene, toggleFullscreen]);
 
   return (
-    <main className="flex min-h-screen flex-col bg-slate-50 text-slate-950">
+    <main className="presentation-shell">
       <PresentationControls
         config={config}
         currentIndex={currentIndex}

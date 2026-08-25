@@ -6,12 +6,15 @@ export function NotFound() {
       <div className="max-w-xl text-center">
         <h1 className="text-3xl font-semibold">Маршрут не найден</h1>
         <p className="mt-4 text-slate-600">
-          Выберите один из подготовленных placeholder-маршрутов.
+          Вернитесь к выбору одной из трёх презентаций.
         </p>
         <nav
           className="mt-8 flex flex-wrap justify-center gap-3"
           aria-label="Sales-маршруты"
         >
+          <Link className="route-link" to="/">
+            Выбор презентации
+          </Link>
           <Link className="route-link" to="/enterprise">
             Enterprise
           </Link>

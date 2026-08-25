@@ -26,6 +26,13 @@ body {
   margin: 0;
 }
 
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
 button,
 select {
   font: inherit;
@@ -55,6 +62,320 @@ select {
 
   .route-link {
     @apply rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-800 hover:bg-slate-100;
+  }
+}
+
+.track-selector-shell {
+  position: relative;
+  display: grid;
+  min-height: 100%;
+  place-items: center;
+  overflow: hidden;
+  background: radial-gradient(
+    circle at 50% 0%,
+    #ffffff 0%,
+    #f7f9fc 48%,
+    #edf2f8 100%
+  );
+  color: #172033;
+}
+
+.track-selector-orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(4px);
+  opacity: 0.58;
+  pointer-events: none;
+}
+
+.track-selector-orb-blue {
+  top: -260px;
+  right: -120px;
+  width: 680px;
+  height: 680px;
+  background: radial-gradient(circle, #dce9ff 0%, #dce9ff00 68%);
+}
+
+.track-selector-orb-green {
+  bottom: -360px;
+  left: -180px;
+  width: 760px;
+  height: 760px;
+  background: radial-gradient(circle, #ddf9e6 0%, #ddf9e600 68%);
+}
+
+.track-selector-content {
+  position: relative;
+  z-index: 1;
+  width: min(1240px, calc(100% - 80px));
+  padding: 56px 0;
+}
+
+.track-selector-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 24px;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+}
+
+.track-selector-mark {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2a73ff 0 52%, #3fe171 52% 100%);
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 800;
+  box-shadow: 0 10px 24px #2a73ff2b;
+}
+
+.track-selector-heading {
+  margin-top: 72px;
+}
+
+.track-selector-heading p {
+  margin: 0;
+  color: #2a73ff;
+  font-size: 14px;
+  font-weight: 750;
+  letter-spacing: 0.16em;
+}
+
+.track-selector-heading h1 {
+  margin: 18px 0 0;
+  font-size: clamp(48px, 5vw, 72px);
+  font-weight: 720;
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+.track-selector-heading > span {
+  display: block;
+  max-width: 680px;
+  margin-top: 24px;
+  color: #5e6a7d;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.track-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 52px;
+}
+
+.track-selector-card {
+  display: flex;
+  min-height: 308px;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 28px;
+  border: 1px solid #e2e7ee;
+  border-radius: 28px;
+  background: #ffffffdf;
+  box-shadow: 0 18px 46px #1720330d;
+  color: #172033;
+  cursor: pointer;
+  text-align: left;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.track-selector-card:hover {
+  transform: translateY(-6px);
+  border-color: #7cabff;
+  box-shadow: 0 26px 60px #2a73ff1a;
+}
+
+.track-selector-card-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.track-selector-icon {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  border-radius: 18px;
+  background: #eef4ff;
+  color: #2a73ff;
+}
+
+.track-selector-status {
+  color: #5e6a7d;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.track-selector-card strong {
+  margin-top: 32px;
+  font-size: 28px;
+  letter-spacing: -0.025em;
+}
+
+.track-selector-description {
+  margin-top: 12px;
+  color: #5e6a7d;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.track-selector-action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 28px;
+  color: #1555d8;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.track-selector-fullscreen-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 28px 0 0;
+  color: #94a0b2;
+  font-size: 13px;
+}
+
+.presentation-shell {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  overflow: hidden;
+  background: #e8edf5;
+  color: #172033;
+}
+
+.pencil-slide-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #e8edf5;
+}
+
+.pencil-slide-canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  transition: opacity 80ms ease-out;
+  will-change: transform;
+}
+
+.pencil-slide-document {
+  display: block;
+  border: 0;
+  background: #f7f9fc;
+  pointer-events: none;
+}
+
+.presentation-control-zone {
+  position: fixed;
+  z-index: 50;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  height: 112px;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 24px 18px;
+}
+
+.presentation-controls {
+  display: flex;
+  max-width: min(940px, calc(100vw - 48px));
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid #ffffff26;
+  border-radius: 16px;
+  background: #172033e8;
+  box-shadow: 0 18px 48px #1720334d;
+  color: #ffffff;
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+.presentation-control-zone:hover .presentation-controls,
+.presentation-controls:focus-within {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.presentation-controls .presentation-control-button {
+  min-width: 40px;
+  border-color: #ffffff26;
+  background: #ffffff14;
+  color: #ffffff;
+}
+
+.presentation-controls .presentation-control-button:hover {
+  background: #ffffff24;
+}
+
+.presentation-controls .presentation-control-button:disabled {
+  opacity: 0.3;
+}
+
+.presentation-scene-counter {
+  min-width: 58px;
+  text-align: center;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+.presentation-debug-label {
+  max-width: 190px;
+  overflow: hidden;
+  color: #ccd4df;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.presentation-scene-picker {
+  width: min(330px, 28vw);
+  border-color: #ffffff26;
+  background: #263248;
+  color: #ffffff;
+}
+
+@media (max-width: 900px) {
+  .track-selector-shell {
+    overflow: auto;
+  }
+
+  .track-selector-content {
+    width: min(680px, calc(100% - 40px));
+  }
+
+  .track-selector-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .presentation-debug-label {
+    display: none;
   }
 }
 
