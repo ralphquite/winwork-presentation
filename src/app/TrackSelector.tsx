@@ -3,6 +3,7 @@ import {
   Building2,
   ChevronDown,
   Code2,
+  LogOut,
   Maximize2,
   Play,
   Store,
@@ -87,11 +88,19 @@ export function TrackSelector() {
       <div className="track-selector-orb track-selector-orb-green" />
 
       <section className="track-selector-content">
-        <img
-          alt="WinWork"
-          className="track-selector-brand"
-          src="/winwork-logo.svg"
-        />
+        <header className="track-selector-topbar">
+          <img
+            alt="WinWork"
+            className="track-selector-brand"
+            src="/winwork-logo.svg"
+          />
+          <form action="/auth/logout" method="post">
+            <button className="track-selector-logout" type="submit">
+              <LogOut aria-hidden="true" size={17} />
+              Выйти
+            </button>
+          </form>
+        </header>
 
         <div className="track-selector-heading">
           <p>GUIDED SALES DEMO</p>

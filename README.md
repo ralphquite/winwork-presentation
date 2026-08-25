@@ -1,6 +1,6 @@
 # WinWork Guided Sales Demo
 
-Детерминированный frontend для управляемых sales-презентаций WinWork. Это автономный демонстрационный сервис без backend, реальной авторизации, production API и пользовательских данных.
+Детерминированный frontend для управляемых sales-презентаций WinWork. Это автономный демонстрационный сервис без продуктового backend, аккаунтов, production API и пользовательских данных. На Vercel весь сервис закрыт одним общим паролем отдела продаж.
 
 ## Текущее состояние
 
@@ -9,6 +9,7 @@
 - `/small` — готовый маршрут из 14 экспортированных Pencil-слайдов; сцена `smb-06` переиспользует demo-flow одиночного задания.
 - `/api` — технический placeholder-маршрут на общем presentation runtime; утверждённый контент для него ещё не перенесён.
 - `/` — экран выбора маршрута.
+- `middleware.ts` и `api/auth/login.ts` — Vercel access gateway: парольный экран, проверка credential, подписанная 30-дневная cookie и защита всех маршрутов/assets.
 
 Текущая сцена хранится в `?scene=<id>`, например `/enterprise?scene=ent-04`. Прямые ссылки, browser Back/Forward, выбор сцены, стрелки клавиатуры, reset и fullscreen используют один общий движок.
 
@@ -21,12 +22,33 @@ pnpm install --frozen-lockfile
 pnpm dev
 ```
 
-Vite выведет локальный URL. Для production-like проверки используйте:
+Vite выведет локальный URL без парольного шлюза. Для проверки production build без Vercel Middleware используйте:
 
 ```bash
 pnpm build
 pnpm preview
 ```
+
+## Парольный доступ на Vercel
+
+Шлюз требует две server-only переменные:
+
+- `WINWORK_ACCESS_PASSWORD` — общий пароль отдела продаж, минимум 12 символов;
+- `WINWORK_SESSION_SECRET` — случайный секрет подписи, минимум 32 символа. Его не нужно передавать сотрудникам.
+
+Реальные значения нельзя коммитить или называть с префиксом `VITE_`. Укажите их в Vercel Project → Settings → Environment Variables для Production и Preview. Секрет подписи можно сгенерировать командой:
+
+```bash
+openssl rand -base64 32
+```
+
+Для локальной проверки скопируйте имена из `.env.example` в игнорируемый `.env.local`, заполните оба значения и запустите Vercel runtime:
+
+```bash
+pnpm dlx vercel@latest dev
+```
+
+Без переменных Vercel deployment намеренно отвечает `503`, а не открывает презентацию. Смена пароля или секрета немедленно делает старые cookies недействительными.
 
 ## Проверки
 
@@ -38,6 +60,7 @@ pnpm check
 
 ```bash
 pnpm docs:check
+pnpm auth:check
 pnpm format:check
 pnpm lint
 pnpm typecheck
@@ -52,6 +75,10 @@ pnpm build
 - `src/presentation/slides/` — масштабирование Pencil HTML и demo hotspots.
 - `src/presentation/flows/` — компонентные desktop/mobile demo-flow и общие product primitives.
 - `src/demos/` — flow bindings и generic synthetic fixtures.
+- `middleware.ts` — Vercel password gateway перед SPA и статическими assets.
+- `api/auth/login.ts` — Edge Function, принимающая password form и выдающая подписанную cookie.
+- `auth/session.ts` — общий server-only контракт cookie, HMAC и env validation.
+- `.env.example` — имена обязательных server-only секретов без значений.
 - `public/enterprise-slides/` — runtime HTML-экспорты Enterprise и их локальные зависимости.
 - `public/small-slides/` — runtime HTML-экспорты Small Business и их локальные зависимости.
 - `public/demo-flows/` — только референсы для visual QA; приложение не рендерит их как интерактивный продукт.
@@ -65,4 +92,4 @@ pnpm build
 
 ## Vercel
 
-Проект собирается в статический Vite SPA. `vercel.json` перенаправляет прямые запросы на `index.html`, поэтому refresh на `/enterprise`, `/api`, `/small` и deep links через query-параметр не должен возвращать 404.
+Проект собирается в статический Vite SPA. Перед cache и SPA routing Vercel запускает корневой `middleware.ts`: он проверяет подписанную HttpOnly cookie либо возвращает парольный экран. Парольная форма отправляется в `/api/auth/login`, потому что request body обрабатывает Edge Function, а не Routing Middleware. После успешной проверки `vercel.json` перенаправляет отсутствующие в filesystem прямые запросы на `index.html`, поэтому refresh на `/enterprise`, `/api`, `/small` и deep links через query-параметр не возвращает 404.

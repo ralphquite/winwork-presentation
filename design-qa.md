@@ -132,6 +132,13 @@ The source and implementation were opened together in the same browser-rendered 
 - Enterprise `ent-02` no longer renders the `Три связи — ручная координация ещё возможна` caption or the `Масштаб требует правил…` callout. Browser evidence: `/tmp/winwork-ent02-copy-removed.png`.
 - The corrected `ent-08` CTA still opens the document-template dialog; `Escape` closes it and restores focus to the trigger.
 
+### Iteration 12 — passed
+
+- The published Vercel build exposed native selects with `appearance: auto`, so dropdown arrows, inner padding, light/dark widget treatment, and text-field chrome remained browser-dependent even though Chromium rendered them acceptably.
+- Desktop and manager demo shells now declare a light control scheme. Text, search, and number inputs have scoped native-appearance normalization; selects use one deterministic chevron, reserved text space, and light option colors. The preferred-worker input no longer inherits the surrounding bold label weight.
+- All five quick-access flows were exercised after the fix. Object, activity, manager-task, and single-task native selects changed real values; the contract template search/radio/save dropdown still worked; desktop and mobile controls reported `appearance: none` with no horizontal overflow.
+- Browser evidence: `/tmp/winwork-form-controls-desktop-after.png` at 1280 × 720 and `/tmp/winwork-form-controls-mobile-after.png` at 390 × 844. Route smoke checks passed for Enterprise, Small Business, API, and invalid-scene normalization with no console errors.
+
 ## Interaction and runtime evidence
 
 - Create object: list → `Добавить объект` → editable drawer → add manager/activity → save → new synthetic row; reset removes the new row.

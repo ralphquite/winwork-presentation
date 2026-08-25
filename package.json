@@ -12,14 +12,16 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
+    "auth:check": "node --experimental-strip-types scripts/check-auth.mjs",
     "docs:check": "node scripts/check-docs.mjs",
     "lint": "eslint . --max-warnings=0",
     "typecheck": "tsc -b --pretty false",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "check": "pnpm docs:check && pnpm format:check && pnpm lint && pnpm typecheck && pnpm build"
+    "check": "pnpm docs:check && pnpm format:check && pnpm lint && pnpm typecheck && pnpm auth:check && pnpm build"
   },
   "dependencies": {
+    "@vercel/functions": "^3.9.5",
     "lucide-react": "^1.33.0",
     "motion": "^13.1.1",
     "react": "^19.2.8",
@@ -29,6 +31,7 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^26.3.0",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
     "@vitejs/plugin-react": "^6.1.0",

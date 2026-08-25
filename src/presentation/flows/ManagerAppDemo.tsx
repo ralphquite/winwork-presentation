@@ -153,6 +153,7 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
           <input
             aria-label="Телефон"
             autoComplete="off"
+            defaultValue="+7 900 000-00-00"
             inputMode="tel"
             placeholder="Телефон"
             required
@@ -163,6 +164,7 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
           <input
             aria-label="Пароль"
             autoComplete="new-password"
+            defaultValue="demo1234"
             placeholder="Пароль"
             required
             type="password"

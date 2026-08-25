@@ -2,11 +2,24 @@
 
 ## Назначение и граница
 
-Репозиторий содержит одно статическое React SPA для детерминированных sales-презентаций. Это не production WinWork: сетевого слоя, backend, авторизации, базы данных, аналитики, секретов и runtime env-контракта нет. Все интерактивные состояния локальны и сбрасываются remount’ом.
+Репозиторий содержит одно статическое React SPA для детерминированных sales-презентаций. Это не production WinWork: продуктового сетевого слоя, аккаунтов, базы данных, аналитики и реальных пользовательских данных нет. Единственная серверная граница — Vercel password gateway из Routing Middleware и одной login-функции с двумя server-only secrets. Все состояния самой презентации локальны и сбрасываются remount’ом.
 
 ## Поток выполнения
 
 ```text
+Incoming request
+        |
+        v
+middleware.ts (password/session check before cache)
+        |
+        +-- no valid cookie --> login HTML / 401 / 503
+        |
+        +-- POST /api/auth/login --> Edge Function --> signed cookie
+        |
+        v
+Vercel static output + SPA rewrite
+        |
+        v
 Browser URL: /<track>?scene=<id>
         |
         v
@@ -38,6 +51,19 @@ SceneRenderer (type dispatch + transition + error boundary)
 ```
 
 Все tracks используют один router, `Presentation` и `SceneRenderer`. Track config задаёт только порядок и данные сцен; новый track не должен создавать отдельный движок.
+
+## Access gateway
+
+Корневой `middleware.ts` работает в Vercel Edge runtime до cache и применяется ко всем путям, включая Vite assets, экспортированные HTML-слайды и их относительные изображения. Он пропускает только `POST /api/auth/login` в одноимённую Edge Function, не читая request body. Общая криптография и cookie policy находятся в `auth/session.ts`. `pnpm dev` запускает только локальный Vite SPA; полный access flow проверяется через `vercel dev`.
+
+- `WINWORK_ACCESS_PASSWORD` — единственный credential, который вводит отдел продаж.
+- `WINWORK_SESSION_SECRET` — отдельный случайный ключ подписи, не передаваемый пользователям.
+- `POST /api/auth/login` в Edge Function сравнивает SHA-256 digests без раннего выхода, подписывает HMAC-SHA-256 token и устанавливает 30-дневную `HttpOnly; SameSite=Lax` cookie (`Secure` и `__Host-` на HTTPS).
+- `POST /auth/logout` удаляет cookie. Смена любого секрета инвалидирует все активные sessions.
+- До входа HTML navigation получает автономную страницу пароля, остальные ресурсы — `401`. Missing/weak configuration всегда даёт `503`.
+- `returnTo` принимает только same-origin относительный путь, поэтому прямой `?scene=` восстанавливается без open redirect.
+
+Пароль не входит в Vite bundle, URL, HTML или логи. Это coarse shared access для синтетической sales-демонстрации, а не персональная корпоративная авторизация.
 
 ## Маршруты и готовность
 
@@ -129,7 +155,7 @@ Desktop surface сохраняет минимальный рабочий canvas 
 
 ## Build и deployment
 
-Vite собирает статический `dist/`. `vercel.json` содержит общий SPA rewrite в `/index.html`, поэтому прямые запросы к track routes обрабатывает React Router. CI устанавливает frozen pnpm lockfile под Node version из `.node-version` и запускает `pnpm check`.
+Vite собирает статический `dist/`. Vercel сначала запускает password middleware; login POST уходит в Edge Function, существующие static files обслуживаются напрямую, а `vercel.json` применяет SPA rewrite в `/index.html` только после filesystem miss. Поэтому авторизованные прямые track routes обрабатывает React Router, а iframe HTML/assets сохраняют собственные пути. CI устанавливает frozen pnpm lockfile под Node version из `.node-version` и запускает `pnpm check`; environment values на этапе CI не требуются, потому что gateway читает их только во время Vercel request.
 
 ## Расширение
 

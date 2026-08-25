@@ -2,6 +2,14 @@
 
 Use the smallest playbook that covers the request. Paths and invariants are also available in `context-index.json`.
 
+## Change the password access gateway
+
+1. Read root `middleware.ts`, `api/auth/login.ts`, and `auth/session.ts` together. Middleware guards every request; only the Function reads the login body; shared crypto/cookie rules must not diverge.
+2. Keep real values only in Vercel or ignored local environment files. `.env.example` contains names, never credentials.
+3. Preserve fail-closed behavior, constant-time password comparison, signed expiry, HttpOnly/SameSite/Secure cookie attributes, same-origin `returnTo`, and password-rotation invalidation.
+4. Keep login/logout as form posts and preserve the selector's semantic logout button.
+5. Run `pnpm auth:check` and `pnpm check`, then use `vercel dev` for the final browser check of the login page, deep links, 30-day persistence, and logout.
+
 ## Change an existing track's scene order, title, or copy
 
 1. Open the relevant file under `src/presentation/config/`.

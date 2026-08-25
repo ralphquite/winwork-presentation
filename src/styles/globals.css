@@ -112,10 +112,53 @@ select {
   padding: 56px 0;
 }
 
+.track-selector-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.track-selector-topbar form {
+  margin: 0;
+}
+
 .track-selector-brand {
   display: block;
   width: min(202px, 100%);
   height: auto;
+}
+
+.track-selector-logout {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 15px;
+  border: 1px solid #dbe3ee;
+  border-radius: 13px;
+  background: #ffffffb8;
+  color: #5e6a7d;
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  transition:
+    border-color 160ms ease,
+    color 160ms ease,
+    background 160ms ease;
+}
+
+.track-selector-logout:hover {
+  border-color: #8eb3ff;
+  background: #ffffff;
+  color: #1555d8;
+}
+
+.track-selector-logout:focus-visible {
+  outline: 3px solid #2a73ff;
+  outline-offset: 3px;
 }
 
 .track-selector-heading {
@@ -739,6 +782,14 @@ select {
 }
 
 @media (max-width: 620px) {
+  .track-selector-topbar {
+    gap: 12px;
+  }
+
+  .track-selector-brand {
+    width: min(158px, 100%);
+  }
+
   .demo-flow-heading > span {
     display: none;
   }

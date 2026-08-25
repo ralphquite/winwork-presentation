@@ -3,7 +3,13 @@
 ## Runtime dependency flow
 
 ```text
-src/main.tsx
+Incoming request
+  -> middleware.ts (password/session gate)
+     -> POST /api/auth/login -> Edge Function
+     -> auth/session.ts (shared env, HMAC, cookie contract)
+  -> Vercel static output + SPA rewrite
+  -> browser
+  -> src/main.tsx
   -> src/app/App.tsx
   -> src/app/router.tsx
   -> TrackSelector -> DemoFlowModal (temporary QA quick access)
@@ -24,8 +30,12 @@ DemoFlowModal
 
 | Path                                               | Owns                                                                                   | Couple changes with                                       |
 | -------------------------------------------------- | -------------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| `middleware.ts`                                    | Shared-password login/logout, signed session cookie, fail-closed request gate          | `.env.example`, Vercel runtime checks, access docs        |
+| `api/auth/login.ts`                                | Password form parsing, credential check, session issue, invalid-password redirect      | Middleware allow-path and shared session module           |
+| `auth/session.ts`                                  | Server-only env validation, return path, cookie, HMAC, expiry, password comparison     | Middleware, login Function, auth contract check           |
+| `.env.example`                                     | Names and minimum requirements of server-only access secrets                           | Middleware and Vercel environment setup                   |
 | `src/app/router.tsx`                               | Public route-to-config mapping                                                         | Track selector and target config                          |
-| `src/app/TrackSelector.tsx`                        | Landing cards, QA flow shortcuts, and fullscreen entry attempt                         | Routes, demo flows, and current track readiness copy      |
+| `src/app/TrackSelector.tsx`                        | Landing cards, QA flow shortcuts, fullscreen entry attempt, and access logout          | Routes, demo flows, auth contract, and track readiness    |
 | `src/presentation/engine/types.ts`                 | Scene/config/demo-flow contracts                                                       | All exhaustive render/dispatch switches                   |
 | `src/presentation/engine/Presentation.tsx`         | `?scene`, history writes, shortcuts, fullscreen, presentation reset                    | Controls and all-route browser verification               |
 | `src/presentation/engine/PresentationControls.tsx` | Home, counter, picker, previous/next, reset, fullscreen controls                       | Presentation callbacks and accessibility labels           |
@@ -51,7 +61,7 @@ DemoFlowModal
 | `public/winwork-logo.svg`                          | Runtime wordmark used by demo shells                                                   | Product UI and manager login                              |
 | `pencil/*.pen`                                     | Approved editable design sources                                                       | Exported runtime/reference assets when explicitly updated |
 | `design-qa.md`                                     | Latest recorded Enterprise visual/interaction evidence                                 | Current implementation evidence only                      |
-| `vercel.json`                                      | SPA rewrite for direct routes                                                          | Router paths and deployment verification                  |
+| `vercel.json`                                      | SPA rewrite after the access gateway                                                   | Middleware, router paths, and deployment verification     |
 
 ## Demo bindings
 

@@ -38,6 +38,7 @@ Update the index and affected focused docs in the same change when any of these 
 - presentation/demo state or reset behavior;
 - supported demo flow or asset role;
 - quality command or browser verification requirement;
+- access-gateway route, cookie, or environment contract;
 - repository boundary or source-priority rule.
 
 Run `pnpm docs:check` after every documentation edit. The check validates internal Markdown links, parses the JSON schema, checks the index's core structure and references, and verifies every repository path declared by the index.

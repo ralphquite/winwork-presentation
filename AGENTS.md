@@ -26,11 +26,13 @@ Never preserve a stale documentation claim over working code. Update the focused
 - `/api` is a technical placeholder track built on the shared runtime.
 - The active scene is URL state in `?scene=<stable-id>`; presentation and demo state are local and resettable.
 - Exported slide HTML under `public/enterprise-slides/` and `public/small-slides/` is runtime content. PNG files under `public/demo-flows/` are QA references and must not be used as interactive product UI.
-- There is no backend, authentication, database, analytics, production API, or runtime environment-variable contract.
+- The Vercel access gateway uses Routing Middleware to protect every deployed route/asset and an Edge Function to process the password form. This is the only server-side behavior and uses `WINWORK_ACCESS_PASSWORD` plus `WINWORK_SESSION_SECRET` for a signed 30-day cookie.
+- There is no account system, product backend, database, analytics, production API, or real user identity.
 
 ## Hard boundaries
 
 - Never connect real WinWork services or introduce network-backed product behavior unless the task explicitly changes this boundary.
+- Never expose, hard-code, log, or prefix the access-gateway secrets with `VITE_`; keep real values in Vercel or ignored local environment files.
 - Never use real personal, customer, company, worker, payment, or conversation data. Keep visible demo data obviously synthetic and deterministic.
 - Do not render product screenshots as interactive demos. Product flows are semantic React controls with local state; screenshots are comparison evidence only.
 - Do not invent product claims, sales copy, or a design system. Use approved Pencil/design inputs and clearly mark unavailable tracks or scenes as placeholders.
@@ -41,6 +43,7 @@ Never preserve a stale documentation claim over working code. Update the focused
 ## Architecture invariants
 
 - One router and one shared presentation engine serve all tracks.
+- Deployed requests fail closed in `middleware.ts`: unauthenticated visitors cannot fetch the SPA bundle, exported slides, or their adjacent assets.
 - Track configs define scene order; renderers and product primitives are shared.
 - Scene IDs are unique and stable within a track because they are public deep-link values.
 - URL state owns the active scene. Browser Back/Forward and unrelated query parameters must keep working.
@@ -54,6 +57,7 @@ Never preserve a stale documentation claim over working code. Update the focused
 
 | Change                   | Start with                                  | Usually changes with                                            |
 | ------------------------ | ------------------------------------------- | --------------------------------------------------------------- |
+| Password access gateway  | `middleware.ts`, `api/auth/login.ts`        | shared session module, selector logout, Vercel verification     |
 | Route or track card      | `src/app/router.tsx`                        | `src/app/TrackSelector.tsx`, track config, browser verification |
 | Scene order/copy/ID      | `src/presentation/config/*.ts`              | exported slide asset, direct-link verification                  |
 | Runtime/navigation/reset | `src/presentation/engine/Presentation.tsx`  | controls, renderer, types, all-track browser checks             |
@@ -78,14 +82,17 @@ Never preserve a stale documentation claim over working code. Update the focused
 
 - Install: `pnpm install --frozen-lockfile`
 - Develop: `pnpm dev`
+- Develop with auth: `pnpm dlx vercel@latest dev`
+- Access-gateway contract: `pnpm auth:check`
 - Documentation contract: `pnpm docs:check`
 - Full gate: `pnpm check`
-- Individual gates: `pnpm format:check`, `pnpm lint`, `pnpm typecheck`, `pnpm build`
+- Individual gates: `pnpm auth:check`, `pnpm format:check`, `pnpm lint`, `pnpm typecheck`, `pnpm build`
 
 ## Verification matrix
 
 - Documentation-only: `pnpm docs:check`, `pnpm format:check`, `git diff --check`.
 - Code, style, asset, or configuration: `pnpm check`.
+- Access-gateway changes: also verify missing configuration, wrong/correct password, preserved deep link, protected direct assets, tampered/expired cookie, 30-day persistence, password rotation, and logout through `vercel dev`.
 - Runtime/navigation: also verify `/enterprise`, `/api`, and `/small`; direct valid and invalid `?scene=` values; Back/Forward; `ArrowLeft`/`ArrowRight`; `F`; reset; fullscreen entry/fallback.
 - Demo-flow changes: also exercise open, primary interaction path, reset, close/reopen, focus restoration, `Escape`, keyboard isolation, and narrow-host behavior when relevant.
 - Visual changes: compare the same state and viewport against the approved Pencil/PNG reference and update `design-qa.md` only with evidence from the current implementation.
@@ -99,7 +106,8 @@ Never preserve a stale documentation claim over working code. Update the focused
 
 ## Code review blockers
 
-- Real API, secret, authentication, analytics, or personal-data dependency.
+- Real product API, account authentication, analytics, hard-coded secret, or personal-data dependency.
+- Fail-open access behavior or a protected route/asset that bypasses `middleware.ts`.
 - Screenshot-backed fake interaction.
 - Duplicated track engine or unresettable/leaking demo state.
 - Broken deep links, browser history, editable-field keyboard behavior, focus handling, or reduced motion.

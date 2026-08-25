@@ -3,12 +3,13 @@
   "schemaVersion": 1,
   "project": {
     "name": "winwork-sales-demo",
-    "kind": "deterministic-static-sales-presentation",
-    "runtime": "React 19 + TypeScript + Vite + React Router + Tailwind CSS + Motion",
+    "kind": "password-protected-deterministic-static-sales-presentation",
+    "runtime": "Vercel Edge Routing Middleware + React 19 + TypeScript + Vite + React Router + Tailwind CSS + Motion",
     "packageManager": "pnpm@11",
     "node": ">=24 <25",
     "entrypoints": [
       "AGENTS.md",
+      "middleware.ts",
       "src/main.tsx",
       "src/app/router.tsx",
       "src/presentation/engine/Presentation.tsx"
@@ -24,6 +25,10 @@
         "public/small-slides",
         "public/winwork-logo.svg",
         "public/favicon.svg",
+        "middleware.ts",
+        "auth",
+        "api/auth/login.ts",
+        ".env.example",
         "package.json",
         "pnpm-lock.yaml",
         ".node-version",
@@ -56,6 +61,7 @@
   "commands": {
     "install": "pnpm install --frozen-lockfile",
     "develop": "pnpm dev",
+    "authCheck": "pnpm auth:check",
     "docsCheck": "pnpm docs:check",
     "formatCheck": "pnpm format:check",
     "lint": "pnpm lint",
@@ -89,7 +95,11 @@
   "invariants": [
     {
       "id": "static-demo-only",
-      "rule": "No real backend, authentication, database, analytics, production API, secrets, or real personal/customer data."
+      "rule": "The shared-password access gateway is the only server-side behavior; there is no account system, product backend, database, analytics, production API, or real personal/customer data."
+    },
+    {
+      "id": "access-gateway",
+      "rule": "Vercel requests fail closed before cache; server-only secrets sign 30-day sessions and every SPA route, exported slide, and adjacent asset requires a valid cookie."
     },
     {
       "id": "shared-engine",
@@ -142,8 +152,52 @@
       ],
       "readFirst": ["AGENTS.md", "README.md", "docs/architecture.md"],
       "changeWith": ["docs/agents/context-index.json"],
-      "invariantIds": ["static-demo-only", "approved-content"],
+      "invariantIds": [
+        "static-demo-only",
+        "access-gateway",
+        "approved-content"
+      ],
       "verification": ["pnpm docs:check"]
+    },
+    {
+      "id": "access-gateway",
+      "intent": "Change the shared sales password, signed session, login/logout response, protected-path coverage, or Vercel secret contract.",
+      "triggers": [
+        "password",
+        "authorization",
+        "authentication",
+        "login",
+        "logout",
+        "session",
+        "cookie",
+        "environment secret",
+        "access gateway"
+      ],
+      "readFirst": [
+        "middleware.ts",
+        "api/auth/login.ts",
+        "auth/session.ts",
+        ".env.example",
+        "vercel.json"
+      ],
+      "changeWith": [
+        "scripts/check-auth.mjs",
+        "src/app/TrackSelector.tsx",
+        "src/styles/globals.css",
+        "package.json",
+        "pnpm-lock.yaml",
+        "tsconfig.node.json",
+        "README.md",
+        "docs/architecture.md",
+        "docs/agents/file-map.md",
+        "docs/agents/change-playbooks.md"
+      ],
+      "invariantIds": ["static-demo-only", "access-gateway"],
+      "verification": [
+        "pnpm auth:check",
+        "pnpm check",
+        "Use vercel dev to verify missing configuration, wrong and correct password, preserved deep links, direct protected assets, tampered and expired cookies, 30-day persistence, password rotation, and logout."
+      ]
     },
     {
       "id": "routes-and-track-selector",
@@ -423,8 +477,14 @@
         ".github/workflows/ci.yml",
         "vercel.json"
       ],
-      "changeWith": ["pnpm-lock.yaml", "README.md", "AGENTS.md"],
-      "invariantIds": ["static-demo-only", "shared-engine"],
+      "changeWith": [
+        "pnpm-lock.yaml",
+        "middleware.ts",
+        ".env.example",
+        "README.md",
+        "AGENTS.md"
+      ],
+      "invariantIds": ["static-demo-only", "access-gateway", "shared-engine"],
       "verification": [
         "pnpm check",
         "Verify direct SPA route refresh when routing or deployment config changes."
