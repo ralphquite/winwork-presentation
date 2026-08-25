@@ -106,30 +106,8 @@ function renderAccessPage(options: {
         box-shadow: 0 26px 70px #17203318;
       }
 
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        font-size: 22px;
-        font-weight: 750;
-        letter-spacing: -0.02em;
-      }
-
-      .mark {
-        display: grid;
-        width: 42px;
-        height: 42px;
-        place-items: center;
-        border-radius: 12px;
-        background: linear-gradient(135deg, #2a73ff 0 52%, #3fe171 52% 100%);
-        box-shadow: 0 10px 24px #2a73ff2b;
-        color: #ffffff;
-        font-size: 20px;
-        font-weight: 800;
-      }
-
       .eyebrow {
-        margin: 42px 0 0;
+        margin: 0;
         color: #2a73ff;
         font-size: 12px;
         font-weight: 800;
@@ -220,10 +198,6 @@ function renderAccessPage(options: {
           padding: 28px 24px;
           border-radius: 22px;
         }
-
-        .eyebrow {
-          margin-top: 36px;
-        }
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -237,7 +211,6 @@ function renderAccessPage(options: {
   <body>
     <main>
       <section class="card" aria-labelledby="access-title">
-        <div class="brand"><span class="mark" aria-hidden="true">W</span>WinWork</div>
         <p class="eyebrow">GUIDED SALES DEMO</p>
         <h1 id="access-title">${title}</h1>
         <p class="description">${description}</p>
