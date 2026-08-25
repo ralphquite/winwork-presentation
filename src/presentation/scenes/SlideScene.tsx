@@ -10,6 +10,7 @@ export function SlideScene({ scene }: SlideSceneProps) {
   if (scene.pencil) {
     return (
       <PencilSlide
+        demoFlow={scene.demoFlow}
         documentPath={scene.pencil.documentPath}
         height={scene.pencil.height}
         title={scene.title}

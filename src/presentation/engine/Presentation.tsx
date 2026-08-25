@@ -15,7 +15,9 @@ function isEditableTarget(target: EventTarget | null) {
   }
 
   return Boolean(
-    target.closest('input, select, textarea, [contenteditable="true"]'),
+    target.closest(
+      'input, select, textarea, [contenteditable="true"], [data-presentation-modal="true"]',
+    ),
   );
 }
 

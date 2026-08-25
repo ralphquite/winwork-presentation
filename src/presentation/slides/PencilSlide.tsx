@@ -1,6 +1,10 @@
 import { useLayoutEffect, useRef, useState } from 'react';
 
+import { DemoFlowModal } from '../flows/DemoFlowModal';
+import type { DemoFlowDefinition } from '../engine/types';
+
 type PencilSlideProps = {
+  demoFlow?: DemoFlowDefinition;
   documentPath: string;
   height: number;
   title: string;
@@ -8,13 +12,16 @@ type PencilSlideProps = {
 };
 
 export function PencilSlide({
+  demoFlow,
   documentPath,
   height,
   title,
   width,
 }: PencilSlideProps) {
   const stageRef = useRef<HTMLElement>(null);
+  const demoTriggerRef = useRef<HTMLButtonElement>(null);
   const [scale, setScale] = useState(0);
+  const [isDemoOpen, setIsDemoOpen] = useState(false);
 
   useLayoutEffect(() => {
     const stage = stageRef.current;
@@ -57,7 +64,32 @@ export function PencilSlide({
           title={title}
           width={width}
         />
+        {demoFlow ? (
+          <button
+            aria-expanded={isDemoOpen}
+            aria-haspopup="dialog"
+            aria-label={demoFlow.triggerLabel}
+            className="pencil-demo-hotspot"
+            onClick={() => setIsDemoOpen(true)}
+            ref={demoTriggerRef}
+            style={{
+              height: demoFlow.hotspot.height,
+              left: demoFlow.hotspot.x,
+              top: demoFlow.hotspot.y,
+              width: demoFlow.hotspot.width,
+            }}
+            type="button"
+          />
+        ) : null}
       </div>
+      {demoFlow ? (
+        <DemoFlowModal
+          flow={demoFlow}
+          isOpen={isDemoOpen}
+          onClose={() => setIsDemoOpen(false)}
+          triggerRef={demoTriggerRef}
+        />
+      ) : null}
     </section>
   );
 }

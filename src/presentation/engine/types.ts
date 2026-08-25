@@ -8,12 +8,34 @@ type SceneBase = {
 
 export type SlideSceneDefinition = SceneBase & {
   type: 'slide';
+  demoFlow?: DemoFlowDefinition;
   pencil?: {
     documentPath: string;
     frameId: string;
     height: 1080;
     width: 1920;
   };
+};
+
+export type DemoFlowBounds = {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+};
+
+export type DemoFlowId =
+  | 'create-object'
+  | 'manager-app'
+  | 'create-activity'
+  | 'document-templates'
+  | 'single-task';
+
+export type DemoFlowDefinition = {
+  id: DemoFlowId;
+  title: string;
+  triggerLabel: string;
+  hotspot: DemoFlowBounds;
 };
 
 export type DemoSceneDefinition = SceneBase & {

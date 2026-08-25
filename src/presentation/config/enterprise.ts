@@ -1,3 +1,4 @@
+import { enterpriseDemoFlows } from '../../demos/flows/enterprise';
 import type { PresentationConfig } from '../engine/types';
 
 const enterpriseSlides = [
@@ -18,11 +19,13 @@ const enterpriseSlides = [
   {
     frameId: 'D5RbJI',
     title: 'Настройте объект один раз — и не собирайте каждый заказ заново',
+    demoFlow: enterpriseDemoFlows.createObject,
   },
   {
     frameId: 'AOoMH',
     title:
       'Локальный руководитель управляет объектом с телефона — но только в разрешённых рамках',
+    demoFlow: enterpriseDemoFlows.managerApp,
   },
   {
     frameId: 'L2ehaf',
@@ -31,14 +34,17 @@ const enterpriseSlides = [
   {
     frameId: 'jpsVw',
     title: 'Каждый тип работы заранее превращается в управляемый шаблон',
+    demoFlow: enterpriseDemoFlows.createActivity,
   },
   {
     frameId: 'LJWST',
     title: 'Договоры и акты создаются автоматически под конкретный тип работы',
+    demoFlow: enterpriseDemoFlows.documentTemplates,
   },
   {
     frameId: 'QgVx0',
     title: 'Одно задание — вручную. Тысячи — реестром',
+    demoFlow: enterpriseDemoFlows.singleTask,
   },
   {
     frameId: 'pQ5Rl',
@@ -103,6 +109,7 @@ export const enterprisePresentation = {
       type: 'slide',
       title: slide.title,
       description: `Enterprise slide ${slideNumber} from Pencil.dev.`,
+      ...('demoFlow' in slide ? { demoFlow: slide.demoFlow } : {}),
       pencil: {
         documentPath: `/enterprise-slides/ent-${slideNumber}.html`,
         frameId: slide.frameId,
