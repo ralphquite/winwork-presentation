@@ -186,6 +186,7 @@
         "src/styles/globals.css",
         "package.json",
         "pnpm-lock.yaml",
+        "tsconfig.json",
         "tsconfig.node.json",
         "README.md",
         "docs/architecture.md",

@@ -57,7 +57,7 @@ Never preserve a stale documentation claim over working code. Update the focused
 
 | Change                   | Start with                                  | Usually changes with                                            |
 | ------------------------ | ------------------------------------------- | --------------------------------------------------------------- |
-| Password access gateway  | `middleware.ts`, `api/auth/login.ts`        | shared session module, selector logout, Vercel verification     |
+| Password access gateway  | `middleware.ts`, `api/auth/login.ts`        | shared session module, root TS config, Vercel verification      |
 | Route or track card      | `src/app/router.tsx`                        | `src/app/TrackSelector.tsx`, track config, browser verification |
 | Scene order/copy/ID      | `src/presentation/config/*.ts`              | exported slide asset, direct-link verification                  |
 | Runtime/navigation/reset | `src/presentation/engine/Presentation.tsx`  | controls, renderer, types, all-track browser checks             |

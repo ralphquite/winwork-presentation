@@ -34,6 +34,7 @@ DemoFlowModal
 | `api/auth/login.ts`                                | Password form parsing, credential check, session issue, invalid-password redirect      | Middleware allow-path and shared session module           |
 | `auth/session.ts`                                  | Server-only env validation, return path, cookie, HMAC, expiry, password comparison     | Middleware, login Function, auth contract check           |
 | `.env.example`                                     | Names and minimum requirements of server-only access secrets                           | Middleware and Vercel environment setup                   |
+| `tsconfig.json`                                    | Root TypeScript options consumed directly by Vercel Function and Middleware compilers  | Server entrypoint imports and runtime globals             |
 | `src/app/router.tsx`                               | Public route-to-config mapping                                                         | Track selector and target config                          |
 | `src/app/TrackSelector.tsx`                        | Landing cards, QA flow shortcuts, fullscreen entry attempt, and access logout          | Routes, demo flows, auth contract, and track readiness    |
 | `src/presentation/engine/types.ts`                 | Scene/config/demo-flow contracts                                                       | All exhaustive render/dispatch switches                   |

@@ -143,9 +143,11 @@ expect(
   'Valid cookie must continue to the protected asset',
 );
 
-const tamperedCookie = `${cookiePair.slice(0, -1)}${
-  cookiePair.endsWith('a') ? 'b' : 'a'
-}`;
+const [tamperedCookieName, tamperedToken = ''] = cookiePair.split('=', 2);
+const tamperedTokenParts = tamperedToken.split('.');
+const signature = tamperedTokenParts[2] ?? '';
+tamperedTokenParts[2] = `${signature.startsWith('a') ? 'b' : 'a'}${signature.slice(1)}`;
+const tamperedCookie = `${tamperedCookieName}=${tamperedTokenParts.join('.')}`;
 const tamperedRequest = await middleware(
   makeRequest('/', {
     headers: { Accept: 'text/html', Cookie: tamperedCookie },

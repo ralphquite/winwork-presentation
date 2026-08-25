@@ -1,4 +1,9 @@
 {
+  "compilerOptions": {
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "types": ["node"]
+  },
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },

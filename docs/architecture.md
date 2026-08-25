@@ -155,7 +155,7 @@ Desktop surface сохраняет минимальный рабочий canvas 
 
 ## Build и deployment
 
-Vite собирает статический `dist/`. Vercel сначала запускает password middleware; login POST уходит в Edge Function, существующие static files обслуживаются напрямую, а `vercel.json` применяет SPA rewrite в `/index.html` только после filesystem miss. Поэтому авторизованные прямые track routes обрабатывает React Router, а iframe HTML/assets сохраняют собственные пути. CI устанавливает frozen pnpm lockfile под Node version из `.node-version` и запускает `pnpm check`; environment values на этапе CI не требуются, потому что gateway читает их только во время Vercel request.
+Vite собирает статический `dist/`. Vercel сначала запускает password middleware; login POST уходит в Edge Function, существующие static files обслуживаются напрямую, а `vercel.json` применяет SPA rewrite в `/index.html` только после filesystem miss. Поэтому авторизованные прямые track routes обрабатывает React Router, а iframe HTML/assets сохраняют собственные пути. Vercel компилирует `middleware.ts` и `api/` по compiler options корневого `tsconfig.json`; project reference на `tsconfig.node.json` для этого отдельного шага недостаточен. CI устанавливает frozen pnpm lockfile под Node version из `.node-version` и запускает `pnpm check`; environment values на этапе CI не требуются, потому что gateway читает их только во время Vercel request.
 
 ## Расширение
 
