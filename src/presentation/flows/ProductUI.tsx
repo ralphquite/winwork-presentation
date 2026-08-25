@@ -245,11 +245,17 @@ export function Toggle({ checked, label, onChange }: ToggleProps) {
 
 type DrawerProps = {
   children: ReactNode;
+  className?: string;
   onClose: () => void;
   title: string;
 };
 
-export function Drawer({ children, onClose, title }: DrawerProps) {
+export function Drawer({
+  children,
+  className = '',
+  onClose,
+  title,
+}: DrawerProps) {
   return (
     <div className="ww-drawer-layer">
       <button
@@ -258,7 +264,7 @@ export function Drawer({ children, onClose, title }: DrawerProps) {
         onClick={onClose}
         type="button"
       />
-      <aside aria-label={title} className="ww-drawer">
+      <aside aria-label={title} className={`ww-drawer ${className}`.trim()}>
         <header>
           <h2>{title}</h2>
           <button aria-label="Закрыть" onClick={onClose} type="button">

@@ -5,7 +5,7 @@ export const enterpriseDemoFlows = {
     id: 'create-object',
     title: 'Создание объекта',
     triggerLabel: 'Показать в WinWork: создание объекта',
-    hotspot: { x: 120, y: 916, width: 570, height: 68 },
+    hotspot: { x: 120, y: 916, width: 507, height: 68 },
   },
   managerApp: {
     id: 'manager-app',
@@ -17,13 +17,13 @@ export const enterpriseDemoFlows = {
     id: 'create-activity',
     title: 'Создание вида деятельности',
     triggerLabel: 'Показать в WinWork: создание вида деятельности',
-    hotspot: { x: 120, y: 916, width: 760, height: 68 },
+    hotspot: { x: 1202, y: 835, width: 614, height: 68 },
   },
   documentTemplates: {
     id: 'document-templates',
     title: 'Шаблоны договора и акта',
     triggerLabel: 'Показать в WinWork: шаблон договора и акта',
-    hotspot: { x: 120, y: 916, width: 760, height: 68 },
+    hotspot: { x: 120, y: 896, width: 567, height: 68 },
   },
   singleTask: {
     id: 'single-task',

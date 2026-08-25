@@ -6,6 +6,7 @@
 src/main.tsx
   -> src/app/App.tsx
   -> src/app/router.tsx
+  -> TrackSelector -> DemoFlowModal (temporary QA quick access)
   -> track PresentationConfig
   -> Presentation (URL, navigation, reset, fullscreen)
   -> SceneRenderer
@@ -24,7 +25,7 @@ DemoFlowModal
 | Path                                               | Owns                                                                                   | Couple changes with                                       |
 | -------------------------------------------------- | -------------------------------------------------------------------------------------- | --------------------------------------------------------- |
 | `src/app/router.tsx`                               | Public route-to-config mapping                                                         | Track selector and target config                          |
-| `src/app/TrackSelector.tsx`                        | Landing cards and fullscreen entry attempt                                             | Routes and current track readiness copy                   |
+| `src/app/TrackSelector.tsx`                        | Landing cards, QA flow shortcuts, and fullscreen entry attempt                         | Routes, demo flows, and current track readiness copy      |
 | `src/presentation/engine/types.ts`                 | Scene/config/demo-flow contracts                                                       | All exhaustive render/dispatch switches                   |
 | `src/presentation/engine/Presentation.tsx`         | `?scene`, history writes, shortcuts, fullscreen, presentation reset                    | Controls and all-route browser verification               |
 | `src/presentation/engine/PresentationControls.tsx` | Home, counter, picker, previous/next, reset, fullscreen controls                       | Presentation callbacks and accessibility labels           |

@@ -96,8 +96,13 @@ export function Presentation({ config }: PresentationProps) {
 
   const toggleFullscreen = useCallback(() => {
     const fullscreenRequest = document.fullscreenElement
-      ? document.exitFullscreen()
-      : document.documentElement.requestFullscreen();
+      ? document.exitFullscreen?.()
+      : document.documentElement.requestFullscreen?.();
+
+    if (fullscreenRequest === undefined) {
+      console.warn('Fullscreen API is not available in this browser.');
+      return;
+    }
 
     void fullscreenRequest.catch((error: unknown) => {
       console.warn('Fullscreen request was not completed.', error);

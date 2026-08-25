@@ -375,62 +375,6 @@
         },
         {
           "type": "frame",
-          "id": "CWGbm",
-          "x": 120,
-          "y": 1010,
-          "name": "Section Progress",
-          "gap": 10,
-          "alignItems": "center",
-          "children": [
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "xOmME",
-              "name": "Progress 1",
-              "fill": "$h:brand-blue",
-              "width": 44,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "P6jXY",
-              "name": "Progress 2",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "R09qs",
-              "name": "Progress 3",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "vKxAn",
-              "name": "Progress 4",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "e3JmY",
-              "name": "Progress 5",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            }
-          ]
-        },
-        {
-          "type": "frame",
           "id": "Tsfjp",
           "x": 120,
           "y": 170,
@@ -665,8 +609,10 @@
           "name": "WinWork Hub",
           "width": 300,
           "height": 200,
-          "fill": "$h:neutral-950",
+          "fill": "$h:brand-blue-soft",
           "cornerRadius": 36,
+          "stroke": "$h:brand-blue-light",
+          "strokeWidth": 1,
           "effect": {
             "type": "shadow",
             "shadowType": "outer",
@@ -693,21 +639,18 @@
               "fill": "$h:brand-green"
             },
             {
-              "type": "text",
-              "id": "gfLQ5",
-              "name": "Hub Label",
-              "fill": "#FFFFFF",
-              "content": "WINWORK",
-              "fontFamily": "$h:font-primary",
-              "fontSize": 30,
-              "fontWeight": "700",
-              "letterSpacing": 0.5
+              "id": "rV6pLh",
+              "type": "ref",
+              "ref": "CmSfJ",
+              "name": "WinWork Hub Logo",
+              "width": 202,
+              "height": 40
             },
             {
               "type": "text",
               "id": "b0uKac",
               "name": "Hub Note",
-              "fill": "$h:neutral-250",
+              "fill": "$h:neutral-600",
               "content": "операционный контур",
               "fontFamily": "$h:font-primary",
               "fontSize": 17,
@@ -1047,62 +990,6 @@
           "letterSpacing": 1.1
         },
         {
-          "type": "frame",
-          "id": "O4XxE9",
-          "x": 120,
-          "y": 1010,
-          "name": "Section Progress",
-          "gap": 10,
-          "alignItems": "center",
-          "children": [
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "VwEXz",
-              "name": "Progress 1",
-              "fill": "$h:brand-blue",
-              "width": 44,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "seUPy",
-              "name": "Progress 2",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "tLzzY",
-              "name": "Progress 3",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "sri4z",
-              "name": "Progress 4",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "ivn9c",
-              "name": "Progress 5",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            }
-          ]
-        },
-        {
           "type": "text",
           "id": "R7g8dj",
           "x": 120,
@@ -1290,19 +1177,6 @@
                   "fontWeight": "650"
                 }
               ]
-            },
-            {
-              "type": "text",
-              "id": "XxtOo",
-              "name": "Chain Caption",
-              "fill": "$h:neutral-600",
-              "textGrowth": "fixed-width",
-              "width": "fill_container",
-              "content": "Три связи — ручная координация ещё возможна",
-              "textAlign": "center",
-              "fontFamily": "$h:font-primary",
-              "fontSize": 18,
-              "fontWeight": "normal"
             }
           ]
         },
@@ -2029,46 +1903,6 @@
               ]
             }
           ]
-        },
-        {
-          "type": "frame",
-          "id": "TMO1M",
-          "x": 120,
-          "y": 950,
-          "name": "Scale Insight",
-          "width": 1680,
-          "fill": "$h:brand-green-soft",
-          "cornerRadius": 16,
-          "stroke": "$h:brand-green-light",
-          "strokeWidth": 1,
-          "gap": 14,
-          "padding": [
-            16,
-            24
-          ],
-          "alignItems": "center",
-          "children": [
-            {
-              "type": "icon",
-              "id": "p2cnRV",
-              "name": "Scale Insight Icon",
-              "width": 26,
-              "height": 26,
-              "icon": "workflow",
-              "library": "lucide",
-              "fill": "$h:brand-green-strong"
-            },
-            {
-              "type": "text",
-              "id": "zjsAy",
-              "name": "Scale Insight Text",
-              "fill": "$h:neutral-950",
-              "content": "Масштаб требует правил, шаблонов и автоматизации — а не большего количества ручной работы.",
-              "fontFamily": "$h:font-primary",
-              "fontSize": 20,
-              "fontWeight": "650"
-            }
-          ]
         }
       ]
     },
@@ -2106,62 +1940,6 @@
           "fontSize": 16,
           "fontWeight": "700",
           "letterSpacing": 1.1
-        },
-        {
-          "type": "frame",
-          "id": "xsYee",
-          "x": 120,
-          "y": 1010,
-          "name": "Section Progress",
-          "gap": 10,
-          "alignItems": "center",
-          "children": [
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "K91Uk5",
-              "name": "Progress 1",
-              "fill": "$h:brand-blue",
-              "width": 44,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "Y3ePH",
-              "name": "Progress 2",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "G38CEe",
-              "name": "Progress 3",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "bwbnk",
-              "name": "Progress 4",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "Z317I4",
-              "name": "Progress 5",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            }
-          ]
         },
         {
           "type": "text",
@@ -2826,62 +2604,6 @@
           "letterSpacing": 1.1
         },
         {
-          "type": "frame",
-          "id": "F5y1zT",
-          "x": 120,
-          "y": 1010,
-          "name": "Section Progress",
-          "gap": 10,
-          "alignItems": "center",
-          "children": [
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "G9WHv",
-              "name": "Progress 1",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "ZE9ew",
-              "name": "Progress 2",
-              "fill": "$h:brand-blue",
-              "width": 44,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "GX8f8",
-              "name": "Progress 3",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "nKTmr",
-              "name": "Progress 4",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "XODvB",
-              "name": "Progress 5",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            }
-          ]
-        },
-        {
           "type": "text",
           "id": "xOZ6r",
           "x": 120,
@@ -3083,7 +2805,7 @@
                       "fill": "$h:neutral-400",
                       "content": "лимиты и ставки заданы",
                       "fontFamily": "$h:font-primary",
-                      "fontSize": 15,
+                      "fontSize": 14,
                       "fontWeight": "normal"
                     }
                   ]
@@ -3139,7 +2861,7 @@
                       "fill": "$h:neutral-400",
                       "content": "лимиты и ставки заданы",
                       "fontFamily": "$h:font-primary",
-                      "fontSize": 15,
+                      "fontSize": 14,
                       "fontWeight": "normal"
                     }
                   ]
@@ -3195,7 +2917,7 @@
                       "fill": "$h:neutral-400",
                       "content": "лимиты и ставки заданы",
                       "fontFamily": "$h:font-primary",
-                      "fontSize": 15,
+                      "fontSize": 14,
                       "fontWeight": "normal"
                     }
                   ]
@@ -3237,6 +2959,7 @@
           "name": "Demo Handoff",
           "x": 120,
           "y": 916,
+          "width": 507,
           "descendants": {
             "cFxSq": {
               "content": "Показать в WinWork: создание объекта →"
@@ -3294,62 +3017,6 @@
           "fontSize": 16,
           "fontWeight": "700",
           "letterSpacing": 1.1
-        },
-        {
-          "type": "frame",
-          "id": "rHMer",
-          "x": 120,
-          "y": 1010,
-          "name": "Section Progress",
-          "gap": 10,
-          "alignItems": "center",
-          "children": [
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "vw6iK",
-              "name": "Progress 1",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "V5G68N",
-              "name": "Progress 2",
-              "fill": "$h:brand-blue",
-              "width": 44,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "t5Euo",
-              "name": "Progress 3",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "Q1Jga",
-              "name": "Progress 4",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "binif",
-              "name": "Progress 5",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            }
-          ]
         },
         {
           "type": "text",
@@ -3759,62 +3426,6 @@
           "fontSize": 16,
           "fontWeight": "700",
           "letterSpacing": 1.1
-        },
-        {
-          "type": "frame",
-          "id": "NPhNH",
-          "x": 120,
-          "y": 1010,
-          "name": "Section Progress",
-          "gap": 10,
-          "alignItems": "center",
-          "children": [
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "vdMK0",
-              "name": "Progress 1",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "omcwe",
-              "name": "Progress 2",
-              "fill": "$h:brand-blue",
-              "width": 44,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "A51Oe",
-              "name": "Progress 3",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "P71naC",
-              "name": "Progress 4",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "lmBXE",
-              "name": "Progress 5",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            }
-          ]
         },
         {
           "type": "text",
@@ -4881,62 +4492,6 @@
           "fontWeight": "normal"
         },
         {
-          "type": "frame",
-          "id": "JqEqj",
-          "x": 120,
-          "y": 1010,
-          "name": "Section Progress",
-          "gap": 10,
-          "alignItems": "center",
-          "children": [
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "yjpcH",
-              "name": "Progress 1",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "OfBsu",
-              "name": "Progress 2",
-              "fill": "$h:brand-blue",
-              "width": 44,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "nF7ve",
-              "name": "Progress 3",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "qdBfn",
-              "name": "Progress 4",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "o3a3Td",
-              "name": "Progress 5",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            }
-          ]
-        },
-        {
           "type": "text",
           "id": "VltP6",
           "x": 120,
@@ -5611,62 +5166,6 @@
           "letterSpacing": 1.1
         },
         {
-          "type": "frame",
-          "id": "n2wJB",
-          "x": 120,
-          "y": 1010,
-          "name": "Section Progress",
-          "gap": 10,
-          "alignItems": "center",
-          "children": [
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "B8FGKR",
-              "name": "Progress 1",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "QMlyx",
-              "name": "Progress 2",
-              "fill": "$h:brand-blue",
-              "width": 44,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "hpA7R",
-              "name": "Progress 3",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "ie1Rt",
-              "name": "Progress 4",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "ABi2V",
-              "name": "Progress 5",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            }
-          ]
-        },
-        {
           "type": "text",
           "id": "cyGGJ",
           "x": 120,
@@ -6149,62 +5648,6 @@
           "letterSpacing": 1.1
         },
         {
-          "type": "frame",
-          "id": "kSgQf",
-          "x": 120,
-          "y": 1010,
-          "name": "Section Progress",
-          "gap": 10,
-          "alignItems": "center",
-          "children": [
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "udng0",
-              "name": "Progress 1",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "c1omC",
-              "name": "Progress 2",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "wPDLi",
-              "name": "Progress 3",
-              "fill": "$h:brand-blue",
-              "width": 44,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "H3p4n6",
-              "name": "Progress 4",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "ImeQ3",
-              "name": "Progress 5",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            }
-          ]
-        },
-        {
           "type": "text",
           "id": "rto4b",
           "x": 120,
@@ -6528,62 +5971,6 @@
           "fontSize": 16,
           "fontWeight": "700",
           "letterSpacing": 1.1
-        },
-        {
-          "type": "frame",
-          "id": "FR31F",
-          "x": 120,
-          "y": 1010,
-          "name": "Section Progress",
-          "gap": 10,
-          "alignItems": "center",
-          "children": [
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "TOOe7",
-              "name": "Progress 1",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "K7oYCk",
-              "name": "Progress 2",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "S3kK0w",
-              "name": "Progress 3",
-              "fill": "$h:brand-blue",
-              "width": 44,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "jLmRY",
-              "name": "Progress 4",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "DC2Nt",
-              "name": "Progress 5",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            }
-          ]
         },
         {
           "type": "text",
@@ -7254,62 +6641,6 @@
           "letterSpacing": 1.1
         },
         {
-          "type": "frame",
-          "id": "CjWhe",
-          "x": 120,
-          "y": 1010,
-          "name": "Section Progress",
-          "gap": 10,
-          "alignItems": "center",
-          "children": [
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "KOWZ9",
-              "name": "Progress 1",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "e8hhe5",
-              "name": "Progress 2",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "nvha1",
-              "name": "Progress 3",
-              "fill": "$h:brand-blue",
-              "width": 44,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "u2twXk",
-              "name": "Progress 4",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "QkMZ1",
-              "name": "Progress 5",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            }
-          ]
-        },
-        {
           "type": "text",
           "id": "vmpqj",
           "x": 120,
@@ -7654,62 +6985,6 @@
           "fontSize": 16,
           "fontWeight": "700",
           "letterSpacing": 1.1
-        },
-        {
-          "type": "frame",
-          "id": "ULvM9",
-          "x": 120,
-          "y": 1010,
-          "name": "Section Progress",
-          "gap": 10,
-          "alignItems": "center",
-          "children": [
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "d6QT8T",
-              "name": "Progress 1",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "KVa9C",
-              "name": "Progress 2",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "b5Em10",
-              "name": "Progress 3",
-              "fill": "$h:brand-blue",
-              "width": 44,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "RY7EP",
-              "name": "Progress 4",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "jABKE",
-              "name": "Progress 5",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            }
-          ]
         },
         {
           "type": "text",
@@ -8637,62 +7912,6 @@
           "letterSpacing": 1.1
         },
         {
-          "type": "frame",
-          "id": "SzAMv",
-          "x": 120,
-          "y": 1010,
-          "name": "Section Progress",
-          "gap": 10,
-          "alignItems": "center",
-          "children": [
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "m6271w",
-              "name": "Progress 1",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "Anct6",
-              "name": "Progress 2",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "mrMEn",
-              "name": "Progress 3",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "W06wbr",
-              "name": "Progress 4",
-              "fill": "$h:brand-blue",
-              "width": 44,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "r68muN",
-              "name": "Progress 5",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            }
-          ]
-        },
-        {
           "type": "text",
           "id": "Ga2BK",
           "x": 120,
@@ -9584,62 +8803,6 @@
           "letterSpacing": 1.1
         },
         {
-          "type": "frame",
-          "id": "JT1zC",
-          "x": 120,
-          "y": 1010,
-          "name": "Section Progress",
-          "gap": 10,
-          "alignItems": "center",
-          "children": [
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "ntAgh",
-              "name": "Progress 1",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "vaGwB",
-              "name": "Progress 2",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "mpfQi",
-              "name": "Progress 3",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "kVvvE",
-              "name": "Progress 4",
-              "fill": "$h:brand-blue",
-              "width": 44,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "LK9V9",
-              "name": "Progress 5",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            }
-          ]
-        },
-        {
           "type": "text",
           "id": "fQyvf",
           "x": 120,
@@ -10263,62 +9426,6 @@
           "letterSpacing": 1.1
         },
         {
-          "type": "frame",
-          "id": "TphaQ",
-          "x": 120,
-          "y": 1010,
-          "name": "Section Progress",
-          "gap": 10,
-          "alignItems": "center",
-          "children": [
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "t3VaFD",
-              "name": "Progress 1",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "P5sgkY",
-              "name": "Progress 2",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "UQo0g",
-              "name": "Progress 3",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "hZ900",
-              "name": "Progress 4",
-              "fill": "$h:brand-blue",
-              "width": 44,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "z4vJS4",
-              "name": "Progress 5",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            }
-          ]
-        },
-        {
           "type": "text",
           "id": "k6CwX8",
           "x": 120,
@@ -10806,62 +9913,6 @@
           "letterSpacing": 1.1
         },
         {
-          "type": "frame",
-          "id": "YVmSd",
-          "x": 120,
-          "y": 1010,
-          "name": "Section Progress",
-          "gap": 10,
-          "alignItems": "center",
-          "children": [
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "Cbdzs",
-              "name": "Progress 1",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "nXO32",
-              "name": "Progress 2",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "G7QolI",
-              "name": "Progress 3",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "b3q49P",
-              "name": "Progress 4",
-              "fill": "$h:brand-blue",
-              "width": 44,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "hwFqu",
-              "name": "Progress 5",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            }
-          ]
-        },
-        {
           "type": "text",
           "id": "UmOg4",
           "x": 120,
@@ -11249,62 +10300,6 @@
           "fontSize": 16,
           "fontWeight": "700",
           "letterSpacing": 1.1
-        },
-        {
-          "type": "frame",
-          "id": "n7fDm",
-          "x": 120,
-          "y": 1010,
-          "name": "Section Progress",
-          "gap": 10,
-          "alignItems": "center",
-          "children": [
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "MSi2P",
-              "name": "Progress 1",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "y9BlI",
-              "name": "Progress 2",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "U3hf9n",
-              "name": "Progress 3",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "i1YIQ",
-              "name": "Progress 4",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "g6kHB",
-              "name": "Progress 5",
-              "fill": "$h:brand-blue",
-              "width": 44,
-              "height": 6
-            }
-          ]
         },
         {
           "type": "frame",
@@ -11811,62 +10806,6 @@
           "fontSize": 16,
           "fontWeight": "700",
           "letterSpacing": 1.1
-        },
-        {
-          "type": "frame",
-          "id": "gK0HL",
-          "x": 120,
-          "y": 1010,
-          "name": "Section Progress",
-          "gap": 10,
-          "alignItems": "center",
-          "children": [
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "Psg12",
-              "name": "Progress 1",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "WzqWM",
-              "name": "Progress 2",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "KWcvx",
-              "name": "Progress 3",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "S66f9",
-              "name": "Progress 4",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "aRsr8",
-              "name": "Progress 5",
-              "fill": "$h:brand-blue",
-              "width": 44,
-              "height": 6
-            }
-          ]
         },
         {
           "type": "text",
@@ -13156,63 +12095,6 @@
                   "fontWeight": "700"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "type": "frame",
-          "id": "iaGha",
-          "x": 120,
-          "y": 1023,
-          "name": "Section Progress",
-          "width": 132,
-          "height": 6,
-          "gap": 10,
-          "children": [
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "QdbiQ",
-              "name": "Progress 1",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "eB1Rl",
-              "name": "Progress 2",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "zkcpF",
-              "name": "Progress 3",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "YLPac",
-              "name": "Progress 4",
-              "fill": "$h:neutral-250",
-              "width": 12,
-              "height": 6
-            },
-            {
-              "type": "rectangle",
-              "cornerRadius": 3,
-              "id": "iObpK",
-              "name": "Progress 5",
-              "fill": "$h:brand-blue",
-              "width": 44,
-              "height": 6
             }
           ]
         },
