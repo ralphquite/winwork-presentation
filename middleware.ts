@@ -11,7 +11,7 @@ import {
   sanitizeReturnTo,
   serializeCookie,
   verifySessionToken,
-} from './auth/session.ts';
+} from './auth/session.js';
 
 function escapeHtml(value: string) {
   return value.replace(

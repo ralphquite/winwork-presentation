@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { registerHooks } from 'node:module';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
@@ -6,6 +7,23 @@ const repositoryRoot = path.resolve(
   path.dirname(fileURLToPath(import.meta.url)),
   '..',
 );
+const repositoryRootUrl = pathToFileURL(`${repositoryRoot}${path.sep}`).href;
+
+registerHooks({
+  resolve(specifier, context, nextResolve) {
+    if (
+      context.parentURL?.startsWith(repositoryRootUrl) &&
+      !context.parentURL.includes('/node_modules/') &&
+      specifier.startsWith('.') &&
+      path.extname(specifier) === '.js'
+    ) {
+      return nextResolve(`${specifier.slice(0, -3)}.ts`, context);
+    }
+
+    return nextResolve(specifier, context);
+  },
+});
+
 const middlewareUrl = pathToFileURL(path.join(repositoryRoot, 'middleware.ts'));
 const loginFunctionUrl = pathToFileURL(
   path.join(repositoryRoot, 'api/auth/login.ts'),

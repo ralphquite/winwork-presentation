@@ -6,7 +6,7 @@ import {
   sanitizeReturnTo,
   serializeCookie,
   SESSION_MAX_AGE_SECONDS,
-} from '../../auth/session.ts';
+} from '../../auth/session.js';
 
 function plainResponse(message: string, status: number, allow?: string) {
   const headers = new Headers({

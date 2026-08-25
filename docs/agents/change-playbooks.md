@@ -4,7 +4,7 @@ Use the smallest playbook that covers the request. Paths and invariants are also
 
 ## Change the password access gateway
 
-1. Read root `middleware.ts`, `api/auth/login.ts`, `auth/session.ts`, and root `tsconfig.json` together. Middleware guards every request; only the Function reads the login body; shared crypto/cookie rules must not diverge. Vercel compiles these entrypoints from the root TypeScript options and does not follow the project's TS references.
+1. Read root `middleware.ts`, `api/auth/login.ts`, `auth/session.ts`, and root `tsconfig.json` together. Middleware guards every request; only the Function reads the login body; shared crypto/cookie rules must not diverge. Vercel compiles these entrypoints from the root TypeScript options and does not follow the project's TS references. Keep relative server TypeScript imports on runtime `.js` specifiers so NodeNext compilation and Edge bundling agree.
 2. Keep real values only in Vercel or ignored local environment files. `.env.example` contains names, never credentials.
 3. Preserve fail-closed behavior, constant-time password comparison, signed expiry, HttpOnly/SameSite/Secure cookie attributes, same-origin `returnTo`, and password-rotation invalidation.
 4. Keep login/logout as form posts and preserve the selector's semantic logout button.
