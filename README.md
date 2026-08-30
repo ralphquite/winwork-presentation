@@ -7,7 +7,7 @@
 - `/enterprise` — готовый маршрут из 19 экспортированных Pencil-слайдов.
 - На сценах `ent-04`, `ent-05`, `ent-07`, `ent-08` и `ent-09` доступны пять интерактивных React demo-flow: создание объекта, работа управляющего, создание вида деятельности, шаблоны документов и одиночное задание.
 - `/small` — готовый маршрут из 14 экспортированных Pencil-слайдов; сцена `smb-06` переиспользует demo-flow одиночного задания.
-- `/api` — технический placeholder-маршрут на общем presentation runtime; утверждённый контент для него ещё не перенесён.
+- `/api` — готовый маршрут из 16 экспортированных Pencil-слайдов без интерактивных demo-flow.
 - `/` — экран выбора маршрута.
 - `middleware.ts` и `api/auth/login.ts` — Vercel access gateway: парольный экран, проверка credential, подписанная 30-дневная cookie и защита всех маршрутов/assets.
 
@@ -80,6 +80,7 @@ pnpm build
 - `auth/session.ts` — общий server-only контракт cookie, HMAC и env validation.
 - `.env.example` — имена обязательных server-only секретов без значений.
 - `public/enterprise-slides/` — runtime HTML-экспорты Enterprise и их локальные зависимости.
+- `public/api-slides/` — runtime HTML-экспорты API / Embedded и их локальные зависимости.
 - `public/small-slides/` — runtime HTML-экспорты Small Business и их локальные зависимости.
 - `public/demo-flows/` — только референсы для visual QA; приложение не рендерит их как интерактивный продукт.
 - `pencil/` — редактируемые дизайн-источники и исходные assets.

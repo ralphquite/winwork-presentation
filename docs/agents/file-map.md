@@ -42,7 +42,7 @@ DemoFlowModal
 | `src/presentation/engine/PresentationControls.tsx` | Home, counter, picker, previous/next, reset, fullscreen controls                       | Presentation callbacks and accessibility labels           |
 | `src/presentation/engine/SceneRenderer.tsx`        | Scene-type dispatch, transition, scene remount boundary                                | Scene contracts/components                                |
 | `src/presentation/config/enterprise.ts`            | Ordered 19-scene Enterprise route and slide metadata                                   | Matching HTML exports and demo-flow bindings              |
-| `src/presentation/config/api.ts`                   | API placeholder route                                                                  | Approved API content when supplied                        |
+| `src/presentation/config/api.ts`                   | Ordered 16-scene API / Embedded route and slide metadata                               | Matching HTML exports                                     |
 | `src/presentation/config/small.ts`                 | Ordered 14-scene Small Business route and reused single-task binding                   | Matching HTML exports and demo-flow binding               |
 | `src/presentation/config/shared.ts`                | Shared placeholder definitions                                                         | Placeholder track contracts only                          |
 | `src/presentation/scenes/SlideScene.tsx`           | Pencil-backed versus placeholder slide selection                                       | `PencilSlide` and slide definition                        |
@@ -57,6 +57,7 @@ DemoFlowModal
 | `src/styles/globals.css`                           | App shell, track selector, presentation controls, slide/modal layout                   | Runtime and responsive behavior                           |
 | `src/styles/demo-product.css`                      | Product recreation styling                                                             | Demo components and approved visual references            |
 | `public/enterprise-slides/`                        | Runtime Enterprise slide HTML and relative dependencies                                | Enterprise config and Pencil export source                |
+| `public/api-slides/`                               | Runtime API / Embedded slide HTML and relative dependencies                            | API config and Pencil export source                       |
 | `public/small-slides/`                             | Runtime Small Business slide HTML and relative dependencies                            | Small config and Pencil export source                     |
 | `public/demo-flows/`                               | QA-only flow screenshots                                                               | `design-qa.md`; never interactive runtime rendering       |
 | `public/winwork-logo.svg`                          | Runtime wordmark used by demo shells                                                   | Product UI and manager login                              |
@@ -81,6 +82,7 @@ DemoFlowModal
 | ------------------------------------------ | ---------------------------------------- | ------------------------------------------------------------------------ |
 | `public/enterprise-slides/*.html`          | Yes                                      | Loaded by iframe; preserve 1920 × 1080 output and relative dependencies. |
 | `public/enterprise-slides/*.{png,jpg,svg}` | Yes when referenced by HTML              | Keep beside exports; verify missing-resource errors.                     |
+| `public/api-slides/*`                      | Yes when referenced by API config/HTML   | Follow the same export and dependency rules as Enterprise.               |
 | `public/small-slides/*`                    | Yes when referenced by Small config/HTML | Follow the same export and relative-dependency rules as Enterprise.      |
 | `public/demo-flows/*.png`                  | No                                       | Visual comparison only; do not use for interaction.                      |
 | `public/winwork-logo.svg`                  | Yes                                      | Shared product wordmark.                                                 |

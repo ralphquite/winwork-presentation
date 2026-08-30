@@ -6791,7 +6791,7 @@
                               "id": "mApIQ",
                               "name": "Time",
                               "fill": "#0a0d14ff",
-                              "content": "Максимов И. П.",
+                              "content": "Смирнов И. П.",
                               "lineHeight": 1.25,
                               "textAlign": "right",
                               "fontFamily": "Onest",
@@ -6845,7 +6845,7 @@
                               "id": "A40TO",
                               "name": "Time",
                               "fill": "#0a0d14ff",
-                              "content": "Антонов В. С.",
+                              "content": "Петров В. С.",
                               "lineHeight": 1.25,
                               "textAlign": "right",
                               "fontFamily": "Onest",
@@ -23823,7 +23823,7 @@
                                           "fill": "#0a0d14ff",
                                           "textGrowth": "fixed-width",
                                           "width": "fill_container",
-                                          "content": "Александр Иванович Антонов",
+                                          "content": "Александр Иванович Петров",
                                           "lineHeight": 1.2222222222222223,
                                           "fontFamily": "Onest",
                                           "fontSize": 18,
@@ -29216,7 +29216,7 @@
                                   "fill": "#0a0d14ff",
                                   "textGrowth": "fixed-width",
                                   "width": "fill_container",
-                                  "content": "Добрый день, Иван Антонович! Все идет по плану.",
+                                  "content": "Добрый день, Иван Петрович! Все идет по плану.",
                                   "lineHeight": 1.25,
                                   "fontFamily": "Onest",
                                   "fontSize": 16,
@@ -32553,7 +32553,7 @@
                                       "id": "JtTzP",
                                       "name": "Subtitle",
                                       "fill": "#7a808bff",
-                                      "content": "Василий Антонов",
+                                      "content": "Василий Петров",
                                       "lineHeight": 1.3333333333333333,
                                       "fontFamily": "Onest",
                                       "fontSize": 12,
@@ -32746,7 +32746,7 @@
                                       "id": "KOjYB",
                                       "name": "Subtitle",
                                       "fill": "#7a808bff",
-                                      "content": "Анна Максимова",
+                                      "content": "Анна Смирнова",
                                       "lineHeight": 1.3333333333333333,
                                       "fontFamily": "Onest",
                                       "fontSize": 12,
@@ -49259,6 +49259,2318 @@
           "fontFamily": "$clr-font",
           "fontSize": 14,
           "fontWeight": "normal"
+        }
+      ]
+    },
+    {
+      "id": "B0inOz",
+      "type": "ref",
+      "ref": "lJl1z",
+      "x": -5570,
+      "y": 3506
+    },
+    {
+      "type": "frame",
+      "id": "O6kBbn",
+      "x": 8179,
+      "y": 2743,
+      "name": "8.0.0",
+      "clip": true,
+      "width": 430,
+      "height": 1329,
+      "fill": "#ffffffff",
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "cO70C",
+          "x": 0,
+          "y": 225,
+          "name": "Content",
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "t01qNu",
+              "name": "Frame 8666",
+              "width": 430,
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "dMM0V",
+                  "name": "18 июня",
+                  "fill": "#7a808bff",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "18 июня",
+                  "lineHeight": 1.3333333333333333,
+                  "textAlign": "center",
+                  "fontFamily": "Onest",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "Xn88P",
+                  "name": "Line",
+                  "width": 406,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "padding": [
+                    0,
+                    0,
+                    0,
+                    52
+                  ],
+                  "alignItems": "end",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "u0Slc9",
+                      "name": "Message",
+                      "width": "fill_container",
+                      "fill": "#d9e9ffff",
+                      "cornerRadius": [
+                        20,
+                        20,
+                        0,
+                        20
+                      ],
+                      "layout": "vertical",
+                      "padding": [
+                        12,
+                        16
+                      ],
+                      "alignItems": "end",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "KAgga",
+                          "name": "Text",
+                          "fill": "#0a0d14ff",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Добрый день, Алексей! Как продвигается выкладка товара в \"Сытый Барин\"?",
+                          "lineHeight": 1.25,
+                          "fontFamily": "Onest",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "zTx2w",
+                          "layoutPosition": "absolute",
+                          "x": 292,
+                          "y": 35.999969482421875,
+                          "name": "Info",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "nHrVb",
+                              "name": "Time",
+                              "fill": "#7a808bff",
+                              "content": "12:39",
+                              "lineHeight": 1.3333333333333333,
+                              "textAlign": "right",
+                              "textAlignVertical": "bottom",
+                              "fontFamily": "Onest",
+                              "fontSize": 12,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "Zd0Cw",
+                              "name": "check-line",
+                              "clip": true,
+                              "width": 16,
+                              "height": 16,
+                              "layout": "none",
+                              "children": [
+                                {
+                                  "type": "path",
+                                  "id": "Sv53K",
+                                  "x": 1.399999976158142,
+                                  "y": 4.387400150299072,
+                                  "name": "Vector",
+                                  "geometry": "M10.602 7.781l1.412 1.412 8.466-8.466 1.414 1.414-9.88 9.88-6.364-6.364 1.414-1.414 2.125 2.125 1.413 1.412 0 0.001z m0.002-2.828l4.952-4.953 1.41 1.41-4.952 4.953-1.41-1.41z m-2.827 5.655l-1.413 1.413-6.364-6.364 1.414-1.414 1.413 1.413-0.001 0.001 4.951 4.951 0 0z",
+                                  "fill": "#7a808bff",
+                                  "width": 13.136399269104004,
+                                  "height": 7.212600231170654
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "cHs2u",
+                  "name": "Frame 8668",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": [
+                    8,
+                    52,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "I9JBpi",
+                      "name": "Message",
+                      "width": "fill_container",
+                      "fill": "#f6f8faff",
+                      "cornerRadius": [
+                        20,
+                        20,
+                        20,
+                        0
+                      ],
+                      "layout": "vertical",
+                      "padding": [
+                        12,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Gm62i",
+                          "name": "Text",
+                          "fill": "#0a0d14ff",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Добрый день, Иван Петрович! Все идет по плану.",
+                          "lineHeight": 1.25,
+                          "fontFamily": "Onest",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "ABnPK",
+                          "name": "Info",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "F5t41",
+                              "name": "Time",
+                              "fill": "#7a808bff",
+                              "content": "12:39",
+                              "lineHeight": 1.3333333333333333,
+                              "textAlign": "right",
+                              "textAlignVertical": "bottom",
+                              "fontFamily": "Onest",
+                              "fontSize": 12,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "x9c0e",
+                              "name": "check-double-line",
+                              "clip": true,
+                              "width": 16,
+                              "height": 16,
+                              "layout": "none",
+                              "children": [
+                                {
+                                  "type": "path",
+                                  "id": "z8xbj",
+                                  "x": 1.399999976158142,
+                                  "y": 4.387400150299072,
+                                  "name": "Vector",
+                                  "geometry": "M10.602 7.781l1.412 1.412 8.466-8.466 1.414 1.414-9.88 9.88-6.364-6.364 1.414-1.414 2.125 2.125 1.413 1.412 0 0.001z m0.002-2.828l4.952-4.953 1.41 1.41-4.952 4.953-1.41-1.41z m-2.827 5.655l-1.413 1.413-6.364-6.364 1.414-1.414 1.413 1.413-0.001 0.001 4.951 4.951 0 0z",
+                                  "fill": "#7a808bff",
+                                  "width": 13.136399269104004,
+                                  "height": 7.212600231170654
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "EvM2Y",
+                      "name": "Message",
+                      "width": "fill_container",
+                      "fill": "#f6f8faff",
+                      "cornerRadius": [
+                        20,
+                        20,
+                        20,
+                        0
+                      ],
+                      "layout": "vertical",
+                      "padding": [
+                        12,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "CUzlP",
+                          "name": "Text",
+                          "fill": "#0a0d14ff",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Отлично! Завершаю выкладку в отделе молочной продукции.",
+                          "lineHeight": 1.25,
+                          "fontFamily": "Onest",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "p1aeQd",
+                          "name": "Info",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "h6FpnV",
+                              "name": "Time",
+                              "fill": "#7a808bff",
+                              "content": "12:39",
+                              "lineHeight": 1.3333333333333333,
+                              "textAlign": "right",
+                              "textAlignVertical": "bottom",
+                              "fontFamily": "Onest",
+                              "fontSize": 12,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "g0bqBZ",
+                              "name": "check-double-line",
+                              "clip": true,
+                              "width": 16,
+                              "height": 16,
+                              "layout": "none",
+                              "children": [
+                                {
+                                  "type": "path",
+                                  "id": "OzVUw",
+                                  "x": 1.399999976158142,
+                                  "y": 4.387400150299072,
+                                  "name": "Vector",
+                                  "geometry": "M10.602 7.781l1.412 1.412 8.466-8.466 1.414 1.414-9.88 9.88-6.364-6.364 1.414-1.414 2.125 2.125 1.413 1.412 0 0.001z m0.002-2.828l4.952-4.953 1.41 1.41-4.952 4.953-1.41-1.41z m-2.827 5.655l-1.413 1.413-6.364-6.364 1.414-1.414 1.413 1.413-0.001 0.001 4.951 4.951 0 0z",
+                                  "fill": "#7a808bff",
+                                  "width": 13.136399269104004,
+                                  "height": 7.212600231170654
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "dVtIX",
+                  "name": "Вчера",
+                  "fill": "#7a808bff",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Вчера",
+                  "lineHeight": 1.3333333333333333,
+                  "textAlign": "center",
+                  "fontFamily": "Onest",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "GqiTF",
+                  "name": "Line",
+                  "width": 406,
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": [
+                    0,
+                    0,
+                    0,
+                    52
+                  ],
+                  "alignItems": "end",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "FXSPN",
+                      "name": "Message",
+                      "width": "fill_container",
+                      "fill": "#d9e9ffff",
+                      "cornerRadius": [
+                        20,
+                        20,
+                        0,
+                        20
+                      ],
+                      "layout": "vertical",
+                      "padding": [
+                        12,
+                        16
+                      ],
+                      "alignItems": "end",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "TvUqn",
+                          "name": "Text",
+                          "fill": "#0a0d14ff",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Хорошо, как закончишь, пришли фотоотчет.",
+                          "lineHeight": 1.25,
+                          "fontFamily": "Onest",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "yJOGp",
+                          "name": "Info",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "QzLjw",
+                              "name": "Time",
+                              "fill": "#7a808bff",
+                              "content": "12:39",
+                              "lineHeight": 1.3333333333333333,
+                              "textAlign": "right",
+                              "textAlignVertical": "bottom",
+                              "fontFamily": "Onest",
+                              "fontSize": 12,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "hyWBd",
+                              "name": "check-double-line",
+                              "clip": true,
+                              "width": 16,
+                              "height": 16,
+                              "layout": "none",
+                              "children": [
+                                {
+                                  "type": "path",
+                                  "id": "Je1vV",
+                                  "x": 1.399999976158142,
+                                  "y": 4.387400150299072,
+                                  "name": "Vector",
+                                  "geometry": "M10.602 7.781l1.412 1.412 8.466-8.466 1.414 1.414-9.88 9.88-6.364-6.364 1.414-1.414 2.125 2.125 1.413 1.412 0 0.001z m0.002-2.828l4.952-4.953 1.41 1.41-4.952 4.953-1.41-1.41z m-2.827 5.655l-1.413 1.413-6.364-6.364 1.414-1.414 1.413 1.413-0.001 0.001 4.951 4.951 0 0z",
+                                  "fill": "#7a808bff",
+                                  "width": 13.136399269104004,
+                                  "height": 7.212600231170654
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "gvOi4",
+                  "name": "Frame 8669",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": [
+                    8,
+                    52,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "wr6BV",
+                      "name": "Message",
+                      "width": "fill_container",
+                      "fill": "#f6f8faff",
+                      "cornerRadius": [
+                        20,
+                        20,
+                        20,
+                        0
+                      ],
+                      "layout": "vertical",
+                      "padding": [
+                        12,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "aex1M",
+                          "name": "Text",
+                          "fill": "#0a0d14ff",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Будет сделано!",
+                          "lineHeight": 1.25,
+                          "fontFamily": "Onest",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "CeLJl",
+                          "name": "Info",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "z84hy",
+                              "name": "Time",
+                              "fill": "#7a808bff",
+                              "content": "12:39",
+                              "lineHeight": 1.3333333333333333,
+                              "textAlign": "right",
+                              "textAlignVertical": "bottom",
+                              "fontFamily": "Onest",
+                              "fontSize": 12,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "z22Jh",
+                              "name": "check-double-line",
+                              "clip": true,
+                              "width": 16,
+                              "height": 16,
+                              "layout": "none",
+                              "children": [
+                                {
+                                  "type": "path",
+                                  "id": "QhSj9",
+                                  "x": 1.399999976158142,
+                                  "y": 4.387400150299072,
+                                  "name": "Vector",
+                                  "geometry": "M10.602 7.781l1.412 1.412 8.466-8.466 1.414 1.414-9.88 9.88-6.364-6.364 1.414-1.414 2.125 2.125 1.413 1.412 0 0.001z m0.002-2.828l4.952-4.953 1.41 1.41-4.952 4.953-1.41-1.41z m-2.827 5.655l-1.413 1.413-6.364-6.364 1.414-1.414 1.413 1.413-0.001 0.001 4.951 4.951 0 0z",
+                                  "fill": "#7a808bff",
+                                  "width": 13.136399269104004,
+                                  "height": 7.212600231170654
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "dwScj",
+                  "name": "Сегодня",
+                  "fill": "#7a808bff",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Сегодня",
+                  "lineHeight": 1.3333333333333333,
+                  "textAlign": "center",
+                  "fontFamily": "Onest",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "GLsbj",
+                  "name": "Frame 8670",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": [
+                    8,
+                    52,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "OPIvG",
+                      "name": "Message",
+                      "width": "fill_container",
+                      "fill": "#f6f8faff",
+                      "cornerRadius": [
+                        20,
+                        20,
+                        20,
+                        0
+                      ],
+                      "layout": "vertical",
+                      "padding": [
+                        12,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "K2i7g",
+                          "name": "Text",
+                          "fill": "#0a0d14ff",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Вот фото",
+                          "lineHeight": 1.25,
+                          "fontFamily": "Onest",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "ZmVk3",
+                          "name": "Info",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "j8PpFX",
+                              "name": "Time",
+                              "fill": "#7a808bff",
+                              "content": "12:39",
+                              "lineHeight": 1.3333333333333333,
+                              "textAlign": "right",
+                              "textAlignVertical": "bottom",
+                              "fontFamily": "Onest",
+                              "fontSize": 12,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "BxWmT",
+                              "name": "check-double-line",
+                              "clip": true,
+                              "width": 16,
+                              "height": 16,
+                              "layout": "none",
+                              "children": [
+                                {
+                                  "type": "path",
+                                  "id": "qsEIW",
+                                  "x": 1.399999976158142,
+                                  "y": 4.387400150299072,
+                                  "name": "Vector",
+                                  "geometry": "M10.602 7.781l1.412 1.412 8.466-8.466 1.414 1.414-9.88 9.88-6.364-6.364 1.414-1.414 2.125 2.125 1.413 1.412 0 0.001z m0.002-2.828l4.952-4.953 1.41 1.41-4.952 4.953-1.41-1.41z m-2.827 5.655l-1.413 1.413-6.364-6.364 1.414-1.414 1.413 1.413-0.001 0.001 4.951 4.951 0 0z",
+                                  "fill": "#7a808bff",
+                                  "width": 13.136399269104004,
+                                  "height": 7.212600231170654
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "l9Gm0I",
+                  "name": "Line",
+                  "width": 406,
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": [
+                    0,
+                    0,
+                    0,
+                    52
+                  ],
+                  "alignItems": "end",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "S1JHMz",
+                      "name": "Message",
+                      "width": "fill_container",
+                      "fill": "#d9e9ffff",
+                      "cornerRadius": [
+                        20,
+                        20,
+                        0,
+                        20
+                      ],
+                      "layout": "vertical",
+                      "padding": [
+                        12,
+                        16
+                      ],
+                      "alignItems": "end",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "MKjBL",
+                          "name": "Text",
+                          "fill": "#0a0d14ff",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Окей, принял работу. Меняю статус",
+                          "lineHeight": 1.25,
+                          "fontFamily": "Onest",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "lMPfw",
+                          "name": "Info",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "MOrmT",
+                              "name": "Time",
+                              "fill": "#7a808bff",
+                              "content": "12:39",
+                              "lineHeight": 1.3333333333333333,
+                              "textAlign": "right",
+                              "textAlignVertical": "bottom",
+                              "fontFamily": "Onest",
+                              "fontSize": 12,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "yYpy6",
+                              "name": "check-double-line",
+                              "clip": true,
+                              "width": 16,
+                              "height": 16,
+                              "layout": "none",
+                              "children": [
+                                {
+                                  "type": "path",
+                                  "id": "hIInB",
+                                  "x": 1.399999976158142,
+                                  "y": 4.387400150299072,
+                                  "name": "Vector",
+                                  "geometry": "M10.602 7.781l1.412 1.412 8.466-8.466 1.414 1.414-9.88 9.88-6.364-6.364 1.414-1.414 2.125 2.125 1.413 1.412 0 0.001z m0.002-2.828l4.952-4.953 1.41 1.41-4.952 4.953-1.41-1.41z m-2.827 5.655l-1.413 1.413-6.364-6.364 1.414-1.414 1.413 1.413-0.001 0.001 4.951 4.951 0 0z",
+                                  "fill": "#7a808bff",
+                                  "width": 13.136399269104004,
+                                  "height": 7.212600231170654
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "u9TVw",
+                  "name": "Frame 2087325641",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": [
+                    8,
+                    52,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "lbfJG",
+                      "name": "File",
+                      "width": 354,
+                      "height": 60,
+                      "fill": "#f6f8faff",
+                      "cornerRadius": 16,
+                      "gap": 12,
+                      "padding": [
+                        8,
+                        16,
+                        8,
+                        8
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "sVigV",
+                          "name": "Icon",
+                          "fill": "#d9e9ffff",
+                          "cornerRadius": 12,
+                          "gap": 10,
+                          "padding": 8,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "A2qemm",
+                              "name": "file-3-fill",
+                              "clip": true,
+                              "width": 28,
+                              "height": 28,
+                              "layout": "none",
+                              "children": [
+                                {
+                                  "type": "path",
+                                  "id": "lVoh9",
+                                  "x": 4.550000190734863,
+                                  "y": 3.5,
+                                  "name": "Vector",
+                                  "geometry": "M18 7l0 11.993c0.00092 0.13132-0.02403 0.26154-0.07343 0.38322-0.0494 0.12168-0.12229 0.23243-0.21451 0.32594-0.09221 0.09351-0.20193 0.16794-0.32291 0.21905-0.12098 0.0511-0.25083 0.07788-0.38215 0.07879l-16.014 0c-0.26319 0-0.51561-0.10448-0.7018-0.29049-0.18619-0.18601-0.29093-0.43832-0.2912-0.70151l0-18.016c0-0.537 0.447-0.992 0.998-0.992l10.002 0 0 6c0 0.26522 0.10536 0.51957 0.29289 0.70711 0.18754 0.18754 0.44189 0.29289 0.70711 0.29289l6 0z m0-2l-5 0 0-4.997 5 4.997z",
+                                  "fill": "#2a73ffff",
+                                  "width": 18.900028228759766,
+                                  "height": 21
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "ZPWha",
+                          "name": "Content",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "TfLHl",
+                              "name": "Name",
+                              "width": "fill_container",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "VEuJ9",
+                                  "name": "Text",
+                                  "fill": "#0a0d14ff",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Очень длинное название файла ",
+                                  "lineHeight": 1.25,
+                                  "fontFamily": "Onest",
+                                  "fontSize": 16,
+                                  "fontWeight": "500"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "gYHxD",
+                                  "name": "Format",
+                                  "fill": "#0a0d14ff",
+                                  "content": ".pdf",
+                                  "lineHeight": 1.25,
+                                  "fontFamily": "Onest",
+                                  "fontSize": 16,
+                                  "fontWeight": "500"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "gdelZ",
+                              "name": "Weight",
+                              "fill": "#7a808bff",
+                              "content": "911 кб",
+                              "lineHeight": 1.3333333333333333,
+                              "fontFamily": "Onest",
+                              "fontSize": 12,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "yIK2A",
+                          "layoutPosition": "absolute",
+                          "x": 292,
+                          "y": 32,
+                          "name": "Info",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "yslSo",
+                              "name": "Time",
+                              "fill": "#7a808bff",
+                              "content": "12:39",
+                              "lineHeight": 1.3333333333333333,
+                              "textAlign": "right",
+                              "textAlignVertical": "bottom",
+                              "fontFamily": "Onest",
+                              "fontSize": 12,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "sjc0U",
+                              "name": "check-line",
+                              "clip": true,
+                              "width": 16,
+                              "height": 16,
+                              "layout": "none",
+                              "children": [
+                                {
+                                  "type": "path",
+                                  "id": "a4NlX",
+                                  "x": 1.399999976158142,
+                                  "y": 4.387400150299072,
+                                  "name": "Vector",
+                                  "geometry": "M10.602 7.781l1.412 1.412 8.466-8.466 1.414 1.414-9.88 9.88-6.364-6.364 1.414-1.414 2.125 2.125 1.413 1.412 0 0.001z m0.002-2.828l4.952-4.953 1.41 1.41-4.952 4.953-1.41-1.41z m-2.827 5.655l-1.413 1.413-6.364-6.364 1.414-1.414 1.413 1.413-0.001 0.001 4.951 4.951 0 0z",
+                                  "fill": "#7a808bff",
+                                  "width": 13.136399269104004,
+                                  "height": 7.212600231170654
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "FyzdJ",
+                      "name": "Message",
+                      "width": "fill_container",
+                      "fill": "#f6f8faff",
+                      "cornerRadius": [
+                        20,
+                        20,
+                        20,
+                        0
+                      ],
+                      "layout": "vertical",
+                      "padding": [
+                        12,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "L5OBnz",
+                          "name": "Text",
+                          "fill": "#0a0d14ff",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Спасибо!",
+                          "lineHeight": 1.25,
+                          "fontFamily": "Onest",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "fzzYo",
+                          "name": "Info",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "ZRfC9",
+                              "name": "Time",
+                              "fill": "#7a808bff",
+                              "content": "12:39",
+                              "lineHeight": 1.3333333333333333,
+                              "textAlign": "right",
+                              "textAlignVertical": "bottom",
+                              "fontFamily": "Onest",
+                              "fontSize": 12,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "wMhQw",
+                              "name": "check-double-line",
+                              "clip": true,
+                              "width": 16,
+                              "height": 16,
+                              "layout": "none",
+                              "children": [
+                                {
+                                  "type": "path",
+                                  "id": "grK0p",
+                                  "x": 1.399999976158142,
+                                  "y": 4.387400150299072,
+                                  "name": "Vector",
+                                  "geometry": "M10.602 7.781l1.412 1.412 8.466-8.466 1.414 1.414-9.88 9.88-6.364-6.364 1.414-1.414 2.125 2.125 1.413 1.412 0 0.001z m0.002-2.828l4.952-4.953 1.41 1.41-4.952 4.953-1.41-1.41z m-2.827 5.655l-1.413 1.413-6.364-6.364 1.414-1.414 1.413 1.413-0.001 0.001 4.951 4.951 0 0z",
+                                  "fill": "#7a808bff",
+                                  "width": 13.136399269104004,
+                                  "height": 7.212600231170654
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "VmYKF",
+                  "name": "Line",
+                  "width": 406,
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": [
+                    0,
+                    0,
+                    0,
+                    52
+                  ],
+                  "alignItems": "end",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "h4PMAs",
+                      "name": "Message",
+                      "width": "fill_container",
+                      "fill": "#d9e9ffff",
+                      "cornerRadius": [
+                        20,
+                        20,
+                        0,
+                        20
+                      ],
+                      "layout": "vertical",
+                      "padding": [
+                        12,
+                        16
+                      ],
+                      "alignItems": "end",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "swFwJ",
+                          "name": "Text",
+                          "fill": "#0a0d14ff",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Чек по выполненному заказу \nПерейдите по ссылке чтобы посмотреть или скачать: \nhttps://lknpd.nalog.ru/api/v1/receipt/771548551232/207u1xi0yf\n/print",
+                          "lineHeight": 1.25,
+                          "fontFamily": "Onest",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "WLnxz",
+                          "name": "Frame 2087325644",
+                          "width": "fill_container",
+                          "justifyContent": "end",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "MO748",
+                              "name": "Text",
+                              "fill": "#7a808bff",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Сообщение создано автоматически",
+                              "lineHeight": 1.3333333333333333,
+                              "fontFamily": "Onest",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "kLXcp",
+                              "name": "Info",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "L9Cnw",
+                                  "name": "Time",
+                                  "fill": "#7a808bff",
+                                  "content": "12:39",
+                                  "lineHeight": 1.3333333333333333,
+                                  "textAlign": "right",
+                                  "textAlignVertical": "bottom",
+                                  "fontFamily": "Onest",
+                                  "fontSize": 12,
+                                  "fontWeight": "500"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "aPtZ0",
+                                  "name": "check-double-line",
+                                  "clip": true,
+                                  "width": 16,
+                                  "height": 16,
+                                  "layout": "none",
+                                  "children": [
+                                    {
+                                      "type": "path",
+                                      "id": "sL9z1",
+                                      "x": 1.399999976158142,
+                                      "y": 4.387400150299072,
+                                      "name": "Vector",
+                                      "geometry": "M10.602 7.781l1.412 1.412 8.466-8.466 1.414 1.414-9.88 9.88-6.364-6.364 1.414-1.414 2.125 2.125 1.413 1.412 0 0.001z m0.002-2.828l4.952-4.953 1.41 1.41-4.952 4.953-1.41-1.41z m-2.827 5.655l-1.413 1.413-6.364-6.364 1.414-1.414 1.413 1.413-0.001 0.001 4.951 4.951 0 0z",
+                                      "fill": "#7a808bff",
+                                      "width": 13.136399269104004,
+                                      "height": 7.212600231170654
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "cRAwc",
+              "name": "Message-input",
+              "width": 430,
+              "fill": "#ffffffff",
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Pk4hn",
+                  "name": "Сообщение",
+                  "clip": true,
+                  "width": "fill_container",
+                  "fill": "#ffffffff",
+                  "gap": 12,
+                  "padding": [
+                    8,
+                    12
+                  ],
+                  "alignItems": "end",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "RxhrY",
+                      "name": "Frame 8662",
+                      "width": 28,
+                      "height": 32,
+                      "fill": {
+                        "type": "color",
+                        "color": "#ffffffff",
+                        "enabled": false
+                      },
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "uqEH4",
+                          "x": 1.5,
+                          "y": 0,
+                          "name": "attachment-line",
+                          "clip": true,
+                          "width": 24,
+                          "height": 24,
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "path",
+                              "id": "CykKr",
+                              "x": 4.800000190734863,
+                              "y": 3,
+                              "name": "Vector",
+                              "geometry": "M10 11.5l0-5.5c0-1.06087-0.42143-2.07828-1.17157-2.82843-0.75015-0.75015-1.76756-1.17157-2.82843-1.17157-1.06087 0-2.07828 0.42143-2.82843 1.17157-0.75015 0.75015-1.17157 1.76756-1.17157 2.82843l0 5.5c0 1.72391 0.68482 3.37721 1.90381 4.59619 1.21899 1.21899 2.87229 1.90381 4.59619 1.90381 1.72391 0 3.37721-0.68482 4.59619-1.90381 1.21899-1.21899 1.90381-2.87229 1.90381-4.59619l0-9.5 2 0 0 9.5c0 2.25434-0.89553 4.41635-2.48959 6.01041-1.59406 1.59406-3.75607 2.48959-6.01041 2.48959-2.25434 0-4.41635-0.89553-6.01041-2.48959-1.59406-1.59406-2.48959-3.75607-2.48959-6.01041l0-5.5c0-1.5913 0.63214-3.11742 1.75736-4.24264 1.12522-1.12522 2.65134-1.75736 4.24264-1.75736 1.5913 0 3.11742 0.63214 4.24264 1.75736 1.12522 1.12522 1.75736 2.65134 1.75736 4.24264l0 5.5c0 0.92826-0.36875 1.8185-1.02513 2.47487-0.65638 0.65638-1.54662 1.02513-2.47487 1.02513-0.92826 0-1.8185-0.36875-2.47487-1.02513-0.65638-0.65638-1.02513-1.54662-1.02513-2.47487l0-5.5 2 0 0 5.5c0 0.39782 0.15804 0.77936 0.43934 1.06066 0.2813 0.2813 0.66284 0.43934 1.06066 0.43934 0.39782 0 0.77936-0.15803 1.06066-0.43934 0.2813-0.2813 0.43934-0.66284 0.43934-1.06066l0 0z",
+                              "fill": "#7a808bff",
+                              "width": 15.300000190734863,
+                              "height": 18
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ICbwl",
+                      "name": "Container",
+                      "width": "fill_container",
+                      "cornerRadius": 16,
+                      "stroke": "#e9ebefff",
+                      "strokeWidth": 1,
+                      "strokeAlignment": "inner",
+                      "padding": 12,
+                      "alignItems": "end",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "J15nx",
+                          "name": "Text",
+                          "fill": "#cdd0d5ff",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Сообщение",
+                          "lineHeight": 1.25,
+                          "fontFamily": "Onest",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "DCIJw",
+                      "name": "Frame 8661",
+                      "width": 28,
+                      "height": 32,
+                      "fill": {
+                        "type": "color",
+                        "color": "#ffffffff",
+                        "enabled": false
+                      },
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "VAL8C",
+                          "x": 2,
+                          "y": 0,
+                          "name": "send-plane-fill",
+                          "clip": true,
+                          "width": 24,
+                          "height": 24,
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "path",
+                              "id": "nxgod",
+                              "x": 2.598485231399536,
+                              "y": 3.241223096847534,
+                              "name": "Vector",
+                              "geometry": "M0.39213 7.04697c-0.522-0.174-0.527-0.455 0.01-0.634l19.087-6.362c0.529-0.176 0.832 0.12 0.684 0.638l-5.454 19.086c-0.15 0.529-0.455 0.547-0.679 0.045l-3.594-8.088 6-8-8 6-8.054-2.685 0 0z",
+                              "fill": "#cdd0d7ff",
+                              "width": 18.189552307128906,
+                              "height": 18.166013717651367
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "f3XbB",
+                  "name": "Home Indicator",
+                  "width": "fill_container",
+                  "height": 24,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "mTsOB",
+                      "x": 0,
+                      "y": 11.29411792755127,
+                      "name": "Screen Corners / Bottom Corners",
+                      "width": 430,
+                      "height": 12.70588207244873,
+                      "fill": {
+                        "type": "color",
+                        "color": "#ffffffff",
+                        "enabled": false
+                      },
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "group",
+                          "id": "IpNN6",
+                          "x": -9.112710586123285e-13,
+                          "y": 13.000003814697266,
+                          "name": "↳ Corners",
+                          "enabled": false,
+                          "rotation": 180,
+                          "flipX": true,
+                          "children": [
+                            {
+                              "type": "path",
+                              "id": "r5BQTI",
+                              "x": 357.05279541015625,
+                              "y": 0,
+                              "name": "Corner",
+                              "geometry": "M0 0l17.9472 0 0 17.9472c0-6.24063-0.64978-8.50364-1.86993-10.78512-1.22015-2.28148-3.01067-4.072-5.29215-5.29215-2.28148-1.22015-4.54448-1.86993-10.78512-1.86993z",
+                              "fill": "#000000ff",
+                              "width": 72.94719696044922,
+                              "height": 17.94719696044922
+                            },
+                            {
+                              "type": "path",
+                              "id": "exB7t",
+                              "x": 0,
+                              "y": 0,
+                              "name": "Corner",
+                              "geometry": "M17.9472 0c-6.24063 0-8.50364 0.64978-10.78512 1.86993-2.28148 1.22015-4.072 3.01067-5.29215 5.29215-1.22015 2.28148-1.86993 4.54449-1.86993 10.78512l0-17.9472 17.9472 0z",
+                              "fill": "#000000ff",
+                              "width": 72.94719696044922,
+                              "height": 17.94719696044922
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 100,
+                      "id": "ZtPRO",
+                      "x": 149,
+                      "y": 11,
+                      "name": "Home Indicator",
+                      "opacity": 0.9000000357627869,
+                      "fill": "#0a0d14ff",
+                      "width": 131,
+                      "height": 5
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "P6jGRv",
+          "x": 0,
+          "y": 46,
+          "name": "Frame 2087325636",
+          "width": 430,
+          "fill": "#ffffffff",
+          "cornerRadius": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#00000014",
+            "offset": {
+              "x": 0,
+              "y": 8
+            },
+            "blur": 26.25
+          },
+          "layout": "vertical",
+          "gap": 12,
+          "padding": [
+            0,
+            16,
+            16,
+            16
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "UaBcE",
+              "name": "Frame 2087325637",
+              "width": "fill_container",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "mQXQu",
+                  "name": "Frame 2087325638",
+                  "width": 43,
+                  "gap": 4,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "a57Pl",
+                      "name": "arrow-left-line",
+                      "clip": true,
+                      "width": 24,
+                      "height": 24,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "path",
+                          "id": "NGXAq",
+                          "x": 4.800000190734863,
+                          "y": 4.999800205230713,
+                          "name": "Vector",
+                          "geometry": "M3.828 6.778l12.172 0 0 2-12.172 0 5.364 5.364-1.414 1.414-7.778-7.778 7.778-7.778 1.414 1.414-5.364 5.364z",
+                          "fill": "#0a0d14ff",
+                          "width": 14.399999618530273,
+                          "height": 14.000399589538574
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "I0ShhG",
+                  "name": "Content",
+                  "width": "fill_container",
+                  "height": 38,
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "zlno8",
+                      "name": "Title",
+                      "fill": "#000000ff",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Выкладка товара",
+                      "lineHeight": 1.25,
+                      "fontFamily": "Onest",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "EEB81",
+                      "name": "Subtitle",
+                      "fill": "#61646cff",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Создано 28.08.26 10:00",
+                      "lineHeight": 1.2857142857142858,
+                      "fontFamily": "Onest",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "int78",
+                  "name": "Status",
+                  "fill": "#ebf9efff",
+                  "cornerRadius": 100,
+                  "stroke": "#32c15aff",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
+                  "gap": 10,
+                  "padding": [
+                    4,
+                    8
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Bb4Jg",
+                      "name": " ",
+                      "fill": "#23873fff",
+                      "content": "Оплата",
+                      "lineHeight": 1.2857142857142858,
+                      "textAlignVertical": "middle",
+                      "fontFamily": "Onest",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "path",
+              "id": "ml6CC",
+              "name": "Vector 18",
+              "geometry": "M0 0l96.5 0",
+              "width": "fill_container",
+              "height": 0,
+              "stroke": "#e9ebefff",
+              "strokeWidth": 1,
+              "strokeLinecap": "round"
+            },
+            {
+              "type": "frame",
+              "id": "zMiDb",
+              "name": "Frame 2087325280",
+              "width": "fill_container",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "hiIoH",
+                  "name": "avatar",
+                  "clip": true,
+                  "width": 44,
+                  "height": 44,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "ellipse",
+                      "id": "y8oJaM",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Ellipse 5",
+                      "sweepAngle": -360.00001001791264,
+                      "fill": [
+                        "#d9d9d9ff",
+                        {
+                          "type": "image",
+                          "enabled": true,
+                          "mode": "fill"
+                        }
+                      ],
+                      "width": 44,
+                      "height": 44
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "V29PJ",
+                  "name": "Frame 2087325279",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "fZzHB",
+                      "name": "Title",
+                      "fill": "#000000ff",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Иванов Алексей Дмитриевич",
+                      "lineHeight": 1.2857142857142858,
+                      "fontFamily": "Onest",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Y37vb",
+                      "name": "Frame 2087325634",
+                      "width": "fill_container",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "LKMmv",
+                          "name": "Time",
+                          "fill": "#7a808bff",
+                          "content": "СМЗ • 20 лет",
+                          "lineHeight": 1.2857142857142858,
+                          "fontFamily": "Onest",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "GFwz8",
+                          "name": "Frame 2087325626",
+                          "gap": 8,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "F5Q7L",
+                              "name": "Frame 2087325594",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "elKC4",
+                                  "name": "Frame 2087325548",
+                                  "gap": 3,
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "b9iQD",
+                                      "name": "Frame 2087325546",
+                                      "width": 18,
+                                      "height": 18,
+                                      "layout": "none",
+                                      "children": [
+                                        {
+                                          "type": "group",
+                                          "id": "T0BxbQ",
+                                          "x": 0,
+                                          "y": 0,
+                                          "name": "star",
+                                          "children": [
+                                            {
+                                              "type": "rectangle",
+                                              "id": "kw6Lq",
+                                              "x": 0,
+                                              "y": 0,
+                                              "name": "Bounding box",
+                                              "width": 18,
+                                              "height": 18
+                                            },
+                                            {
+                                              "type": "path",
+                                              "id": "LK8H4",
+                                              "x": 1.5,
+                                              "y": 1.5,
+                                              "name": "star",
+                                              "geometry": "M3.825 19l1.625-7.025-5.45-4.725 7.2-0.625 2.8-6.625 2.8 6.625 7.2 0.625-5.45 4.725 1.625 7.025-6.175-3.725-6.175 3.725z",
+                                              "fill": "#ffb32eff",
+                                              "width": 15,
+                                              "height": 14.25
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "fTYAV",
+                                  "name": "Time",
+                                  "fill": "#0a0d14ff",
+                                  "content": "4.6 из 5",
+                                  "lineHeight": 1.2857142857142858,
+                                  "fontFamily": "Onest",
+                                  "fontSize": 14,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "POUpW",
+                              "name": "Time",
+                              "fill": "#2a73ffff",
+                              "content": "21 отзыв",
+                              "lineHeight": 1.2857142857142858,
+                              "fontFamily": "Onest",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "mg7tP",
+              "name": "Button",
+              "width": "fill_container",
+              "height": 32,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "f0Gia",
+                  "name": "Container",
+                  "clip": true,
+                  "width": 398,
+                  "height": 32,
+                  "fill": "#d9e9ffff",
+                  "cornerRadius": 10,
+                  "gap": 4,
+                  "padding": [
+                    0,
+                    12
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "jbwP6",
+                      "x": 16.5,
+                      "y": 16,
+                      "name": "arrow-left-line",
+                      "enabled": false,
+                      "clip": true,
+                      "width": 24,
+                      "height": 24,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "path",
+                          "id": "d5Ugt",
+                          "x": 4.800000190734863,
+                          "y": 4.999800205230713,
+                          "name": "Vector",
+                          "geometry": "M3.828 6.778l12.172 0 0 2-12.172 0 5.364 5.364-1.414 1.414-7.778-7.778 7.778-7.778 1.414 1.414-5.364 5.364z",
+                          "fill": "#2a73ffff",
+                          "width": 14.399999618530273,
+                          "height": 14.000399589538574
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Zp9DW",
+                      "name": "Content",
+                      "height": "fill_container",
+                      "layout": "vertical",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "v4q7e",
+                          "name": "Title",
+                          "fill": "#2a73ffff",
+                          "content": "Перейти к заказу",
+                          "lineHeight": 1.3333333333333333,
+                          "textAlign": "center",
+                          "fontFamily": "Onest",
+                          "fontSize": 12,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "text",
+                          "id": "WC44H",
+                          "x": 7,
+                          "y": 21,
+                          "name": "Subtitle",
+                          "enabled": false,
+                          "fill": "#2a73ffff",
+                          "content": "Subtitle",
+                          "lineHeight": 1.4,
+                          "textAlign": "center",
+                          "fontFamily": "Onest",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "mxq0I",
+                      "name": "arrow-right-line",
+                      "clip": true,
+                      "width": 24,
+                      "height": 24,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "path",
+                          "id": "GIQdS",
+                          "x": 4.800000190734863,
+                          "y": 4.999800205230713,
+                          "name": "Vector",
+                          "geometry": "M12.172 6.778l-5.364-5.364 1.414-1.414 7.778 7.778-7.778 7.778-1.414-1.414 5.364-5.364-12.172 0 0-2 12.172 0z",
+                          "fill": "#2a73ffff",
+                          "width": 14.399999618530273,
+                          "height": 14.000399589538574
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ZQoXw",
+          "x": 0,
+          "y": 0,
+          "name": "NavBar",
+          "width": 430,
+          "fill": "#ffffffff",
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "mJNqL",
+              "name": "Status bar",
+              "width": "fill_container",
+              "height": 46,
+              "fill": "#ffffffff",
+              "gap": 286,
+              "padding": [
+                10,
+                24
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "end",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "XrJkw",
+                  "name": "Time",
+                  "fill": "#000000ff",
+                  "content": "9:30",
+                  "lineHeight": 1.4285714285714286,
+                  "textAlignVertical": "middle",
+                  "fontFamily": "Roboto",
+                  "fontSize": 14,
+                  "fontWeight": "500",
+                  "letterSpacing": 0.14
+                },
+                {
+                  "type": "group",
+                  "id": "FbPbV",
+                  "name": "right icons",
+                  "children": [
+                    {
+                      "type": "group",
+                      "id": "g2LbK",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Wifi",
+                      "children": [
+                        {
+                          "type": "path",
+                          "id": "rrwRr",
+                          "x": 0,
+                          "y": 0,
+                          "name": "Path",
+                          "geometry": "M0 0l17 0 0 17-17 0 0-17z",
+                          "fillRule": "evenodd",
+                          "width": 17,
+                          "height": 17
+                        },
+                        {
+                          "type": "rectangle",
+                          "id": "dG9Vv",
+                          "x": 0,
+                          "y": 0,
+                          "name": "Rectangle",
+                          "width": 17,
+                          "height": 17
+                        },
+                        {
+                          "type": "path",
+                          "id": "VwWMf",
+                          "x": 0,
+                          "y": 0,
+                          "name": "Path",
+                          "geometry": "M0 0l17 0 0 17-17 0 0-17z",
+                          "fillRule": "evenodd",
+                          "width": 17,
+                          "height": 17
+                        },
+                        {
+                          "type": "path",
+                          "id": "ekkVw",
+                          "x": 0,
+                          "y": 1.4166666269302368,
+                          "name": "Path",
+                          "geometry": "M8.5 0c-3.4 0-6.375 1.4875-8.5 3.825l8.5 10.34167 8.5-10.34167c-2.125-2.3375-5.1-3.825-8.5-3.825z",
+                          "fill": "#000000ff",
+                          "width": 17,
+                          "height": 14.166666984558105
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "id": "XiSbR",
+                      "x": 16,
+                      "y": 0,
+                      "name": "Signal",
+                      "children": [
+                        {
+                          "type": "path",
+                          "id": "n0xp5X",
+                          "x": 0,
+                          "y": 0,
+                          "name": "Path",
+                          "geometry": "M0 0l17 0 0 17-17 0 0-17z",
+                          "fillRule": "evenodd",
+                          "width": 17,
+                          "height": 17
+                        },
+                        {
+                          "type": "path",
+                          "id": "bkh9R",
+                          "x": 1.4166717529296875,
+                          "y": 1.4166666269302368,
+                          "name": "Path",
+                          "geometry": "M14.16667 0l-14.16667 14.16667 14.16667 0 0-14.16667 0 0z",
+                          "fill": "#000000ff",
+                          "width": 14.166666984558105,
+                          "height": 14.166666984558105
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "sMMdN",
+                      "x": 38,
+                      "y": 1.0000135898590088,
+                      "name": "Battery",
+                      "width": 8,
+                      "height": 15,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "path",
+                          "id": "j2pCKQ",
+                          "x": 0,
+                          "y": 0,
+                          "name": "Base",
+                          "geometry": "M8.25 0l-4.5 0 0 2-2.25 0c-0.82843 0-1.5 0.67157-1.5 1.5l0 15c0 0.82843 0.67157 1.5 1.5 1.5l9 0c0.82843 0 1.5-0.67157 1.5-1.5l0-15c0-0.82843-0.67157-1.5-1.5-1.5l-2.25 0 0-2z",
+                          "fill": "#61646cff",
+                          "width": 8,
+                          "height": 15
+                        },
+                        {
+                          "type": "path",
+                          "id": "tFagG",
+                          "x": 0,
+                          "y": 8,
+                          "name": "Charge",
+                          "geometry": "M0.00001 0c-0.00001 0.83333-0.00001 7.66667-0.00001 8.5 0 0.82843 0.67157 1.5 1.5 1.5l9 0c0.82843 0 1.5-0.67157 1.5-1.5 0-0.83333 0-7.66667 0-8.5l-11.99999 0z",
+                          "fill": "#000000ff",
+                          "width": 8,
+                          "height": 7
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "K7TdIt",
+              "x": 0,
+              "y": 120,
+              "name": "Segmented control",
+              "enabled": false,
+              "width": "fill_container(360)",
+              "fill": "#ffffffff",
+              "layout": "vertical",
+              "gap": 10,
+              "padding": [
+                4,
+                16
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "dBop6",
+                  "name": "segmented control",
+                  "width": "fill_container",
+                  "height": "fit_content(36)",
+                  "fill": "#f6f8faff",
+                  "cornerRadius": 12,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "enabled": false,
+                    "color": "#00000026",
+                    "blur": 8.75
+                  },
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "pWZ48",
+                      "name": ".segments",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "padding": 2,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "gmRBg",
+                          "name": ".segment",
+                          "width": "fill_container",
+                          "height": 32,
+                          "fill": "#ffffffff",
+                          "cornerRadius": 10,
+                          "gap": 4,
+                          "padding": [
+                            8,
+                            0
+                          ],
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "eRm1j",
+                              "name": "Label",
+                              "fill": "#0a0d14ff",
+                              "content": "Label",
+                              "lineHeight": 1.25,
+                              "textAlign": "center",
+                              "fontFamily": "Onest",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "ukXYm",
+                              "x": 96.75,
+                              "y": 8,
+                              "name": "Badge",
+                              "enabled": false,
+                              "fill": "#ed0e00ff",
+                              "cornerRadius": 8,
+                              "layout": "vertical",
+                              "padding": [
+                                0,
+                                4
+                              ],
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "SOlBH",
+                                  "name": "Value",
+                                  "fill": "#ffffffff",
+                                  "textGrowth": "fixed-width-height",
+                                  "width": 8,
+                                  "height": 16,
+                                  "content": "9",
+                                  "lineHeight": 1.6666666666666667,
+                                  "textAlign": "center",
+                                  "textAlignVertical": "middle",
+                                  "fontFamily": "SF Pro Display",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal",
+                                  "letterSpacing": 0.2199999988079071
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "egCvd",
+                          "name": ".segment",
+                          "width": "fill_container",
+                          "height": 32,
+                          "cornerRadius": 10,
+                          "gap": 4,
+                          "padding": [
+                            8,
+                            0
+                          ],
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "d1ImWg",
+                              "name": "Label",
+                              "fill": "#0a0d14ff",
+                              "content": "Label",
+                              "lineHeight": 1.25,
+                              "textAlign": "center",
+                              "fontFamily": "Onest",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "waNS3",
+                              "x": 96.75,
+                              "y": 8,
+                              "name": "Badge",
+                              "enabled": false,
+                              "fill": "#ed0e00ff",
+                              "cornerRadius": 8,
+                              "layout": "vertical",
+                              "padding": [
+                                0,
+                                4
+                              ],
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "T1lZM3",
+                                  "name": "Value",
+                                  "fill": "#ffffffff",
+                                  "textGrowth": "fixed-width-height",
+                                  "width": 8,
+                                  "height": 16,
+                                  "content": "9",
+                                  "lineHeight": 1.6666666666666667,
+                                  "textAlign": "center",
+                                  "textAlignVertical": "middle",
+                                  "fontFamily": "SF Pro Display",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal",
+                                  "letterSpacing": 0.2199999988079071
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "IybpT",
+              "x": 0,
+              "y": 90,
+              "name": "Search block",
+              "enabled": false,
+              "width": "fill_container(360)",
+              "fill": "#ffffffff",
+              "layout": "vertical",
+              "padding": [
+                4,
+                16
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "mlbUM",
+                  "name": "Search",
+                  "clip": true,
+                  "width": "fill_container",
+                  "height": 48,
+                  "fill": "#f6f8faff",
+                  "cornerRadius": 16,
+                  "stroke": "#cdd0d7ff",
+                  "strokeWidth": 0.5,
+                  "strokeAlignment": "inner",
+                  "gap": 8,
+                  "padding": [
+                    8,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "yA3rv",
+                      "name": "search-line",
+                      "clip": true,
+                      "width": 24,
+                      "height": 24,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "path",
+                          "id": "ML4RX",
+                          "x": 3,
+                          "y": 3,
+                          "name": "Vector",
+                          "geometry": "M16.031 14.617l4.283 4.282-1.415 1.415-4.282-4.283c-1.59326 1.27722-3.575 1.9719-5.617 1.969-4.968 0-9-4.032-9-9 0-4.968 4.032-9 9-9 4.968 0 9 4.032 9 9 0.0029 2.042-0.69178 4.02374-1.969 5.617z m-2.006-0.742c1.26911-1.30512 1.97787-3.05457 1.975-4.875 0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7 1.82043 0.00287 3.56988-0.70589 4.875-1.975l0.15-0.15 0 0z",
+                          "fill": "#7a808bff",
+                          "width": 18.2825984954834,
+                          "height": 18.2825984954834
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "GVTiD",
+                      "name": "Lable",
+                      "fill": "#7a808bff",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Поиск",
+                      "lineHeight": 1.25,
+                      "textAlignVertical": "middle",
+                      "fontFamily": "Onest",
+                      "fontSize": 16,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "W1YuGw",
+              "x": 0,
+              "y": 90,
+              "name": "Tag group",
+              "enabled": false,
+              "clip": true,
+              "width": "fill_container(360)",
+              "fill": "#ffffffff",
+              "padding": [
+                8,
+                16
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "c43fx",
+                  "name": "Tab",
+                  "fill": "#e9ebefff",
+                  "cornerRadius": 16,
+                  "padding": [
+                    6,
+                    12
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "N6HHnq",
+                      "name": "Lable",
+                      "fill": "#0a0d14ff",
+                      "content": "Lable",
+                      "lineHeight": 1.25,
+                      "fontFamily": "Onest",
+                      "fontSize": 16,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "DjHMv",
+                  "name": "Tab",
+                  "cornerRadius": 16,
+                  "padding": [
+                    6,
+                    12
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "bvoA0",
+                      "name": "Lable",
+                      "fill": "#7a808bff",
+                      "content": "Lable",
+                      "lineHeight": 1.25,
+                      "fontFamily": "Onest",
+                      "fontSize": 16,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "A9wHFp",
+                  "name": "Tab",
+                  "cornerRadius": 16,
+                  "padding": [
+                    6,
+                    12
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "yfRzW",
+                      "name": "Lable",
+                      "fill": "#7a808bff",
+                      "content": "Lable",
+                      "lineHeight": 1.25,
+                      "fontFamily": "Onest",
+                      "fontSize": 16,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "jbpbm",
+                  "name": "Tab",
+                  "cornerRadius": 16,
+                  "padding": [
+                    6,
+                    12
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "X7SBf",
+                      "name": "Lable",
+                      "fill": "#7a808bff",
+                      "content": "Lable",
+                      "lineHeight": 1.25,
+                      "fontFamily": "Onest",
+                      "fontSize": 16,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "f66e4",
+                  "name": "Tab",
+                  "cornerRadius": 16,
+                  "padding": [
+                    6,
+                    12
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Aga5M",
+                      "name": "Lable",
+                      "fill": "#7a808bff",
+                      "content": "Lable",
+                      "lineHeight": 1.25,
+                      "fontFamily": "Onest",
+                      "fontSize": 16,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "i2O1U",
+                  "name": "Tab",
+                  "cornerRadius": 16,
+                  "padding": [
+                    6,
+                    12
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "AKjOh",
+                      "name": "Lable",
+                      "fill": "#7a808bff",
+                      "content": "Lable",
+                      "lineHeight": 1.25,
+                      "fontFamily": "Onest",
+                      "fontSize": 16,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     }

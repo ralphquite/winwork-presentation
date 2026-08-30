@@ -1,8 +1,11 @@
-# Design QA — component-based Enterprise demo flows
+# Design QA — exported presentations and component-based demo flows
 
 ## Comparison target
 
 - Source visual truth: `pencil/flows.pen` and the exact exported references under `public/demo-flows/`.
+- API source visual truth: `pencil/preesentation_api_business.pen`, frames `API-01` … `API-16` at 1920 × 1080.
+- API implementation: `http://127.0.0.1:4173/api?scene=api-01` through `api-16`; direct runtime exports live under `public/api-slides/`.
+- API comparison evidence: `/tmp/winwork-api-qa/reference-grid.png`, `/tmp/winwork-api-qa/rendered-grid.png`, and `/tmp/winwork-api-qa/diff-grid.png`. Every direct browser capture is 1920 × 1080 at device scale factor 1.
 - Desktop source: `public/demo-flows/object-list.png` (1599 × 1170 px, 1× source export).
 - Mobile source: `public/demo-flows/manager-orders.png` (430 × 1546 px); the visible application viewport is the top 430 × 812 px.
 - Manager-flow source set: `manager-login.png`, `manager-orders.png`, `manager-create-task.png`, `manager-order-details.png`, `manager-payment.png`, `manager-settings.png`, and `manager-chats.png`, exported from the matching mobile groups in `pencil/flows.pen`.
@@ -138,6 +141,15 @@ The source and implementation were opened together in the same browser-rendered 
 - Desktop and manager demo shells now declare a light control scheme. Text, search, and number inputs have scoped native-appearance normalization; selects use one deterministic chevron, reserved text space, and light option colors. The preferred-worker input no longer inherits the surrounding bold label weight.
 - All five quick-access flows were exercised after the fix. Object, activity, manager-task, and single-task native selects changed real values; the contract template search/radio/save dropdown still worked; desktop and mobile controls reported `appearance: none` with no horizontal overflow.
 - Browser evidence: `/tmp/winwork-form-controls-desktop-after.png` at 1280 × 720 and `/tmp/winwork-form-controls-mobile-after.png` at 390 × 844. Route smoke checks passed for Enterprise, Small Business, API, and invalid-scene normalization with no console errors.
+
+### Iteration 13 — passed
+
+- The API / Embedded placeholder was replaced with all 16 approved Pencil frames, mapped to stable IDs `api-01` … `api-16`. The track contains slide scenes only and exposes zero demo hotspots.
+- Native 1920 × 1080 Pencil exports and native 1920 × 1080 Chromium renders were compared as full 4 × 4 contact sheets and as focused full-resolution pairs for the densest frames `api-02` and `api-10`.
+- Copy, frame order, layout geometry, line wrapping, typography scale/weight, palette, borders, radii, shadows, progress markers, WinWork wordmark, icons, diagrams, and the API-01 hero asset were checked. Pixel differences of 1.33–3.36% are edge-antialiasing differences between the Pencil rasterizer and Chromium; no shifted container or clipped content remains.
+- [P1 fixed] Prettier removed the trailing space between two separate flex text nodes in the `api-02` headline, so Chromium rendered `Подключитеинфраструктуру`. The export now preserves that designed word gap with a non-breaking space and matches the Pencil frame.
+- The first Pencil PNG export isolates the `API-01` frame and omits the overlapping top-level hero-image node. The runtime HTML export includes that original node, references the deterministic adjacent asset `api-01-hero.png`, and the browser screenshot confirms the full hero composition.
+- Browser checks passed for 16 selector options, previous/next controls, ArrowLeft/ArrowRight, Back/Forward, direct `api-16`, disabled next at the end, invalid-scene normalization to `api-01` while preserving `qa=kept`, landing readiness copy, Enterprise/Small route smoke checks, and zero application console errors. The only warning is the expected reduced-motion notice.
 
 ## Interaction and runtime evidence
 

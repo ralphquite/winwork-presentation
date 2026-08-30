@@ -23,9 +23,9 @@ Never preserve a stale documentation claim over working code. Update the focused
 - This repository is a deterministic sales-presentation frontend, not the production WinWork product.
 - `/enterprise` is implemented as 19 exported Pencil slides. Slides `ent-04`, `ent-05`, `ent-07`, `ent-08`, and `ent-09` open component-based React demo flows.
 - `/small` is implemented as 14 exported Pencil slides. Slide `smb-06` reuses the component-based `single-task` demo flow.
-- `/api` is a technical placeholder track built on the shared runtime.
+- `/api` is implemented as 16 exported Pencil slides with no interactive demo flows.
 - The active scene is URL state in `?scene=<stable-id>`; presentation and demo state are local and resettable.
-- Exported slide HTML under `public/enterprise-slides/` and `public/small-slides/` is runtime content. PNG files under `public/demo-flows/` are QA references and must not be used as interactive product UI.
+- Exported slide HTML under `public/enterprise-slides/`, `public/api-slides/`, and `public/small-slides/` is runtime content. PNG files under `public/demo-flows/` are QA references and must not be used as interactive product UI.
 - The Vercel access gateway uses Routing Middleware to protect every deployed route/asset and an Edge Function to process the password form. This is the only server-side behavior and uses `WINWORK_ACCESS_PASSWORD` plus `WINWORK_SESSION_SECRET` for a signed 30-day cookie.
 - There is no account system, product backend, database, analytics, production API, or real user identity.
 

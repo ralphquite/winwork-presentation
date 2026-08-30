@@ -22,6 +22,7 @@
       "paths": [
         "src",
         "public/enterprise-slides",
+        "public/api-slides",
         "public/small-slides",
         "public/winwork-logo.svg",
         "public/favicon.svg",
@@ -80,8 +81,8 @@
     {
       "path": "/api",
       "trackId": "api",
-      "status": "placeholder",
-      "firstSceneId": "intro",
+      "status": "implemented",
+      "firstSceneId": "api-01",
       "configPath": "src/presentation/config/api.ts"
     },
     {
@@ -133,6 +134,7 @@
   "assets": {
     "runtimePaths": [
       "public/enterprise-slides",
+      "public/api-slides",
       "public/small-slides",
       "public/winwork-logo.svg",
       "public/favicon.svg"
@@ -264,27 +266,32 @@
     },
     {
       "id": "exported-track-slides",
-      "intent": "Change Enterprise or Small Business scene order, titles, Pencil frame metadata, HTML exports, or adjacent runtime images.",
+      "intent": "Change Enterprise, API / Embedded, or Small Business scene order, titles, Pencil frame metadata, HTML exports, or adjacent runtime images.",
       "triggers": [
         "enterprise slide",
+        "api slide",
         "small business slide",
         "Pencil export",
         "frameId",
         "ent-NN",
+        "api-NN",
         "smb-NN",
         "slide copy",
         "slide image"
       ],
       "readFirst": [
         "src/presentation/config/enterprise.ts",
+        "src/presentation/config/api.ts",
         "src/presentation/config/small.ts",
         "src/presentation/scenes/SlideScene.tsx",
         "src/presentation/slides/PencilSlide.tsx"
       ],
       "changeWith": [
         "public/enterprise-slides",
+        "public/api-slides",
         "public/small-slides",
         "pencil/preesentation_big_business.pen",
+        "pencil/preesentation_api_business.pen",
         "pencil/preesentation_small_business.pen",
         "docs/agents/file-map.md"
       ],
@@ -398,19 +405,25 @@
       ]
     },
     {
-      "id": "api-placeholders-and-generic-scenes",
-      "intent": "Change API placeholder content, generic fixture scenes, media placeholders, or promote the API track to approved content.",
-      "triggers": ["api track", "placeholder", "fixture", "media scene"],
+      "id": "api-track-and-generic-scenes",
+      "intent": "Change the API track, generic fixture scenes, or media placeholders.",
+      "triggers": [
+        "api track",
+        "api slide",
+        "placeholder",
+        "fixture",
+        "media scene"
+      ],
       "readFirst": [
         "src/presentation/config/api.ts",
-        "src/presentation/config/shared.ts",
-        "src/presentation/scenes/DemoScene.tsx",
-        "src/presentation/scenes/MediaScene.tsx"
+        "src/presentation/scenes/SlideScene.tsx",
+        "src/presentation/slides/PencilSlide.tsx"
       ],
       "changeWith": [
-        "src/demos/fixtures",
-        "src/presentation/engine/types.ts",
-        "src/app/TrackSelector.tsx"
+        "public/api-slides",
+        "pencil/preesentation_api_business.pen",
+        "src/app/TrackSelector.tsx",
+        "docs/agents/file-map.md"
       ],
       "invariantIds": [
         "shared-engine",
@@ -420,7 +433,7 @@
       ],
       "verification": [
         "pnpm check",
-        "Verify the affected route, direct scene URL, navigation, and reset."
+        "Verify /api, direct valid and invalid api-NN scene URLs, neighbouring navigation, 1920x1080 scaling, iframe console, relative assets, Back/Forward, and reset."
       ]
     },
     {

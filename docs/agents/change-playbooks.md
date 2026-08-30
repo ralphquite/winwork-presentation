@@ -21,9 +21,9 @@ Use the smallest playbook that covers the request. Paths and invariants are also
 ## Replace or add a track slide export
 
 1. Confirm the approved Pencil frame/export supplied for the change; do not invent missing sales content.
-2. Place runtime HTML in the track's directory: `public/enterprise-slides/ent-NN.html` or `public/small-slides/smb-NN.html`. Keep every relative asset it references beside the export.
+2. Place runtime HTML in the track's directory: `public/enterprise-slides/ent-NN.html`, `public/api-slides/api-NN.html`, or `public/small-slides/smb-NN.html`. Keep every relative asset it references beside the export.
 3. Update the matching config for ordering, title, `frameId`, and optional flow binding.
-4. Keep the scene ID and filename aligned (`ent-NN` or `smb-NN`) unless a deliberate migration is requested.
+4. Keep the scene ID and filename aligned (`ent-NN`, `api-NN`, or `smb-NN`) unless a deliberate migration is requested.
 5. Open the direct scene URL and check 1920 × 1080 fit, missing assets, console errors, neighbouring navigation, and fullscreen behavior.
 
 ## Add an interactive demo flow to a track slide

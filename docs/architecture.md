@@ -70,7 +70,7 @@ SceneRenderer (type dispatch + transition + error boundary)
 | Route         | Config                                  | Current state                                                      |
 | ------------- | --------------------------------------- | ------------------------------------------------------------------ |
 | `/enterprise` | `src/presentation/config/enterprise.ts` | 19 Pencil-backed slides; пять сцен открывают React demo-flow       |
-| `/api`        | `src/presentation/config/api.ts`        | Technical placeholders                                             |
+| `/api`        | `src/presentation/config/api.ts`        | 16 Pencil-backed slides; без интерактивных demo-flow               |
 | `/small`      | `src/presentation/config/small.ts`      | 14 Pencil-backed slides; одна сцена переиспользует React demo-flow |
 
 `src/app/TrackSelector.tsx` показывает текущую готовность tracks и пытается войти в fullscreen перед переходом. Ошибка или отсутствие Fullscreen API не блокирует навигацию.
@@ -110,7 +110,7 @@ SceneRenderer (type dispatch + transition + error boundary)
 
 ## Exported slides и demo-flow
 
-`src/presentation/config/enterprise.ts` программно сопоставляет 19 элементов массива с IDs и путями `ent-01` … `ent-19`. `src/presentation/config/small.ts` делает то же для 14 сцен `smb-01` … `smb-14`. `PencilSlide` загружает соответствующий HTML из track-specific директории в `public/` и масштабирует фиксированный canvas 1920 × 1080 по доступной области через `ResizeObserver`.
+`src/presentation/config/enterprise.ts` программно сопоставляет 19 элементов массива с IDs и путями `ent-01` … `ent-19`. `src/presentation/config/api.ts` делает то же для 16 сцен `api-01` … `api-16`, а `src/presentation/config/small.ts` — для 14 сцен `smb-01` … `smb-14`. `PencilSlide` загружает соответствующий HTML из track-specific директории в `public/` и масштабирует фиксированный canvas 1920 × 1080 по доступной области через `ResizeObserver`.
 
 Шесть track scenes имеют hotspot binding на пять реализаций:
 
@@ -140,6 +140,7 @@ Desktop surface сохраняет минимальный рабочий canvas 
 | ------------------------------------------ | ----------------------------------------------------------------------------- |
 | `public/enterprise-slides/*.html`          | Runtime slide exports loaded by iframe                                        |
 | `public/enterprise-slides/*.{png,svg,...}` | Runtime dependencies referenced relatively by exported HTML                   |
+| `public/api-slides/*`                      | Runtime API / Embedded exports and relative dependencies                      |
 | `public/small-slides/*`                    | Runtime Small Business exports and relative dependencies                      |
 | `public/winwork-logo.svg`                  | Runtime product wordmark                                                      |
 | `public/demo-flows/*.png`                  | QA-only visual references; forbidden as interactive product surfaces          |
