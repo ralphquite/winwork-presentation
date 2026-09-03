@@ -21,8 +21,8 @@ Never preserve a stale documentation claim over working code. Update the focused
 ## Current implementation state
 
 - This repository is a deterministic sales-presentation frontend, not the production WinWork product.
-- `/enterprise` is implemented as 19 exported Pencil slides. Slides `ent-04`, `ent-05`, `ent-07`, `ent-08`, and `ent-09` open component-based React demo flows.
-- `/small` is implemented as 14 exported Pencil slides. Slide `smb-06` reuses the component-based `single-task` demo flow.
+- `/enterprise` is implemented as 17 exported Pencil slides. Slides `ent-04`, `ent-05`, `ent-07`, `ent-08`, and `ent-09` open component-based React demo flows.
+- `/small` is implemented as 12 exported Pencil slides. Slide `smb-06` reuses the component-based `single-task` demo flow.
 - `/api` is implemented as 16 exported Pencil slides with no interactive demo flows.
 - `/court` is a public five-slide code-authored presentation for court demonstrations. It uses an isolated public Vite bundle; `court-02` opens the legal-entity registration and single-task React demo flows, `court-03` opens performer registration, `court-04` opens performer selection, and `court-05` opens the completed-task payment flow.
 - The landing-page quick-access panel also exposes a component-based `performer-selection` flow and a temporary screenshot-based `performer-registration` mobile flow built from 17 approved source captures. The screenshot flow is deliberately non-interactive except for step navigation and per-screen vertical scrolling.

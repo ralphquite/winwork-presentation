@@ -21,7 +21,7 @@ import { DemoFlowModal } from '../presentation/flows/DemoFlowModal';
 const tracks = [
   {
     description:
-      'Полный маршрут из 19 слайдов, перенесённых из утверждённого Pencil-макета.',
+      'Полный маршрут из 17 слайдов, перенесённых из утверждённого Pencil-макета.',
     icon: Building2,
     label: 'Готово к показу',
     path: '/enterprise',
@@ -29,7 +29,7 @@ const tracks = [
   },
   {
     description:
-      'Полный маршрут из 14 слайдов для работы через кабинет малого бизнеса.',
+      'Полный маршрут из 12 слайдов для работы через кабинет малого бизнеса.',
     icon: Store,
     label: 'Готово к показу',
     path: '/small',

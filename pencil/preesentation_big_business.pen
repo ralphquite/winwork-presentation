@@ -408,7 +408,7 @@
           "fill": "$h:neutral-950",
           "textGrowth": "fixed-width",
           "width": 880,
-          "content": "WinWork для массовой\nработы с исполнителями",
+          "content": "WinWork\nдля массовой работы\nс исполнителями",
           "lineHeight": 1.06,
           "fontFamily": "$h:font-primary",
           "fontSize": 70,
@@ -418,7 +418,7 @@
           "type": "text",
           "id": "l4MgyN",
           "x": 120,
-          "y": 490,
+          "y": 504,
           "name": "Cover Subheadline",
           "fill": "$h:neutral-600",
           "textGrowth": "fixed-width",
@@ -2571,8 +2571,8 @@
     {
       "type": "frame",
       "id": "D5RbJI",
-      "x": 0,
-      "y": 4169,
+      "x": 6110,
+      "y": 2969,
       "name": "РАЗДЕЛ B — ОПЕРАЦИОННАЯ МОДЕЛЬ / ENT-04",
       "clip": true,
       "width": 1920,
@@ -2986,8 +2986,8 @@
     {
       "type": "frame",
       "id": "AOoMH",
-      "x": 2040,
-      "y": 4169,
+      "x": 8150,
+      "y": 2969,
       "name": "РАЗДЕЛ B — ОПЕРАЦИОННАЯ МОДЕЛЬ / ENT-05",
       "clip": true,
       "width": 1920,
@@ -3395,8 +3395,8 @@
     {
       "type": "frame",
       "id": "L2ehaf",
-      "x": 4080,
-      "y": 4169,
+      "x": 10190,
+      "y": 2969,
       "name": "РАЗДЕЛ B — ОПЕРАЦИОННАЯ МОДЕЛЬ / ENT-06",
       "clip": true,
       "width": 1920,
@@ -4444,8 +4444,8 @@
     {
       "type": "frame",
       "id": "jpsVw",
-      "x": 6120,
-      "y": 4169,
+      "x": 12230,
+      "y": 2969,
       "name": "РАЗДЕЛ B — ОПЕРАЦИОННАЯ МОДЕЛЬ / ENT-07",
       "clip": true,
       "width": 1920,
@@ -5133,8 +5133,8 @@
     {
       "type": "frame",
       "id": "LJWST",
-      "x": 8160,
-      "y": 4169,
+      "x": 14270,
+      "y": 2969,
       "name": "РАЗДЕЛ B — ОПЕРАЦИОННАЯ МОДЕЛЬ / ENT-08",
       "clip": true,
       "width": 1920,
@@ -5615,8 +5615,8 @@
     {
       "type": "frame",
       "id": "QgVx0",
-      "x": 0,
-      "y": 5369,
+      "x": 16316,
+      "y": 2969,
       "name": "РАЗДЕЛ C — МАССОВЫЕ ОПЕРАЦИИ / ENT-09",
       "clip": true,
       "width": 1920,
@@ -5939,9 +5939,9 @@
     },
     {
       "type": "frame",
-      "id": "pQ5Rl",
-      "x": 2040,
-      "y": 5369,
+      "id": "sGz1w",
+      "x": 18356,
+      "y": 2969,
       "name": "РАЗДЕЛ C — МАССОВЫЕ ОПЕРАЦИИ / ENT-10",
       "clip": true,
       "width": 1920,
@@ -5950,7 +5950,7 @@
       "layout": "none",
       "children": [
         {
-          "id": "w8kcN",
+          "id": "dde3K",
           "type": "ref",
           "ref": "CmSfJ",
           "name": "WinWork Logo",
@@ -5961,982 +5961,551 @@
         },
         {
           "type": "text",
-          "id": "V1rd5",
+          "id": "Ix6rr",
           "x": 120,
           "y": 68,
           "name": "Section Indicator",
-          "fill": "$h:neutral-400",
+          "fill": "#94A0B2",
           "content": "C  ·  КОРПОРАТИВНЫЙ СЕГМЕНТ / ОПЕРАЦИИ",
-          "fontFamily": "$h:font-primary",
+          "fontFamily": "Inter",
           "fontSize": 16,
           "fontWeight": "700",
           "letterSpacing": 1.1
         },
         {
           "type": "text",
-          "id": "s4EpFU",
+          "id": "FlmXV",
           "x": 120,
-          "y": 145,
+          "y": 136,
           "name": "Slide Title",
-          "fill": "$h:neutral-950",
+          "fill": "#172033",
           "textGrowth": "fixed-width",
-          "width": 1500,
-          "content": "Подключите существующий пул исполнителей массово",
+          "width": 1600,
+          "content": "Получайте отклики из маркетплейса и своего пула",
           "lineHeight": 1.08,
-          "fontFamily": "$h:font-primary",
-          "fontSize": 50,
-          "fontWeight": "700"
-        },
-        {
-          "type": "frame",
-          "id": "LZDdK",
-          "x": 120,
-          "y": 290,
-          "name": "Frame 1",
-          "layout": "vertical",
-          "gap": 40,
-          "children": [
-            {
-              "type": "text",
-              "id": "c4Mcn5",
-              "name": "Slide Lead",
-              "fill": "$h:neutral-600",
-              "textGrowth": "fixed-width",
-              "width": 1338,
-              "content": "Исполнителей можно пригласить по ссылке, SMS или QR-коду, а список загрузить из CSV или Excel.",
-              "lineHeight": 1.35,
-              "fontFamily": "$h:font-primary",
-              "fontSize": 24,
-              "fontWeight": "normal"
-            },
-            {
-              "type": "frame",
-              "id": "fGKOk",
-              "name": "Rollout Funnel",
-              "width": 1187,
-              "gap": 8,
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "Npx0d",
-                  "name": "Funnel База исполнителей",
-                  "width": "fill_container",
-                  "height": 140,
-                  "fill": "$h:brand-blue-light",
-                  "cornerRadius": 18,
-                  "layout": "vertical",
-                  "gap": 8,
-                  "padding": 16,
-                  "justifyContent": "center",
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "icon",
-                      "id": "RnLjO",
-                      "name": "База исполнителей Icon",
-                      "width": 28,
-                      "height": 28,
-                      "icon": "users",
-                      "library": "lucide",
-                      "fill": "$h:brand-blue-strong"
-                    },
-                    {
-                      "type": "text",
-                      "id": "jq44h",
-                      "name": "База исполнителей Label",
-                      "fill": "$h:neutral-950",
-                      "textGrowth": "fixed-width",
-                      "width": "fill_container",
-                      "content": "База исполнителей",
-                      "textAlign": "center",
-                      "fontFamily": "$h:font-primary",
-                      "fontSize": 19,
-                      "fontWeight": "700"
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "e8p8Bo",
-                  "name": "Funnel Каналы приглашения",
-                  "width": "fill_container",
-                  "height": 140,
-                  "fill": "$h:brand-blue-mid",
-                  "cornerRadius": 18,
-                  "layout": "vertical",
-                  "gap": 8,
-                  "padding": 16,
-                  "justifyContent": "center",
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "icon",
-                      "id": "SPqqe",
-                      "name": "Каналы приглашения Icon",
-                      "width": 28,
-                      "height": 28,
-                      "icon": "send",
-                      "library": "lucide",
-                      "fill": "$h:brand-blue-strong"
-                    },
-                    {
-                      "type": "text",
-                      "id": "JwxVz",
-                      "name": "Каналы приглашения Label",
-                      "fill": "#ffffffff",
-                      "textGrowth": "fixed-width",
-                      "width": "fill_container",
-                      "content": "Каналы приглашения",
-                      "textAlign": "center",
-                      "fontFamily": "$h:font-primary",
-                      "fontSize": 19,
-                      "fontWeight": "700"
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "sBKA4",
-                  "name": "Funnel Регистрация",
-                  "width": "fill_container",
-                  "height": 140,
-                  "fill": "$h:brand-blue",
-                  "cornerRadius": 18,
-                  "layout": "vertical",
-                  "gap": 8,
-                  "padding": 16,
-                  "justifyContent": "center",
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "icon",
-                      "id": "ZsxDo",
-                      "name": "Регистрация Icon",
-                      "width": 28,
-                      "height": 28,
-                      "icon": "user-plus",
-                      "library": "lucide",
-                      "fill": "#FFFFFF"
-                    },
-                    {
-                      "type": "text",
-                      "id": "i1Ya8j",
-                      "name": "Регистрация Label",
-                      "fill": "#FFFFFF",
-                      "textGrowth": "fixed-width",
-                      "width": "fill_container",
-                      "content": "Регистрация",
-                      "textAlign": "center",
-                      "fontFamily": "$h:font-primary",
-                      "fontSize": 19,
-                      "fontWeight": "700"
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "eDbDk",
-                  "name": "Funnel Пул компании",
-                  "width": "fill_container",
-                  "height": 140,
-                  "fill": "$h:brand-blue-strong",
-                  "cornerRadius": 18,
-                  "layout": "vertical",
-                  "gap": 8,
-                  "padding": 16,
-                  "justifyContent": "center",
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "icon",
-                      "id": "EKLeT",
-                      "name": "Пул компании Icon",
-                      "width": 28,
-                      "height": 28,
-                      "icon": "building-2",
-                      "library": "lucide",
-                      "fill": "#FFFFFF"
-                    },
-                    {
-                      "type": "text",
-                      "id": "Nv2Mm",
-                      "name": "Пул компании Label",
-                      "fill": "#FFFFFF",
-                      "textGrowth": "fixed-width",
-                      "width": "fill_container",
-                      "content": "Пул компании",
-                      "textAlign": "center",
-                      "fontFamily": "$h:font-primary",
-                      "fontSize": 19,
-                      "fontWeight": "700"
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "Vzml8",
-                  "name": "Funnel Первое задание",
-                  "width": "fill_container",
-                  "height": 140,
-                  "fill": "$h:brand-green",
-                  "cornerRadius": 18,
-                  "layout": "vertical",
-                  "gap": 8,
-                  "padding": 16,
-                  "justifyContent": "center",
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "icon",
-                      "id": "vdBQ6",
-                      "name": "Первое задание Icon",
-                      "width": 28,
-                      "height": 28,
-                      "icon": "flag",
-                      "library": "lucide",
-                      "fill": "#FFFFFF"
-                    },
-                    {
-                      "type": "text",
-                      "id": "iDP2V",
-                      "name": "Первое задание Label",
-                      "fill": "#FFFFFF",
-                      "textGrowth": "fixed-width",
-                      "width": "fill_container",
-                      "content": "Первое задание",
-                      "textAlign": "center",
-                      "fontFamily": "$h:font-primary",
-                      "fontSize": 19,
-                      "fontWeight": "700"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "Y7efa",
-              "name": "Invite Channels",
-              "width": 1140,
-              "layout": "vertical",
-              "gap": 12,
-              "children": [
-                {
-                  "type": "text",
-                  "id": "pnWJl",
-                  "name": "Channels Label",
-                  "fill": "$h:neutral-400",
-                  "content": "КАНАЛЫ ПОДКЛЮЧЕНИЯ",
-                  "fontFamily": "$h:font-primary",
-                  "fontSize": 16,
-                  "fontWeight": "700",
-                  "letterSpacing": 1
-                },
-                {
-                  "type": "frame",
-                  "id": "UEqav",
-                  "name": "Channels Row",
-                  "gap": 10,
-                  "children": [
-                    {
-                      "type": "frame",
-                      "id": "MOhvm",
-                      "name": "Channel Привязка по ИНН",
-                      "fill": "$h:surface",
-                      "cornerRadius": 14,
-                      "padding": [
-                        12,
-                        18
-                      ],
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "kf5vS",
-                          "name": "Channel Привязка по ИНН Text",
-                          "fill": "$h:neutral-800",
-                          "content": "Привязка по ИНН",
-                          "fontFamily": "$h:font-primary",
-                          "fontSize": 18,
-                          "fontWeight": "650"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "z9IGX",
-                      "name": "Channel Invite-ссылка",
-                      "fill": "$h:surface",
-                      "cornerRadius": 14,
-                      "padding": [
-                        12,
-                        18
-                      ],
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "pFRlq",
-                          "name": "Channel Invite-ссылка Text",
-                          "fill": "$h:neutral-800",
-                          "content": "Ссылка-приглашение",
-                          "fontFamily": "$h:font-primary",
-                          "fontSize": 18,
-                          "fontWeight": "650"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "nhVbH",
-                      "name": "Channel Реестр CSV / Excel",
-                      "fill": "$h:surface",
-                      "cornerRadius": 14,
-                      "padding": [
-                        12,
-                        18
-                      ],
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "JVeau",
-                          "name": "Channel Реестр CSV / Excel Text",
-                          "fill": "$h:neutral-800",
-                          "content": "Реестр CSV / Excel",
-                          "fontFamily": "$h:font-primary",
-                          "fontSize": 18,
-                          "fontWeight": "650"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "dpUXJ",
-                  "name": "Channels Row 2",
-                  "gap": 10,
-                  "children": [
-                    {
-                      "type": "frame",
-                      "id": "GlPCm",
-                      "name": "Channel SMS со ссылкой",
-                      "fill": "$h:surface",
-                      "cornerRadius": 14,
-                      "padding": [
-                        12,
-                        18
-                      ],
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "g5OdO",
-                          "name": "Channel SMS со ссылкой Text",
-                          "fill": "$h:neutral-800",
-                          "content": "SMS со ссылкой",
-                          "fontFamily": "$h:font-primary",
-                          "fontSize": 18,
-                          "fontWeight": "650"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "s35TS",
-                      "name": "Channel QR-код на объекте",
-                      "fill": "$h:surface",
-                      "cornerRadius": 14,
-                      "padding": [
-                        12,
-                        18
-                      ],
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "dmrb6",
-                          "name": "Channel QR-код на объекте Text",
-                          "fill": "$h:neutral-800",
-                          "content": "QR-код на объекте",
-                          "fontFamily": "$h:font-primary",
-                          "fontSize": 18,
-                          "fontWeight": "650"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "t0xAA",
-              "name": "Rollout Layer",
-              "width": 1140,
-              "height": 170,
-              "fill": "$h:brand-green-soft",
-              "cornerRadius": 24,
-              "stroke": "$h:brand-green-light",
-              "strokeWidth": 1,
-              "layout": "vertical",
-              "gap": 14,
-              "padding": 24,
-              "children": [
-                {
-                  "type": "text",
-                  "id": "fC67H",
-                  "name": "Rollout Label",
-                  "fill": "$h:brand-green-strong",
-                  "content": "ВНЕДРЕНИЕ НА ОБЪЕКТАХ",
-                  "fontFamily": "$h:font-primary",
-                  "fontSize": 16,
-                  "fontWeight": "700",
-                  "letterSpacing": 1
-                },
-                {
-                  "type": "frame",
-                  "id": "N7Evo",
-                  "name": "Rollout Items",
-                  "width": "fill_container",
-                  "gap": 10,
-                  "justifyContent": "space_between",
-                  "children": [
-                    {
-                      "type": "frame",
-                      "id": "XJZkq",
-                      "name": "Rollout QR-коды и флаеры",
-                      "width": "fill_container",
-                      "layout": "vertical",
-                      "gap": 10,
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "icon",
-                          "id": "Cihv3",
-                          "name": "QR-коды и флаеры Icon",
-                          "width": 28,
-                          "height": 28,
-                          "icon": "qr-code",
-                          "library": "lucide",
-                          "fill": "$h:brand-green-strong"
-                        },
-                        {
-                          "type": "text",
-                          "id": "YUc9b",
-                          "name": "QR-коды и флаеры Text",
-                          "fill": "$h:neutral-800",
-                          "textGrowth": "fixed-width",
-                          "width": "fill_container",
-                          "content": "QR-коды и флаеры",
-                          "lineHeight": 1.25,
-                          "textAlign": "center",
-                          "fontFamily": "$h:font-primary",
-                          "fontSize": 16,
-                          "fontWeight": "650"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "D1hWK",
-                      "name": "Rollout Материалы на объектах",
-                      "width": "fill_container",
-                      "layout": "vertical",
-                      "gap": 10,
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "icon",
-                          "id": "kupPf",
-                          "name": "Материалы на объектах Icon",
-                          "width": 28,
-                          "height": 28,
-                          "icon": "printer",
-                          "library": "lucide",
-                          "fill": "$h:brand-green-strong"
-                        },
-                        {
-                          "type": "text",
-                          "id": "zWj1r",
-                          "name": "Материалы на объектах Text",
-                          "fill": "$h:neutral-800",
-                          "textGrowth": "fixed-width",
-                          "width": "fill_container",
-                          "content": "Материалы на объектах",
-                          "lineHeight": 1.25,
-                          "textAlign": "center",
-                          "fontFamily": "$h:font-primary",
-                          "fontSize": 16,
-                          "fontWeight": "650"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "bXbu5",
-                      "name": "Rollout Обучение руководителей",
-                      "width": "fill_container",
-                      "layout": "vertical",
-                      "gap": 10,
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "icon",
-                          "id": "V1pW3t",
-                          "name": "Обучение руководителей Icon",
-                          "width": 28,
-                          "height": 28,
-                          "icon": "graduation-cap",
-                          "library": "lucide",
-                          "fill": "$h:brand-green-strong"
-                        },
-                        {
-                          "type": "text",
-                          "id": "E5NGM",
-                          "name": "Обучение руководителей Text",
-                          "fill": "$h:neutral-800",
-                          "textGrowth": "fixed-width",
-                          "width": "fill_container",
-                          "content": "Обучение руководителей",
-                          "lineHeight": 1.25,
-                          "textAlign": "center",
-                          "fontFamily": "$h:font-primary",
-                          "fontSize": 16,
-                          "fontWeight": "650"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "vhdS1",
-                      "name": "Rollout Инструкции исполнителям",
-                      "width": "fill_container",
-                      "layout": "vertical",
-                      "gap": 10,
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "icon",
-                          "id": "O5a1XT",
-                          "name": "Инструкции исполнителям Icon",
-                          "width": 28,
-                          "height": 28,
-                          "icon": "book-open",
-                          "library": "lucide",
-                          "fill": "$h:brand-green-strong"
-                        },
-                        {
-                          "type": "text",
-                          "id": "dz4xl",
-                          "name": "Инструкции исполнителям Text",
-                          "fill": "$h:neutral-800",
-                          "textGrowth": "fixed-width",
-                          "width": "fill_container",
-                          "content": "Инструкции исполнителям",
-                          "lineHeight": 1.25,
-                          "textAlign": "center",
-                          "fontFamily": "$h:font-primary",
-                          "fontSize": 16,
-                          "fontWeight": "650"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "N5pNp",
-                      "name": "Rollout Реферальная программа",
-                      "width": "fill_container",
-                      "layout": "vertical",
-                      "gap": 10,
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "icon",
-                          "id": "Sn9BE",
-                          "name": "Реферальная программа Icon",
-                          "width": 28,
-                          "height": 28,
-                          "icon": "gift",
-                          "library": "lucide",
-                          "fill": "$h:brand-green-strong"
-                        },
-                        {
-                          "type": "text",
-                          "id": "dPgPP",
-                          "name": "Реферальная программа Text",
-                          "fill": "$h:neutral-800",
-                          "textGrowth": "fixed-width",
-                          "width": "fill_container",
-                          "content": "Реферальная программа",
-                          "lineHeight": 1.25,
-                          "textAlign": "center",
-                          "fontFamily": "$h:font-primary",
-                          "fontSize": 16,
-                          "fontWeight": "650"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "rectangle",
-          "cornerRadius": 20,
-          "id": "RfjO5",
-          "x": 1363,
-          "y": 394,
-          "fill": {
-            "type": "image",
-            "enabled": true,
-            "url": "%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%C2%A0%E2%80%94%202026-08-25%20%D0%B2%C2%A017.55.27.png",
-            "mode": "fill"
-          },
-          "width": 477,
-          "height": 344,
-          "stroke": "#e1e6ed",
-          "strokeWidth": 4,
-          "strokeAlignment": "inner"
-        }
-      ]
-    },
-    {
-      "type": "frame",
-      "id": "mCXhB",
-      "x": 4080,
-      "y": 5369,
-      "name": "РАЗДЕЛ C — МАССОВЫЕ ОПЕРАЦИИ / ENT-11",
-      "clip": true,
-      "width": 1920,
-      "height": 1080,
-      "fill": "$h:bg-primary",
-      "layout": "none",
-      "children": [
-        {
-          "id": "Kr3wP",
-          "type": "ref",
-          "ref": "CmSfJ",
-          "name": "WinWork Logo",
-          "width": 202,
-          "height": 40,
-          "x": 1598,
-          "y": 63
-        },
-        {
-          "type": "text",
-          "id": "Qg9EY",
-          "x": 120,
-          "y": 68,
-          "name": "Section Indicator",
-          "fill": "$h:neutral-400",
-          "content": "C  ·  КОРПОРАТИВНЫЙ СЕГМЕНТ / ОПЕРАЦИИ",
-          "fontFamily": "$h:font-primary",
-          "fontSize": 16,
-          "fontWeight": "700",
-          "letterSpacing": 1.1
-        },
-        {
-          "type": "text",
-          "id": "vmpqj",
-          "x": 120,
-          "y": 145,
-          "name": "Slide Title",
-          "fill": "$h:neutral-950",
-          "textGrowth": "fixed-width",
-          "width": 1480,
-          "content": "Используйте свой пул и маркетплейс в одном процессе",
-          "lineHeight": 1.08,
-          "fontFamily": "$h:font-primary",
-          "fontSize": 50,
+          "fontFamily": "Inter",
+          "fontSize": 54,
           "fontWeight": "700"
         },
         {
           "type": "text",
-          "id": "hGiqn",
+          "id": "CXV67",
           "x": 120,
-          "y": 290,
+          "y": 222,
           "name": "Slide Lead",
-          "fill": "$h:neutral-600",
+          "fill": "#5E6A7D",
           "textGrowth": "fixed-width",
-          "width": 1180,
-          "content": "Руководитель выбирает исполнителя из своего пула или из откликов на опубликованное задание.",
+          "width": 1540,
+          "content": "Новые исполнители приходят из маркетплейса, а знакомых вам кандидатов можно пригласить",
           "lineHeight": 1.35,
-          "fontFamily": "$h:font-primary",
-          "fontSize": 24,
+          "fontFamily": "Inter",
+          "fontSize": 22,
           "fontWeight": "normal"
         },
         {
           "type": "frame",
-          "id": "RwV87",
-          "x": 120,
-          "y": 390,
-          "name": "Own Pool Card",
-          "width": 380,
-          "height": 190,
-          "fill": "$h:brand-green-soft",
-          "cornerRadius": 24,
-          "stroke": "$h:brand-green-light",
-          "strokeWidth": 1,
-          "layout": "vertical",
-          "gap": 10,
-          "padding": 26,
-          "children": [
-            {
-              "type": "icon",
-              "id": "WVVoT",
-              "name": "Pool Icon",
-              "width": 34,
-              "height": 34,
-              "icon": "heart-handshake",
-              "library": "lucide",
-              "fill": "$h:brand-green-strong"
-            },
-            {
-              "type": "text",
-              "id": "wmKOI",
-              "name": "Pool Title",
-              "fill": "$h:neutral-950",
-              "content": "Свой пул",
-              "fontFamily": "$h:font-primary",
-              "fontSize": 25,
-              "fontWeight": "700"
-            },
-            {
-              "type": "text",
-              "id": "BIZZb",
-              "name": "Pool Note",
-              "fill": "$h:neutral-600",
-              "textGrowth": "fixed-width",
-              "width": "fill_container",
-              "content": "проверенные исполнители и предпочитаемые кандидаты",
-              "lineHeight": 1.3,
-              "fontFamily": "$h:font-primary",
-              "fontSize": 18,
-              "fontWeight": "normal"
-            }
-          ]
-        },
-        {
-          "type": "frame",
-          "id": "R8QnTp",
-          "x": 120,
-          "y": 620,
+          "id": "K6nuBN",
+          "x": 118,
+          "y": 359,
           "name": "Marketplace Card",
-          "width": 380,
-          "height": 190,
-          "fill": "$h:brand-blue-soft",
+          "width": 420,
+          "fill": "#2A73FF",
           "cornerRadius": 24,
-          "stroke": "$h:brand-blue-light",
-          "strokeWidth": 1,
           "layout": "vertical",
-          "gap": 10,
-          "padding": 26,
+          "gap": 14,
+          "padding": 28,
           "children": [
             {
               "type": "icon",
-              "id": "zdyR8",
+              "id": "LAjlV",
               "name": "Market Icon",
               "width": 34,
               "height": 34,
               "icon": "store",
               "library": "lucide",
-              "fill": "$h:brand-blue"
+              "fill": "#FFFFFF"
             },
             {
               "type": "text",
-              "id": "B5EJ8",
+              "id": "A2Yza",
               "name": "Market Title",
-              "fill": "$h:neutral-950",
-              "content": "Маркетплейс",
-              "fontFamily": "$h:font-primary",
+              "fill": "#FFFFFF",
+              "content": "Маркетплейс WinWork",
+              "fontFamily": "Inter",
               "fontSize": 25,
               "fontWeight": "700"
             },
             {
               "type": "text",
-              "id": "y7KbEs",
+              "id": "p7N4gT",
               "name": "Market Note",
-              "fill": "$h:neutral-600",
+              "fill": "#E3ECFF",
               "textGrowth": "fixed-width",
               "width": "fill_container",
-              "content": "отклики на опубликованные задания",
+              "content": "Новые исполнители находят задание в маркетплейсе и откликаются на него.",
               "lineHeight": 1.3,
-              "fontFamily": "$h:font-primary",
-              "fontSize": 18,
+              "fontFamily": "Inter",
+              "fontSize": 17,
               "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "NIsvn",
+              "name": "Market Points",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "cQH1I",
+                  "name": "Point Новые отклики",
+                  "fill": "#FFFFFF26",
+                  "cornerRadius": 12,
+                  "padding": [
+                    8,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "k2mS1",
+                      "name": "Point Новые отклики Text",
+                      "fill": "#FFFFFF",
+                      "content": "Новые отклики",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "U8oUgW",
+                  "name": "Point Расширение пула",
+                  "fill": "#FFFFFF26",
+                  "cornerRadius": 12,
+                  "padding": [
+                    8,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "vE3hF",
+                      "name": "Point Расширение пула Text",
+                      "fill": "#FFFFFF",
+                      "content": "Расширение пула",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
         {
-          "type": "icon",
-          "id": "el1Wt",
-          "x": 540,
-          "y": 460,
-          "name": "Converge Arrow Top",
-          "width": 42,
-          "height": 42,
-          "icon": "chevron-right",
-          "library": "lucide",
-          "fill": "$h:brand-green-strong"
-        },
-        {
-          "type": "icon",
-          "id": "X3sMJ",
-          "x": 540,
-          "y": 690,
-          "name": "Converge Arrow Bottom",
-          "width": 42,
-          "height": 42,
-          "icon": "chevron-right",
-          "library": "lucide",
-          "fill": "$h:brand-blue"
-        },
-        {
           "type": "frame",
-          "id": "Agrsp",
-          "x": 620,
-          "y": 460,
-          "name": "Match Result Card",
-          "width": 560,
-          "height": 280,
-          "fill": "$h:neutral-950",
-          "cornerRadius": 26,
+          "id": "zRZKv",
+          "x": 118,
+          "y": 615,
+          "name": "Own Pool Card",
+          "width": 420,
+          "fill": "#F0FCF4",
+          "cornerRadius": 24,
+          "stroke": "#DDF9E6",
+          "strokeWidth": 1,
           "layout": "vertical",
-          "gap": 12,
-          "padding": 30,
-          "justifyContent": "center",
+          "gap": 14,
+          "padding": 28,
           "children": [
             {
               "type": "icon",
-              "id": "pcB34",
-              "name": "Match Icon",
-              "width": 38,
-              "height": 38,
-              "icon": "user-check",
+              "id": "ujh7p",
+              "name": "Pool Icon",
+              "width": 34,
+              "height": 34,
+              "icon": "heart-handshake",
               "library": "lucide",
-              "fill": "$h:brand-green"
+              "fill": "#179E48"
             },
             {
               "type": "text",
-              "id": "bT5Eb",
-              "name": "Match Title",
-              "fill": "#FFFFFF",
-              "textGrowth": "fixed-width",
-              "width": "fill_container",
-              "content": "Выбранный исполнитель на конкретный объект",
-              "lineHeight": 1.15,
-              "fontFamily": "$h:font-primary",
-              "fontSize": 27,
+              "id": "n1KeJ3",
+              "name": "Pool Title",
+              "fill": "#172033",
+              "content": "Ваш существующий пул",
+              "fontFamily": "Inter",
+              "fontSize": 25,
               "fontWeight": "700"
             },
             {
               "type": "text",
-              "id": "DBhEX",
-              "name": "Match Note",
-              "fill": "$h:neutral-250",
+              "id": "P6PK8",
+              "name": "Pool Note",
+              "fill": "#5E6A7D",
               "textGrowth": "fixed-width",
               "width": "fill_container",
-              "content": "предпочитаемому исполнителю отправляется приоритетное приглашение",
+              "content": "Подключите знакомых исполнителей к этому же заданию.",
               "lineHeight": 1.3,
-              "fontFamily": "$h:font-primary",
-              "fontSize": 18,
+              "fontFamily": "Inter",
+              "fontSize": 17,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "lRx6X",
+              "name": "Pool Channels",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "CPn6X",
+                  "name": "Channel По ИНН",
+                  "width": "fill_container",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 12,
+                  "stroke": "#DDF9E6",
+                  "strokeWidth": 1,
+                  "padding": [
+                    9,
+                    13
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "N7Kw1Q",
+                      "name": "Channel По ИНН Text",
+                      "fill": "#172033",
+                      "content": "По ИНН",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "kjiCV",
+                  "name": "Channel Ссылка-приглашение",
+                  "width": "fill_container",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 12,
+                  "stroke": "#DDF9E6",
+                  "strokeWidth": 1,
+                  "padding": [
+                    9,
+                    13
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "QoLxd",
+                      "name": "Channel Ссылка-приглашение Text",
+                      "fill": "#172033",
+                      "content": "По ссылке или SMS",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "fLZHP",
+                  "name": "Channel CSV / Excel",
+                  "width": "fill_container",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 12,
+                  "stroke": "#DDF9E6",
+                  "strokeWidth": 1,
+                  "padding": [
+                    9,
+                    13
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "wnoYI",
+                      "name": "Channel CSV / Excel Text",
+                      "fill": "#172033",
+                      "content": "Через CSV / Excel",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "path",
+          "id": "Gizjj",
+          "x": 551,
+          "y": 521,
+          "name": "Arrow Marketplace",
+          "geometry": "M2 12h50m-10-10l10 10-10 10",
+          "viewBox": [
+            0,
+            0,
+            54,
+            24
+          ],
+          "width": 54,
+          "height": 24,
+          "stroke": "#2A73FF",
+          "strokeWidth": 3,
+          "strokeLinejoin": "round",
+          "strokeLinecap": "round"
+        },
+        {
+          "type": "path",
+          "id": "TOrv8",
+          "x": 551,
+          "y": 670,
+          "name": "Arrow Pool",
+          "geometry": "M2 12l25 0 25 0m-10-10l10 10-10 10",
+          "viewBox": [
+            0,
+            0,
+            54,
+            24
+          ],
+          "width": 54,
+          "height": 24,
+          "stroke": "#179E48",
+          "strokeWidth": 3,
+          "strokeLinejoin": "round",
+          "strokeLinecap": "round"
+        },
+        {
+          "type": "frame",
+          "id": "P7OUiW",
+          "x": 622,
+          "y": 494,
+          "name": "Published Task Card",
+          "width": 420,
+          "fill": "#FFFFFF",
+          "cornerRadius": 26,
+          "stroke": "#2A73FF",
+          "strokeWidth": 2,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#2A73FF1F",
+            "offset": {
+              "x": 0,
+              "y": 10
+            },
+            "blur": 28
+          },
+          "layout": "vertical",
+          "gap": 15,
+          "padding": 32,
+          "children": [
+            {
+              "type": "frame",
+              "id": "FGaBl",
+              "name": "Task Top Row",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "bc6vT",
+                  "name": "Task Icon",
+                  "width": 38,
+                  "height": 38,
+                  "icon": "clipboard-list",
+                  "library": "lucide",
+                  "fill": "#2A73FF"
+                },
+                {
+                  "type": "frame",
+                  "id": "IgAMN",
+                  "name": "Task Status",
+                  "fill": "#179E48",
+                  "cornerRadius": 999,
+                  "padding": [
+                    9,
+                    16
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "b9FAF",
+                      "name": "Task Status Text",
+                      "fill": "#FFFFFF",
+                      "content": "Опубликовано",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "J92jNf",
+              "name": "Task Title",
+              "fill": "#172033",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Мерчандайзер",
+              "lineHeight": 1.15,
+              "fontFamily": "Inter",
+              "fontSize": 30,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "KCfwR",
+              "name": "Task Location",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "iUAm4",
+                  "name": "Task Location Icon",
+                  "width": 18,
+                  "height": 18,
+                  "icon": "map-pin",
+                  "library": "lucide",
+                  "fill": "#94A0B2"
+                },
+                {
+                  "type": "text",
+                  "id": "CBoEW",
+                  "name": "Task Location Text",
+                  "fill": "#5E6A7D",
+                  "content": "Склад «Север» · Москва",
+                  "fontFamily": "Inter",
+                  "fontSize": 17,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "C1leAa",
+              "name": "Task Desc",
+              "fill": "#5E6A7D",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Выкладка товаров, ведение отчетности",
+              "lineHeight": 1.3,
+              "fontFamily": "Inter",
+              "fontSize": 17,
               "fontWeight": "normal"
             }
           ]
         },
         {
+          "type": "path",
+          "id": "IxF2b",
+          "x": 1074,
+          "y": 595,
+          "name": "Arrow Responses",
+          "geometry": "M-13 12l65 0m-10-10l10 10-10 10",
+          "viewBox": [
+            0,
+            0,
+            54,
+            24
+          ],
+          "width": 54,
+          "height": 24,
+          "stroke": "#2A73FF",
+          "strokeWidth": 3,
+          "strokeLinejoin": "round",
+          "strokeLinecap": "round"
+        },
+        {
           "type": "frame",
-          "id": "IRIxA",
-          "x": 120,
-          "y": 860,
-          "name": "Selection Signals",
-          "gap": 10,
+          "id": "gyFmw",
+          "x": 1543,
+          "y": 359,
+          "name": "Priority Callout",
+          "width": 361,
+          "fill": "#EEF4FF",
+          "cornerRadius": 14,
+          "stroke": "#DCE9FF",
+          "strokeWidth": 1,
+          "gap": 12,
+          "padding": [
+            13,
+            18
+          ],
+          "alignItems": "center",
           "children": [
             {
-              "type": "frame",
-              "id": "U9f9zd",
-              "name": "Signal Профиль исполнителя",
-              "fill": "$h:surface",
-              "cornerRadius": 14,
-              "padding": [
-                12,
-                18
-              ],
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "text",
-                  "id": "m33IV",
-                  "name": "Signal Профиль исполнителя Text",
-                  "fill": "$h:neutral-800",
-                  "content": "Профиль исполнителя",
-                  "fontFamily": "$h:font-primary",
-                  "fontSize": 18,
-                  "fontWeight": "650"
-                }
-              ]
+              "type": "icon",
+              "id": "yAdlm",
+              "name": "Priority Icon",
+              "width": 22,
+              "height": 22,
+              "icon": "send",
+              "library": "lucide",
+              "fill": "#2A73FF"
             },
             {
-              "type": "frame",
-              "id": "utBBI",
-              "name": "Signal Рейтинг надёжности",
-              "fill": "$h:surface",
-              "cornerRadius": 14,
-              "padding": [
-                12,
-                18
-              ],
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "text",
-                  "id": "kGg1a",
-                  "name": "Signal Рейтинг надёжности Text",
-                  "fill": "$h:neutral-800",
-                  "content": "Рейтинг надёжности",
-                  "fontFamily": "$h:font-primary",
-                  "fontSize": 18,
-                  "fontWeight": "650"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "XCjvr",
-              "name": "Signal Приоритетное уведомление",
-              "fill": "$h:surface",
-              "cornerRadius": 14,
-              "padding": [
-                12,
-                18
-              ],
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "text",
-                  "id": "b4Ohq",
-                  "name": "Signal Приоритетное уведомление Text",
-                  "fill": "$h:neutral-800",
-                  "content": "Приоритетное уведомление",
-                  "fontFamily": "$h:font-primary",
-                  "fontSize": 18,
-                  "fontWeight": "650"
-                }
-              ]
+              "type": "text",
+              "id": "IDSkd",
+              "name": "Priority Text",
+              "fill": "#172033",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Своему исполнителю можно отправить приоритетное приглашение на опубликованное задание.",
+              "lineHeight": 1.3,
+              "fontFamily": "Inter",
+              "fontSize": 15,
+              "fontWeight": "normal"
             }
           ]
         },
         {
+          "type": "text",
+          "id": "n3ufWl",
+          "x": 1154,
+          "y": 272,
+          "name": "Responses Title",
+          "fill": "#172033",
+          "content": "Все отклики в одном списке",
+          "fontFamily": "Inter",
+          "fontSize": 28,
+          "fontWeight": "700"
+        },
+        {
+          "type": "text",
+          "id": "YBLWj",
+          "x": 1154,
+          "y": 321,
+          "name": "Responses Sub",
+          "fill": "#2A73FF",
+          "content": "Маркетплейс + свой пул",
+          "fontFamily": "Inter",
+          "fontSize": 16,
+          "fontWeight": "700"
+        },
+        {
           "type": "rectangle",
           "cornerRadius": 32,
-          "id": "kDctG",
-          "x": 1366,
-          "y": 161,
+          "id": "y8lajQ",
+          "x": 1148,
+          "y": 359,
           "fill": {
             "type": "image",
             "enabled": true,
@@ -6948,14 +6517,32 @@
           "stroke": "#000000ff",
           "strokeWidth": 4,
           "strokeAlignment": "inner"
+        },
+        {
+          "type": "rectangle",
+          "cornerRadius": 20,
+          "id": "orZLm",
+          "x": 1467,
+          "y": 755,
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%C2%A0%E2%80%94%202026-08-25%20%D0%B2%C2%A017.55.27.png",
+            "mode": "fill"
+          },
+          "width": 416,
+          "height": 300,
+          "stroke": "#e1e6ed",
+          "strokeWidth": 4,
+          "strokeAlignment": "inner"
         }
       ]
     },
     {
       "type": "frame",
       "id": "PgLFk",
-      "x": 6120,
-      "y": 5369,
+      "x": 22383,
+      "y": 1815,
       "name": "РАЗДЕЛ C — МАССОВЫЕ ОПЕРАЦИИ / ENT-12",
       "clip": true,
       "width": 1920,
@@ -6971,7 +6558,8 @@
           "width": 202,
           "height": 40,
           "x": 1598,
-          "y": 63
+          "y": 63,
+          "opacity": 0.2799999999999995
         },
         {
           "type": "text",
@@ -6979,6 +6567,7 @@
           "x": 120,
           "y": 68,
           "name": "Section Indicator",
+          "opacity": 0.2799999999999995,
           "fill": "$h:neutral-400",
           "content": "C  ·  КОРПОРАТИВНЫЙ СЕГМЕНТ / ОПЕРАЦИИ",
           "fontFamily": "$h:font-primary",
@@ -6992,6 +6581,7 @@
           "x": 120,
           "y": 145,
           "name": "Slide Title",
+          "opacity": 0.2799999999999995,
           "fill": "$h:neutral-950",
           "textGrowth": "fixed-width",
           "width": 1520,
@@ -7007,6 +6597,7 @@
           "x": 120,
           "y": 295,
           "name": "Slide Lead",
+          "opacity": 0.2799999999999995,
           "fill": "$h:neutral-600",
           "textGrowth": "fixed-width",
           "width": 1150,
@@ -7022,6 +6613,7 @@
           "x": 120,
           "y": 395,
           "name": "Payout Flow",
+          "opacity": 0.2799999999999995,
           "width": 1680,
           "gap": 6,
           "alignItems": "center",
@@ -7336,6 +6928,7 @@
           "x": 120,
           "y": 600,
           "name": "Registry Transform",
+          "opacity": 0.2799999999999995,
           "width": 840,
           "height": 300,
           "fill": "$h:surface",
@@ -7776,6 +7369,7 @@
           "x": 120,
           "y": 930,
           "name": "Payout Chips",
+          "opacity": 0.2799999999999995,
           "gap": 10,
           "alignItems": "center",
           "children": [
@@ -7862,6 +7456,7 @@
           "id": "tGiwe",
           "x": 1093,
           "y": 600,
+          "opacity": 0.2799999999999995,
           "fill": {
             "type": "image",
             "enabled": true,
@@ -7879,8 +7474,8 @@
     {
       "type": "frame",
       "id": "H5q7pR",
-      "x": 0,
-      "y": 6569,
+      "x": 24484,
+      "y": 2969,
       "name": "РАЗДЕЛ D — РИСКИ И СООТВЕТСТВИЕ ТРЕБОВАНИЯМ / API-13",
       "clip": true,
       "width": 1920,
@@ -8770,8 +8365,8 @@
     {
       "type": "frame",
       "id": "o1my1",
-      "x": 2040,
-      "y": 6569,
+      "x": 26524,
+      "y": 2969,
       "name": "РАЗДЕЛ D — РИСКИ И СООТВЕТСТВИЕ ТРЕБОВАНИЯМ / ENT-14",
       "clip": true,
       "width": 1920,
@@ -9393,9 +8988,10 @@
     {
       "type": "frame",
       "id": "Fy5Vy",
-      "x": 4080,
-      "y": 6569,
+      "x": 28564,
+      "y": 2969,
       "name": "РАЗДЕЛ D — РИСКИ И СООТВЕТСТВИЕ ТРЕБОВАНИЯМ / ENT-15",
+      "opacity": 0.36999999999999955,
       "clip": true,
       "width": 1920,
       "height": 1080,
@@ -9880,8 +9476,8 @@
     {
       "type": "frame",
       "id": "yGBrt",
-      "x": 6120,
-      "y": 6569,
+      "x": 22383,
+      "y": 2969,
       "name": "РАЗДЕЛ D — РИСКИ И СООТВЕТСТВИЕ ТРЕБОВАНИЯМ / ENT-16",
       "clip": true,
       "width": 1920,
@@ -9916,64 +9512,64 @@
           "type": "text",
           "id": "UmOg4",
           "x": 120,
-          "y": 145,
+          "y": 140,
           "name": "Slide Title",
           "fill": "$h:neutral-950",
           "textGrowth": "fixed-width",
-          "width": 1420,
-          "content": "Допуск к заданию учитывает рейтинг и ограничения",
+          "width": 1680,
+          "content": "Допуск к заданию учитывает рейтинг, ограничения и опыт исполнителя",
           "lineHeight": 1.08,
           "fontFamily": "$h:font-primary",
-          "fontSize": 52,
+          "fontSize": 40,
           "fontWeight": "700"
         },
         {
           "type": "text",
           "id": "D4sCn",
           "x": 120,
-          "y": 275,
+          "y": 210,
           "name": "Slide Lead",
           "fill": "$h:neutral-600",
           "textGrowth": "fixed-width",
-          "width": 1000,
-          "content": "До отклика WinWork учитывает рейтинг, корпоративные ограничения и правила платформы.",
+          "width": 1500,
+          "content": "До отклика WinWork учитывает рейтинг, корпоративные ограничения, правила платформы и накопленный опыт исполнителя.",
           "lineHeight": 1.35,
           "fontFamily": "$h:font-primary",
-          "fontSize": 24,
+          "fontSize": 22,
           "fontWeight": "normal"
         },
         {
           "type": "frame",
           "id": "n6SJdj",
           "x": 120,
-          "y": 390,
+          "y": 330,
           "name": "Eligibility Inputs",
-          "width": 560,
+          "width": 540,
           "layout": "vertical",
-          "gap": 14,
+          "gap": 12,
           "children": [
             {
               "type": "frame",
               "id": "rvwbk",
               "name": "Input Trust signals",
               "width": "fill_container",
-              "height": 150,
+              "height": 126,
               "fill": "$h:surface",
               "cornerRadius": 20,
               "stroke": "$h:neutral-150",
               "strokeWidth": 1,
               "gap": 16,
-              "padding": 24,
+              "padding": 20,
               "alignItems": "center",
               "children": [
                 {
                   "type": "frame",
                   "id": "t4a1l",
                   "name": "Trust signals Icon Box",
-                  "width": 58,
-                  "height": 58,
+                  "width": 52,
+                  "height": 52,
                   "fill": "$h:brand-blue-soft",
-                  "cornerRadius": 16,
+                  "cornerRadius": 14,
                   "justifyContent": "center",
                   "alignItems": "center",
                   "children": [
@@ -10029,23 +9625,23 @@
               "id": "iSdZd",
               "name": "Input Corporate restrictions",
               "width": "fill_container",
-              "height": 150,
+              "height": 126,
               "fill": "$h:surface",
               "cornerRadius": 20,
               "stroke": "$h:neutral-150",
               "strokeWidth": 1,
               "gap": 16,
-              "padding": 24,
+              "padding": 20,
               "alignItems": "center",
               "children": [
                 {
                   "type": "frame",
                   "id": "WLBoy",
                   "name": "Corporate restrictions Icon Box",
-                  "width": 58,
-                  "height": 58,
+                  "width": 52,
+                  "height": 52,
                   "fill": "$h:brand-blue-soft",
-                  "cornerRadius": 16,
+                  "cornerRadius": 14,
                   "justifyContent": "center",
                   "alignItems": "center",
                   "children": [
@@ -10101,23 +9697,23 @@
               "id": "rNsZf",
               "name": "Input WinWork rules",
               "width": "fill_container",
-              "height": 150,
+              "height": 126,
               "fill": "$h:surface",
               "cornerRadius": 20,
               "stroke": "$h:neutral-150",
               "strokeWidth": 1,
               "gap": 16,
-              "padding": 24,
+              "padding": 20,
               "alignItems": "center",
               "children": [
                 {
                   "type": "frame",
                   "id": "jyk7h",
                   "name": "WinWork rules Icon Box",
-                  "width": 58,
-                  "height": 58,
+                  "width": 52,
+                  "height": 52,
                   "fill": "$h:brand-blue-soft",
-                  "cornerRadius": 16,
+                  "cornerRadius": 14,
                   "justifyContent": "center",
                   "alignItems": "center",
                   "children": [
@@ -10173,8 +9769,8 @@
         {
           "type": "icon",
           "id": "vdiBW",
-          "x": 698,
-          "y": 613,
+          "x": 675,
+          "y": 506,
           "name": "Eligibility Arrow",
           "width": 46,
           "height": 46,
@@ -10185,11 +9781,11 @@
         {
           "type": "frame",
           "id": "aXgEg",
-          "x": 757,
-          "y": 527,
+          "x": 735,
+          "y": 426,
           "name": "Eligibility Output",
           "width": 300,
-          "height": 217,
+          "height": 220,
           "fill": "$h:brand-green",
           "cornerRadius": 26,
           "layout": "vertical",
@@ -10236,16 +9832,16 @@
           "type": "rectangle",
           "cornerRadius": 25,
           "id": "NtKbZ",
-          "x": 1088.883522727273,
-          "y": 321,
+          "x": 1130,
+          "y": 294,
           "fill": {
             "type": "image",
             "enabled": true,
             "url": "image-7.png",
             "mode": "fill"
           },
-          "width": 458,
-          "height": 783,
+          "width": 420,
+          "height": 718,
           "stroke": "#bcc4ccff",
           "strokeWidth": 3,
           "strokeAlignment": "inner"
@@ -10253,25 +9849,207 @@
         {
           "type": "rectangle",
           "id": "yAp6z",
-          "x": 1473,
-          "y": 700,
+          "x": 1450,
+          "y": 650,
           "fill": {
             "type": "image",
             "enabled": true,
             "url": "image-8.png",
             "mode": "fill"
           },
-          "width": 414,
-          "height": 431
+          "width": 390,
+          "height": 406
+        },
+        {
+          "type": "frame",
+          "id": "GBwyD",
+          "x": 120,
+          "y": 770,
+          "name": "Customer Experience Proof",
+          "width": 930,
+          "height": 210,
+          "fill": "$h:surface",
+          "cornerRadius": 20,
+          "stroke": "$h:neutral-150",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "gap": 10,
+          "padding": 22,
+          "children": [
+            {
+              "type": "text",
+              "id": "qKRpG",
+              "name": "Customer Experience Proof Title",
+              "fill": "$h:neutral-950",
+              "content": "Опыт работы с крупными заказчиками",
+              "fontFamily": "$h:font-primary",
+              "fontSize": 22,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "XxmTT",
+              "name": "Customer Experience Proof Note",
+              "fill": "$h:neutral-600",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Исполнители WinWork уже выполняют задания для крупных компаний — дополнительный сигнал доверия при выборе кандидата.",
+              "lineHeight": 1.3,
+              "fontFamily": "$h:font-primary",
+              "fontSize": 17,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "zLnrG",
+              "name": "Customer Logo Placeholders",
+              "width": "fill_container",
+              "height": 66,
+              "gap": 12,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "y3GUWG",
+                  "name": "Customer Logo Placeholder 1",
+                  "width": "fill_container",
+                  "height": 66,
+                  "fill": "#F7F9FC",
+                  "cornerRadius": 12,
+                  "stroke": "#E1E6ED",
+                  "strokeWidth": 1,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "tc7ZM",
+                      "name": "Customer Logo Placeholder 1 Label",
+                      "fill": "#94A0B2",
+                      "content": "ЛОГОТИП",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "letterSpacing": 1
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "jfQcS",
+                  "name": "Customer Logo Placeholder 2",
+                  "width": "fill_container",
+                  "height": 66,
+                  "fill": "#F7F9FC",
+                  "cornerRadius": 12,
+                  "stroke": "#E1E6ED",
+                  "strokeWidth": 1,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "u0V5O",
+                      "name": "Customer Logo Placeholder 2 Label",
+                      "fill": "#94A0B2",
+                      "content": "ЛОГОТИП",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "letterSpacing": 1
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "GMIh4",
+                  "name": "Customer Logo Placeholder 3",
+                  "width": "fill_container",
+                  "height": 66,
+                  "fill": "#F7F9FC",
+                  "cornerRadius": 12,
+                  "stroke": "#E1E6ED",
+                  "strokeWidth": 1,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "tXe0T",
+                      "name": "Customer Logo Placeholder 3 Label",
+                      "fill": "#94A0B2",
+                      "content": "ЛОГОТИП",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "letterSpacing": 1
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "cY3Sq",
+                  "name": "Customer Logo Placeholder 4",
+                  "width": "fill_container",
+                  "height": 66,
+                  "fill": "#F7F9FC",
+                  "cornerRadius": 12,
+                  "stroke": "#E1E6ED",
+                  "strokeWidth": 1,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "G9KoL",
+                      "name": "Customer Logo Placeholder 4 Label",
+                      "fill": "#94A0B2",
+                      "content": "ЛОГОТИП",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "letterSpacing": 1
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "cxzvA",
+                  "name": "Customer Logo Placeholder 5",
+                  "width": "fill_container",
+                  "height": 66,
+                  "fill": "#F7F9FC",
+                  "cornerRadius": 12,
+                  "stroke": "#E1E6ED",
+                  "strokeWidth": 1,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "qZwoW",
+                      "name": "Customer Logo Placeholder 5 Label",
+                      "fill": "#94A0B2",
+                      "content": "ЛОГОТИП",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "letterSpacing": 1
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     },
     {
       "type": "frame",
       "id": "knW5q",
-      "x": 0,
-      "y": 7769,
+      "x": 31025,
+      "y": 2969,
       "name": "РАЗДЕЛ E — ИНТЕГРАЦИЯ И ВНЕДРЕНИЕ / ENT-17",
+      "opacity": 0.48999999999999955,
       "clip": true,
       "width": 1920,
       "height": 1080,
@@ -10335,7 +10113,7 @@
           "name": "Slide Title",
           "fill": "$h:neutral-950",
           "textGrowth": "fixed-width",
-          "width": 1560,
+          "width": 1626,
           "content": "WinWork можно встроить в существующие системы через API",
           "lineHeight": 1.08,
           "fontFamily": "$h:font-primary",
@@ -10775,8 +10553,8 @@
     {
       "type": "frame",
       "id": "iOKdp",
-      "x": 2040,
-      "y": 7769,
+      "x": 33065,
+      "y": 2969,
       "name": "РАЗДЕЛ E — ИНТЕГРАЦИЯ И ВНЕДРЕНИЕ / ENT-18",
       "clip": true,
       "width": 1920,
@@ -10815,7 +10593,7 @@
           "name": "Slide Title",
           "fill": "$h:neutral-950",
           "textGrowth": "fixed-width",
-          "width": 1500,
+          "width": 1294,
           "content": "Финансы, HR и служба контроля получают данные по своим задачам",
           "lineHeight": 1.08,
           "fontFamily": "$h:font-primary",
@@ -11334,520 +11112,746 @@
     },
     {
       "type": "frame",
-      "id": "ygsEo",
-      "x": 4080,
-      "y": 7769,
-      "name": "РАЗДЕЛ E — ПОДКЛЮЧЕНИЕ И ПРИВЛЕЧЕНИЕ / ENT-19",
+      "id": "CPLyo",
+      "x": 35127,
+      "y": 2969,
+      "name": "РАЗДЕЛ F — СЛЕДУЮЩИЕ ШАГИ / ENT-20",
       "clip": true,
       "width": 1920,
       "height": 1080,
       "fill": "$h:bg-primary",
-      "stroke": "#ff0000ff",
-      "strokeAlignment": "inner",
       "layout": "none",
       "children": [
         {
+          "type": "ellipse",
+          "id": "N5FjV0",
+          "x": 1425,
+          "y": 275,
+          "name": "Success Glow",
+          "fill": {
+            "type": "gradient",
+            "gradientType": "radial",
+            "enabled": true,
+            "rotation": 0,
+            "size": {
+              "width": 1,
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#DDF9E6AA",
+                "position": 0
+              },
+              {
+                "color": "#F0FCF400",
+                "position": 1
+              }
+            ]
+          },
+          "width": 430,
+          "height": 430
+        },
+        {
           "type": "text",
-          "id": "QWFFt",
+          "id": "MCue7",
           "x": 120,
           "y": 58,
           "name": "Section Indicator",
           "fill": "$h:neutral-400",
-          "content": "E  ·  КОРПОРАТИВНЫЙ СЕГМЕНТ / ПОДКЛЮЧЕНИЕ",
+          "content": "F  ·  КОРПОРАТИВНЫЙ СЕГМЕНТ / ПОДКЛЮЧЕНИЕ",
           "fontFamily": "$h:font-primary",
           "fontSize": 16,
           "fontWeight": "700",
           "letterSpacing": 1.1
         },
         {
-          "id": "Vm2KL",
+          "id": "NnLjE",
           "type": "ref",
           "ref": "CmSfJ",
           "name": "WinWork Logo",
-          "width": 202,
-          "height": 40,
           "x": 1598,
-          "y": 58
+          "y": 58,
+          "width": 202,
+          "height": 40
         },
         {
           "type": "text",
-          "id": "tI1I5",
+          "id": "oQPyh",
           "x": 120,
-          "y": 110,
-          "name": "Slide Headline",
+          "y": 126,
+          "name": "Slide Title",
           "fill": "$h:neutral-950",
           "textGrowth": "fixed-width",
-          "width": 1040,
-          "content": "Подключайте существующих исполнителей и привлекайте новых на объектах",
+          "width": 1520,
+          "content": "Следующие шаги — от регистрации до начала работы",
           "lineHeight": 1.06,
           "fontFamily": "$h:font-primary",
-          "fontSize": 46,
+          "fontSize": 52,
           "fontWeight": "700"
         },
         {
           "type": "text",
-          "id": "CVSdk",
+          "id": "e5xGZ",
           "x": 120,
-          "y": 228,
-          "name": "Slide Subheadline",
+          "y": 202,
+          "name": "Slide Subtitle",
           "fill": "$h:neutral-600",
           "textGrowth": "fixed-width",
-          "width": 1020,
-          "content": "Для подключения доступны приглашения, SMS, реестры, QR-коды и материалы для объектов.",
-          "lineHeight": 1.3,
+          "width": 1540,
+          "content": "Подключение WinWork проходит в несколько простых этапов. После этого персональный менеджер поможет команде начать работу с сервисом.",
+          "lineHeight": 1.35,
           "fontFamily": "$h:font-primary",
-          "fontSize": 22,
+          "fontSize": 21,
           "fontWeight": "normal"
         },
         {
           "type": "frame",
-          "id": "BfkcC",
-          "x": 120,
-          "y": 350,
-          "name": "Three Connection Scenarios",
-          "width": 980,
-          "height": 430,
-          "layout": "none",
+          "id": "TbTby",
+          "x": 128,
+          "y": 318,
+          "name": "Four Step Connection Flow",
+          "width": 1664,
+          "height": 410,
+          "alignItems": "center",
           "children": [
             {
-              "type": "rectangle",
-              "cornerRadius": 2,
-              "id": "S3gqgM",
-              "x": 27,
-              "y": 30,
-              "name": "Scenario Timeline",
-              "fill": "$h:neutral-150",
-              "width": 3,
-              "height": 364
-            },
-            {
               "type": "frame",
-              "id": "vqIss",
-              "x": 0,
-              "y": -42,
-              "name": "01 Existing Pool",
-              "width": 960,
-              "height": 144,
-              "layout": "none",
+              "id": "rHj3e",
+              "name": "Step 01 — Зарегистрируйте компанию",
+              "width": 386,
+              "height": 410,
+              "fill": "$h:surface",
+              "cornerRadius": 24,
+              "stroke": "$h:neutral-150",
+              "strokeWidth": 1,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#17203310",
+                "offset": {
+                  "x": 0,
+                  "y": 8
+                },
+                "blur": 22
+              },
+              "layout": "vertical",
+              "gap": 18,
+              "padding": 24,
               "children": [
                 {
                   "type": "frame",
-                  "id": "FBbWa",
-                  "x": 0,
-                  "y": 0,
-                  "name": "01 Number",
-                  "width": 58,
-                  "height": 58,
-                  "fill": "$h:brand-blue",
-                  "cornerRadius": 29,
-                  "justifyContent": "center",
+                  "id": "VHJ6n",
+                  "name": "Step 01 Header",
+                  "width": "fill_container",
+                  "height": 64,
+                  "justifyContent": "space_between",
                   "alignItems": "center",
                   "children": [
                     {
                       "type": "text",
-                      "id": "Vn39F",
-                      "name": "01 Label",
-                      "fill": "#FFFFFF",
+                      "id": "pCyEM",
+                      "name": "Step 01 Number",
+                      "fill": "$h:brand-blue",
                       "content": "01",
                       "fontFamily": "$h:font-primary",
-                      "fontSize": 19,
-                      "fontWeight": "800"
-                    }
-                  ]
-                },
-                {
-                  "type": "text",
-                  "id": "QPBVr",
-                  "x": 84,
-                  "y": 0,
-                  "name": "01 Title",
-                  "fill": "$h:neutral-950",
-                  "textGrowth": "fixed-width",
-                  "width": 850,
-                  "content": "Подключите существующий пул",
-                  "fontFamily": "$h:font-primary",
-                  "fontSize": 26,
-                  "fontWeight": "700"
-                },
-                {
-                  "type": "text",
-                  "id": "PcwFB",
-                  "x": 84,
-                  "y": 37,
-                  "name": "01 Description",
-                  "fill": "$h:neutral-600",
-                  "textGrowth": "fixed-width",
-                  "width": 850,
-                  "content": "Пригласите тех, с кем уже работаете: телефон · CSV / Excel · массовое SMS · ИНН · реестр.",
-                  "lineHeight": 1.25,
-                  "fontFamily": "$h:font-primary",
-                  "fontSize": 19,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "frame",
-                  "id": "jdnkz",
-                  "x": 84,
-                  "y": 82,
-                  "name": "Registry Conversion Flow",
-                  "width": 850,
-                  "height": 48,
-                  "gap": 8,
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "frame",
-                      "id": "N7mLwg",
-                      "name": "База исполнителей",
-                      "width": "fill_container",
-                      "height": 48,
-                      "fill": "$h:bg-secondary",
-                      "cornerRadius": 12,
-                      "gap": 8,
-                      "justifyContent": "center",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "icon",
-                          "id": "gxDlW",
-                          "name": "База исполнителей Icon",
-                          "width": 19,
-                          "height": 19,
-                          "icon": "users",
-                          "library": "lucide",
-                          "fill": "$h:brand-blue"
-                        },
-                        {
-                          "type": "text",
-                          "id": "L8lCZ",
-                          "name": "База исполнителей Text",
-                          "fill": "$h:neutral-800",
-                          "content": "База исполнителей",
-                          "fontFamily": "$h:font-primary",
-                          "fontSize": 16,
-                          "fontWeight": "700"
-                        }
-                      ]
+                      "fontSize": 42,
+                      "fontWeight": "750",
+                      "letterSpacing": -1
                     },
                     {
                       "type": "frame",
-                      "id": "dJrYs",
-                      "name": "SMS / реестр",
-                      "width": "fill_container",
-                      "height": 48,
+                      "id": "ciFz5",
+                      "name": "Step 01 Icon Container",
+                      "width": 64,
+                      "height": 64,
                       "fill": "$h:brand-blue-soft",
-                      "cornerRadius": 12,
-                      "gap": 8,
+                      "cornerRadius": 20,
                       "justifyContent": "center",
                       "alignItems": "center",
                       "children": [
                         {
                           "type": "icon",
-                          "id": "HJF8J",
-                          "name": "SMS / реестр Icon",
-                          "width": 19,
-                          "height": 19,
-                          "icon": "send",
+                          "id": "rTOCW",
+                          "name": "Step 01 Icon",
+                          "width": 30,
+                          "height": 30,
+                          "icon": "badge-check",
                           "library": "lucide",
                           "fill": "$h:brand-blue"
-                        },
-                        {
-                          "type": "text",
-                          "id": "uMn4U",
-                          "name": "SMS / реестр Text",
-                          "fill": "$h:neutral-800",
-                          "content": "SMS / реестр",
-                          "fontFamily": "$h:font-primary",
-                          "fontSize": 16,
-                          "fontWeight": "700"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "C6yZEj",
-                      "name": "Подключённый пул",
-                      "width": "fill_container",
-                      "height": 48,
-                      "fill": "$h:brand-green-soft",
-                      "cornerRadius": 12,
-                      "gap": 8,
-                      "justifyContent": "center",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "icon",
-                          "id": "NS3yM",
-                          "name": "Подключённый пул Icon",
-                          "width": 19,
-                          "height": 19,
-                          "icon": "user-check",
-                          "library": "lucide",
-                          "fill": "$h:brand-green-strong"
-                        },
-                        {
-                          "type": "text",
-                          "id": "EQwDU",
-                          "name": "Подключённый пул Text",
-                          "fill": "$h:neutral-800",
-                          "content": "Подключённый пул",
-                          "fontFamily": "$h:font-primary",
-                          "fontSize": 16,
-                          "fontWeight": "700"
                         }
                       ]
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "jWRTd",
-              "x": 0,
-              "y": 130,
-              "name": "02 Onsite Acquisition",
-              "width": 960,
-              "height": 144,
-              "fill": "$h:brand-blue-soft",
-              "cornerRadius": 24,
-              "layout": "none",
-              "children": [
+                },
                 {
                   "type": "frame",
-                  "id": "QhJX1",
-                  "x": 18,
-                  "y": 18,
-                  "name": "02 Number",
-                  "width": 58,
-                  "height": 58,
-                  "fill": "$h:brand-blue",
-                  "cornerRadius": 29,
-                  "justifyContent": "center",
-                  "alignItems": "center",
+                  "id": "HtZiA",
+                  "name": "Step 01 Content",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
                   "children": [
                     {
                       "type": "text",
-                      "id": "WWHiu",
-                      "name": "02 Label",
-                      "fill": "#FFFFFF",
-                      "content": "02",
+                      "id": "AfDNZ",
+                      "name": "Step 01 Title",
+                      "fill": "$h:neutral-950",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Зарегистрируйте компанию",
+                      "lineHeight": 1.12,
                       "fontFamily": "$h:font-primary",
-                      "fontSize": 19,
-                      "fontWeight": "800"
+                      "fontSize": 25,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "U1QGow",
+                      "name": "Step 01 Description",
+                      "fill": "$h:neutral-600",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Создайте кабинет WinWork и подтвердите регистрацию по ссылке из письма.",
+                      "lineHeight": 1.35,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 17,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
                 {
-                  "type": "text",
-                  "id": "nEYoZ",
-                  "x": 102,
-                  "y": 18,
-                  "name": "02 Title",
-                  "fill": "$h:neutral-950",
-                  "textGrowth": "fixed-width",
-                  "width": 820,
-                  "content": "Привлекайте новых исполнителей на площадках",
-                  "fontFamily": "$h:font-primary",
-                  "fontSize": 27,
-                  "fontWeight": "700"
-                },
-                {
-                  "type": "text",
-                  "id": "W9ondm",
-                  "x": 102,
-                  "y": 58,
-                  "name": "02 Description",
-                  "fill": "$h:neutral-600",
-                  "textGrowth": "fixed-width",
-                  "width": 820,
-                  "content": "Флаер с QR-кодом у входа, материалы на складе, в магазине, РЦ или зоне персонала — плюс ссылка и готовая инструкция.",
-                  "lineHeight": 1.25,
-                  "fontFamily": "$h:font-primary",
-                  "fontSize": 19,
-                  "fontWeight": "normal"
-                },
-                {
                   "type": "frame",
-                  "id": "ZJCjS",
-                  "x": 102,
-                  "y": 105,
-                  "name": "Ready Entry Point",
-                  "width": 300,
-                  "height": 27,
-                  "gap": 7,
+                  "id": "aTj4Z",
+                  "name": "Step 01 Note",
+                  "width": "fill_container",
+                  "height": 42,
+                  "fill": "$h:bg-secondary",
+                  "cornerRadius": 12,
+                  "gap": 9,
+                  "padding": [
+                    0,
+                    13
+                  ],
                   "alignItems": "center",
                   "children": [
                     {
                       "type": "icon",
-                      "id": "y42yBS",
-                      "name": "Ready Entry Icon",
+                      "id": "wSwda",
+                      "name": "Step 01 Note Icon",
                       "width": 18,
                       "height": 18,
-                      "icon": "door-open",
+                      "icon": "clock-3",
                       "library": "lucide",
                       "fill": "$h:brand-blue"
                     },
                     {
                       "type": "text",
-                      "id": "tKTXR",
-                      "name": "Ready Entry Text",
-                      "fill": "$h:brand-blue-strong",
-                      "content": "ГОТОВАЯ ТОЧКА ВХОДА",
+                      "id": "vLEH9",
+                      "name": "Step 01 Note Text",
+                      "fill": "$h:neutral-800",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Письмо приходит за 10–15 минут",
+                      "lineHeight": 1.15,
                       "fontFamily": "$h:font-primary",
-                      "fontSize": 15,
-                      "fontWeight": "800",
-                      "letterSpacing": 0.6
+                      "fontSize": 14,
+                      "fontWeight": "700"
                     }
                   ]
                 }
               ]
             },
             {
+              "id": "jIKiA",
+              "type": "ref",
+              "ref": "h:WbD9x",
+              "name": "Connector 01–02",
+              "width": 40
+            },
+            {
               "type": "frame",
-              "id": "BjOD2",
-              "x": 0,
-              "y": 318,
-              "name": "03 Referral Channel",
-              "width": 960,
-              "height": 112,
-              "layout": "none",
+              "id": "OeBiO",
+              "name": "Step 02 — Пополните счёт",
+              "width": 386,
+              "height": 410,
+              "fill": "$h:surface",
+              "cornerRadius": 24,
+              "stroke": "$h:neutral-150",
+              "strokeWidth": 1,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#17203310",
+                "offset": {
+                  "x": 0,
+                  "y": 8
+                },
+                "blur": 22
+              },
+              "layout": "vertical",
+              "gap": 18,
+              "padding": 24,
               "children": [
                 {
                   "type": "frame",
-                  "id": "bvVb8",
-                  "x": 0,
-                  "y": 0,
-                  "name": "03 Number",
-                  "width": 58,
-                  "height": 58,
-                  "fill": "$h:surface",
-                  "cornerRadius": 29,
-                  "stroke": "$h:neutral-150",
-                  "strokeWidth": 1,
-                  "justifyContent": "center",
+                  "id": "K4Ezty",
+                  "name": "Step 02 Header",
+                  "width": "fill_container",
+                  "height": 64,
+                  "justifyContent": "space_between",
                   "alignItems": "center",
                   "children": [
                     {
                       "type": "text",
-                      "id": "zogUt",
-                      "name": "03 Label",
+                      "id": "tqi92",
+                      "name": "Step 02 Number",
                       "fill": "$h:brand-blue",
-                      "content": "03",
+                      "content": "02",
                       "fontFamily": "$h:font-primary",
-                      "fontSize": 19,
-                      "fontWeight": "800"
+                      "fontSize": 42,
+                      "fontWeight": "750",
+                      "letterSpacing": -1
+                    },
+                    {
+                      "type": "frame",
+                      "id": "vqnF6",
+                      "name": "Step 02 Icon Container",
+                      "width": 64,
+                      "height": 64,
+                      "fill": "$h:brand-blue-soft",
+                      "cornerRadius": 20,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "j3DxQj",
+                          "name": "Step 02 Icon",
+                          "width": 30,
+                          "height": 30,
+                          "icon": "wallet-cards",
+                          "library": "lucide",
+                          "fill": "$h:brand-blue"
+                        }
+                      ]
                     }
                   ]
                 },
                 {
-                  "type": "text",
-                  "id": "NX8HP",
-                  "x": 84,
-                  "y": 0,
-                  "name": "03 Title",
-                  "fill": "$h:neutral-950",
-                  "textGrowth": "fixed-width",
-                  "width": 850,
-                  "content": "Расширяйте пул через рекомендации",
-                  "fontFamily": "$h:font-primary",
-                  "fontSize": 25,
-                  "fontWeight": "700"
-                },
-                {
-                  "type": "text",
-                  "id": "IWGTO",
-                  "x": 84,
-                  "y": 34,
-                  "name": "03 Description",
-                  "fill": "$h:neutral-600",
-                  "textGrowth": "fixed-width",
-                  "width": 850,
-                  "content": "Исполнитель приглашает нового пользователя; механика действует после первого успешно выполненного задания.",
-                  "lineHeight": 1.25,
-                  "fontFamily": "$h:font-primary",
-                  "fontSize": 18,
-                  "fontWeight": "normal"
+                  "type": "frame",
+                  "id": "EDfzV",
+                  "name": "Step 02 Content",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Ga9XI",
+                      "name": "Step 02 Title",
+                      "fill": "$h:neutral-950",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Пополните счёт",
+                      "lineHeight": 1.12,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 25,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "r7FFy",
+                      "name": "Step 02 Description",
+                      "fill": "$h:neutral-600",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Получите реквизиты в кабинете и сделайте перевод с расчётного счёта компании.",
+                      "lineHeight": 1.35,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 17,
+                      "fontWeight": "normal"
+                    }
+                  ]
                 },
                 {
                   "type": "frame",
-                  "id": "JoHgq",
-                  "x": 84,
-                  "y": 76,
-                  "name": "Referral Flow",
-                  "width": 800,
-                  "height": 30,
-                  "gap": 10,
+                  "id": "GZFwg",
+                  "name": "Step 02 Note",
+                  "width": "fill_container",
+                  "height": 42,
+                  "fill": "$h:bg-secondary",
+                  "cornerRadius": 12,
+                  "gap": 9,
+                  "padding": [
+                    0,
+                    13
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "fOi9q",
+                      "name": "Step 02 Note Icon",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "clock-3",
+                      "library": "lucide",
+                      "fill": "$h:brand-blue"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ViBSI",
+                      "name": "Step 02 Note Text",
+                      "fill": "$h:neutral-800",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Зачисление обычно — до 1 часа",
+                      "lineHeight": 1.15,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "uxjtu",
+              "type": "ref",
+              "ref": "h:WbD9x",
+              "name": "Connector 02–03",
+              "width": 40
+            },
+            {
+              "type": "frame",
+              "id": "XuM9x",
+              "name": "Step 03 — Пройдите идентификацию",
+              "width": 386,
+              "height": 410,
+              "fill": "$h:surface",
+              "cornerRadius": 24,
+              "stroke": "$h:neutral-150",
+              "strokeWidth": 1,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#17203310",
+                "offset": {
+                  "x": 0,
+                  "y": 8
+                },
+                "blur": 22
+              },
+              "layout": "vertical",
+              "gap": 18,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "jBGSW",
+                  "name": "Step 03 Header",
+                  "width": "fill_container",
+                  "height": 64,
+                  "justifyContent": "space_between",
                   "alignItems": "center",
                   "children": [
                     {
                       "type": "text",
-                      "id": "HKaqb",
-                      "name": "Referral Step 1",
-                      "fill": "$h:neutral-800",
-                      "content": "Исполнитель",
+                      "id": "kA2Op",
+                      "name": "Step 03 Number",
+                      "fill": "$h:brand-blue",
+                      "content": "03",
                       "fontFamily": "$h:font-primary",
-                      "fontSize": 15,
-                      "fontWeight": "600"
+                      "fontSize": 42,
+                      "fontWeight": "750",
+                      "letterSpacing": -1
                     },
                     {
-                      "type": "icon",
-                      "id": "wtZLn",
-                      "name": "Referral Arrow 1",
-                      "width": 18,
-                      "height": 18,
-                      "icon": "arrow-right",
-                      "library": "lucide",
-                      "fill": "$h:neutral-400"
+                      "type": "frame",
+                      "id": "rQRxb",
+                      "name": "Step 03 Icon Container",
+                      "width": 64,
+                      "height": 64,
+                      "fill": "$h:brand-blue-soft",
+                      "cornerRadius": 20,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "RGU1x",
+                          "name": "Step 03 Icon",
+                          "width": 30,
+                          "height": 30,
+                          "icon": "shield-check",
+                          "library": "lucide",
+                          "fill": "$h:brand-blue"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "EhHWN",
+                  "name": "Step 03 Content",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "s6D8XZ",
+                      "name": "Step 03 Title",
+                      "fill": "$h:neutral-950",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Пройдите идентификацию",
+                      "lineHeight": 1.12,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 25,
+                      "fontWeight": "700"
                     },
                     {
                       "type": "text",
-                      "id": "fzArI",
-                      "name": "Referral Step 2",
-                      "fill": "$h:neutral-800",
-                      "content": "приглашает",
+                      "id": "djRnw",
+                      "name": "Step 03 Description",
+                      "fill": "$h:neutral-600",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Передайте реквизиты компании и данные руководителя для проверки.",
+                      "lineHeight": 1.35,
                       "fontFamily": "$h:font-primary",
-                      "fontSize": 15,
-                      "fontWeight": "600"
-                    },
+                      "fontSize": 17,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "gGH6A",
+                  "name": "Step 03 Note",
+                  "width": "fill_container",
+                  "height": 42,
+                  "fill": "$h:bg-secondary",
+                  "cornerRadius": 12,
+                  "gap": 9,
+                  "padding": [
+                    0,
+                    13
+                  ],
+                  "alignItems": "center",
+                  "children": [
                     {
                       "type": "icon",
-                      "id": "EKDub",
-                      "name": "Referral Arrow 2",
+                      "id": "L3Zq1O",
+                      "name": "Step 03 Note Icon",
                       "width": 18,
                       "height": 18,
-                      "icon": "arrow-right",
+                      "icon": "building-2",
                       "library": "lucide",
-                      "fill": "$h:neutral-400"
+                      "fill": "$h:brand-blue"
                     },
                     {
                       "type": "text",
-                      "id": "k4AaYZ",
-                      "name": "Referral Step 3",
+                      "id": "bSv3h",
+                      "name": "Step 03 Note Text",
                       "fill": "$h:neutral-800",
-                      "content": "новый исполнитель",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Карточка компании + паспортные данные",
+                      "lineHeight": 1.15,
                       "fontFamily": "$h:font-primary",
-                      "fontSize": 15,
-                      "fontWeight": "600"
-                    },
-                    {
-                      "type": "icon",
-                      "id": "AipRS",
-                      "name": "Referral Arrow 3",
-                      "width": 18,
-                      "height": 18,
-                      "icon": "arrow-right",
-                      "library": "lucide",
-                      "fill": "$h:neutral-400"
-                    },
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "sRH3x",
+              "type": "ref",
+              "ref": "h:WbD9x",
+              "name": "Connector 03–04",
+              "width": 40
+            },
+            {
+              "type": "frame",
+              "id": "ZXiUP",
+              "name": "Step 04 — Начните работу с WinWork",
+              "width": 386,
+              "height": 410,
+              "fill": {
+                "type": "gradient",
+                "gradientType": "linear",
+                "enabled": true,
+                "rotation": 160,
+                "size": {
+                  "height": 1
+                },
+                "colors": [
+                  {
+                    "color": "#FFFFFF",
+                    "position": 0
+                  },
+                  {
+                    "color": "#F0FCF4",
+                    "position": 1
+                  }
+                ]
+              },
+              "cornerRadius": 24,
+              "stroke": "$h:brand-green-mid",
+              "strokeWidth": 2,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#179E4826",
+                "offset": {
+                  "x": 0,
+                  "y": 14
+                },
+                "blur": 32
+              },
+              "layout": "vertical",
+              "gap": 18,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "wOAfe",
+                  "name": "Step 04 Header",
+                  "width": "fill_container",
+                  "height": 64,
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
                     {
                       "type": "text",
-                      "id": "IBia0",
-                      "name": "Referral Step 4",
+                      "id": "wuQcv",
+                      "name": "Step 04 Number",
                       "fill": "$h:brand-green-strong",
-                      "content": "первое задание",
+                      "content": "04",
                       "fontFamily": "$h:font-primary",
-                      "fontSize": 15,
+                      "fontSize": 42,
+                      "fontWeight": "750",
+                      "letterSpacing": -1
+                    },
+                    {
+                      "type": "frame",
+                      "id": "XW4Ap",
+                      "name": "Step 04 Icon Container",
+                      "width": 64,
+                      "height": 64,
+                      "fill": "$h:brand-green",
+                      "cornerRadius": 20,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "HQCbR",
+                          "name": "Step 04 Icon",
+                          "width": 30,
+                          "height": 30,
+                          "icon": "rocket",
+                          "library": "lucide",
+                          "fill": "$h:neutral-950"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Fmk0X",
+                  "name": "Step 04 Content",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "oKQko",
+                      "name": "Step 04 Title",
+                      "fill": "$h:neutral-950",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Начните работу с WinWork",
+                      "lineHeight": 1.12,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 25,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "H2OK4",
+                      "name": "Step 04 Description",
+                      "fill": "$h:neutral-600",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Мы завершим подключение и передадим компанию персональному аккаунт-менеджеру.",
+                      "lineHeight": 1.35,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 17,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "MZAyT",
+                      "name": "Step 04 Manager Support",
+                      "fill": "$h:brand-green-strong",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Менеджер познакомится с командой и проведёт обучение по работе с сервисом.",
+                      "lineHeight": 1.28,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "m8n92X",
+                  "name": "Step 04 Note",
+                  "width": "fill_container",
+                  "height": 42,
+                  "fill": "$h:brand-green",
+                  "cornerRadius": 12,
+                  "gap": 9,
+                  "padding": [
+                    0,
+                    13
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "CdOG8",
+                      "name": "Step 04 Note Icon",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "circle-check-big",
+                      "library": "lucide",
+                      "fill": "$h:neutral-950"
+                    },
+                    {
+                      "type": "text",
+                      "id": "R2HP5q",
+                      "name": "Step 04 Note Text",
+                      "fill": "$h:neutral-950",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Готово к работе",
+                      "lineHeight": 1.15,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 14,
                       "fontWeight": "700"
                     }
                   ]
@@ -11858,294 +11862,90 @@
         },
         {
           "type": "frame",
-          "id": "UEHTN",
+          "id": "JoW2c",
           "x": 120,
-          "y": 802,
-          "name": "Business Message",
-          "width": 980,
-          "height": 66,
+          "y": 790,
+          "name": "Final Registration CTA",
+          "width": 1680,
+          "height": 174,
           "fill": "$h:neutral-950",
-          "cornerRadius": 16,
-          "gap": 14,
+          "cornerRadius": 24,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#1720331A",
+            "offset": {
+              "x": 0,
+              "y": 10
+            },
+            "blur": 28
+          },
+          "gap": 28,
           "padding": [
-            12,
-            18
+            24,
+            28
           ],
           "alignItems": "center",
           "children": [
             {
-              "type": "icon",
-              "id": "fHlkp",
-              "name": "Business Message Icon",
-              "width": 24,
-              "height": 24,
-              "icon": "move-right",
-              "library": "lucide",
-              "fill": "$h:brand-green"
-            },
-            {
-              "type": "text",
-              "id": "xW3Um",
-              "name": "Business Message Text",
-              "fill": "#FFFFFF",
-              "textGrowth": "fixed-width",
-              "width": "fill_container",
-              "content": "Существующий пул подключается через реестр или приглашения; новые исполнители — через QR-коды, ссылки и рекомендации.",
-              "lineHeight": 1.25,
-              "fontFamily": "$h:font-primary",
-              "fontSize": 18,
-              "fontWeight": "600"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "id": "nuB8u",
-          "x": 120,
-          "y": 892,
-          "name": "Connection Flow Label",
-          "fill": "$h:neutral-400",
-          "content": "ПУТЬ ИСПОЛНИТЕЛЯ",
-          "fontFamily": "$h:font-primary",
-          "fontSize": 14,
-          "fontWeight": "800",
-          "letterSpacing": 1
-        },
-        {
-          "type": "frame",
-          "id": "qMWhW",
-          "x": 120,
-          "y": 920,
-          "name": "Connection Flow",
-          "width": 1680,
-          "height": 64,
-          "gap": 12,
-          "alignItems": "center",
-          "children": [
-            {
-              "type": "frame",
-              "id": "Fjm1O",
-              "name": "Flow Step 1",
-              "width": "fill_container",
-              "height": 64,
-              "fill": "$h:surface",
-              "cornerRadius": 16,
-              "stroke": "$h:neutral-150",
-              "strokeWidth": 1,
-              "gap": 10,
-              "justifyContent": "center",
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "icon",
-                  "id": "B875qv",
-                  "name": "Flow Step 1 Icon",
-                  "width": 22,
-                  "height": 22,
-                  "icon": "send",
-                  "library": "lucide",
-                  "fill": "$h:brand-blue"
-                },
-                {
-                  "type": "text",
-                  "id": "muHf8",
-                  "name": "Flow Step 1 Text",
-                  "fill": "$h:neutral-950",
-                  "content": "QR / SMS / ссылка / реестр",
-                  "fontFamily": "$h:font-primary",
-                  "fontSize": 18,
-                  "fontWeight": "700"
-                }
-              ]
-            },
-            {
-              "type": "icon",
-              "id": "s8uEXs",
-              "name": "Flow Arrow 1",
-              "width": 20,
-              "height": 20,
-              "icon": "arrow-right",
-              "library": "lucide",
-              "fill": "$h:neutral-400"
-            },
-            {
-              "type": "frame",
-              "id": "bdl0t",
-              "name": "Flow Step 2",
-              "width": "fill_container",
-              "height": 64,
-              "fill": "$h:surface",
-              "cornerRadius": 16,
-              "stroke": "$h:neutral-150",
-              "strokeWidth": 1,
-              "gap": 10,
-              "justifyContent": "center",
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "icon",
-                  "id": "KiXRY",
-                  "name": "Flow Step 2 Icon",
-                  "width": 22,
-                  "height": 22,
-                  "icon": "user-plus",
-                  "library": "lucide",
-                  "fill": "$h:brand-blue"
-                },
-                {
-                  "type": "text",
-                  "id": "d1E0Z",
-                  "name": "Flow Step 2 Text",
-                  "fill": "$h:neutral-950",
-                  "content": "Регистрация исполнителя",
-                  "fontFamily": "$h:font-primary",
-                  "fontSize": 18,
-                  "fontWeight": "700"
-                }
-              ]
-            },
-            {
-              "type": "icon",
-              "id": "ViCS5",
-              "name": "Flow Arrow 2",
-              "width": 20,
-              "height": 20,
-              "icon": "arrow-right",
-              "library": "lucide",
-              "fill": "$h:neutral-400"
-            },
-            {
-              "type": "frame",
-              "id": "RpTja",
-              "name": "Flow Step 3",
-              "width": "fill_container",
-              "height": 64,
-              "fill": "$h:surface",
-              "cornerRadius": 16,
-              "stroke": "$h:neutral-150",
-              "strokeWidth": 1,
-              "gap": 10,
-              "justifyContent": "center",
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "icon",
-                  "id": "A3wOpN",
-                  "name": "Flow Step 3 Icon",
-                  "width": 22,
-                  "height": 22,
-                  "icon": "building-2",
-                  "library": "lucide",
-                  "fill": "$h:brand-blue"
-                },
-                {
-                  "type": "text",
-                  "id": "jWJcp",
-                  "name": "Flow Step 3 Text",
-                  "fill": "$h:neutral-950",
-                  "content": "Подключение к компании",
-                  "fontFamily": "$h:font-primary",
-                  "fontSize": 18,
-                  "fontWeight": "700"
-                }
-              ]
-            },
-            {
-              "type": "icon",
-              "id": "wNhHL",
-              "name": "Flow Arrow 3",
-              "width": 20,
-              "height": 20,
-              "icon": "arrow-right",
-              "library": "lucide",
-              "fill": "$h:neutral-400"
-            },
-            {
-              "type": "frame",
-              "id": "Q87gk",
-              "name": "Flow Step 4",
-              "width": "fill_container",
-              "height": 64,
+              "type": "rectangle",
+              "cornerRadius": 3,
+              "id": "SUtLJ",
+              "name": "CTA Green Accent",
               "fill": "$h:brand-green",
-              "cornerRadius": 16,
-              "stroke": "$h:brand-green",
-              "strokeWidth": 1,
-              "gap": 10,
+              "width": 6,
+              "height": "fill_container"
+            },
+            {
+              "type": "frame",
+              "id": "AS60O",
+              "name": "CTA Copy",
+              "width": "fill_container",
+              "height": "fill_container",
+              "layout": "vertical",
+              "gap": 7,
               "justifyContent": "center",
-              "alignItems": "center",
               "children": [
                 {
-                  "type": "icon",
-                  "id": "s1LQfP",
-                  "name": "Flow Step 4 Icon",
-                  "width": 22,
-                  "height": 22,
-                  "icon": "briefcase-business",
-                  "library": "lucide",
-                  "fill": "$h:neutral-950"
+                  "type": "text",
+                  "id": "Z9Q1A",
+                  "name": "CTA Label",
+                  "fill": "$h:brand-green",
+                  "content": "ГОТОВЫ ПОДКЛЮЧИТЬСЯ?",
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 14,
+                  "fontWeight": "800",
+                  "letterSpacing": 1
                 },
                 {
                   "type": "text",
-                  "id": "u5VKL",
-                  "name": "Flow Step 4 Text",
-                  "fill": "$h:neutral-950",
-                  "content": "Доступ к заданиям",
+                  "id": "uK2QZ",
+                  "name": "CTA Headline",
+                  "fill": "#FFFFFF",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Зарегистрируйте компанию и начните настройку WinWork.",
+                  "lineHeight": 1.15,
                   "fontFamily": "$h:font-primary",
-                  "fontSize": 18,
+                  "fontSize": 26,
                   "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "PGhis",
+                  "name": "CTA Support",
+                  "fill": "$h:neutral-400",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Дальше персональный менеджер проведёт команду до первого рабочего сценария.",
+                  "lineHeight": 1.3,
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
                 }
               ]
             }
           ]
-        },
-        {
-          "type": "frame",
-          "id": "WZXFU",
-          "x": 1320,
-          "y": 1002,
-          "name": "Demo Handoff CTA",
-          "width": 480,
-          "height": 44,
-          "gap": 10,
-          "justifyContent": "end",
-          "alignItems": "center",
-          "children": [
-            {
-              "type": "text",
-              "id": "A6a2n",
-              "name": "Demo CTA Text",
-              "fill": "$h:brand-blue",
-              "content": "Показать в WinWork: как пригласить исполнителей",
-              "fontFamily": "$h:font-primary",
-              "fontSize": 17,
-              "fontWeight": "700"
-            },
-            {
-              "type": "icon",
-              "id": "sluIV",
-              "name": "Demo CTA Arrow",
-              "width": 20,
-              "height": 20,
-              "icon": "arrow-right",
-              "library": "lucide",
-              "fill": "$h:brand-blue"
-            }
-          ]
-        },
-        {
-          "type": "rectangle",
-          "cornerRadius": 21,
-          "id": "mTkTk",
-          "x": 1182,
-          "y": 147,
-          "fill": {
-            "type": "image",
-            "enabled": true,
-            "url": "ChatGPT%20Image%2025%20%D0%B0%D0%B2%D0%B3.%202026%20%D0%B3.%2C%2018_25_37.png",
-            "mode": "fill"
-          },
-          "width": 659,
-          "height": 721
         }
       ]
     },
@@ -12483,6 +12283,835 @@
               "height": 18.80858612060547
             }
           ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "ygsEo",
+      "x": 20361,
+      "y": 2969,
+      "name": "РАЗДЕЛ E — ПОДКЛЮЧЕНИЕ И ПРИВЛЕЧЕНИЕ / ENT-19",
+      "clip": true,
+      "width": 1920,
+      "height": 1080,
+      "fill": "$h:bg-primary",
+      "stroke": "#ff0000ff",
+      "strokeAlignment": "inner",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "cornerRadius": 2,
+          "id": "S3gqgM",
+          "x": 147,
+          "y": 298,
+          "name": "Scenario Timeline",
+          "fill": "$h:neutral-150",
+          "width": 3,
+          "height": 480
+        },
+        {
+          "type": "text",
+          "id": "QWFFt",
+          "x": 120,
+          "y": 58,
+          "name": "Section Indicator",
+          "fill": "$h:neutral-400",
+          "content": "E  ·  КОРПОРАТИВНЫЙ СЕГМЕНТ / ПОДКЛЮЧЕНИЕ",
+          "fontFamily": "$h:font-primary",
+          "fontSize": 16,
+          "fontWeight": "700",
+          "letterSpacing": 1.1
+        },
+        {
+          "id": "Vm2KL",
+          "type": "ref",
+          "ref": "CmSfJ",
+          "name": "WinWork Logo",
+          "width": 202,
+          "height": 40,
+          "x": 1598,
+          "y": 58
+        },
+        {
+          "type": "frame",
+          "id": "UEHTN",
+          "x": 120,
+          "y": 765,
+          "name": "Business Message",
+          "width": 980,
+          "height": 103,
+          "fill": "$h:neutral-950",
+          "cornerRadius": 16,
+          "gap": 14,
+          "padding": [
+            12,
+            18
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon",
+              "id": "fHlkp",
+              "name": "Business Message Icon",
+              "width": 24,
+              "height": 24,
+              "icon": "move-right",
+              "library": "lucide",
+              "fill": "$h:brand-green"
+            },
+            {
+              "type": "text",
+              "id": "xW3Um",
+              "name": "Business Message Text",
+              "fill": "#FFFFFF",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Существующий пул подключается через реестр или приглашения\n\nновые исполнители — через QR-коды, ссылки и рекомендации",
+              "lineHeight": 1.25,
+              "fontFamily": "$h:font-primary",
+              "fontSize": 18,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "nuB8u",
+          "x": 120,
+          "y": 892,
+          "name": "Connection Flow Label",
+          "fill": "$h:neutral-400",
+          "content": "ПУТЬ ИСПОЛНИТЕЛЯ",
+          "fontFamily": "$h:font-primary",
+          "fontSize": 14,
+          "fontWeight": "800",
+          "letterSpacing": 1
+        },
+        {
+          "type": "frame",
+          "id": "qMWhW",
+          "x": 120,
+          "y": 920,
+          "name": "Connection Flow",
+          "width": 1680,
+          "height": 64,
+          "gap": 12,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "Fjm1O",
+              "name": "Flow Step 1",
+              "width": "fill_container",
+              "height": 64,
+              "fill": "$h:surface",
+              "cornerRadius": 16,
+              "stroke": "$h:neutral-150",
+              "strokeWidth": 1,
+              "gap": 10,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "B875qv",
+                  "name": "Flow Step 1 Icon",
+                  "width": 22,
+                  "height": 22,
+                  "icon": "send",
+                  "library": "lucide",
+                  "fill": "$h:brand-blue"
+                },
+                {
+                  "type": "text",
+                  "id": "muHf8",
+                  "name": "Flow Step 1 Text",
+                  "fill": "$h:neutral-950",
+                  "content": "QR / SMS / ссылка / реестр",
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 18,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "icon",
+              "id": "s8uEXs",
+              "name": "Flow Arrow 1",
+              "width": 20,
+              "height": 20,
+              "icon": "arrow-right",
+              "library": "lucide",
+              "fill": "$h:neutral-400"
+            },
+            {
+              "type": "frame",
+              "id": "bdl0t",
+              "name": "Flow Step 2",
+              "width": "fill_container",
+              "height": 64,
+              "fill": "$h:surface",
+              "cornerRadius": 16,
+              "stroke": "$h:neutral-150",
+              "strokeWidth": 1,
+              "gap": 10,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "KiXRY",
+                  "name": "Flow Step 2 Icon",
+                  "width": 22,
+                  "height": 22,
+                  "icon": "user-plus",
+                  "library": "lucide",
+                  "fill": "$h:brand-blue"
+                },
+                {
+                  "type": "text",
+                  "id": "d1E0Z",
+                  "name": "Flow Step 2 Text",
+                  "fill": "$h:neutral-950",
+                  "content": "Регистрация исполнителя",
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 18,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "icon",
+              "id": "ViCS5",
+              "name": "Flow Arrow 2",
+              "width": 20,
+              "height": 20,
+              "icon": "arrow-right",
+              "library": "lucide",
+              "fill": "$h:neutral-400"
+            },
+            {
+              "type": "frame",
+              "id": "RpTja",
+              "name": "Flow Step 3",
+              "width": "fill_container",
+              "height": 64,
+              "fill": "$h:surface",
+              "cornerRadius": 16,
+              "stroke": "$h:neutral-150",
+              "strokeWidth": 1,
+              "gap": 10,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "A3wOpN",
+                  "name": "Flow Step 3 Icon",
+                  "width": 22,
+                  "height": 22,
+                  "icon": "building-2",
+                  "library": "lucide",
+                  "fill": "$h:brand-blue"
+                },
+                {
+                  "type": "text",
+                  "id": "jWJcp",
+                  "name": "Flow Step 3 Text",
+                  "fill": "$h:neutral-950",
+                  "content": "Видит ваши задания",
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 18,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "icon",
+              "id": "wNhHL",
+              "name": "Flow Arrow 3",
+              "width": 20,
+              "height": 20,
+              "icon": "arrow-right",
+              "library": "lucide",
+              "fill": "$h:neutral-400"
+            },
+            {
+              "type": "frame",
+              "id": "Q87gk",
+              "name": "Flow Step 4",
+              "width": "fill_container",
+              "height": 64,
+              "fill": "$h:brand-green",
+              "cornerRadius": 16,
+              "stroke": "$h:brand-green",
+              "strokeWidth": 1,
+              "gap": 10,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "s1LQfP",
+                  "name": "Flow Step 4 Icon",
+                  "width": 22,
+                  "height": 22,
+                  "icon": "briefcase-business",
+                  "library": "lucide",
+                  "fill": "$h:neutral-950"
+                },
+                {
+                  "type": "text",
+                  "id": "u5VKL",
+                  "name": "Flow Step 4 Text",
+                  "fill": "$h:neutral-950",
+                  "content": "Откликается",
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 18,
+                  "fontWeight": "700"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "rectangle",
+          "cornerRadius": 21,
+          "id": "mTkTk",
+          "x": 1182,
+          "y": 147,
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "ChatGPT%20Image%2025%20%D0%B0%D0%B2%D0%B3.%202026%20%D0%B3.%2C%2018_25_37.png",
+            "mode": "fill"
+          },
+          "width": 659,
+          "height": 721
+        },
+        {
+          "type": "frame",
+          "id": "FBbWa",
+          "x": 120,
+          "y": 253,
+          "name": "01 Number",
+          "width": 58,
+          "height": 58,
+          "fill": "$h:brand-blue",
+          "cornerRadius": 29,
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "Vn39F",
+              "name": "01 Label",
+              "fill": "#FFFFFF",
+              "content": "01",
+              "fontFamily": "$h:font-primary",
+              "fontSize": 19,
+              "fontWeight": "800"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "gj4Bm",
+          "x": 120,
+          "y": 125,
+          "name": "01 Title",
+          "fill": "$h:neutral-950",
+          "textGrowth": "fixed-width",
+          "width": 850,
+          "content": "Подключайте существующих исполнителей и привлекайте новых на объектах",
+          "fontFamily": "$h:font-primary",
+          "fontSize": 26,
+          "fontWeight": "700"
+        },
+        {
+          "type": "frame",
+          "id": "H5WpT",
+          "x": 204,
+          "y": 269,
+          "name": "Frame 5",
+          "width": 850,
+          "layout": "vertical",
+          "gap": 7,
+          "children": [
+            {
+              "type": "text",
+              "id": "QPBVr",
+              "name": "01 Title",
+              "fill": "$h:neutral-950",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Подключите существующий пул",
+              "fontFamily": "$h:font-primary",
+              "fontSize": 26,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "PcwFB",
+              "name": "01 Description",
+              "fill": "$h:neutral-600",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Пригласите тех, с кем уже работаете: телефон · CSV / Excel · массовое SMS · ИНН · реестр.",
+              "lineHeight": 1.25,
+              "fontFamily": "$h:font-primary",
+              "fontSize": 19,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "jdnkz",
+              "name": "Registry Conversion Flow",
+              "width": "fill_container",
+              "height": 48,
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "N7mLwg",
+                  "name": "База исполнителей",
+                  "width": "fill_container",
+                  "height": 48,
+                  "fill": "$h:bg-secondary",
+                  "cornerRadius": 12,
+                  "gap": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "gxDlW",
+                      "name": "База исполнителей Icon",
+                      "width": 19,
+                      "height": 19,
+                      "icon": "users",
+                      "library": "lucide",
+                      "fill": "$h:brand-blue"
+                    },
+                    {
+                      "type": "text",
+                      "id": "L8lCZ",
+                      "name": "База исполнителей Text",
+                      "fill": "$h:neutral-800",
+                      "content": "База исполнителей",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 16,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "dJrYs",
+                  "name": "SMS / реестр",
+                  "width": "fill_container",
+                  "height": 48,
+                  "fill": "$h:brand-blue-soft",
+                  "cornerRadius": 12,
+                  "gap": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "HJF8J",
+                      "name": "SMS / реестр Icon",
+                      "width": 19,
+                      "height": 19,
+                      "icon": "send",
+                      "library": "lucide",
+                      "fill": "$h:brand-blue"
+                    },
+                    {
+                      "type": "text",
+                      "id": "uMn4U",
+                      "name": "SMS / реестр Text",
+                      "fill": "$h:neutral-800",
+                      "content": "SMS / реестр ИНН",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 16,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "C6yZEj",
+                  "name": "Подключённый пул",
+                  "width": "fill_container",
+                  "height": 48,
+                  "fill": "$h:brand-green-soft",
+                  "cornerRadius": 12,
+                  "gap": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "NS3yM",
+                      "name": "Подключённый пул Icon",
+                      "width": 19,
+                      "height": 19,
+                      "icon": "user-check",
+                      "library": "lucide",
+                      "fill": "$h:brand-green-strong"
+                    },
+                    {
+                      "type": "text",
+                      "id": "EQwDU",
+                      "name": "Подключённый пул Text",
+                      "fill": "$h:neutral-800",
+                      "content": "Подключённый пул",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 16,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "jWRTd",
+          "x": 102,
+          "y": 444,
+          "name": "02 Onsite Acquisition",
+          "width": 960,
+          "height": 144,
+          "fill": "$h:brand-blue-soft",
+          "cornerRadius": 24,
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "QhJX1",
+              "x": 18,
+              "y": 18,
+              "name": "02 Number",
+              "width": 58,
+              "height": 58,
+              "fill": "$h:brand-blue",
+              "cornerRadius": 29,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "WWHiu",
+                  "name": "02 Label",
+                  "fill": "#FFFFFF",
+                  "content": "02",
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 19,
+                  "fontWeight": "800"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "nEYoZ",
+              "x": 101,
+              "y": 30,
+              "name": "02 Title",
+              "fill": "$h:neutral-950",
+              "textGrowth": "fixed-width",
+              "width": 820,
+              "content": "Привлекайте новых исполнителей на площадках",
+              "fontFamily": "$h:font-primary",
+              "fontSize": 27,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "yahqE",
+              "x": 18,
+              "y": 90,
+              "name": "Frame 9",
+              "width": 926,
+              "gap": 11,
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "PhJJF",
+                  "name": "Frame 6",
+                  "fill": "#ffffffff",
+                  "cornerRadius": 805,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "padding": [
+                    10,
+                    20
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "K4DkW",
+                      "name": "База исполнителей Text",
+                      "fill": "$h:neutral-800",
+                      "content": "Ссылки в чатах",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "kGNjI",
+                  "name": "Frame 7",
+                  "fill": "#ffffffff",
+                  "cornerRadius": 805,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "padding": [
+                    10,
+                    20
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ewirW",
+                      "name": "База исполнителей Text",
+                      "fill": "$h:neutral-800",
+                      "content": "QR коды на объектах",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "k0szdx",
+                  "name": "Frame 8",
+                  "fill": "#ffffffff",
+                  "cornerRadius": 805,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "padding": [
+                    10,
+                    20
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "BOCbs",
+                      "name": "База исполнителей Text",
+                      "fill": "$h:neutral-800",
+                      "content": "Реферральная программа",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "a58XF",
+                  "name": "Frame 8",
+                  "fill": "#ffffffff",
+                  "cornerRadius": 805,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "padding": [
+                    10,
+                    20
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "byzJy",
+                      "name": "База исполнителей Text",
+                      "fill": "$h:neutral-800",
+                      "content": "Публикация в социальных сетях",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "bvVb8",
+          "x": 120,
+          "y": 616,
+          "name": "03 Number",
+          "width": 58,
+          "height": 58,
+          "fill": "$h:surface",
+          "cornerRadius": 29,
+          "stroke": "$h:neutral-150",
+          "strokeWidth": 1,
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "zogUt",
+              "name": "03 Label",
+              "fill": "$h:brand-blue",
+              "content": "03",
+              "fontFamily": "$h:font-primary",
+              "fontSize": 19,
+              "fontWeight": "800"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "rhdqk",
+          "x": 204,
+          "y": 633,
+          "name": "Frame 4",
+          "width": 850,
+          "layout": "vertical",
+          "gap": 7,
+          "children": [
+            {
+              "type": "text",
+              "id": "NX8HP",
+              "name": "03 Title",
+              "fill": "$h:neutral-950",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Реферальная программа",
+              "fontFamily": "$h:font-primary",
+              "fontSize": 25,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "IWGTO",
+              "name": "03 Description",
+              "fill": "$h:neutral-600",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Пусть исполнители приглашают своих друзей и знакомых",
+              "lineHeight": 1.25,
+              "fontFamily": "$h:font-primary",
+              "fontSize": 18,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "JoHgq",
+              "name": "Referral Flow",
+              "width": 800,
+              "height": 30,
+              "gap": 10,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "HKaqb",
+                  "name": "Referral Step 1",
+                  "fill": "$h:neutral-800",
+                  "content": "Исполнитель",
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "icon",
+                  "id": "wtZLn",
+                  "name": "Referral Arrow 1",
+                  "width": 18,
+                  "height": 18,
+                  "icon": "arrow-right",
+                  "library": "lucide",
+                  "fill": "$h:neutral-400"
+                },
+                {
+                  "type": "text",
+                  "id": "fzArI",
+                  "name": "Referral Step 2",
+                  "fill": "$h:neutral-800",
+                  "content": "приглашает",
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "icon",
+                  "id": "EKDub",
+                  "name": "Referral Arrow 2",
+                  "width": 18,
+                  "height": 18,
+                  "icon": "arrow-right",
+                  "library": "lucide",
+                  "fill": "$h:neutral-400"
+                },
+                {
+                  "type": "text",
+                  "id": "k4AaYZ",
+                  "name": "Referral Step 3",
+                  "fill": "$h:neutral-800",
+                  "content": "новый исполнитель",
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "icon",
+                  "id": "AipRS",
+                  "name": "Referral Arrow 3",
+                  "width": 18,
+                  "height": 18,
+                  "icon": "arrow-right",
+                  "library": "lucide",
+                  "fill": "$h:neutral-400"
+                },
+                {
+                  "type": "text",
+                  "id": "IBia0",
+                  "name": "Referral Step 4",
+                  "fill": "$h:brand-green-strong",
+                  "content": "первое задание",
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 15,
+                  "fontWeight": "700"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "UV9AF",
+          "x": 120,
+          "y": 201,
+          "name": "01 Description",
+          "fill": "$h:neutral-600",
+          "textGrowth": "fixed-width",
+          "width": 850,
+          "content": "Для подключения доступны приглашения, SMS, реестры, QR-коды и ссылки.",
+          "lineHeight": 1.25,
+          "fontFamily": "$h:font-primary",
+          "fontSize": 19,
+          "fontWeight": "normal"
         }
       ]
     }

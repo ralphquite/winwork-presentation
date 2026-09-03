@@ -48,9 +48,9 @@ DemoFlowModal
 | `src/presentation/engine/Presentation.tsx`             | `?scene`, history writes, shortcuts, fullscreen, presentation reset                   | Controls and all-route browser verification                |
 | `src/presentation/engine/PresentationControls.tsx`     | Home, counter, picker, previous/next, reset, fullscreen controls                      | Presentation callbacks and accessibility labels            |
 | `src/presentation/engine/SceneRenderer.tsx`            | Scene-type dispatch, transition, scene remount boundary                               | Scene contracts/components                                 |
-| `src/presentation/config/enterprise.ts`                | Ordered 19-scene Enterprise route and slide metadata                                  | Matching HTML exports and demo-flow bindings               |
+| `src/presentation/config/enterprise.ts`                | Ordered 17-scene Enterprise route and slide metadata                                  | Matching HTML exports and demo-flow bindings               |
 | `src/presentation/config/api.ts`                       | Ordered 16-scene API / Embedded route and slide metadata                              | Matching HTML exports                                      |
-| `src/presentation/config/small.ts`                     | Ordered 14-scene Small Business route and reused single-task binding                  | Matching HTML exports and demo-flow binding                |
+| `src/presentation/config/small.ts`                     | Ordered 12-scene Small Business route and reused single-task binding                  | Matching HTML exports and demo-flow binding                |
 | `src/presentation/config/court.ts`                     | Ordered five-scene public court route, registry link, and court demo bindings         | Court slides/assets, shared demo flows, public entry       |
 | `src/presentation/config/shared.ts`                    | Shared placeholder definitions                                                        | Placeholder track contracts only                           |
 | `src/presentation/scenes/SlideScene.tsx`               | Pencil-backed versus placeholder slide selection                                      | `PencilSlide` and slide definition                         |

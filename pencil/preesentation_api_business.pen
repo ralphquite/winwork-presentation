@@ -1221,7 +1221,7 @@
                   "fill": "$h:neutral-800",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
-                  "content": "Исполнителю не обязательно устанавливать приложение WinWork: работа может оставаться в вашем продукте.",
+                  "content": "Для регистрации, получения выплат и регистрации чеков исполнителю нужно будет использовать приложение или веб версию WinWork",
                   "lineHeight": 1.3,
                   "fontFamily": "$h:font-primary",
                   "fontSize": 13,
@@ -2165,7 +2165,7 @@
                           "fill": "$h:neutral-600",
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
-                          "content": "Статус возвращается в продукт. Документы и история связаны с операцией.",
+                          "content": "Статус возвращается в продукт.\nДокументы и история связаны с операцией.",
                           "lineHeight": 1.25,
                           "fontFamily": "$h:font-primary",
                           "fontSize": 14,
@@ -2616,7 +2616,7 @@
                   "fill": "#A7B3C6",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
-                  "content": "Команда и исполнители работают в вашем интерфейсе. WinWork обрабатывает проверки, документы и выплаты через API.",
+                  "content": "Команда и исполнители работают в вашем интерфейсе.\nWinWork обрабатывает проверки, документы и выплаты через API.",
                   "lineHeight": 1.4,
                   "fontFamily": "$h:font-primary",
                   "fontSize": 15,
@@ -2676,7 +2676,7 @@
                           "id": "SNLBh",
                           "name": "Result Title",
                           "fill": "#FFFFFF",
-                          "content": "Сохраняете интерфейс",
+                          "content": "Исполнители видят ваш интерфейс",
                           "fontFamily": "$h:font-primary",
                           "fontSize": 16,
                           "fontWeight": "700"
@@ -2688,7 +2688,7 @@
                           "fill": "#93A1B5",
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
-                          "content": "процесс не переносится в отдельный кабинет",
+                          "content": "Кроме регистрации",
                           "lineHeight": 1.25,
                           "fontFamily": "$h:font-primary",
                           "fontSize": 13,
@@ -2927,7 +2927,7 @@
           "fill": "$h:neutral-950",
           "textGrowth": "fixed-width",
           "width": 1520,
-          "content": "Пользователь работает в вашем продукте, а WinWork обрабатывает инфраструктурную часть",
+          "content": "Пользователь работает в вашем продукте,\nа WinWork обрабатывает инфраструктурную часть",
           "lineHeight": 1.08,
           "fontFamily": "$h:font-primary",
           "fontSize": 56,
@@ -3011,45 +3011,7 @@
                   "fill": "$h:neutral-800",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
-                  "content": "Интерфейс и пользовательский путь",
-                  "fontFamily": "$h:font-primary",
-                  "fontSize": 20,
-                  "fontWeight": "650"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "Hbxoz",
-              "name": "Keep Найм и подбор",
-              "width": "fill_container",
-              "fill": "$h:bg-primary",
-              "cornerRadius": 12,
-              "gap": 12,
-              "padding": [
-                15,
-                18
-              ],
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "icon",
-                  "id": "SJH2S",
-                  "name": "Keep Icon",
-                  "width": 22,
-                  "height": 22,
-                  "icon": "check",
-                  "library": "lucide",
-                  "fill": "$h:brand-blue"
-                },
-                {
-                  "type": "text",
-                  "id": "I5h1Tk",
-                  "name": "Keep Text",
-                  "fill": "$h:neutral-800",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "Найм и подбор",
+                  "content": "Интерфейс который видит исполнитель",
                   "fontFamily": "$h:font-primary",
                   "fontSize": 20,
                   "fontWeight": "650"
@@ -3164,6 +3126,44 @@
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
                   "content": "Собственные бизнес-правила",
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 20,
+                  "fontWeight": "650"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Hbxoz",
+              "name": "Keep Найм и подбор",
+              "width": "fill_container",
+              "fill": "$h:bg-primary",
+              "cornerRadius": 12,
+              "gap": 12,
+              "padding": [
+                15,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "SJH2S",
+                  "name": "Keep Icon",
+                  "width": 22,
+                  "height": 22,
+                  "icon": "check",
+                  "library": "lucide",
+                  "fill": "$h:brand-blue"
+                },
+                {
+                  "type": "text",
+                  "id": "I5h1Tk",
+                  "name": "Keep Text",
+                  "fill": "$h:neutral-800",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Найм и подбор в интерфейсе WinWork ",
                   "fontFamily": "$h:font-primary",
                   "fontSize": 20,
                   "fontWeight": "650"
@@ -3512,41 +3512,10 @@
               "fill": "$h:neutral-950",
               "textGrowth": "fixed-width",
               "width": "fill_container",
-              "content": "Статусы, документы и результаты возвращаются в систему клиента. Его продукт остаётся основным интерфейсом процесса.",
+              "content": "Статусы, документы и результаты возвращаются в вашу систему.\nВаш продукт остаётся основным интерфейсом для исполнителей.",
               "lineHeight": 1.4,
               "fontFamily": "$h:font-primary",
               "fontSize": 24,
-              "fontWeight": "650"
-            }
-          ]
-        },
-        {
-          "type": "frame",
-          "id": "EZpFK",
-          "x": 120,
-          "y": 952,
-          "name": "Return Annotation",
-          "gap": 12,
-          "alignItems": "center",
-          "children": [
-            {
-              "type": "icon",
-              "id": "LppRq",
-              "name": "Return Icon",
-              "width": 24,
-              "height": 24,
-              "icon": "corner-up-left",
-              "library": "lucide",
-              "fill": "$h:brand-green-strong"
-            },
-            {
-              "type": "text",
-              "id": "WbU8U",
-              "name": "Return Text",
-              "fill": "$h:brand-green-strong",
-              "content": "статусы · документы · результаты возвращаются в систему клиента",
-              "fontFamily": "$h:font-primary",
-              "fontSize": 20,
               "fontWeight": "650"
             }
           ]
@@ -3643,8 +3612,8 @@
           "name": "Slide Title",
           "fill": "$h:neutral-950",
           "textGrowth": "fixed-width",
-          "width": 1500,
-          "content": "Команде и исполнителям не нужно работать в двух продуктах",
+          "width": 1692,
+          "content": "Исполнителям не нужно работать в двух продуктах",
           "lineHeight": 1.08,
           "fontFamily": "$h:font-primary",
           "fontSize": 56,
@@ -3654,7 +3623,7 @@
           "type": "frame",
           "id": "HDL0x",
           "x": 120,
-          "y": 303,
+          "y": 264,
           "name": "Before Card",
           "width": 760,
           "height": 580,
@@ -3916,7 +3885,7 @@
           "type": "frame",
           "id": "IE3Ju",
           "x": 920,
-          "y": 553,
+          "y": 514,
           "name": "Compare Arrow",
           "width": 80,
           "height": 80,
@@ -3951,7 +3920,7 @@
           "type": "frame",
           "id": "M7Sn6",
           "x": 1040,
-          "y": 303,
+          "y": 264,
           "name": "After Card",
           "width": 760,
           "height": 580,
@@ -4048,7 +4017,7 @@
                       "fill": "$h:brand-blue-mid",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
-                      "content": "интерфейс и процесс остаются у клиента",
+                      "content": "WInWork подтсраивается под ваши нужды",
                       "fontFamily": "$h:font-primary",
                       "fontSize": 17,
                       "fontWeight": "normal"
@@ -4211,7 +4180,7 @@
           "type": "frame",
           "id": "oD7Np",
           "x": 120,
-          "y": 913,
+          "y": 903,
           "name": "One Flow Insight",
           "width": 1680,
           "fill": "$h:brand-green-soft",
@@ -4242,7 +4211,7 @@
               "fill": "$h:neutral-950",
               "textGrowth": "fixed-width",
               "width": "fill_container",
-              "content": "Сотрудник продолжает работать в привычной системе, а операции WinWork запускаются из неё.",
+              "content": "Сотрудник работает в WinWork, но по вашим правилам.",
               "fontFamily": "$h:font-primary",
               "fontSize": 24,
               "fontWeight": "650"
@@ -4253,9 +4222,9 @@
     },
     {
       "type": "frame",
-      "id": "lAmWx",
-      "x": 0,
-      "y": 4496,
+      "id": "hLUa8",
+      "x": 8171,
+      "y": 3296,
       "name": "РАЗДЕЛ B — РАБОТА С ИСПОЛНИТЕЛЕМ / API-05",
       "clip": true,
       "width": 1920,
@@ -4264,7 +4233,7 @@
       "layout": "none",
       "children": [
         {
-          "id": "zA2P9",
+          "id": "IqIIi",
           "type": "ref",
           "ref": "CmSfJ",
           "name": "WinWork Logo",
@@ -4275,7 +4244,7 @@
         },
         {
           "type": "text",
-          "id": "A5wFFo",
+          "id": "UKZv1",
           "x": 120,
           "y": 68,
           "name": "Section Indicator",
@@ -4288,7 +4257,7 @@
         },
         {
           "type": "frame",
-          "id": "xwZ1x",
+          "id": "i6ylx",
           "x": 120,
           "y": 1010,
           "name": "Section Progress",
@@ -4298,7 +4267,7 @@
             {
               "type": "rectangle",
               "cornerRadius": 3,
-              "id": "IxAjV",
+              "id": "ydHK9",
               "name": "Progress 1",
               "fill": "$h:brand-blue",
               "width": 44,
@@ -4307,7 +4276,7 @@
             {
               "type": "rectangle",
               "cornerRadius": 3,
-              "id": "lr64W",
+              "id": "gQPZa",
               "name": "Progress 2",
               "fill": "$h:neutral-250",
               "width": 12,
@@ -4316,7 +4285,7 @@
             {
               "type": "rectangle",
               "cornerRadius": 3,
-              "id": "yOoRT",
+              "id": "eEkr2",
               "name": "Progress 3",
               "fill": "$h:neutral-250",
               "width": 12,
@@ -4326,14 +4295,14 @@
         },
         {
           "type": "text",
-          "id": "e3sbTL",
+          "id": "pDgZt",
           "x": 120,
           "y": 140,
           "name": "Slide Title",
           "fill": "$h:neutral-950",
           "textGrowth": "fixed-width",
-          "width": 1560,
-          "content": "Исполнителю не нужно переходить в отдельное приложение WinWork",
+          "width": 1572,
+          "content": "После регистрации исполнитель продолжает работу в вашем продукте",
           "lineHeight": 1.08,
           "fontFamily": "$h:font-primary",
           "fontSize": 52,
@@ -4341,14 +4310,14 @@
         },
         {
           "type": "text",
-          "id": "awOqy",
+          "id": "L2cxy",
           "x": 120,
           "y": 268,
           "name": "Slide Lead",
           "fill": "$h:neutral-600",
           "textGrowth": "fixed-width",
           "width": 1320,
-          "content": "Рабочий сценарий остаётся в вашем продукте, а регистрация, реквизиты и выплаты проходят через встроенную веб-форму.",
+          "content": "Регистрация проходит в веб-интерфейсе WinWork. После неё основной рабочий сценарий остаётся в вашем продукте, а необходимые операции выполняются через API.",
           "lineHeight": 1.35,
           "fontFamily": "$h:font-primary",
           "fontSize": 26,
@@ -4356,7 +4325,7 @@
         },
         {
           "type": "rectangle",
-          "id": "RFa9B",
+          "id": "K2P2gM",
           "x": 180,
           "y": 648,
           "name": "Flow Connector",
@@ -4366,7 +4335,7 @@
         },
         {
           "type": "frame",
-          "id": "PY1Aq",
+          "id": "QvNfu",
           "x": 120,
           "y": 393,
           "name": "Stage 01 — Продукт клиента",
@@ -4376,7 +4345,7 @@
           "children": [
             {
               "type": "frame",
-              "id": "FR8VJ",
+              "id": "YYXAT",
               "name": "Stage Header",
               "width": "fill_container",
               "layout": "vertical",
@@ -4384,7 +4353,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "U6674S",
+                  "id": "ihZll",
                   "name": "Chip Row",
                   "width": "fill_container",
                   "gap": 12,
@@ -4392,7 +4361,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "obKB0",
+                      "id": "Kh7H1",
                       "name": "Number Chip",
                       "width": 40,
                       "height": 40,
@@ -4403,7 +4372,7 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "h2TKX",
+                          "id": "I0IZCf",
                           "name": "Num",
                           "fill": "#FFFFFF",
                           "content": "1",
@@ -4415,7 +4384,7 @@
                     },
                     {
                       "type": "text",
-                      "id": "t9UZ8",
+                      "id": "C66Hv",
                       "name": "Overline",
                       "fill": "$h:neutral-400",
                       "content": "ПРОДУКТ КЛИЕНТА",
@@ -4428,12 +4397,12 @@
                 },
                 {
                   "type": "text",
-                  "id": "GAO5y",
+                  "id": "B167xJ",
                   "name": "Stage Title",
                   "fill": "$h:neutral-950",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
-                  "content": "Исполнитель начинает работу в вашем продукте",
+                  "content": "Исполнитель начинает в вашем продукте",
                   "lineHeight": 1.15,
                   "fontFamily": "$h:font-primary",
                   "fontSize": 27,
@@ -4443,7 +4412,7 @@
             },
             {
               "type": "frame",
-              "id": "RHSbe",
+              "id": "AQAYX",
               "name": "Stage Visual",
               "clip": true,
               "width": "fill_container",
@@ -4468,7 +4437,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "FoGhW",
+                  "id": "r8NhtL",
                   "name": "Browser Bar",
                   "width": "fill_container",
                   "gap": 10,
@@ -4476,13 +4445,13 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "N5CqH",
+                      "id": "WMNV6",
                       "name": "Dots",
                       "gap": 6,
                       "children": [
                         {
                           "type": "ellipse",
-                          "id": "HBrr3",
+                          "id": "mMz64",
                           "name": "Dot",
                           "fill": "#E2E7EE",
                           "width": 9,
@@ -4490,7 +4459,7 @@
                         },
                         {
                           "type": "ellipse",
-                          "id": "pm8Vk",
+                          "id": "kXJKZ",
                           "name": "Dot",
                           "fill": "#E2E7EE",
                           "width": 9,
@@ -4498,7 +4467,7 @@
                         },
                         {
                           "type": "ellipse",
-                          "id": "OtxCl",
+                          "id": "Ch5M9",
                           "name": "Dot",
                           "fill": "#E2E7EE",
                           "width": 9,
@@ -4508,7 +4477,7 @@
                     },
                     {
                       "type": "frame",
-                      "id": "BNbMg",
+                      "id": "rFUih",
                       "name": "Url Pill",
                       "width": "fill_container",
                       "fill": "$h:neutral-100",
@@ -4520,7 +4489,7 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "MXTls",
+                          "id": "BJsPX",
                           "name": "Url",
                           "fill": "$h:neutral-400",
                           "content": "yourproduct.app",
@@ -4534,7 +4503,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "Fbok8",
+                  "id": "QqWzL",
                   "name": "Job Card",
                   "width": "fill_container",
                   "fill": "$h:brand-blue-soft",
@@ -4547,7 +4516,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "TQgUf",
+                      "id": "uVzVL",
                       "name": "Job Top",
                       "width": "fill_container",
                       "gap": 10,
@@ -4555,7 +4524,7 @@
                       "children": [
                         {
                           "type": "frame",
-                          "id": "UmvHo",
+                          "id": "vQDIq",
                           "name": "Tag",
                           "fill": "$h:brand-blue",
                           "cornerRadius": 7,
@@ -4566,7 +4535,7 @@
                           "children": [
                             {
                               "type": "text",
-                              "id": "trkFB",
+                              "id": "a79sE",
                               "name": "Tag Label",
                               "fill": "#FFFFFF",
                               "content": "Задание",
@@ -4578,7 +4547,7 @@
                         },
                         {
                           "type": "text",
-                          "id": "pOmjT",
+                          "id": "BKFrf",
                           "name": "Job Meta",
                           "fill": "$h:neutral-400",
                           "content": "Сегодня · 2–3 ч",
@@ -4590,7 +4559,7 @@
                     },
                     {
                       "type": "text",
-                      "id": "P1jNo",
+                      "id": "U8FXE",
                       "name": "Job Title",
                       "fill": "$h:neutral-950",
                       "textGrowth": "fixed-width",
@@ -4602,7 +4571,7 @@
                     },
                     {
                       "type": "frame",
-                      "id": "WXwCf",
+                      "id": "X0kSeg",
                       "name": "Job Bottom",
                       "width": "fill_container",
                       "justifyContent": "space_between",
@@ -4610,7 +4579,7 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "sNahB",
+                          "id": "LZnxL",
                           "name": "Job Price",
                           "fill": "$h:neutral-950",
                           "content": "1 200 ₽",
@@ -4620,7 +4589,7 @@
                         },
                         {
                           "type": "frame",
-                          "id": "piP1N",
+                          "id": "P43wel",
                           "name": "Apply Button",
                           "fill": "$h:brand-blue",
                           "cornerRadius": 10,
@@ -4631,7 +4600,7 @@
                           "children": [
                             {
                               "type": "text",
-                              "id": "vt5CO",
+                              "id": "JI7O1",
                               "name": "Apply Label",
                               "fill": "#FFFFFF",
                               "content": "Откликнуться",
@@ -4647,7 +4616,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "gfFq8",
+                  "id": "GS3uh",
                   "name": "List Row",
                   "width": "fill_container",
                   "gap": 12,
@@ -4656,7 +4625,7 @@
                     {
                       "type": "rectangle",
                       "cornerRadius": 10,
-                      "id": "I3zab",
+                      "id": "pHbYi",
                       "name": "Avatar",
                       "fill": "$h:neutral-100",
                       "width": 34,
@@ -4665,7 +4634,7 @@
                     {
                       "type": "rectangle",
                       "cornerRadius": 5,
-                      "id": "qFYvs",
+                      "id": "GtLmQ",
                       "name": "Line",
                       "fill": "$h:neutral-100",
                       "width": 300,
@@ -4677,12 +4646,12 @@
             },
             {
               "type": "text",
-              "id": "TDUEB",
+              "id": "a8zq4",
               "name": "Stage Desc",
               "fill": "$h:neutral-600",
               "textGrowth": "fixed-width",
               "width": "fill_container",
-              "content": "Поиск задания, отклик и основная работа остаются в интерфейсе клиента.",
+              "content": "Задания и основной рабочий сценарий остаются в привычном интерфейсе.",
               "lineHeight": 1.45,
               "fontFamily": "$h:font-primary",
               "fontSize": 18,
@@ -4692,17 +4661,17 @@
         },
         {
           "type": "frame",
-          "id": "Kqiyu",
+          "id": "Vh11E",
           "x": 700,
           "y": 393,
-          "name": "Stage 02 — Embedded flow",
+          "name": "Stage 02 — Web-регистрация WinWork",
           "width": 520,
           "layout": "vertical",
           "gap": 22,
           "children": [
             {
               "type": "frame",
-              "id": "LMd0X",
+              "id": "Ri3fP",
               "name": "Stage Header",
               "width": "fill_container",
               "layout": "vertical",
@@ -4710,7 +4679,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "wFJok",
+                  "id": "ANxTi",
                   "name": "Chip Row",
                   "width": "fill_container",
                   "gap": 12,
@@ -4718,7 +4687,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "mMssj",
+                      "id": "DjNYH",
                       "name": "Number Chip",
                       "width": 40,
                       "height": 40,
@@ -4729,7 +4698,7 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "PHK8v",
+                          "id": "bwqY4",
                           "name": "Num",
                           "fill": "#FFFFFF",
                           "content": "2",
@@ -4741,10 +4710,10 @@
                     },
                     {
                       "type": "text",
-                      "id": "trZfx",
+                      "id": "T8RhNd",
                       "name": "Overline",
                       "fill": "$h:neutral-400",
-                      "content": "ВСТРОЕННЫЙ СЦЕНАРИЙ",
+                      "content": "WEB-РЕГИСТРАЦИЯ WINWORK",
                       "fontFamily": "$h:font-primary",
                       "fontSize": 15,
                       "fontWeight": "700",
@@ -4754,12 +4723,12 @@
                 },
                 {
                   "type": "text",
-                  "id": "Na9Km",
+                  "id": "ACWJm",
                   "name": "Stage Title",
                   "fill": "$h:neutral-950",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
-                  "content": "Регистрация и реквизиты собираются во встроенной форме",
+                  "content": "Регистрация проходит в WinWork",
                   "lineHeight": 1.15,
                   "fontFamily": "$h:font-primary",
                   "fontSize": 27,
@@ -4769,46 +4738,131 @@
             },
             {
               "type": "frame",
-              "id": "Uc687",
-              "name": "Stage Visual",
+              "id": "X1oY0u",
+              "name": "WinWork Web Registration",
               "clip": true,
               "width": "fill_container",
               "height": 300,
-              "fill": "$h:brand-blue-soft",
+              "fill": "#FFFFFF",
               "cornerRadius": 24,
               "stroke": "$h:brand-blue-light",
               "strokeWidth": 1,
               "layout": "vertical",
-              "padding": 24,
-              "justifyContent": "center",
-              "alignItems": "center",
               "children": [
                 {
                   "type": "frame",
-                  "id": "U0qyWQ",
-                  "name": "Embedded Modal",
-                  "width": 380,
-                  "fill": "$h:surface",
-                  "cornerRadius": 20,
-                  "stroke": "$h:neutral-150",
-                  "strokeWidth": 1,
-                  "effect": {
-                    "type": "shadow",
-                    "shadowType": "outer",
-                    "color": "#1720331F",
-                    "offset": {
-                      "x": 0,
-                      "y": 14
-                    },
-                    "blur": 36
-                  },
-                  "layout": "vertical",
+                  "id": "VMDzU",
+                  "name": "WinWork Browser Bar",
+                  "width": "fill_container",
+                  "height": 40,
+                  "fill": "#F7F9FC",
                   "gap": 12,
-                  "padding": 20,
+                  "padding": [
+                    0,
+                    14
+                  ],
+                  "alignItems": "center",
                   "children": [
                     {
                       "type": "frame",
-                      "id": "s4xwHZ",
+                      "id": "sM6uB",
+                      "name": "Browser Dots",
+                      "gap": 5,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "ellipse",
+                          "id": "nZQDp",
+                          "name": "Browser Dot 1",
+                          "fill": "#FF7A7A",
+                          "width": 7,
+                          "height": 7
+                        },
+                        {
+                          "type": "ellipse",
+                          "id": "onHkz",
+                          "name": "Browser Dot 2",
+                          "fill": "#F5C451",
+                          "width": 7,
+                          "height": 7
+                        },
+                        {
+                          "type": "ellipse",
+                          "id": "KCn1J",
+                          "name": "Browser Dot 3",
+                          "fill": "#55C985",
+                          "width": 7,
+                          "height": 7
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "LZ8z2",
+                      "name": "WinWork URL",
+                      "width": "fill_container",
+                      "height": 25,
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 999,
+                      "stroke": "#E2E7EE",
+                      "strokeWidth": 1,
+                      "gap": 6,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "e5IqM",
+                          "name": "Secure Lock",
+                          "width": 12,
+                          "height": 12,
+                          "icon": "lock",
+                          "library": "lucide",
+                          "fill": "#179E48"
+                        },
+                        {
+                          "type": "text",
+                          "id": "eT8Fp",
+                          "name": "URL Text",
+                          "fill": "#5E6A7D",
+                          "content": "register.winwork.ru",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "OnI4x",
+                  "name": "WinWork Registration Page",
+                  "width": "fill_container",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": [
+                    0,
+                    0,
+                    20,
+                    20
+                  ],
+                  "stroke": "#FFFFFF00",
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "enabled": false,
+                    "color": "#000000"
+                  },
+                  "layout": "vertical",
+                  "gap": 6,
+                  "padding": [
+                    12,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "fjbSX",
                       "name": "Modal Header",
                       "width": "fill_container",
                       "justifyContent": "space_between",
@@ -4816,17 +4870,17 @@
                       "children": [
                         {
                           "type": "frame",
-                          "id": "W8Xjz",
+                          "id": "vLiH7",
                           "name": "Modal Title Col",
                           "layout": "vertical",
                           "gap": 4,
                           "children": [
                             {
                               "type": "text",
-                              "id": "gZMVu",
+                              "id": "s3LiO5",
                               "name": "Modal Overline",
                               "fill": "$h:brand-blue",
-                              "content": "WINWORK · ВСТРОЕННАЯ ФОРМА",
+                              "content": "WEB-РЕГИСТРАЦИЯ · WHITE LABEL",
                               "fontFamily": "$h:font-primary",
                               "fontSize": 12,
                               "fontWeight": "700",
@@ -4834,10 +4888,10 @@
                             },
                             {
                               "type": "text",
-                              "id": "tuT1d",
+                              "id": "LDvkc",
                               "name": "Modal Title",
                               "fill": "$h:neutral-950",
-                              "content": "Подключение выплат",
+                              "content": "Регистрация исполнителя",
                               "fontFamily": "$h:font-primary",
                               "fontSize": 19,
                               "fontWeight": "700"
@@ -4845,20 +4899,18 @@
                           ]
                         },
                         {
-                          "type": "icon",
-                          "id": "WWWAZ",
-                          "name": "Close",
-                          "width": 20,
-                          "height": 20,
-                          "icon": "x",
-                          "library": "lucide",
-                          "fill": "$h:neutral-400"
+                          "id": "QLFcZ",
+                          "type": "ref",
+                          "ref": "CmSfJ",
+                          "name": "WinWork Logo on Registration",
+                          "width": 92,
+                          "height": 18
                         }
                       ]
                     },
                     {
                       "type": "frame",
-                      "id": "OpOHu",
+                      "id": "H2jET",
                       "name": "Step 1",
                       "width": "fill_container",
                       "fill": "$h:brand-blue-soft",
@@ -4869,7 +4921,7 @@
                       "children": [
                         {
                           "type": "frame",
-                          "id": "iZsob",
+                          "id": "US2nL",
                           "name": "Step Chip",
                           "width": 32,
                           "height": 32,
@@ -4880,7 +4932,7 @@
                           "children": [
                             {
                               "type": "text",
-                              "id": "ok7LH",
+                              "id": "E5r5ZR",
                               "name": "Step Num",
                               "fill": "#FFFFFF",
                               "content": "1",
@@ -4892,7 +4944,7 @@
                         },
                         {
                           "type": "frame",
-                          "id": "w8GQq7",
+                          "id": "GkIai",
                           "name": "Step Text",
                           "width": "fill_container",
                           "layout": "vertical",
@@ -4900,7 +4952,7 @@
                           "children": [
                             {
                               "type": "text",
-                              "id": "LYQwB",
+                              "id": "lv6R2",
                               "name": "Step Title",
                               "fill": "$h:neutral-950",
                               "content": "Регистрация",
@@ -4910,7 +4962,7 @@
                             },
                             {
                               "type": "text",
-                              "id": "I9E3kr",
+                              "id": "H5kKc",
                               "name": "Step Desc",
                               "fill": "$h:neutral-400",
                               "content": "Основные данные исполнителя",
@@ -4924,7 +4976,7 @@
                     },
                     {
                       "type": "frame",
-                      "id": "Ht9xf",
+                      "id": "cc88t",
                       "name": "Step 2",
                       "width": "fill_container",
                       "fill": "#FFFFFF00",
@@ -4935,7 +4987,7 @@
                       "children": [
                         {
                           "type": "frame",
-                          "id": "vSfVV",
+                          "id": "mP3MU",
                           "name": "Step Chip",
                           "width": 32,
                           "height": 32,
@@ -4946,7 +4998,7 @@
                           "children": [
                             {
                               "type": "text",
-                              "id": "lFGYk",
+                              "id": "o02qI9",
                               "name": "Step Num",
                               "fill": "$h:neutral-600",
                               "content": "2",
@@ -4958,7 +5010,7 @@
                         },
                         {
                           "type": "frame",
-                          "id": "uE9WA",
+                          "id": "KtHSp",
                           "name": "Step Text",
                           "width": "fill_container",
                           "layout": "vertical",
@@ -4966,7 +5018,7 @@
                           "children": [
                             {
                               "type": "text",
-                              "id": "Qdr1g",
+                              "id": "gs0pd",
                               "name": "Step Title",
                               "fill": "$h:neutral-950",
                               "content": "Подтверждение данных",
@@ -4976,7 +5028,7 @@
                             },
                             {
                               "type": "text",
-                              "id": "XIaRb",
+                              "id": "r4Eqv",
                               "name": "Step Desc",
                               "fill": "$h:neutral-400",
                               "content": "Проверка личности и сведений",
@@ -4990,7 +5042,7 @@
                     },
                     {
                       "type": "frame",
-                      "id": "Q8XLcP",
+                      "id": "TitY2",
                       "name": "Step 3",
                       "width": "fill_container",
                       "fill": "#FFFFFF00",
@@ -5001,7 +5053,7 @@
                       "children": [
                         {
                           "type": "frame",
-                          "id": "OQU2B",
+                          "id": "EGZRD",
                           "name": "Step Chip",
                           "width": 32,
                           "height": 32,
@@ -5012,7 +5064,7 @@
                           "children": [
                             {
                               "type": "text",
-                              "id": "z6NwDu",
+                              "id": "VHElY",
                               "name": "Step Num",
                               "fill": "$h:neutral-600",
                               "content": "3",
@@ -5024,7 +5076,7 @@
                         },
                         {
                           "type": "frame",
-                          "id": "C7FR6W",
+                          "id": "euivA",
                           "name": "Step Text",
                           "width": "fill_container",
                           "layout": "vertical",
@@ -5032,17 +5084,17 @@
                           "children": [
                             {
                               "type": "text",
-                              "id": "c1voBI",
+                              "id": "JfxwW",
                               "name": "Step Title",
                               "fill": "$h:neutral-950",
-                              "content": "Реквизиты для выплаты",
+                              "content": "Реквизиты для выплат",
                               "fontFamily": "$h:font-primary",
                               "fontSize": 15,
                               "fontWeight": "700"
                             },
                             {
                               "type": "text",
-                              "id": "tbwIJ",
+                              "id": "OOdZe",
                               "name": "Step Desc",
                               "fill": "$h:neutral-400",
                               "content": "Счёт для перевода денег",
@@ -5060,12 +5112,12 @@
             },
             {
               "type": "text",
-              "id": "HHb8p",
+              "id": "piEEu",
               "name": "Stage Desc",
               "fill": "$h:neutral-600",
               "textGrowth": "fixed-width",
               "width": "fill_container",
-              "content": "Регистрация и платёжные реквизиты собираются без обязательной установки приложения WinWork.",
+              "content": "Исполнитель один раз проходит регистрацию и указывает необходимые данные в защищённом веб-интерфейсе WinWork.",
               "lineHeight": 1.45,
               "fontFamily": "$h:font-primary",
               "fontSize": 18,
@@ -5075,17 +5127,17 @@
         },
         {
           "type": "frame",
-          "id": "wLG4d",
+          "id": "mCNBH",
           "x": 1280,
           "y": 393,
-          "name": "Stage 03 — WinWork",
+          "name": "Stage 03 — Работа через API WinWork",
           "width": 520,
           "layout": "vertical",
           "gap": 22,
           "children": [
             {
               "type": "frame",
-              "id": "eLlil",
+              "id": "OelOM",
               "name": "Stage Header",
               "width": "fill_container",
               "layout": "vertical",
@@ -5093,7 +5145,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "JIRCS",
+                  "id": "g0EdM",
                   "name": "Chip Row",
                   "width": "fill_container",
                   "gap": 12,
@@ -5101,7 +5153,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "RvMdz",
+                      "id": "WZAAC",
                       "name": "Number Chip",
                       "width": 40,
                       "height": 40,
@@ -5112,7 +5164,7 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "fmwx8",
+                          "id": "R5nYE",
                           "name": "Num",
                           "fill": "#FFFFFF",
                           "content": "3",
@@ -5124,10 +5176,10 @@
                     },
                     {
                       "type": "text",
-                      "id": "pTUdU",
+                      "id": "MOVXN",
                       "name": "Overline",
                       "fill": "$h:neutral-400",
-                      "content": "WINWORK",
+                      "content": "РАБОТА ЧЕРЕЗ API WINWORK",
                       "fontFamily": "$h:font-primary",
                       "fontSize": 15,
                       "fontWeight": "700",
@@ -5137,12 +5189,12 @@
                 },
                 {
                   "type": "text",
-                  "id": "ZWSoB",
+                  "id": "tZHHF",
                   "name": "Stage Title",
                   "fill": "$h:neutral-950",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
-                  "content": "WinWork обрабатывает выплаты и документы",
+                  "content": "Дальше исполнитель работает в вашем продукте",
                   "lineHeight": 1.15,
                   "fontFamily": "$h:font-primary",
                   "fontSize": 27,
@@ -5152,12 +5204,12 @@
             },
             {
               "type": "frame",
-              "id": "Nm2WF",
-              "name": "Stage Visual",
+              "id": "PlZty",
+              "name": "Stage Visual — Client UI over WinWork API",
               "clip": true,
-              "width": "fill_container",
+              "width": 520,
               "height": 300,
-              "fill": "$h:neutral-950",
+              "fill": "#172033",
               "cornerRadius": 24,
               "effect": {
                 "type": "shadow",
@@ -5169,256 +5221,320 @@
                 },
                 "blur": 30
               },
-              "layout": "vertical",
-              "gap": 12,
-              "padding": 20,
+              "layout": "none",
               "children": [
                 {
                   "type": "frame",
-                  "id": "f1CsrP",
-                  "name": "Infra Header",
-                  "width": "fill_container",
-                  "gap": 10,
+                  "id": "QRXKZ",
+                  "x": 20,
+                  "y": 20,
+                  "name": "API Badge",
+                  "fill": "#2A73FF",
+                  "cornerRadius": 10,
+                  "gap": 7,
+                  "padding": [
+                    7,
+                    11
+                  ],
                   "alignItems": "center",
                   "children": [
                     {
-                      "type": "frame",
-                      "id": "ztXJJ",
-                      "name": "W Badge",
-                      "width": 34,
-                      "height": 34,
-                      "fill": "$h:brand-blue",
-                      "cornerRadius": 10,
-                      "justifyContent": "center",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "tJjQ7",
-                          "name": "W",
-                          "fill": "#FFFFFF",
-                          "content": "W",
-                          "fontFamily": "$h:font-primary",
-                          "fontSize": 17,
-                          "fontWeight": "700"
-                        }
-                      ]
+                      "type": "icon",
+                      "id": "M2nAA7",
+                      "name": "API Icon",
+                      "width": 16,
+                      "height": 16,
+                      "icon": "braces",
+                      "library": "lucide",
+                      "fill": "#FFFFFF"
                     },
                     {
                       "type": "text",
-                      "id": "YyChI",
-                      "name": "Infra Title",
-                      "fill": "#FFFFFF99",
-                      "content": "ИНФРАСТРУКТУРА WINWORK",
-                      "fontFamily": "$h:font-primary",
+                      "id": "GT8Wo",
+                      "name": "API Badge Text",
+                      "fill": "#FFFFFF",
+                      "content": "API WinWork",
+                      "fontFamily": "Inter",
                       "fontSize": 13,
-                      "fontWeight": "700",
-                      "letterSpacing": 1.6
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "qZu1S",
+                  "x": 154,
+                  "y": 29,
+                  "name": "Infrastructure Label",
+                  "fill": "#FFFFFF99",
+                  "content": "ИНФРАСТРУКТУРНЫЙ СЛОЙ",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "letterSpacing": 1.3
+                },
+                {
+                  "type": "frame",
+                  "id": "wqaHj",
+                  "x": 20,
+                  "y": 64,
+                  "name": "Client Product Surface",
+                  "width": 480,
+                  "height": 128,
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 16,
+                  "stroke": "#DCE9FF",
+                  "strokeWidth": 1,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000033",
+                    "offset": {
+                      "x": 0,
+                      "y": 8
+                    },
+                    "blur": 20
+                  },
+                  "layout": "vertical",
+                  "gap": 10,
+                  "padding": 16,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "oui03",
+                      "name": "Client Surface Header",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "m6l2Uw",
+                          "name": "Client Surface Title",
+                          "fill": "#172033",
+                          "content": "Ваш продукт",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "n7FGS",
+                          "name": "Primary UI Chip",
+                          "fill": "#EEF4FF",
+                          "cornerRadius": 999,
+                          "padding": [
+                            6,
+                            10
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "mzef4",
+                              "name": "Primary UI Chip Text",
+                              "fill": "#2A73FF",
+                              "content": "основной интерфейс",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "WkaHI",
+                      "name": "Active Task Row",
+                      "width": "fill_container",
+                      "fill": "#F7F9FC",
+                      "cornerRadius": 11,
+                      "gap": 10,
+                      "padding": [
+                        10,
+                        12
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "rTwi5",
+                          "name": "Task Check Box",
+                          "width": 28,
+                          "height": 28,
+                          "fill": "#DDF9E6",
+                          "cornerRadius": 8,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "xOa4u",
+                              "name": "Task Check",
+                              "width": 16,
+                              "height": 16,
+                              "icon": "check",
+                              "library": "lucide",
+                              "fill": "#179E48"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "g0JHt",
+                          "name": "Active Task Text",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "lHg07",
+                              "name": "Active Task Title",
+                              "fill": "#172033",
+                              "content": "Задание в работе",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "text",
+                              "id": "f4F6Km",
+                              "name": "Active Task Status",
+                              "fill": "#5E6A7D",
+                              "content": "Статус синхронизирован",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
                     }
                   ]
                 },
                 {
                   "type": "frame",
-                  "id": "EDpCp",
-                  "name": "Outcome — Выплата",
-                  "width": "fill_container",
+                  "id": "x90vQ",
+                  "x": 20,
+                  "y": 210,
+                  "name": "WinWork Operations Layer",
+                  "width": 480,
+                  "height": 70,
                   "fill": "#FFFFFF10",
                   "cornerRadius": 14,
-                  "gap": 14,
+                  "gap": 8,
                   "padding": [
                     12,
-                    16
+                    14
                   ],
                   "alignItems": "center",
                   "children": [
                     {
                       "type": "frame",
-                      "id": "r2I8tU",
-                      "name": "Icon Box",
-                      "width": 38,
-                      "height": 38,
-                      "fill": "#FFFFFF14",
-                      "cornerRadius": 11,
-                      "justifyContent": "center",
+                      "id": "uk3qV",
+                      "name": "Operation Выплаты",
+                      "width": "fill_container",
+                      "fill": "#FFFFFF0D",
+                      "cornerRadius": 10,
+                      "gap": 7,
+                      "padding": [
+                        9,
+                        10
+                      ],
                       "alignItems": "center",
                       "children": [
                         {
                           "type": "icon",
-                          "id": "rtggz",
-                          "name": "Icon",
-                          "width": 19,
-                          "height": 19,
+                          "id": "lXQhC",
+                          "name": "Payments Icon",
+                          "width": 16,
+                          "height": 16,
                           "icon": "banknote",
                           "library": "lucide",
-                          "fill": "$h:brand-green"
+                          "fill": "#3FE171"
+                        },
+                        {
+                          "type": "text",
+                          "id": "kGk69",
+                          "name": "Payments Text",
+                          "fill": "#FFFFFF",
+                          "content": "Выплаты",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "700"
                         }
                       ]
                     },
                     {
                       "type": "frame",
-                      "id": "uxulc",
-                      "name": "Text",
+                      "id": "hHT6y",
+                      "name": "Operation Документы",
                       "width": "fill_container",
-                      "layout": "vertical",
-                      "gap": 2,
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "Vj48g",
-                          "name": "Title",
-                          "fill": "#FFFFFF",
-                          "content": "Выплата",
-                          "fontFamily": "$h:font-primary",
-                          "fontSize": 17,
-                          "fontWeight": "700"
-                        },
-                        {
-                          "type": "text",
-                          "id": "juztt",
-                          "name": "Desc",
-                          "fill": "#FFFFFF80",
-                          "content": "Перевод исполнителю",
-                          "fontFamily": "$h:font-primary",
-                          "fontSize": 14,
-                          "fontWeight": "normal"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "Z0thCJ",
-                  "name": "Outcome — Документы",
-                  "width": "fill_container",
-                  "fill": "#FFFFFF10",
-                  "cornerRadius": 14,
-                  "gap": 14,
-                  "padding": [
-                    12,
-                    16
-                  ],
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "frame",
-                      "id": "yAejw",
-                      "name": "Icon Box",
-                      "width": 38,
-                      "height": 38,
-                      "fill": "#FFFFFF14",
-                      "cornerRadius": 11,
-                      "justifyContent": "center",
+                      "fill": "#FFFFFF0D",
+                      "cornerRadius": 10,
+                      "gap": 7,
+                      "padding": [
+                        9,
+                        10
+                      ],
                       "alignItems": "center",
                       "children": [
                         {
                           "type": "icon",
-                          "id": "Ma2zt",
-                          "name": "Icon",
-                          "width": 19,
-                          "height": 19,
+                          "id": "jsqKa",
+                          "name": "Documents Icon",
+                          "width": 16,
+                          "height": 16,
                           "icon": "file-text",
                           "library": "lucide",
-                          "fill": "$h:brand-blue-mid"
+                          "fill": "#7CABFF"
+                        },
+                        {
+                          "type": "text",
+                          "id": "mvT96",
+                          "name": "Documents Text",
+                          "fill": "#FFFFFF",
+                          "content": "Документы",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "700"
                         }
                       ]
                     },
                     {
                       "type": "frame",
-                      "id": "e9FXr",
-                      "name": "Text",
+                      "id": "o6CA05",
+                      "name": "Operation Статусы",
                       "width": "fill_container",
-                      "layout": "vertical",
-                      "gap": 2,
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "BBcKi",
-                          "name": "Title",
-                          "fill": "#FFFFFF",
-                          "content": "Документы",
-                          "fontFamily": "$h:font-primary",
-                          "fontSize": 17,
-                          "fontWeight": "700"
-                        },
-                        {
-                          "type": "text",
-                          "id": "XZs6A",
-                          "name": "Desc",
-                          "fill": "#FFFFFF80",
-                          "content": "Акты и закрывающие документы",
-                          "fontFamily": "$h:font-primary",
-                          "fontSize": 14,
-                          "fontWeight": "normal"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "qi0im",
-                  "name": "Outcome — Статус операции",
-                  "width": "fill_container",
-                  "fill": "#FFFFFF10",
-                  "cornerRadius": 14,
-                  "gap": 14,
-                  "padding": [
-                    12,
-                    16
-                  ],
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "frame",
-                      "id": "utriP",
-                      "name": "Icon Box",
-                      "width": 38,
-                      "height": 38,
-                      "fill": "#FFFFFF14",
-                      "cornerRadius": 11,
-                      "justifyContent": "center",
+                      "fill": "#FFFFFF0D",
+                      "cornerRadius": 10,
+                      "gap": 5,
+                      "padding": [
+                        9,
+                        5
+                      ],
                       "alignItems": "center",
                       "children": [
                         {
                           "type": "icon",
-                          "id": "ABSFX",
-                          "name": "Icon",
-                          "width": 19,
-                          "height": 19,
+                          "id": "g6MdkS",
+                          "name": "Statuses Icon",
+                          "width": 16,
+                          "height": 16,
                           "icon": "badge-check",
                           "library": "lucide",
-                          "fill": "$h:brand-green"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "yCcsd",
-                      "name": "Text",
-                      "width": "fill_container",
-                      "layout": "vertical",
-                      "gap": 2,
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "WuR77",
-                          "name": "Title",
-                          "fill": "#FFFFFF",
-                          "content": "Статус операции",
-                          "fontFamily": "$h:font-primary",
-                          "fontSize": 17,
-                          "fontWeight": "700"
+                          "fill": "#3FE171"
                         },
                         {
                           "type": "text",
-                          "id": "bszNX",
-                          "name": "Desc",
-                          "fill": "#FFFFFF80",
-                          "content": "Результат возвращается в систему клиента",
-                          "fontFamily": "$h:font-primary",
-                          "fontSize": 14,
-                          "fontWeight": "normal"
+                          "id": "Y9Zsdm",
+                          "name": "Statuses Text",
+                          "fill": "#FFFFFF",
+                          "content": "Статусы операций",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "700"
                         }
                       ]
                     }
@@ -5428,12 +5544,12 @@
             },
             {
               "type": "text",
-              "id": "jvMfS",
+              "id": "pmLC9",
               "name": "Stage Desc",
               "fill": "$h:neutral-600",
               "textGrowth": "fixed-width",
               "width": "fill_container",
-              "content": "WinWork проводит операцию и возвращает её результат в систему клиента.",
+              "content": "WinWork обрабатывает необходимые операции через API, а результаты возвращаются в систему клиента.",
               "lineHeight": 1.45,
               "fontFamily": "$h:font-primary",
               "fontSize": 18,
@@ -5443,7 +5559,7 @@
         },
         {
           "type": "icon",
-          "id": "z75W5",
+          "id": "q4Zrs",
           "x": 654,
           "y": 636,
           "name": "Flow Arrow",
@@ -5455,7 +5571,7 @@
         },
         {
           "type": "icon",
-          "id": "jxkPo",
+          "id": "RwvBV",
           "x": 1234,
           "y": 636,
           "name": "Flow Arrow",
@@ -5463,11 +5579,11 @@
           "height": 28,
           "icon": "arrow-right",
           "library": "lucide",
-          "fill": "$h:brand-blue"
+          "fill": "#179E48"
         },
         {
           "type": "frame",
-          "id": "PkWSa",
+          "id": "rRbN7",
           "x": 120,
           "y": 972,
           "name": "Important Note",
@@ -5476,7 +5592,7 @@
           "children": [
             {
               "type": "icon",
-              "id": "lZVNl",
+              "id": "YtLpL",
               "name": "Info Icon",
               "width": 18,
               "height": 18,
@@ -5486,23 +5602,49 @@
             },
             {
               "type": "text",
-              "id": "I7XnZM",
+              "id": "yZLK9",
               "name": "Note Text",
               "fill": "$h:neutral-400",
-              "content": "Отдельное приложение WinWork не требуется. Регистрация и платёжные реквизиты остаются обязательными этапами процесса.",
+              "content": "Мобильное приложение WinWork не требуется.",
               "fontFamily": "$h:font-primary",
               "fontSize": 17,
               "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "OQQR9",
+              "name": "Required Registration Note",
+              "fill": "#2A73FF",
+              "content": "Веб-регистрация в WinWork остаётся обязательным этапом.",
+              "fontFamily": "Inter",
+              "fontSize": 17,
+              "fontWeight": "700"
             }
           ]
+        },
+        {
+          "type": "text",
+          "id": "G3SfNi",
+          "x": 1224,
+          "y": 613,
+          "name": "Return Label",
+          "fill": "#179E48",
+          "textGrowth": "fixed-width",
+          "width": 48,
+          "content": "ВОЗВРАТ",
+          "textAlign": "center",
+          "fontFamily": "Inter",
+          "fontSize": 10,
+          "fontWeight": "700",
+          "letterSpacing": 0.8
         }
       ]
     },
     {
       "type": "frame",
       "id": "dI7KV",
-      "x": 2040,
-      "y": 4496,
+      "x": 10207,
+      "y": 3296,
       "name": "РАЗДЕЛ B — РАБОТА С ИСПОЛНИТЕЛЕМ / API-06",
       "clip": true,
       "width": 1920,
@@ -6339,8 +6481,8 @@
     {
       "type": "frame",
       "id": "vEAm3",
-      "x": 4080,
-      "y": 4496,
+      "x": 12247,
+      "y": 3296,
       "name": "РАЗДЕЛ B — РАБОТА С ИСПОЛНИТЕЛЕМ / API-07",
       "clip": true,
       "width": 1920,
@@ -6868,8 +7010,8 @@
     {
       "type": "frame",
       "id": "b0CeJ",
-      "x": 0,
-      "y": 5696,
+      "x": 14287,
+      "y": 3296,
       "name": "РАЗДЕЛ C — ДОКУМЕНТЫ И ПОДПИСАНИЕ / API-08",
       "clip": true,
       "width": 1920,
@@ -7561,8 +7703,8 @@
     {
       "type": "frame",
       "id": "E6YdfS",
-      "x": 2040,
-      "y": 5696,
+      "x": 16327,
+      "y": 3296,
       "name": "РАЗДЕЛ C — ДОКУМЕНТЫ И ПОДПИСАНИЕ / API-09",
       "clip": true,
       "width": 1920,
@@ -8247,8 +8389,8 @@
     {
       "type": "frame",
       "id": "MhloN",
-      "x": 0,
-      "y": 6896,
+      "x": 18400,
+      "y": 3296,
       "name": "РАЗДЕЛ D — ВЫПЛАТЫ И КОНТРОЛЬ / API-10",
       "clip": true,
       "width": 1920,
@@ -9071,8 +9213,8 @@
     {
       "type": "frame",
       "id": "N73QW",
-      "x": 2040,
-      "y": 6896,
+      "x": 20440,
+      "y": 3296,
       "name": "РАЗДЕЛ D — ВЫПЛАТЫ И КОНТРОЛЬ / API-11",
       "clip": true,
       "width": 1920,
@@ -9836,8 +9978,8 @@
     {
       "type": "frame",
       "id": "ML6UB",
-      "x": 4080,
-      "y": 6896,
+      "x": 22480,
+      "y": 3296,
       "name": "РАЗДЕЛ D — ВЫПЛАТЫ И КОНТРОЛЬ / API-12",
       "clip": true,
       "width": 1920,
@@ -11093,8 +11235,8 @@
     {
       "type": "frame",
       "id": "vk9i2",
-      "x": 6120,
-      "y": 6896,
+      "x": 24520,
+      "y": 3296,
       "name": "РАЗДЕЛ D — ВЫПЛАТЫ И КОНТРОЛЬ / API-13",
       "clip": true,
       "width": 1920,
@@ -11815,8 +11957,8 @@
     {
       "type": "frame",
       "id": "FRVKP",
-      "x": 0,
-      "y": 8096,
+      "x": 26591,
+      "y": 3296,
       "name": "РАЗДЕЛ E — ПОДКЛЮЧЕНИЕ И ИТОГИ / API-14",
       "clip": true,
       "width": 1920,
@@ -12832,8 +12974,8 @@
     {
       "type": "frame",
       "id": "n9X4x1",
-      "x": 2040,
-      "y": 8096,
+      "x": 28631,
+      "y": 3296,
       "name": "РАЗДЕЛ E — ПОДКЛЮЧЕНИЕ И ИТОГИ / API-15",
       "clip": true,
       "width": 1920,
@@ -13464,8 +13606,8 @@
     {
       "type": "frame",
       "id": "b8s1i",
-      "x": 4080,
-      "y": 8096,
+      "x": 30671,
+      "y": 3296,
       "name": "РАЗДЕЛ E — ПОДКЛЮЧЕНИЕ И ИТОГИ / API-16",
       "clip": true,
       "width": 1920,
@@ -13846,35 +13988,6 @@
               "fontFamily": "$h:font-primary",
               "fontSize": 30,
               "fontWeight": "650"
-            },
-            {
-              "type": "frame",
-              "id": "eYdfl",
-              "name": "CTA Action",
-              "gap": 10,
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "text",
-                  "id": "pYGyj",
-                  "name": "CTA Action Text",
-                  "fill": "$h:brand-green",
-                  "content": "Обсудить интеграцию",
-                  "fontFamily": "$h:font-primary",
-                  "fontSize": 20,
-                  "fontWeight": "650"
-                },
-                {
-                  "type": "icon",
-                  "id": "Mq5YZ",
-                  "name": "CTA Action Icon",
-                  "width": 22,
-                  "height": 22,
-                  "icon": "arrow-right",
-                  "library": "lucide",
-                  "fill": "$h:brand-green"
-                }
-              ]
             }
           ]
         }
@@ -14012,8 +14125,1055 @@
       },
       "width": 903,
       "height": 678
+    },
+    {
+      "type": "path",
+      "id": "B8nt7",
+      "x": 2805.5,
+      "y": 2783.5,
+      "geometry": "M0 0l0 355-108-108 207 0-99 99",
+      "width": 207,
+      "height": 355,
+      "stroke": "#000000",
+      "strokeWidth": 35
+    },
+    {
+      "type": "frame",
+      "id": "TQWD8",
+      "x": 32748,
+      "y": 3296,
+      "name": "РАЗДЕЛ F — СЛЕДУЮЩИЕ ШАГИ / ENT-20",
+      "clip": true,
+      "width": 1920,
+      "height": 1080,
+      "fill": "$h:bg-primary",
+      "layout": "none",
+      "children": [
+        {
+          "type": "ellipse",
+          "id": "QwQ5U",
+          "x": 1425,
+          "y": 275,
+          "name": "Success Glow",
+          "fill": {
+            "type": "gradient",
+            "gradientType": "radial",
+            "enabled": true,
+            "rotation": 0,
+            "size": {
+              "width": 1,
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#DDF9E6AA",
+                "position": 0
+              },
+              {
+                "color": "#F0FCF400",
+                "position": 1
+              }
+            ]
+          },
+          "width": 430,
+          "height": 430
+        },
+        {
+          "type": "text",
+          "id": "vIgPa",
+          "x": 120,
+          "y": 58,
+          "name": "Section Indicator",
+          "fill": "$h:neutral",
+          "content": "F  ·  КОРПОРАТИВНЫЙ СЕГМЕНТ / ПОДКЛЮЧЕНИЕ",
+          "fontFamily": "$h:font-primary",
+          "fontSize": 16,
+          "fontWeight": "700",
+          "letterSpacing": 1.1
+        },
+        {
+          "type": "frame",
+          "id": "XpeUe",
+          "x": 1598,
+          "y": 58,
+          "name": "WinWork Logo",
+          "width": 202,
+          "height": 40,
+          "gap": 10,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "nxeDg",
+              "name": "WinWork Logo",
+              "context": "span",
+              "clip": true,
+              "width": 202,
+              "height": 40,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "path",
+                  "id": "vctWJ",
+                  "x": 42.7,
+                  "y": 0,
+                  "geometry": "M0.00134 21.682l0 10.308c0.0008 0.59515 0.23798 1.1656 0.65938 1.58587 0.42139 0.42027 0.99248 0.65593 1.58762 0.65513l10.331 0c1.09 0 1.998-0.774 2.203-1.8l0-0.006 0.003-0.01699c0.055-0.27 3.963-19.903 4.566-21.94801 0.044-0.146 0.25-0.836 0.373-1.78 0.01301-0.10408 0.02368-0.20844 0.032-0.313l0-6.87c0-0.825-0.67-1.497-1.5-1.497l-6.886 0c-0.56395 0.00095-1.07972 0.31813-1.335 0.821-0.487 0.99-9.453 18.915-9.90699 19.803 0 0.003-0.006 0.012-0.00901 0.02-0.146 0.299-0.117 0.69-0.117 1.041l-0.001-0.003z",
+                  "fill": {
+                    "type": "gradient",
+                    "gradientType": "linear",
+                    "enabled": true,
+                    "rotation": -180,
+                    "size": {
+                      "height": 1.0000874951413106
+                    },
+                    "colors": [
+                      {
+                        "color": "#51DB51",
+                        "position": 0
+                      },
+                      {
+                        "color": "#009907",
+                        "position": 1
+                      }
+                    ],
+                    "center": {
+                      "x": 0.500059352310139,
+                      "y": 0.4999561071118105
+                    }
+                  },
+                  "width": 22.578676496233257,
+                  "height": 39.121148518153596
+                },
+                {
+                  "type": "path",
+                  "id": "nohyY",
+                  "x": 28.69,
+                  "y": 0.02,
+                  "geometry": "M12.563 33.10204c0 0 0.009 0.013 0.012 0.02099q0.006 0.008 0.011 0.02001c0.4093 0.66919 1.13757 1.0769 1.922 1.076l10.322 0c0.59212 0.00372 1.16142-0.22821 1.58237-0.64466 0.42095-0.41645 0.65899-0.98322 0.66163-1.57534l0-10.216c0.00061-0.42017-0.11911-0.83172-0.345-1.186l-0.012-0.021c-0.015-0.026-12.194-19.443-12.206-19.464q-0.001-0.005-0.012-0.017c-0.40664-0.67983-1.14083-1.09573-1.933-1.095l-10.323 0c-0.59195-0.00346-1.16099 0.22859-1.58172 0.64501-0.42073 0.41642-0.65863 0.98303-0.66128 1.57499l0 10.215c0 0.427 0.123 0.827 0.334 1.166l0.011 0.02 12.22 19.482-0.002-0.001z",
+                  "fill": "#51DB51",
+                  "width": 30.941720145089285,
+                  "height": 39.107523845774786
+                },
+                {
+                  "type": "path",
+                  "id": "Szaxk",
+                  "x": 9,
+                  "y": 0,
+                  "geometry": "M19.637 20.645c0 0-0.008-0.015-0.008-0.02-0.455-0.891-9.419-18.814-9.907-19.805 0-0.003-0.006-0.011-0.009-0.02-0.249-0.476-0.75-0.8-1.327-0.8l-6.886 0c-0.82687 0-1.4978 0.66914-1.5 1.496l0 6.871c0.012 0.14 0.026 0.252 0.032 0.313 0.123 0.944 0.328 1.634 0.372 1.78 0.6 2.045 4.511 21.679 4.567 21.948 0 0 0 0.009 0.003 0.017l0 0.006c0.21231 1.04787 1.13384 1.80083 2.203 1.8l10.33 0c0.59523 0.00106 1.16647-0.23451 1.58792-0.65484 0.42145-0.42033 0.65855-0.99094 0.65908-1.58616l0-10.308c0-0.354 0.027-0.745-0.117-1.04l0 0.003z",
+                  "fill": {
+                    "type": "gradient",
+                    "gradientType": "linear",
+                    "enabled": true,
+                    "rotation": -180,
+                    "size": {
+                      "height": 1.0000875578314188
+                    },
+                    "colors": [
+                      {
+                        "color": "#2A73FF",
+                        "position": 0
+                      },
+                      {
+                        "color": "#1B3A6A",
+                        "position": 1
+                      }
+                    ],
+                    "center": {
+                      "x": 0.5001010288054322,
+                      "y": 0.5000437789159925
+                    }
+                  },
+                  "width": 22.578295026506694,
+                  "height": 39.12114606585928
+                },
+                {
+                  "type": "path",
+                  "id": "gK5a1",
+                  "x": 14.65,
+                  "y": 0.02,
+                  "geometry": "M14.508 33.10204l12.22-19.48 0.012-0.021c0.211-0.339 0.334-0.74 0.334-1.166l0-10.214c-0.00238-0.59231-0.2403-1.15933-0.66128-1.57599-0.42098-0.41666-0.99043-0.64873-1.58272-0.64501l-10.322 0c-0.814 0-1.53 0.43-1.922 1.075q-0.006 0.008-0.011 0.02l-0.012 0.018c-0.012 0.02-12.191 19.438-12.206 19.464l-0.012 0.02001q-0.006 0.008-0.011 0.021c-0.211 0.339-0.334 0.74-0.334 1.166l0 10.214c0.00238 0.59213 0.24016 1.159 0.66092 1.57563 0.42076 0.41664 0.98995 0.64882 1.58208 0.64536l10.323 0c0.814 0 1.529-0.43 1.921-1.075 0.003-0.006 0.01-0.012 0.012-0.02q0.006-0.008 0.012-0.021l-0.003-0.001z",
+                  "fill": "#2A73FF",
+                  "width": 30.94171469552176,
+                  "height": 39.107521942683626
+                },
+                {
+                  "type": "path",
+                  "id": "k4ALb",
+                  "x": 76.62,
+                  "y": 10.13,
+                  "geometry": "M16.33799 11.73551l-2.293-11.045-5.02999 0-2.337 11.045-2.204-11.045-4.474 0 3.584 15.766 5.609 0 2.26999-10.645 2.293 10.646 5.386 0 3.517-15.766-4.23 0-2.091 11.044z m12.428-7.014l-3.94 0 0 11.735 3.94 0 0-11.735z m12.00801 0.512q-0.934-0.757-2.582-0.758-0.421 0-1.02401 0.09-0.6 0.089-1.246 0.378-0.624 0.267-1.18 0.846l-0.223-1.069-3.628 0 0 11.737 3.94001 0 0-6.057q0-0.646 0.19999-1.158 0.222-0.535 0.668-0.846 0.469-0.314 1.158-0.312 0.534 0 0.868 0.223 0.332 0.2 0.512 0.534 0.2 0.334 0.267 0.735 0.088 0.38 0.08899 0.735l0 6.146 3.94001 0 0-6.48q0-1.49-0.40101-2.74-0.401-1.248-1.358-2.004m18.096 6.502l-2.293-11.045-5.02999 0-2.337 11.045-2.204-11.045-4.473 0 3.583 15.766 5.609 0 2.26999-10.645 2.293 10.645 5.386 0 3.517-15.766-4.22899 0-2.09201 11.045z m15.52701-6.703q-1.356-0.735-3.071-0.735c-1.144 0-2.129 0.237-3.05 0.713q-1.38 0.713-2.22501 2.093-0.82399 1.357-0.82399 3.34c0 1.322 0.27499 2.391 0.82399 3.296 0.52664 0.87117 1.29089 1.57401 2.20302 2.026q1.40199 0.69 3.13901 0.69 1.73701 0 3.093-0.66799c0.89604-0.45052 1.63936-1.15524 2.13699-2.02601q0.78-1.334 0.77901-3.251c0-1.278-0.27499-2.441-0.823-3.36299-0.50989-0.89934-1.26721-1.63341-2.18201-2.11501m-1.046 6.525c-0.13478 0.35958-0.37535 0.66988-0.69001 0.89q-0.48801 0.356-1.335 0.357-0.847 0-1.336-0.334c-0.31497-0.22563-0.5614-0.534-0.71199-0.891q-0.2-0.556-0.2-1.114 0-0.556 0.2-1.113 0.201-0.58 0.69-0.98 0.51199-0.4 1.358-0.4c0.565 0 1.024 0.133 1.33501 0.4q0.49 0.4 0.69 0.98 0.201 0.58 0.20101 1.113 0 0.535-0.20101 1.092m12.963-7.082q-0.446 0-0.979 0.067c-0.3757 0.0504-0.73843 0.17154-1.06902 0.357q-0.534 0.287-0.979 0.935l-0.267-1.114-3.45 0 0 11.737 3.939 0 0-5.345q0-1.18 0.423-1.759c0.28331-0.3915 0.69188-0.67447 1.15801-0.802 0.50571-0.14968 1.03061-0.22448 1.55799-0.222l0.756 0 0-3.808c-0.13225-0.0207-0.26627-0.02807-0.39999-0.022-0.22966-0.01561-0.45981-0.02328-0.69-0.023m11.60499 5.834l3.62801-5.59-4.407 0-2.44901 4.142-1.179 0 0-8.172-3.94 0 0 15.766 3.94 0 0-4.075 1.24601 0 2.537 4.075 4.541 0-3.91701-6.146z m-71.13401-6.391c0.71062 0.01587 1.37414-0.35423 1.73402-0.96719 0.35986-0.61297 0.35966-1.37272-0.00051-1.9855-0.36018-0.61278-1.02389-0.98254-1.7345-0.96631-1.06496 0.02406-1.91573 0.89427-1.91572 1.9595 0 1.06523 0.85077 1.93544 1.91572 1.9595",
+                  "fill": "#252E42",
+                  "width": 116.38399396623883,
+                  "height": 18.80858612060547
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "t22kv",
+          "x": 120,
+          "y": 126,
+          "name": "Slide Title",
+          "fill": "$h:neutral-2",
+          "textGrowth": "fixed-width",
+          "width": 1520,
+          "content": "Следующие шаги — от регистрации до начала работы",
+          "lineHeight": 1.06,
+          "fontFamily": "$h:font-primary",
+          "fontSize": 52,
+          "fontWeight": "700"
+        },
+        {
+          "type": "text",
+          "id": "Bg6aR",
+          "x": 120,
+          "y": 202,
+          "name": "Slide Subtitle",
+          "fill": "$h:neutral-3",
+          "textGrowth": "fixed-width",
+          "width": 1540,
+          "content": "Подключение WinWork проходит в несколько простых этапов. После этого персональный менеджер поможет команде начать работу с сервисом.",
+          "lineHeight": 1.35,
+          "fontFamily": "$h:font-primary",
+          "fontSize": 21,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "bGM28",
+          "x": 128,
+          "y": 318,
+          "name": "Four Step Connection Flow",
+          "width": 1664,
+          "height": 410,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "y8x0OY",
+              "name": "Step 01 — Зарегистрируйте компанию",
+              "width": 386,
+              "height": 410,
+              "fill": "$h:surface",
+              "cornerRadius": 24,
+              "stroke": "$h:neutral-4",
+              "strokeWidth": 1,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#17203310",
+                "offset": {
+                  "x": 0,
+                  "y": 8
+                },
+                "blur": 22
+              },
+              "layout": "vertical",
+              "gap": 18,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "WiQMe",
+                  "name": "Step 01 Header",
+                  "width": "fill_container",
+                  "height": 64,
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "CuxtW",
+                      "name": "Step 01 Number",
+                      "fill": "$h:brand-blue",
+                      "content": "01",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 42,
+                      "fontWeight": "750",
+                      "letterSpacing": -1
+                    },
+                    {
+                      "type": "frame",
+                      "id": "K3w9qS",
+                      "name": "Step 01 Icon Container",
+                      "width": 64,
+                      "height": 64,
+                      "fill": "$h:brand-blue-soft",
+                      "cornerRadius": 20,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "TzCK8",
+                          "name": "Step 01 Icon",
+                          "width": 30,
+                          "height": 30,
+                          "icon": "badge-check",
+                          "library": "lucide",
+                          "fill": "$h:brand-blue"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "djTof",
+                  "name": "Step 01 Content",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "A6p6Nm",
+                      "name": "Step 01 Title",
+                      "fill": "$h:neutral-2",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Зарегистрируйте компанию",
+                      "lineHeight": 1.12,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 25,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "R90Os",
+                      "name": "Step 01 Description",
+                      "fill": "$h:neutral-3",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Создайте кабинет WinWork и подтвердите регистрацию по ссылке из письма.",
+                      "lineHeight": 1.35,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 17,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "izbv9",
+                  "name": "Step 01 Note",
+                  "width": "fill_container",
+                  "height": 42,
+                  "fill": "$h:bg-secondary",
+                  "cornerRadius": 12,
+                  "gap": 9,
+                  "padding": [
+                    0,
+                    13
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "j0uyt",
+                      "name": "Step 01 Note Icon",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "clock-3",
+                      "library": "lucide",
+                      "fill": "$h:brand-blue"
+                    },
+                    {
+                      "type": "text",
+                      "id": "WFFjr",
+                      "name": "Step 01 Note Text",
+                      "fill": "$h:neutral-5",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Письмо приходит за 10–15 минут",
+                      "lineHeight": 1.15,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "GFGM8",
+              "name": "Connector 01–02",
+              "width": 40,
+              "height": 24,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 2,
+                  "id": "EZVTk",
+                  "name": "Connector Line",
+                  "fill": "$h:brand-blue-light",
+                  "width": 34,
+                  "height": 2
+                },
+                {
+                  "type": "icon",
+                  "id": "XLwqC",
+                  "name": "Connector Arrow",
+                  "width": 18,
+                  "height": 18,
+                  "icon": "chevron-right",
+                  "library": "lucide",
+                  "fill": "$h:brand-blue"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "rcYrG",
+              "name": "Step 02 — Пополните счёт",
+              "width": 386,
+              "height": 410,
+              "fill": "$h:surface",
+              "cornerRadius": 24,
+              "stroke": "$h:neutral-4",
+              "strokeWidth": 1,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#17203310",
+                "offset": {
+                  "x": 0,
+                  "y": 8
+                },
+                "blur": 22
+              },
+              "layout": "vertical",
+              "gap": 18,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "lcoY1",
+                  "name": "Step 02 Header",
+                  "width": "fill_container",
+                  "height": 64,
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "l3E0BO",
+                      "name": "Step 02 Number",
+                      "fill": "$h:brand-blue",
+                      "content": "02",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 42,
+                      "fontWeight": "750",
+                      "letterSpacing": -1
+                    },
+                    {
+                      "type": "frame",
+                      "id": "jD0YP",
+                      "name": "Step 02 Icon Container",
+                      "width": 64,
+                      "height": 64,
+                      "fill": "$h:brand-blue-soft",
+                      "cornerRadius": 20,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "u80ZyR",
+                          "name": "Step 02 Icon",
+                          "width": 30,
+                          "height": 30,
+                          "icon": "wallet-cards",
+                          "library": "lucide",
+                          "fill": "$h:brand-blue"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "h3Nl2",
+                  "name": "Step 02 Content",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "bxAqh",
+                      "name": "Step 02 Title",
+                      "fill": "$h:neutral-2",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Пополните счёт",
+                      "lineHeight": 1.12,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 25,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Z6gEKJ",
+                      "name": "Step 02 Description",
+                      "fill": "$h:neutral-3",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Получите реквизиты в кабинете и сделайте перевод с расчётного счёта компании.",
+                      "lineHeight": 1.35,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 17,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "dLbuB",
+                  "name": "Step 02 Note",
+                  "width": "fill_container",
+                  "height": 42,
+                  "fill": "$h:bg-secondary",
+                  "cornerRadius": 12,
+                  "gap": 9,
+                  "padding": [
+                    0,
+                    13
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "iCPsk",
+                      "name": "Step 02 Note Icon",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "clock-3",
+                      "library": "lucide",
+                      "fill": "$h:brand-blue"
+                    },
+                    {
+                      "type": "text",
+                      "id": "k0DpX",
+                      "name": "Step 02 Note Text",
+                      "fill": "$h:neutral-5",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Зачисление обычно — до 1 часа",
+                      "lineHeight": 1.15,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "NA6MZ",
+              "name": "Connector 02–03",
+              "width": 40,
+              "height": 24,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 2,
+                  "id": "ErhmT",
+                  "name": "Connector Line",
+                  "fill": "$h:brand-blue-light",
+                  "width": 34,
+                  "height": 2
+                },
+                {
+                  "type": "icon",
+                  "id": "gOc9O",
+                  "name": "Connector Arrow",
+                  "width": 18,
+                  "height": 18,
+                  "icon": "chevron-right",
+                  "library": "lucide",
+                  "fill": "$h:brand-blue"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "LvuON",
+              "name": "Step 03 — Пройдите идентификацию",
+              "width": 386,
+              "height": 410,
+              "fill": "$h:surface",
+              "cornerRadius": 24,
+              "stroke": "$h:neutral-4",
+              "strokeWidth": 1,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#17203310",
+                "offset": {
+                  "x": 0,
+                  "y": 8
+                },
+                "blur": 22
+              },
+              "layout": "vertical",
+              "gap": 18,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "K5Pyw",
+                  "name": "Step 03 Header",
+                  "width": "fill_container",
+                  "height": 64,
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "sNM7a",
+                      "name": "Step 03 Number",
+                      "fill": "$h:brand-blue",
+                      "content": "03",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 42,
+                      "fontWeight": "750",
+                      "letterSpacing": -1
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Hjjkd",
+                      "name": "Step 03 Icon Container",
+                      "width": 64,
+                      "height": 64,
+                      "fill": "$h:brand-blue-soft",
+                      "cornerRadius": 20,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "gUAT7",
+                          "name": "Step 03 Icon",
+                          "width": 30,
+                          "height": 30,
+                          "icon": "shield-check",
+                          "library": "lucide",
+                          "fill": "$h:brand-blue"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "eQHS2",
+                  "name": "Step 03 Content",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "wRxtM",
+                      "name": "Step 03 Title",
+                      "fill": "$h:neutral-2",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Пройдите идентификацию",
+                      "lineHeight": 1.12,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 25,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "LosuI",
+                      "name": "Step 03 Description",
+                      "fill": "$h:neutral-3",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Передайте реквизиты компании и данные руководителя для проверки.",
+                      "lineHeight": 1.35,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 17,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "L8OX3U",
+                  "name": "Step 03 Note",
+                  "width": "fill_container",
+                  "height": 42,
+                  "fill": "$h:bg-secondary",
+                  "cornerRadius": 12,
+                  "gap": 9,
+                  "padding": [
+                    0,
+                    13
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "y8mPT",
+                      "name": "Step 03 Note Icon",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "building-2",
+                      "library": "lucide",
+                      "fill": "$h:brand-blue"
+                    },
+                    {
+                      "type": "text",
+                      "id": "WpgCt",
+                      "name": "Step 03 Note Text",
+                      "fill": "$h:neutral-5",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Карточка компании + паспортные данные",
+                      "lineHeight": 1.15,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Sd29s",
+              "name": "Connector 03–04",
+              "width": 40,
+              "height": 24,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 2,
+                  "id": "AQdM2",
+                  "name": "Connector Line",
+                  "fill": "$h:brand-blue-light",
+                  "width": 34,
+                  "height": 2
+                },
+                {
+                  "type": "icon",
+                  "id": "IuD3U",
+                  "name": "Connector Arrow",
+                  "width": 18,
+                  "height": 18,
+                  "icon": "chevron-right",
+                  "library": "lucide",
+                  "fill": "$h:brand-blue"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "jnihE",
+              "name": "Step 04 — Начните работу с WinWork",
+              "width": 386,
+              "height": 410,
+              "fill": {
+                "type": "gradient",
+                "gradientType": "linear",
+                "enabled": true,
+                "rotation": 160,
+                "size": {
+                  "height": 1
+                },
+                "colors": [
+                  {
+                    "color": "#FFFFFF",
+                    "position": 0
+                  },
+                  {
+                    "color": "#F0FCF4",
+                    "position": 1
+                  }
+                ]
+              },
+              "cornerRadius": 24,
+              "stroke": "$h:brand-green-mid",
+              "strokeWidth": 2,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#179E4826",
+                "offset": {
+                  "x": 0,
+                  "y": 14
+                },
+                "blur": 32
+              },
+              "layout": "vertical",
+              "gap": 18,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "soJHH",
+                  "name": "Step 04 Header",
+                  "width": "fill_container",
+                  "height": 64,
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "zdvG7",
+                      "name": "Step 04 Number",
+                      "fill": "$h:brand-green-strong",
+                      "content": "04",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 42,
+                      "fontWeight": "750",
+                      "letterSpacing": -1
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Ka67O",
+                      "name": "Step 04 Icon Container",
+                      "width": 64,
+                      "height": 64,
+                      "fill": "$h:brand-green",
+                      "cornerRadius": 20,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "lEpPq",
+                          "name": "Step 04 Icon",
+                          "width": 30,
+                          "height": 30,
+                          "icon": "rocket",
+                          "library": "lucide",
+                          "fill": "$h:neutral-2"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "RyXKg",
+                  "name": "Step 04 Content",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ZQJ8N",
+                      "name": "Step 04 Title",
+                      "fill": "$h:neutral-2",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Начните работу с WinWork",
+                      "lineHeight": 1.12,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 25,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "G2xUA",
+                      "name": "Step 04 Description",
+                      "fill": "$h:neutral-3",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Мы завершим подключение и передадим компанию персональному аккаунт-менеджеру.",
+                      "lineHeight": 1.35,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 17,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "j3TtXK",
+                      "name": "Step 04 Manager Support",
+                      "fill": "$h:brand-green-strong",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Менеджер познакомится с командой и проведёт обучение по работе с сервисом.",
+                      "lineHeight": 1.28,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "G1d6n",
+                  "name": "Step 04 Note",
+                  "width": "fill_container",
+                  "height": 42,
+                  "fill": "$h:brand-green",
+                  "cornerRadius": 12,
+                  "gap": 9,
+                  "padding": [
+                    0,
+                    13
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "J8n4a",
+                      "name": "Step 04 Note Icon",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "circle-check-big",
+                      "library": "lucide",
+                      "fill": "$h:neutral-2"
+                    },
+                    {
+                      "type": "text",
+                      "id": "p5u1p",
+                      "name": "Step 04 Note Text",
+                      "fill": "$h:neutral-2",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Готово к работе",
+                      "lineHeight": 1.15,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "uCWN3",
+          "x": 120,
+          "y": 790,
+          "name": "Final Registration CTA",
+          "width": 1680,
+          "height": 174,
+          "fill": "$h:neutral-2",
+          "cornerRadius": 24,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#1720331A",
+            "offset": {
+              "x": 0,
+              "y": 10
+            },
+            "blur": 28
+          },
+          "gap": 28,
+          "padding": [
+            24,
+            28
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "rectangle",
+              "cornerRadius": 3,
+              "id": "O5ywob",
+              "name": "CTA Green Accent",
+              "fill": "$h:brand-green",
+              "width": 6,
+              "height": "fill_container"
+            },
+            {
+              "type": "frame",
+              "id": "y3Gn8",
+              "name": "CTA Copy",
+              "width": "fill_container",
+              "height": "fill_container",
+              "layout": "vertical",
+              "gap": 7,
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "VOhqD",
+                  "name": "CTA Label",
+                  "fill": "$h:brand-green",
+                  "content": "ГОТОВЫ ПОДКЛЮЧИТЬСЯ?",
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 14,
+                  "fontWeight": "800",
+                  "letterSpacing": 1
+                },
+                {
+                  "type": "text",
+                  "id": "S9KZYj",
+                  "name": "CTA Headline",
+                  "fill": "#FFFFFF",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Зарегистрируйте компанию и начните настройку WinWork.",
+                  "lineHeight": 1.15,
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 26,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "R9fO5",
+                  "name": "CTA Support",
+                  "fill": "$h:neutral",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Дальше персональный менеджер проведёт команду до первого рабочего сценария.",
+                  "lineHeight": 1.3,
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
+  "variables": {
+    "h:neutral": {
+      "type": "color",
+      "value": "#94A0B2"
+    },
+    "h:neutral-2": {
+      "type": "color",
+      "value": "#172033"
+    },
+    "h:neutral-3": {
+      "type": "color",
+      "value": "#5E6A7D"
+    },
+    "h:neutral-4": {
+      "type": "color",
+      "value": "#E2E7EE"
+    },
+    "h:neutral-5": {
+      "type": "color",
+      "value": "#263248"
+    }
+  },
   "imports": {
     "h": "presentation_DS.lib.pen"
   },

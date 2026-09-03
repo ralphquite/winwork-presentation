@@ -202,6 +202,29 @@ The source and implementation were opened together in the same browser-rendered 
 - The access-gateway contract now includes GET/HEAD-only public access for `/performer-registration-flow/*`, rejects POST to those assets, and keeps the remaining sales routes/assets behind the existing fail-closed boundary. `pnpm auth:check` passed 30 assertions.
 - Browser evidence: `/tmp/winwork-court03-before.png` and `/tmp/winwork-court03-flow-open.png`.
 
+### Iteration 20 — passed
+
+- The Enterprise route now contains 15 scenes. Pencil node `sGz1w` is exported as `ent-10`, updated node `ygsEo` as `ent-11`, former `ent-16` content as `ent-12`, and former `ent-17` content as the final `ent-15`; the obsolete positions and their unreferenced assets were removed.
+- Direct browser QA at `/enterprise?scene=ent-10` and Next to `ent-11` matched the approved Pencil exports at the rendered 1920 × 1080 canvas. The mismatch ledger is empty: titles, content hierarchy, images, counter, and scaling agreed with the two selected Pencil nodes.
+- Next to `ent-12`, browser Back/Forward, direct `ent-15`, disabled Next at `15 / 15`, and invalid `ent-16` normalization to `ent-01` all passed. A 390 × 844 host retained the full `ent-10` canvas with the intended letterboxing and no document-level overflow.
+- No framework overlay or application console error appeared. The only console warning came from the existing Pencil-export Tailwind CDN runtime. `pnpm check` passed the documentation, formatting, lint, type, auth, and production-build gates.
+
+### Iteration 21 — passed
+
+- Enterprise now contains 17 scenes. Updated Pencil node `yGBrt` remains at `ent-12`, restored node `iOKdp` is `ent-16`, and new node `CPLyo` is the final `ent-17`.
+- Direct browser QA confirmed the updated `ent-12` title and trust/limitations/experience content. Direct `ent-16` rendered the Finance, HR, compliance, and support summary; Next advanced to the new onboarding timeline at `ent-17`.
+- The final scene showed `17 / 17`, disabled Next, and rendered all four onboarding stages plus the final success state. Invalid `ent-18` normalized to `ent-01`.
+- The normal Chrome viewport and a 390 × 844 host both retained the complete 1920 × 1080 final canvas with the intended letterboxing. No framework overlay or application error appeared; only the expected reduced-motion and Pencil Tailwind CDN warnings were logged.
+- The mismatch ledger is empty: the three runtime HTML exports match the selected Pencil nodes. `pnpm check` passed the documentation, formatting, lint, type, auth, and production-build gates.
+
+### Iteration 22 — passed
+
+- Small Business now contains 12 scenes. Updated Pencil node `gZWhP` remains at `smb-07`, new node `iaGLr` is the final `smb-12`, and the former scenes `smb-12` through `smb-14` were removed from the route and runtime exports.
+- Direct browser QA confirmed the updated `smb-07` title, response/profile hierarchy, trust cards, and source imagery. The `smb-11` Next control advanced to the new onboarding slide at `smb-12`; the final scene showed `12 / 12` with Next disabled.
+- Browser Back/Forward preserved the `smb-11` → `smb-12` transition, while a direct `smb-13` link normalized to `smb-01`. At a 390 × 844 host viewport the complete 1920 × 1080 final canvas remained visible with the intended letterboxing and no document-level overflow.
+- The mismatch ledger is empty across title, copy, hierarchy, spacing, color, imagery, and canvas geometry: both runtime exports match the selected Pencil nodes. No application console error appeared; the only warning was the expected reduced-motion notice.
+- Browser evidence: `/tmp/winwork-smb07-desktop.png`, `/tmp/winwork-smb12-final.png`, and `/tmp/winwork-smb12-mobile.png`. `pnpm check` passed the documentation, formatting, lint, type, auth, and production-build gates.
+
 ## Interaction and runtime evidence
 
 - Create object: list → `Добавить объект` → editable drawer → add manager/activity → save → new synthetic row; reset removes the new row.
