@@ -15,5 +15,11 @@
     "isolatedModules": true,
     "noEmit": true
   },
-  "include": ["vite.config.ts", "middleware.ts", "auth/**/*.ts", "api/**/*.ts"]
+  "include": [
+    "vite.config.ts",
+    "vite.court.config.ts",
+    "middleware.ts",
+    "auth/**/*.ts",
+    "api/**/*.ts"
+  ]
 }

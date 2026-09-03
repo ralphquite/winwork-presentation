@@ -66,6 +66,60 @@ async function submitLogin({ password, returnTo, origin = productionOrigin }) {
 delete process.env.WINWORK_ACCESS_PASSWORD;
 delete process.env.WINWORK_SESSION_SECRET;
 
+const publicCourtPage = await middleware(
+  makeRequest('/court', { headers: { Accept: 'text/html' } }),
+);
+expect(
+  publicCourtPage.headers.get('x-middleware-next') === '1',
+  'The court presentation must remain public without auth configuration',
+);
+
+const publicCourtAsset = await middleware(
+  makeRequest('/court-slides/court-01.html', {
+    headers: { Accept: 'text/html' },
+  }),
+);
+expect(
+  publicCourtAsset.headers.get('x-middleware-next') === '1',
+  'Court slide assets must remain public',
+);
+
+const publicCourtBundle = await middleware(
+  makeRequest('/court-app/assets/court-test.js', {
+    headers: { Accept: 'text/javascript' },
+  }),
+);
+expect(
+  publicCourtBundle.headers.get('x-middleware-next') === '1',
+  'The isolated court bundle must remain public',
+);
+
+const publicPerformerRegistrationAsset = await middleware(
+  makeRequest('/performer-registration-flow/1.png', {
+    headers: { Accept: 'image/png' },
+  }),
+);
+expect(
+  publicPerformerRegistrationAsset.headers.get('x-middleware-next') === '1',
+  'Performer registration assets used by court-03 must remain public',
+);
+
+const rejectedPublicAssetPost = await middleware(
+  makeRequest('/performer-registration-flow/1.png', { method: 'POST' }),
+);
+expect(
+  rejectedPublicAssetPost.status === 405,
+  'Public performer registration assets must reject unsupported methods',
+);
+
+const rejectedPublicPost = await middleware(
+  makeRequest('/court', { method: 'POST' }),
+);
+expect(
+  rejectedPublicPost.status === 405,
+  'The public court route must reject unsupported methods',
+);
+
 const missingConfig = await middleware(
   makeRequest('/enterprise', { headers: { Accept: 'text/html' } }),
 );

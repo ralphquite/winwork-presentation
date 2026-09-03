@@ -9,6 +9,8 @@ type SceneBase = {
 export type SlideSceneDefinition = SceneBase & {
   type: 'slide';
   demoFlow?: DemoFlowDefinition;
+  demoFlows?: readonly DemoFlowDefinition[];
+  externalLinks?: readonly SlideExternalLinkDefinition[];
   pencil?: {
     documentPath: string;
     frameId: string;
@@ -24,12 +26,22 @@ export type DemoFlowBounds = {
   height: number;
 };
 
+export type SlideExternalLinkDefinition = {
+  href: string;
+  label: string;
+  bounds: DemoFlowBounds;
+};
+
 export type DemoFlowId =
+  | 'registration'
+  | 'performer-registration'
   | 'create-object'
   | 'manager-app'
   | 'create-activity'
   | 'document-templates'
-  | 'single-task';
+  | 'single-task'
+  | 'performer-selection'
+  | 'task-payment';
 
 export type DemoFlowDefinition = {
   id: DemoFlowId;
@@ -52,7 +64,8 @@ export type PresentationScene =
   SlideSceneDefinition | DemoSceneDefinition | MediaSceneDefinition;
 
 export type PresentationConfig = {
-  id: 'enterprise' | 'api' | 'small';
+  id: 'enterprise' | 'api' | 'small' | 'court';
+  homePath?: string | null;
   title: string;
   scenes: readonly PresentationScene[];
 };

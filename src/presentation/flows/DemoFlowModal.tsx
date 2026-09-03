@@ -32,6 +32,9 @@ export function DemoFlowModal({
   const dialogRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const prefersReducedMotion = useReducedMotion();
+  const isMobileFlow =
+    flow.id === 'manager-app' || flow.id === 'performer-registration';
+  const isScreenshotFlow = flow.id === 'performer-registration';
 
   useEffect(() => {
     if (!isOpen) return;
@@ -98,7 +101,7 @@ export function DemoFlowModal({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             aria-labelledby={`${flow.id}-dialog-title`}
             aria-modal="true"
-            className={`demo-flow-dialog${flow.id === 'manager-app' ? ' is-mobile-demo' : ''}`}
+            className={`demo-flow-dialog${isMobileFlow ? ' is-mobile-demo' : ''}${isScreenshotFlow ? ' is-screenshot-demo' : ''}`}
             exit={{
               opacity: prefersReducedMotion ? 1 : 0,
               scale: prefersReducedMotion ? 1 : 0.99,
@@ -116,15 +119,27 @@ export function DemoFlowModal({
           >
             <header className="demo-flow-header">
               <div className="demo-flow-heading">
-                <span>Интерактивное демо WinWork</span>
+                <span>
+                  {isScreenshotFlow
+                    ? 'Мобильный flow по скриншотам'
+                    : 'Интерактивное демо WinWork'}
+                </span>
                 <h2 id={`${flow.id}-dialog-title`}>{flow.title}</h2>
               </div>
               <div className="demo-flow-header-actions">
                 <button
-                  aria-label="Сбросить демо"
+                  aria-label={
+                    isScreenshotFlow
+                      ? 'Вернуться к первому экрану'
+                      : 'Сбросить демо'
+                  }
                   className="demo-flow-icon-button"
                   onClick={() => setRevision((current) => current + 1)}
-                  title="Сбросить демо"
+                  title={
+                    isScreenshotFlow
+                      ? 'Вернуться к первому экрану'
+                      : 'Сбросить демо'
+                  }
                   type="button"
                 >
                   <RotateCcw aria-hidden="true" size={20} />

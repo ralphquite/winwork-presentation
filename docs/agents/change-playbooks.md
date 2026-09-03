@@ -52,6 +52,15 @@ Use the smallest playbook that covers the request. Paths and invariants are also
 3. Preserve the 430 × 812 product viewport, narrow-host adaptation, bottom navigation, local mutations, and reset-on-remount behavior.
 4. Check nested Back actions, main navigation, inputs, payment/chat paths, transient messages, and reference fidelity.
 
+## Change the screenshot-based performer registration flow
+
+1. Keep source captures under `screenshots_app/` and copy the approved runtime set to `public/performer-registration-flow/` without altering pixels.
+2. Keep filenames numeric and contiguous because `PerformerRegistrationDemo` derives the runtime URL from the 1-based step number.
+3. Preserve the adaptive 375 × 932 viewport, same-width image rendering, vertical overflow for long captures, scroll reset on step change, and external Previous/Next controls.
+4. Do not add hotspots to the captured product controls. The single `court-03` hotspot belongs only to the visible slide CTA.
+5. Keep `/performer-registration-flow/*` in the GET/HEAD-only public court allowlist while the flow is bound to the public `court-03` scene, and prove unrelated sales assets remain protected.
+6. Verify numeric order, all 17 image requests, Previous/Next disabled states, keyboard step navigation, reset, close/reopen, `Escape`, focus restoration, scrolling on long screens, and a narrow host viewport.
+
 ## Change presentation navigation or reset behavior
 
 1. Read `Presentation.tsx`, `PresentationControls.tsx`, `SceneRenderer.tsx`, and `engine/types.ts` together.
@@ -68,6 +77,8 @@ Use the smallest playbook that covers the request. Paths and invariants are also
 3. Register one shallow route in `src/app/router.tsx` and one landing card in `TrackSelector.tsx`.
 4. Do not create another engine or app root.
 5. Verify direct route refresh against the generic Vercel SPA rewrite and include the route in agent docs/browser checks.
+
+If the track must be public while existing tracks remain protected, use a separately emitted Vite entry under its own asset prefix. Add only that route, bundle prefix, slide prefix, required asset prefix, and exact shared assets to the middleware allowlist; keep `GET`/`HEAD` as the only accepted methods. Add auth-contract assertions proving both public access and continued protection of the main SPA/assets.
 
 ## Add a new scene type
 

@@ -1,6 +1,20 @@
 import type { DemoFlowDefinition } from '../../presentation/engine/types';
 
 export const enterpriseDemoFlows = {
+  registration: {
+    id: 'registration',
+    title: 'Регистрация юридического лица',
+    triggerLabel: 'Показать в WinWork: регистрация юридического лица',
+    // This flow is opened only from the landing-page QA panel.
+    hotspot: { x: 0, y: 0, width: 0, height: 0 },
+  },
+  performerRegistration: {
+    id: 'performer-registration',
+    title: 'Flow регистрации исполнителя',
+    triggerLabel: 'Показать flow регистрации исполнителя',
+    // This screenshot-based flow is opened only from the landing-page QA panel.
+    hotspot: { x: 0, y: 0, width: 0, height: 0 },
+  },
   createObject: {
     id: 'create-object',
     title: 'Создание объекта',
@@ -30,5 +44,19 @@ export const enterpriseDemoFlows = {
     title: 'Создание одиночного задания',
     triggerLabel: 'Показать в WinWork: создание одиночного задания',
     hotspot: { x: 120, y: 916, width: 760, height: 68 },
+  },
+  performerSelection: {
+    id: 'performer-selection',
+    title: 'Flow выбора исполнителя',
+    triggerLabel: 'Показать в WinWork: выбор исполнителя по откликам',
+    // This flow is opened only from the landing-page QA panel.
+    hotspot: { x: 0, y: 0, width: 0, height: 0 },
+  },
+  taskPayment: {
+    id: 'task-payment',
+    title: 'Оплата выполненного задания',
+    triggerLabel: 'Показать в WinWork: оплата выполненного задания',
+    // Quick access uses zero bounds; track configs may override them.
+    hotspot: { x: 0, y: 0, width: 0, height: 0 },
   },
 } as const satisfies Record<string, DemoFlowDefinition>;

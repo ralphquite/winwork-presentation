@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 
 import { apiPresentation } from '../presentation/config/api';
+import { courtPresentation } from '../presentation/config/court';
 import { enterprisePresentation } from '../presentation/config/enterprise';
 import { smallPresentation } from '../presentation/config/small';
 import { Presentation } from '../presentation/engine/Presentation';
@@ -23,6 +24,10 @@ export const router = createBrowserRouter([
   {
     path: '/small',
     element: <Presentation key="small" config={smallPresentation} />,
+  },
+  {
+    path: '/court',
+    element: <Presentation key="court" config={courtPresentation} />,
   },
   {
     path: '*',

@@ -459,6 +459,31 @@ select {
   cursor: pointer;
 }
 
+.pencil-external-hotspot {
+  position: absolute;
+  z-index: 21;
+  display: block;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  background: transparent;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.pencil-external-hotspot:hover {
+  border-color: #7cabff;
+  box-shadow: inset 0 0 0 1px #ffffffb3;
+}
+
+.pencil-external-hotspot:focus-visible {
+  border-color: #2a73ff;
+  box-shadow:
+    inset 0 0 0 1px #ffffff,
+    0 0 0 3px #2a73ff26;
+  outline: none;
+}
+
 .pencil-demo-hotspot::after {
   position: absolute;
   inset: 0;

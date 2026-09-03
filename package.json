@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && vite build --config vite.court.config.ts",
     "preview": "vite preview",
     "auth:check": "node --experimental-strip-types scripts/check-auth.mjs",
     "docs:check": "node scripts/check-docs.mjs",

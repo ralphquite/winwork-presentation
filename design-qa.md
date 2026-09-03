@@ -151,6 +151,57 @@ The source and implementation were opened together in the same browser-rendered 
 - The first Pencil PNG export isolates the `API-01` frame and omits the overlapping top-level hero-image node. The runtime HTML export includes that original node, references the deterministic adjacent asset `api-01-hero.png`, and the browser screenshot confirms the full hero composition.
 - Browser checks passed for 16 selector options, previous/next controls, ArrowLeft/ArrowRight, Back/Forward, direct `api-16`, disabled next at the end, invalid-scene normalization to `api-01` while preserving `qa=kept`, landing readiness copy, Enterprise/Small route smoke checks, and zero application console errors. The only warning is the expected reduced-motion notice.
 
+### Iteration 14 — passed
+
+- A new quick-access `Регистрация юридического лица` flow was recreated from the live WinWork development sign-in and sign-up pages in Chrome. The split layout, WinWork branding, phone/login tabs, benefits, company and position fields, contact fields, password guidance, primary/secondary actions, confirmation copy, and email-sent state were compared at the same desktop viewport.
+- The live development registration was completed with synthetic credentials. It confirmed the Russian-mail-domain validation and rendered the source `Последний шаг, чтобы завершить регистрацию` state before the prototype implementation was finalized.
+- Every required demo field auto-fills on focus or click. The browser path passed end to end: sign-in → registration → company/position/phone/email/password auto-fill → email sent → demo confirmation → sign-in phone/password auto-fill → signed-in cabinet state.
+- Reset, close/reopen, `Escape`, trigger focus restoration, and 900 × 700 scroll-safe desktop-canvas behavior passed. The fresh console contained no application errors; the only warning reports the test device's enabled reduced-motion preference.
+
+### Iteration 15 — passed
+
+- A standalone quick-access `Оплата выполненного задания` flow was recreated from the authorized live WinWork development Marketplace in Chrome. The selected synthetic row uses the presentation-safe title `Грузчик. Разгрузка товара на складе`, appears second in the local table with the green `ВЫПОЛНЕН` status, and opens a right-side task panel.
+- The live source was inspected across `Задание`, `Исполнитель`, `Действия`, `Документы`, and `История`, plus the SMS-code state. Live payment attempts with `0000` reached the backend but returned validation/general errors; no successful payment or external side effect was observed.
+- The deterministic prototype follows the clarified intended terminal behavior without a network call: `Подтвердить и оплатить` → code `0000` → `Оплатить` → green `Отправлено`, while the panel and Marketplace row change to `ОПЛАЧЕН`.
+
+### Iteration 16 — passed
+
+- The paid action state no longer offers `Отменить задание`; only the disabled green `Отправлено` confirmation remains.
+- `court-05` reuses the same `task-payment` implementation through a hotspot aligned to the visible `Показать подтверждение оплаты` CTA.
+- The isolated court entry imports the existing product-demo stylesheet so shared React flows retain their signed-in product layout without exposing or loading the protected sales bundle.
+- Direct `court-05` browser QA passed at the normal Chrome viewport: the visible CTA opened the styled flow, the renamed task completed the `0000` payment path, both panel and table changed to `ОПЛАЧЕН`, `Отправлено` remained visible, and the post-payment cancel button count was zero.
+- `Escape` closed the modal and restored focus to the `court-05` hotspot. At 900 × 700 the modal surface stayed 856 × 585 with the intended scrollable 1180 × 820 desktop canvas. The console had no application errors; the only warning was the expected reduced-motion notice.
+
+### Iteration 17 — passed
+
+- The landing-page quick-access panel now includes `Flow регистрации исполнителя`, an explicitly approved temporary screenshot-based flow with 17 captures loaded in numeric order from `public/performer-registration-flow/`.
+- At the 1440 × 1080 browser viewport, the mobile frame measured exactly 375 × 932 px and every image rendered at the same 375 px width. All 17 runtime image requests returned HTTP 200.
+- Previous/Next buttons, ArrowLeft/ArrowRight navigation while the viewer is focused, first/last disabled states, reset to screen 1, close/reopen, `Escape`, and trigger focus restoration passed with no runtime exceptions or console entries.
+- The 1409 px-tall source for screen 14 produced a 1166 px rendered document inside the 932 px frame and scrolled 234 px to its bottom. Moving to screen 15 reset the frame scroll position to zero.
+- At a 390 × 844 host viewport, the frame adapted to 313.83 × 780 px with the requested 375:932 ratio and no document-level horizontal overflow.
+- Browser evidence: `/tmp/winwork-performer-flow-desktop.png`, `/tmp/winwork-performer-flow-long-scroll.png`, and `/tmp/winwork-performer-flow-narrow.png`.
+
+### Iteration 18 — passed
+
+- A standalone quick-access `Flow выбора исполнителя` was recreated from the authorized live WinWork Marketplace tab. The source evidence showed the right-side task drawer, `Отклики` tab, response-card hierarchy, viewed badge, rating/statistics, personal details, yearly income, and remaining-task limit.
+- The new synthetic target row uses the orange `ЕСТЬ ОТКЛИКИ` status. Opening it lands directly on `Отклики (3)` with three scrollable performer cards; each card has a primary blue `Принять` button and a transparent red-outline `Отказать` button.
+- The normal Chrome viewport rendered the table, dimmed Marketplace background, right-side drawer, status chip, active tab, first complete response card, and the start of the second card without clipping the desktop canvas. Accessibility output confirmed all three response cards and all six action buttons.
+- Local accept/reject decisions changed only the selected card (`Принято` / `Отказано`). Modal reset removed those decisions and closed the nested task drawer; `Escape` closed the flow and restored focus to its landing-page card.
+
+### Iteration 19 — passed
+
+- The visible `Показать выбор исполнителей` CTA on `court-04` now opens the shared `performer-selection` implementation through a 1920 × 1080 hotspot at `x = 1358`, `y = 723`, `width = 458`, `height = 76`.
+- Direct browser QA at `/court?scene=court-04` passed: the CTA opened `Flow выбора исполнителя`, its target Marketplace row opened `Отклики (3)`, and accessibility output confirmed all three performer cards and six decision buttons.
+- `Escape` closed the modal and restored focus to the `court-04` hotspot. The court slide remained on the same stable scene URL.
+
+### Iteration 19 — passed
+
+- `court-03` now reuses the `performer-registration` screenshot flow through the visible `Показать путь исполнителя` CTA. The 1920 × 1080 hotspot measured `104 × 584`, `423 × 76`; the rendered CTA measured `104 × 584.16`, `422.39 × 76`, so the clickable geometry stays within one pixel of the source button.
+- Direct `court-03` QA passed in both the development route and the built isolated court entry at `/court-app/court.html?scene=court-03`: the CTA opened `Flow регистрации исполнителя` on `/performer-registration-flow/1.png`, Next advanced to screen 2, and all 17 image requests returned HTTP 200.
+- `Escape` closed the screenshot flow and restored focus to the `court-03` hotspot. No framework overlay or runtime exception appeared; the only application warning was the expected reduced-motion notice.
+- The access-gateway contract now includes GET/HEAD-only public access for `/performer-registration-flow/*`, rejects POST to those assets, and keeps the remaining sales routes/assets behind the existing fail-closed boundary. `pnpm auth:check` passed 30 assertions.
+- Browser evidence: `/tmp/winwork-court03-before.png` and `/tmp/winwork-court03-flow-open.png`.
+
 ## Interaction and runtime evidence
 
 - Create object: list → `Добавить объект` → editable drawer → add manager/activity → save → new synthetic row; reset removes the new row.
@@ -158,6 +209,10 @@ The source and implementation were opened together in the same browser-rendered 
 - Activity: settings list → `Добавить вид деятельности` → requirements/operations → save.
 - Templates: activity drawer → anchored contract/act dropdown → search/select/save; contract create action → editable document editor → save and select.
 - Single task: marketplace → `Добавить задание` → `Разовое задание` → form → created-task details.
+- Legal-entity registration: sign-in → registration auto-fill → email sent → confirmed sign-in → cabinet.
+- Completed-task payment: Marketplace row 2 → all five task tabs → actions → SMS `0000` → green sent state → paid row status.
+- Performer selection: Marketplace row 2 → `ЕСТЬ ОТКЛИКИ` → `Отклики (3)` → three performer cards → local accept/reject decisions.
+- Court performer registration: `court-03` → `Показать путь исполнителя` → screenshot flow screens 1–17.
 - Direct scene links, browser Back/Forward, presentation reset, modal keyboard isolation, `/enterprise`, `/api`, and `/small` all passed.
 - Fresh-tab console check had no app errors. The only warning reports that reduced motion is enabled in the test environment, which the implementation honors.
 - Fullscreen entry was attempted, but the in-app browser does not expose the Fullscreen API; the guarded fallback leaves the presentation rendered without a runtime error.
@@ -167,7 +222,7 @@ The source and implementation were opened together in the same browser-rendered 
 
 - [x] Removed all screenshot-backed product rendering and hotspot navigation.
 - [x] Recreated the desktop and mobile product shells as React components.
-- [x] Implemented five resettable deterministic flows with synthetic data only.
+- [x] Implemented eight resettable deterministic component flows with synthetic data only, plus one explicitly approved screenshot viewer.
 - [x] Implemented real forms, tables, drawers, pickers, editor, tabs, toggles, payment sheet, and chat.
 - [x] Preserved slide entry CTAs, deep links, browser history, keyboard guards, focus restoration, and reduced motion.
 - [x] Compared source and implementation together and verified the complete primary interaction paths in the browser.

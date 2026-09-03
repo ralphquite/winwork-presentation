@@ -278,8 +278,36 @@ function redirectResponse(location: string, cookie?: string) {
   return new Response(null, { status: 303, headers });
 }
 
+const PUBLIC_COURT_PATHS = new Set(['/court', '/winwork-logo.svg']);
+const PUBLIC_COURT_PREFIXES = [
+  '/court-app/',
+  '/court-assets/',
+  '/court-slides/',
+  '/performer-registration-flow/',
+] as const;
+
+function isPublicCourtPath(pathname: string) {
+  return (
+    PUBLIC_COURT_PATHS.has(pathname) ||
+    PUBLIC_COURT_PREFIXES.some((prefix) => pathname.startsWith(prefix))
+  );
+}
+
 export default async function middleware(request: Request) {
   const requestUrl = new URL(request.url);
+
+  if (isPublicCourtPath(requestUrl.pathname)) {
+    if (request.method !== 'GET' && request.method !== 'HEAD') {
+      return plainResponse('Метод не поддерживается.', 405, 'GET, HEAD');
+    }
+
+    return next({
+      headers: {
+        'X-Robots-Tag': 'noindex, nofollow, noarchive',
+      },
+    });
+  }
+
   const config = readAuthConfig();
 
   if (!config) {

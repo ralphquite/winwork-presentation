@@ -24,9 +24,11 @@ Never preserve a stale documentation claim over working code. Update the focused
 - `/enterprise` is implemented as 19 exported Pencil slides. Slides `ent-04`, `ent-05`, `ent-07`, `ent-08`, and `ent-09` open component-based React demo flows.
 - `/small` is implemented as 14 exported Pencil slides. Slide `smb-06` reuses the component-based `single-task` demo flow.
 - `/api` is implemented as 16 exported Pencil slides with no interactive demo flows.
+- `/court` is a public five-slide code-authored presentation for court demonstrations. It uses an isolated public Vite bundle; `court-02` opens the legal-entity registration and single-task React demo flows, `court-03` opens performer registration, `court-04` opens performer selection, and `court-05` opens the completed-task payment flow.
+- The landing-page quick-access panel also exposes a component-based `performer-selection` flow and a temporary screenshot-based `performer-registration` mobile flow built from 17 approved source captures. The screenshot flow is deliberately non-interactive except for step navigation and per-screen vertical scrolling.
 - The active scene is URL state in `?scene=<stable-id>`; presentation and demo state are local and resettable.
-- Exported slide HTML under `public/enterprise-slides/`, `public/api-slides/`, and `public/small-slides/` is runtime content. PNG files under `public/demo-flows/` are QA references and must not be used as interactive product UI.
-- The Vercel access gateway uses Routing Middleware to protect every deployed route/asset and an Edge Function to process the password form. This is the only server-side behavior and uses `WINWORK_ACCESS_PASSWORD` plus `WINWORK_SESSION_SECRET` for a signed 30-day cookie.
+- Exported slide HTML under `public/enterprise-slides/`, `public/api-slides/`, and `public/small-slides/`, code-authored HTML/CSS under `public/court-slides/`, and the explicitly approved captures under `public/performer-registration-flow/` are runtime content. PNG files under `public/demo-flows/` remain QA references and must not be used as interactive product UI.
+- The Vercel access gateway uses Routing Middleware to protect the sales routes/assets and an Edge Function to process the password form. The narrowly allowlisted `/court`, `/court-app/*`, `/court-slides/*`, `/court-assets/*`, `/performer-registration-flow/*`, and shared WinWork wordmark are public; all other deployed routes/assets remain fail-closed. This is the only server-side behavior and uses `WINWORK_ACCESS_PASSWORD` plus `WINWORK_SESSION_SECRET` for a signed 30-day cookie.
 - There is no account system, product backend, database, analytics, production API, or real user identity.
 
 ## Hard boundaries
@@ -34,7 +36,7 @@ Never preserve a stale documentation claim over working code. Update the focused
 - Never connect real WinWork services or introduce network-backed product behavior unless the task explicitly changes this boundary.
 - Never expose, hard-code, log, or prefix the access-gateway secrets with `VITE_`; keep real values in Vercel or ignored local environment files.
 - Never use real personal, customer, company, worker, payment, or conversation data. Keep visible demo data obviously synthetic and deterministic.
-- Do not render product screenshots as interactive demos. Product flows are semantic React controls with local state; screenshots are comparison evidence only.
+- Do not render product screenshots as interactive demos unless the task explicitly approves a screenshot-only temporary flow. Product flows otherwise remain semantic React controls with local state; screenshots under `public/demo-flows/` are comparison evidence only.
 - Do not invent product claims, sales copy, or a design system. Use approved Pencil/design inputs and clearly mark unavailable tracks or scenes as placeholders.
 - Keep React, TypeScript, Vite, React Router, Tailwind CSS, Motion, and pnpm unless a concrete requirement justifies a change.
 - Do not turn the runtime into a CMS, slide editor, universal presentation framework, or full WinWork clone.
@@ -42,8 +44,8 @@ Never preserve a stale documentation claim over working code. Update the focused
 
 ## Architecture invariants
 
-- One router and one shared presentation engine serve all tracks.
-- Deployed requests fail closed in `middleware.ts`: unauthenticated visitors cannot fetch the SPA bundle, exported slides, or their adjacent assets.
+- One shared presentation engine serves all tracks. The protected tracks use the main router; the public court track has an isolated entry so protected bundle assets stay private.
+- Deployed requests fail closed in `middleware.ts`: unauthenticated visitors cannot fetch the protected SPA bundle, protected exported slides, or their adjacent assets. Only the explicit court allowlist is public.
 - Track configs define scene order; renderers and product primitives are shared.
 - Scene IDs are unique and stable within a track because they are public deep-link values.
 - URL state owns the active scene. Browser Back/Forward and unrelated query parameters must keep working.
@@ -55,18 +57,19 @@ Never preserve a stale documentation claim over working code. Update the focused
 
 ## Change routing
 
-| Change                   | Start with                                  | Usually changes with                                            |
-| ------------------------ | ------------------------------------------- | --------------------------------------------------------------- |
-| Password access gateway  | `middleware.ts`, `api/auth/login.ts`        | shared session module, root TS config, Vercel verification      |
-| Route or track card      | `src/app/router.tsx`                        | `src/app/TrackSelector.tsx`, track config, browser verification |
-| Scene order/copy/ID      | `src/presentation/config/*.ts`              | exported slide asset, direct-link verification                  |
-| Runtime/navigation/reset | `src/presentation/engine/Presentation.tsx`  | controls, renderer, types, all-track browser checks             |
-| Exported track slide     | matching `src/presentation/config/*.ts`     | matching `public/*-slides/`, Pencil source/reference            |
-| Demo hotspot or flow ID  | `src/demos/flows/enterprise.ts`             | engine types, matching track config, `DemoProduct.tsx`          |
-| Desktop demo behavior    | `src/presentation/flows/DesktopDemos.tsx`   | `ProductUI.tsx`, `demo-product.css`, QA references              |
-| Manager mobile behavior  | `src/presentation/flows/ManagerAppDemo.tsx` | `demo-product.css`, QA references                               |
-| Scene type               | `src/presentation/engine/types.ts`          | renderer, scene component, configs, architecture docs           |
-| Agent documentation      | `docs/agents/context-index.json`            | relevant focused docs, `pnpm docs:check`                        |
+| Change                   | Start with                                             | Usually changes with                                                            |
+| ------------------------ | ------------------------------------------------------ | ------------------------------------------------------------------------------- |
+| Password access gateway  | `middleware.ts`, `api/auth/login.ts`                   | shared session module, root TS config, Vercel verification                      |
+| Route or track card      | `src/app/router.tsx`                                   | track config, middleware/public build when access differs, browser verification |
+| Scene order/copy/ID      | `src/presentation/config/*.ts`                         | exported slide asset, direct-link verification                                  |
+| Runtime/navigation/reset | `src/presentation/engine/Presentation.tsx`             | controls, renderer, types, all-track browser checks                             |
+| Exported track slide     | matching `src/presentation/config/*.ts`                | matching `public/*-slides/`, Pencil source/reference                            |
+| Demo hotspot or flow ID  | `src/demos/flows/enterprise.ts`                        | engine types, matching track config, `DemoProduct.tsx`                          |
+| Desktop demo behavior    | `src/presentation/flows/DesktopDemos.tsx`              | `ProductUI.tsx`, `demo-product.css`, QA references                              |
+| Manager mobile behavior  | `src/presentation/flows/ManagerAppDemo.tsx`            | `demo-product.css`, QA references                                               |
+| Screenshot mobile flow   | `src/presentation/flows/PerformerRegistrationDemo.tsx` | runtime captures, quick access, `DemoProduct.tsx`, `demo-product.css`           |
+| Scene type               | `src/presentation/engine/types.ts`                     | renderer, scene component, configs, architecture docs                           |
+| Agent documentation      | `docs/agents/context-index.json`                       | relevant focused docs, `pnpm docs:check`                                        |
 
 ## Working agreements
 
@@ -108,7 +111,7 @@ Never preserve a stale documentation claim over working code. Update the focused
 
 - Real product API, account authentication, analytics, hard-coded secret, or personal-data dependency.
 - Fail-open access behavior or a protected route/asset that bypasses `middleware.ts`.
-- Screenshot-backed fake interaction.
+- Screenshot-backed fake interaction outside an explicitly approved screenshot-only flow.
 - Duplicated track engine or unresettable/leaking demo state.
 - Broken deep links, browser history, editable-field keyboard behavior, focus handling, or reduced motion.
 - Runtime asset referenced from an untracked, temporary, or source-only path.

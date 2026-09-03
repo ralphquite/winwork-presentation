@@ -11,7 +11,9 @@ export function SlideScene({ scene }: SlideSceneProps) {
     return (
       <PencilSlide
         demoFlow={scene.demoFlow}
+        demoFlows={scene.demoFlows}
         documentPath={scene.pencil.documentPath}
+        externalLinks={scene.externalLinks}
         height={scene.pencil.height}
         title={scene.title}
         width={scene.pencil.width}

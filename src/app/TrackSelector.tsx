@@ -49,11 +49,16 @@ const demoFlows: readonly DemoFlowDefinition[] =
   Object.values(enterpriseDemoFlows);
 
 const demoFlowSteps = {
+  registration: 'Вход → регистрация → письмо → вход в кабинет',
+  'performer-registration': '17 экранов мобильной регистрации исполнителя',
   'create-object': 'Список объектов → пустая форма → заполненная форма',
   'manager-app': 'Вход → заказы → исполнитель → оплата → настройки → чаты',
   'create-activity': 'Пакеты документов → добавление вида деятельности',
   'document-templates': 'Шторка → выбор договора или акта → редактор',
   'single-task': 'Маркетплейс → меню → форма задания → результат',
+  'performer-selection':
+    'Маркетплейс → есть отклики → 3 исполнителя → принять или отказать',
+  'task-payment': 'Маркетплейс → выполнено → действия → SMS → оплачено',
 } as const satisfies Record<DemoFlowId, string>;
 
 export function TrackSelector() {

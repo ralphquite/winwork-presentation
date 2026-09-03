@@ -32,6 +32,7 @@ export function PresentationControls({
   onSceneChange,
   onToggleFullscreen,
 }: PresentationControlsProps) {
+  const homePath = config.homePath === undefined ? '/' : config.homePath;
   const handleSceneChange = (event: ChangeEvent<HTMLSelectElement>) => {
     onSceneChange(event.target.value);
   };
@@ -70,13 +71,15 @@ export function PresentationControls({
           aria-label="Управление презентацией"
           className="presentation-controls"
         >
-          <Link
-            aria-label="К выбору презентаций"
-            className="control-button presentation-control-button"
-            to="/"
-          >
-            <Home aria-hidden="true" size={17} />
-          </Link>
+          {homePath ? (
+            <Link
+              aria-label="К выбору презентаций"
+              className="control-button presentation-control-button"
+              to={homePath}
+            >
+              <Home aria-hidden="true" size={17} />
+            </Link>
+          ) : null}
 
           <span className="presentation-scene-counter">
             {currentIndex + 1} / {config.scenes.length}

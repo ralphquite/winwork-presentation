@@ -3,7 +3,7 @@
   "schemaVersion": 1,
   "project": {
     "name": "winwork-sales-demo",
-    "kind": "password-protected-deterministic-static-sales-presentation",
+    "kind": "protected-sales-presentations-plus-public-court-presentation",
     "runtime": "Vercel Edge Routing Middleware + React 19 + TypeScript + Vite + React Router + Tailwind CSS + Motion",
     "packageManager": "pnpm@11",
     "node": ">=24 <25",
@@ -11,6 +11,7 @@
       "AGENTS.md",
       "middleware.ts",
       "src/main.tsx",
+      "src/court/main.tsx",
       "src/app/router.tsx",
       "src/presentation/engine/Presentation.tsx"
     ]
@@ -24,6 +25,9 @@
         "public/enterprise-slides",
         "public/api-slides",
         "public/small-slides",
+        "public/court-slides",
+        "public/court-assets",
+        "public/performer-registration-flow",
         "public/winwork-logo.svg",
         "public/favicon.svg",
         "middleware.ts",
@@ -35,6 +39,8 @@
         ".node-version",
         ".github/workflows/ci.yml",
         "vite.config.ts",
+        "vite.court.config.ts",
+        "court.html",
         "tsconfig.json",
         "tsconfig.app.json",
         "tsconfig.node.json",
@@ -91,6 +97,13 @@
       "status": "implemented",
       "firstSceneId": "smb-01",
       "configPath": "src/presentation/config/small.ts"
+    },
+    {
+      "path": "/court",
+      "trackId": "court",
+      "status": "implemented",
+      "firstSceneId": "court-01",
+      "configPath": "src/presentation/config/court.ts"
     }
   ],
   "invariants": [
@@ -100,11 +113,11 @@
     },
     {
       "id": "access-gateway",
-      "rule": "Vercel requests fail closed before cache; server-only secrets sign 30-day sessions and every SPA route, exported slide, and adjacent asset requires a valid cookie."
+      "rule": "Vercel requests fail closed before cache; server-only secrets sign 30-day sessions for the sales SPA and assets. Only /court, its isolated bundle/slides/assets, and the exact shared WinWork wordmark are public for GET/HEAD."
     },
     {
       "id": "shared-engine",
-      "rule": "All tracks use one router and the shared presentation engine; track configs remain data-defined."
+      "rule": "All tracks use the shared presentation engine and data-defined configs. Protected tracks use the main router; the public court track uses an isolated Vite entry so the protected SPA bundle remains private."
     },
     {
       "id": "url-scene-state",
@@ -116,7 +129,7 @@
     },
     {
       "id": "semantic-demo-ui",
-      "rule": "Interactive product demos use semantic React controls; PNG screenshots are QA references only."
+      "rule": "Interactive product demos use semantic React controls. The explicitly approved performer-registration flow is a temporary screenshot-only viewer with navigation and scrolling, while public/demo-flows PNG files remain QA references only."
     },
     {
       "id": "keyboard-and-focus",
@@ -136,6 +149,9 @@
       "public/enterprise-slides",
       "public/api-slides",
       "public/small-slides",
+      "public/court-slides",
+      "public/court-assets",
+      "public/performer-registration-flow",
       "public/winwork-logo.svg",
       "public/favicon.svg"
     ],
@@ -216,10 +232,16 @@
       "readFirst": [
         "src/app/router.tsx",
         "src/app/TrackSelector.tsx",
-        "src/presentation/engine/types.ts"
+        "src/presentation/engine/types.ts",
+        "middleware.ts",
+        "vercel.json"
       ],
       "changeWith": [
         "src/presentation/config",
+        "src/court/main.tsx",
+        "court.html",
+        "vite.court.config.ts",
+        "scripts/check-auth.mjs",
         "vercel.json",
         "README.md",
         "docs/agents/context-index.json"
@@ -227,7 +249,7 @@
       "invariantIds": ["shared-engine", "url-scene-state", "approved-content"],
       "verification": [
         "pnpm check",
-        "Verify /enterprise, /api, /small, direct refresh, and the changed route in a browser."
+        "Verify /enterprise, /api, /small, /court, direct refresh, and the changed route in a browser; when access differs, prove the main bundle remains protected."
       ]
     },
     {
@@ -266,16 +288,18 @@
     },
     {
       "id": "exported-track-slides",
-      "intent": "Change Enterprise, API / Embedded, or Small Business scene order, titles, Pencil frame metadata, HTML exports, or adjacent runtime images.",
+      "intent": "Change Enterprise, API / Embedded, Small Business, or Court scene order, titles, HTML exports, Pencil metadata, or adjacent runtime images.",
       "triggers": [
         "enterprise slide",
         "api slide",
         "small business slide",
+        "court slide",
         "Pencil export",
         "frameId",
         "ent-NN",
         "api-NN",
         "smb-NN",
+        "court-NN",
         "slide copy",
         "slide image"
       ],
@@ -283,6 +307,7 @@
         "src/presentation/config/enterprise.ts",
         "src/presentation/config/api.ts",
         "src/presentation/config/small.ts",
+        "src/presentation/config/court.ts",
         "src/presentation/scenes/SlideScene.tsx",
         "src/presentation/slides/PencilSlide.tsx"
       ],
@@ -290,6 +315,9 @@
         "public/enterprise-slides",
         "public/api-slides",
         "public/small-slides",
+        "public/court-slides",
+        "public/court-assets",
+        "public/performer-registration-flow",
         "pencil/preesentation_big_business.pen",
         "pencil/preesentation_api_business.pen",
         "pencil/preesentation_small_business.pen",
@@ -341,17 +369,27 @@
     },
     {
       "id": "desktop-product-demos",
-      "intent": "Change create-object, create-activity, document-template, or single-task desktop product behavior.",
+      "intent": "Change legal-entity registration, create-object, create-activity, document-template, single-task, performer-selection, or completed-task payment desktop product behavior.",
       "triggers": [
         "desktop demo",
+        "registration",
+        "sign-in",
         "object",
         "activity",
         "document template",
         "single task",
+        "task payment",
+        "completed task",
+        "performer selection",
+        "task responses",
+        "SMS code",
         "drawer",
         "product modal"
       ],
       "readFirst": [
+        "src/presentation/flows/RegistrationDemo.tsx",
+        "src/presentation/flows/TaskPaymentDemo.tsx",
+        "src/presentation/flows/PerformerSelectionDemo.tsx",
         "src/presentation/flows/DesktopDemos.tsx",
         "src/presentation/flows/ProductUI.tsx",
         "src/styles/demo-product.css"
@@ -402,6 +440,45 @@
       "verification": [
         "pnpm check",
         "Exercise nested Back/main navigation, changed flow, reset, transient messages, 430x812 viewport, and narrow host."
+      ]
+    },
+    {
+      "id": "performer-registration-screenshot-flow",
+      "intent": "Change the explicitly approved temporary performer-registration flow, its court-03 binding, ordered captures, 375 x 932 viewport, navigation, or per-screen scrolling.",
+      "triggers": [
+        "performer registration",
+        "performer-registration",
+        "registration screenshot flow",
+        "screenshots_app",
+        "375x932"
+      ],
+      "readFirst": [
+        "src/presentation/flows/PerformerRegistrationDemo.tsx",
+        "src/presentation/flows/DemoFlowModal.tsx",
+        "src/styles/demo-product.css"
+      ],
+      "changeWith": [
+        "screenshots_app",
+        "public/performer-registration-flow",
+        "src/demos/flows/enterprise.ts",
+        "src/presentation/engine/types.ts",
+        "src/presentation/flows/DemoProduct.tsx",
+        "src/app/TrackSelector.tsx",
+        "src/presentation/config/court.ts",
+        "middleware.ts",
+        "scripts/check-auth.mjs",
+        "design-qa.md"
+      ],
+      "invariantIds": [
+        "static-demo-only",
+        "resettable-local-state",
+        "keyboard-and-focus",
+        "approved-content",
+        "asset-separation"
+      ],
+      "verification": [
+        "pnpm check",
+        "Verify court-03 CTA alignment and open behavior, all 17 screens in numeric order, public asset access, protected-asset isolation, Previous/Next and keyboard navigation, long-screen vertical scrolling, reset, close/reopen, focus restoration, Escape, and a narrow host viewport."
       ]
     },
     {
@@ -486,6 +563,9 @@
       "readFirst": [
         "package.json",
         "vite.config.ts",
+        "vite.court.config.ts",
+        "court.html",
+        "src/court/main.tsx",
         "tsconfig.app.json",
         "eslint.config.js",
         ".github/workflows/ci.yml",

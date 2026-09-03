@@ -1,11 +1,16 @@
 import { useLayoutEffect, useRef, useState } from 'react';
 
 import { DemoFlowModal } from '../flows/DemoFlowModal';
-import type { DemoFlowDefinition } from '../engine/types';
+import type {
+  DemoFlowDefinition,
+  SlideExternalLinkDefinition,
+} from '../engine/types';
 
 type PencilSlideProps = {
   demoFlow?: DemoFlowDefinition;
+  demoFlows?: readonly DemoFlowDefinition[];
   documentPath: string;
+  externalLinks?: readonly SlideExternalLinkDefinition[];
   height: number;
   title: string;
   width: number;
@@ -13,7 +18,9 @@ type PencilSlideProps = {
 
 export function PencilSlide({
   demoFlow,
+  demoFlows = [],
   documentPath,
+  externalLinks = [],
   height,
   title,
   width,
@@ -21,7 +28,14 @@ export function PencilSlide({
   const stageRef = useRef<HTMLElement>(null);
   const demoTriggerRef = useRef<HTMLButtonElement>(null);
   const [scale, setScale] = useState(0);
+  const [activeFlowId, setActiveFlowId] = useState<
+    DemoFlowDefinition['id'] | null
+  >(null);
   const [isDemoOpen, setIsDemoOpen] = useState(false);
+  const availableDemoFlows = demoFlow ? [demoFlow, ...demoFlows] : demoFlows;
+  const activeFlow = availableDemoFlows.find(
+    (flow) => flow.id === activeFlowId,
+  );
 
   useLayoutEffect(() => {
     const stage = stageRef.current;
@@ -64,27 +78,47 @@ export function PencilSlide({
           title={title}
           width={width}
         />
-        {demoFlow ? (
+        {availableDemoFlows.map((flow) => (
           <button
-            aria-expanded={isDemoOpen}
+            aria-expanded={isDemoOpen && activeFlowId === flow.id}
             aria-haspopup="dialog"
-            aria-label={demoFlow.triggerLabel}
+            aria-label={flow.triggerLabel}
             className="pencil-demo-hotspot"
-            onClick={() => setIsDemoOpen(true)}
-            ref={demoTriggerRef}
+            key={flow.id}
+            onClick={(event) => {
+              demoTriggerRef.current = event.currentTarget;
+              setActiveFlowId(flow.id);
+              setIsDemoOpen(true);
+            }}
             style={{
-              height: demoFlow.hotspot.height,
-              left: demoFlow.hotspot.x,
-              top: demoFlow.hotspot.y,
-              width: demoFlow.hotspot.width,
+              height: flow.hotspot.height,
+              left: flow.hotspot.x,
+              top: flow.hotspot.y,
+              width: flow.hotspot.width,
             }}
             type="button"
           />
-        ) : null}
+        ))}
+        {externalLinks.map((link) => (
+          <a
+            aria-label={link.label}
+            className="pencil-external-hotspot"
+            href={link.href}
+            key={link.href}
+            rel="noreferrer"
+            style={{
+              height: link.bounds.height,
+              left: link.bounds.x,
+              top: link.bounds.y,
+              width: link.bounds.width,
+            }}
+            target="_blank"
+          />
+        ))}
       </div>
-      {demoFlow ? (
+      {activeFlow ? (
         <DemoFlowModal
-          flow={demoFlow}
+          flow={activeFlow}
           isOpen={isDemoOpen}
           onClose={() => setIsDemoOpen(false)}
           triggerRef={demoTriggerRef}
