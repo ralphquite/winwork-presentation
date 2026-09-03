@@ -70,8 +70,8 @@ SceneRenderer (type dispatch + transition + error boundary)
 | Route         | Config                                  | Current state                                                                 |
 | ------------- | --------------------------------------- | ----------------------------------------------------------------------------- |
 | `/enterprise` | `src/presentation/config/enterprise.ts` | 17 Pencil-backed slides; пять сцен открывают React demo-flow                  |
-| `/api`        | `src/presentation/config/api.ts`        | 16 Pencil-backed slides; без интерактивных demo-flow                          |
-| `/small`      | `src/presentation/config/small.ts`      | 12 Pencil-backed slides; одна сцена переиспользует React demo-flow            |
+| `/api`        | `src/presentation/config/api.ts`        | 9 Pencil-backed slides; без интерактивных demo-flow                           |
+| `/small`      | `src/presentation/config/small.ts`      | 13 Pencil-backed slides; одна сцена переиспользует React demo-flow            |
 | `/court`      | `src/presentation/config/court.ts`      | 5 code-authored slides; второй, третий, четвёртый и пятый открывают demo-flow |
 
 `src/app/TrackSelector.tsx` показывает текущую готовность tracks и пытается войти в fullscreen перед переходом. Ошибка или отсутствие Fullscreen API не блокирует навигацию.
@@ -111,7 +111,7 @@ SceneRenderer (type dispatch + transition + error boundary)
 
 ## Exported slides и demo-flow
 
-`src/presentation/config/enterprise.ts` программно сопоставляет 17 элементов массива с IDs и путями `ent-01` … `ent-17`. `src/presentation/config/api.ts` делает то же для 16 сцен `api-01` … `api-16`, `src/presentation/config/small.ts` — для 12 сцен `smb-01` … `smb-12`, а `src/presentation/config/court.ts` — для пяти сцен `court-01` … `court-05`. `PencilSlide` загружает соответствующий HTML из track-specific директории в `public/` и масштабирует фиксированный canvas 1920 × 1080 по доступной области через `ResizeObserver`. Court-слайды собраны кодом в HTML/CSS и используют тот же renderer; прозрачная React-ссылка на первом слайде открывает официальный реестр ФНС, две hotspot-кнопки на втором слайде открывают регистрацию и размещение задания, CTA третьего слайда — путь исполнителя, CTA четвёртого — выбор исполнителя, а CTA пятого — подтверждение оплаты.
+`src/presentation/config/enterprise.ts` программно сопоставляет 17 элементов массива с IDs и путями `ent-01` … `ent-17`. `src/presentation/config/api.ts` задаёт девять сцен со стабильными IDs `api-01` … `api-06`, `api-12`, `api-15` и `api-17`, `src/presentation/config/small.ts` — для 13 сцен `smb-01` … `smb-13`, а `src/presentation/config/court.ts` — для пяти сцен `court-01` … `court-05`. `PencilSlide` загружает соответствующий HTML из track-specific директории в `public/` и масштабирует фиксированный canvas 1920 × 1080 по доступной области через `ResizeObserver`. Court-слайды собраны кодом в HTML/CSS и используют тот же renderer; прозрачная React-ссылка на первом слайде открывает официальный реестр ФНС, две hotspot-кнопки на втором слайде открывают регистрацию и размещение задания, CTA третьего слайда — путь исполнителя, CTA четвёртого — выбор исполнителя, а CTA пятого — подтверждение оплаты.
 
 Десять track scenes имеют одиннадцать hotspot bindings на девять slide-bound реализаций:
 

@@ -14343,10 +14343,10 @@
         {
           "type": "frame",
           "id": "bGM28",
-          "x": 128,
+          "x": 130,
           "y": 318,
-          "name": "Four Step Connection Flow",
-          "width": 1664,
+          "name": "Five Step Connection Flow",
+          "width": 1660,
           "height": 410,
           "alignItems": "center",
           "children": [
@@ -14354,7 +14354,7 @@
               "type": "frame",
               "id": "y8x0OY",
               "name": "Step 01 — Зарегистрируйте компанию",
-              "width": 386,
+              "width": 300,
               "height": 410,
               "fill": "$h:surface",
               "cornerRadius": 24,
@@ -14438,7 +14438,7 @@
                       "content": "Зарегистрируйте компанию",
                       "lineHeight": 1.12,
                       "fontFamily": "$h:font-primary",
-                      "fontSize": 25,
+                      "fontSize": 22,
                       "fontWeight": "700"
                     },
                     {
@@ -14451,7 +14451,7 @@
                       "content": "Создайте кабинет WinWork и подтвердите регистрацию по ссылке из письма.",
                       "lineHeight": 1.35,
                       "fontFamily": "$h:font-primary",
-                      "fontSize": 17,
+                      "fontSize": 15,
                       "fontWeight": "normal"
                     }
                   ]
@@ -14491,7 +14491,7 @@
                       "content": "Письмо приходит за 10–15 минут",
                       "lineHeight": 1.15,
                       "fontFamily": "$h:font-primary",
-                      "fontSize": 14,
+                      "fontSize": 12,
                       "fontWeight": "700"
                     }
                   ]
@@ -14512,7 +14512,7 @@
                   "id": "EZVTk",
                   "name": "Connector Line",
                   "fill": "$h:brand-blue-light",
-                  "width": 34,
+                  "width": 20,
                   "height": 2
                 },
                 {
@@ -14531,7 +14531,7 @@
               "type": "frame",
               "id": "rcYrG",
               "name": "Step 02 — Пополните счёт",
-              "width": 386,
+              "width": 300,
               "height": 410,
               "fill": "$h:surface",
               "cornerRadius": 24,
@@ -14615,7 +14615,7 @@
                       "content": "Пополните счёт",
                       "lineHeight": 1.12,
                       "fontFamily": "$h:font-primary",
-                      "fontSize": 25,
+                      "fontSize": 22,
                       "fontWeight": "700"
                     },
                     {
@@ -14628,7 +14628,7 @@
                       "content": "Получите реквизиты в кабинете и сделайте перевод с расчётного счёта компании.",
                       "lineHeight": 1.35,
                       "fontFamily": "$h:font-primary",
-                      "fontSize": 17,
+                      "fontSize": 15,
                       "fontWeight": "normal"
                     }
                   ]
@@ -14668,7 +14668,7 @@
                       "content": "Зачисление обычно — до 1 часа",
                       "lineHeight": 1.15,
                       "fontFamily": "$h:font-primary",
-                      "fontSize": 14,
+                      "fontSize": 12,
                       "fontWeight": "700"
                     }
                   ]
@@ -14689,7 +14689,7 @@
                   "id": "ErhmT",
                   "name": "Connector Line",
                   "fill": "$h:brand-blue-light",
-                  "width": 34,
+                  "width": 20,
                   "height": 2
                 },
                 {
@@ -14708,7 +14708,7 @@
               "type": "frame",
               "id": "LvuON",
               "name": "Step 03 — Пройдите идентификацию",
-              "width": 386,
+              "width": 300,
               "height": 410,
               "fill": "$h:surface",
               "cornerRadius": 24,
@@ -14792,7 +14792,7 @@
                       "content": "Пройдите идентификацию",
                       "lineHeight": 1.12,
                       "fontFamily": "$h:font-primary",
-                      "fontSize": 25,
+                      "fontSize": 22,
                       "fontWeight": "700"
                     },
                     {
@@ -14805,7 +14805,7 @@
                       "content": "Передайте реквизиты компании и данные руководителя для проверки.",
                       "lineHeight": 1.35,
                       "fontFamily": "$h:font-primary",
-                      "fontSize": 17,
+                      "fontSize": 15,
                       "fontWeight": "normal"
                     }
                   ]
@@ -14845,7 +14845,7 @@
                       "content": "Карточка компании + паспортные данные",
                       "lineHeight": 1.15,
                       "fontFamily": "$h:font-primary",
-                      "fontSize": 14,
+                      "fontSize": 12,
                       "fontWeight": "700"
                     }
                   ]
@@ -14866,7 +14866,7 @@
                   "id": "AQdM2",
                   "name": "Connector Line",
                   "fill": "$h:brand-blue-light",
-                  "width": 34,
+                  "width": 20,
                   "height": 2
                 },
                 {
@@ -14883,9 +14883,186 @@
             },
             {
               "type": "frame",
+              "id": "ZPC3l",
+              "name": "Step 04 — Передайте инструкцию разработчикам",
+              "width": 300,
+              "height": 410,
+              "fill": "$h:surface",
+              "cornerRadius": 24,
+              "stroke": "$h:neutral-4",
+              "strokeWidth": 1,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#17203310",
+                "offset": {
+                  "x": 0,
+                  "y": 8
+                },
+                "blur": 22
+              },
+              "layout": "vertical",
+              "gap": 18,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "kmLWp",
+                  "name": "Step 04 Header",
+                  "width": "fill_container",
+                  "height": 64,
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "IRUxv",
+                      "name": "Step 04 Number",
+                      "fill": "$h:brand-blue",
+                      "content": "04",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 42,
+                      "fontWeight": "750",
+                      "letterSpacing": -1
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ULLds",
+                      "name": "Step 04 Icon Container",
+                      "width": 64,
+                      "height": 64,
+                      "fill": "$h:brand-blue-soft",
+                      "cornerRadius": 20,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "QrPZR",
+                          "name": "Step 04 Icon",
+                          "width": 30,
+                          "height": 30,
+                          "icon": "file-code-2",
+                          "library": "lucide",
+                          "fill": "$h:brand-blue"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "v2HwN",
+                  "name": "Step 04 Content",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "jKvXR",
+                      "name": "Step 04 Title",
+                      "fill": "$h:neutral-2",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Передайте инструкцию разработчикам",
+                      "lineHeight": 1.12,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 22,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "K33xuP",
+                      "name": "Step 04 Description",
+                      "fill": "$h:neutral-3",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Мы отправим инструкцию по интеграции API — передайте её своей команде, чтобы разработчики провели интеграцию.",
+                      "lineHeight": 1.35,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "moaV8",
+                  "name": "Step 04 Note",
+                  "width": "fill_container",
+                  "height": 42,
+                  "fill": "$h:bg-secondary",
+                  "cornerRadius": 12,
+                  "gap": 9,
+                  "padding": [
+                    0,
+                    13
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "tR3ih",
+                      "name": "Step 04 Note Icon",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "messages-square",
+                      "library": "lucide",
+                      "fill": "$h:brand-blue"
+                    },
+                    {
+                      "type": "text",
+                      "id": "fqbgx",
+                      "name": "Step 04 Note Text",
+                      "fill": "$h:neutral-5",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Разработчики на связи и помогут с вопросами",
+                      "lineHeight": 1.15,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 11,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "xZMEy",
+              "name": "Connector 04–05",
+              "width": 40,
+              "height": 24,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 2,
+                  "id": "lSDvh",
+                  "name": "Connector Line",
+                  "fill": "$h:brand-blue-light",
+                  "width": 20,
+                  "height": 2
+                },
+                {
+                  "type": "icon",
+                  "id": "i6RcG",
+                  "name": "Connector Arrow",
+                  "width": 18,
+                  "height": 18,
+                  "icon": "chevron-right",
+                  "library": "lucide",
+                  "fill": "$h:brand-blue"
+                }
+              ]
+            },
+            {
+              "type": "frame",
               "id": "jnihE",
-              "name": "Step 04 — Начните работу с WinWork",
-              "width": 386,
+              "name": "Step 05 — Начните работу с WinWork",
+              "width": 300,
               "height": 410,
               "fill": {
                 "type": "gradient",
@@ -14926,7 +15103,7 @@
                 {
                   "type": "frame",
                   "id": "soJHH",
-                  "name": "Step 04 Header",
+                  "name": "Step 05 Header",
                   "width": "fill_container",
                   "height": 64,
                   "justifyContent": "space_between",
@@ -14935,9 +15112,9 @@
                     {
                       "type": "text",
                       "id": "zdvG7",
-                      "name": "Step 04 Number",
+                      "name": "Step 05 Number",
                       "fill": "$h:brand-green-strong",
-                      "content": "04",
+                      "content": "05",
                       "fontFamily": "$h:font-primary",
                       "fontSize": 42,
                       "fontWeight": "750",
@@ -14946,7 +15123,7 @@
                     {
                       "type": "frame",
                       "id": "Ka67O",
-                      "name": "Step 04 Icon Container",
+                      "name": "Step 05 Icon Container",
                       "width": 64,
                       "height": 64,
                       "fill": "$h:brand-green",
@@ -14957,7 +15134,7 @@
                         {
                           "type": "icon",
                           "id": "lEpPq",
-                          "name": "Step 04 Icon",
+                          "name": "Step 05 Icon",
                           "width": 30,
                           "height": 30,
                           "icon": "rocket",
@@ -14971,7 +15148,7 @@
                 {
                   "type": "frame",
                   "id": "RyXKg",
-                  "name": "Step 04 Content",
+                  "name": "Step 05 Content",
                   "width": "fill_container",
                   "height": "fill_container",
                   "layout": "vertical",
@@ -14980,40 +15157,40 @@
                     {
                       "type": "text",
                       "id": "ZQJ8N",
-                      "name": "Step 04 Title",
+                      "name": "Step 05 Title",
                       "fill": "$h:neutral-2",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
                       "content": "Начните работу с WinWork",
                       "lineHeight": 1.12,
                       "fontFamily": "$h:font-primary",
-                      "fontSize": 25,
+                      "fontSize": 22,
                       "fontWeight": "700"
                     },
                     {
                       "type": "text",
                       "id": "G2xUA",
-                      "name": "Step 04 Description",
+                      "name": "Step 05 Description",
                       "fill": "$h:neutral-3",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
                       "content": "Мы завершим подключение и передадим компанию персональному аккаунт-менеджеру.",
                       "lineHeight": 1.35,
                       "fontFamily": "$h:font-primary",
-                      "fontSize": 17,
+                      "fontSize": 15,
                       "fontWeight": "normal"
                     },
                     {
                       "type": "text",
                       "id": "j3TtXK",
-                      "name": "Step 04 Manager Support",
+                      "name": "Step 05 Manager Support",
                       "fill": "$h:brand-green-strong",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
                       "content": "Менеджер познакомится с командой и проведёт обучение по работе с сервисом.",
                       "lineHeight": 1.28,
                       "fontFamily": "$h:font-primary",
-                      "fontSize": 14,
+                      "fontSize": 13,
                       "fontWeight": "600"
                     }
                   ]
@@ -15021,7 +15198,7 @@
                 {
                   "type": "frame",
                   "id": "G1d6n",
-                  "name": "Step 04 Note",
+                  "name": "Step 05 Note",
                   "width": "fill_container",
                   "height": 42,
                   "fill": "$h:brand-green",
@@ -15036,7 +15213,7 @@
                     {
                       "type": "icon",
                       "id": "J8n4a",
-                      "name": "Step 04 Note Icon",
+                      "name": "Step 05 Note Icon",
                       "width": 18,
                       "height": 18,
                       "icon": "circle-check-big",
@@ -15046,14 +15223,14 @@
                     {
                       "type": "text",
                       "id": "p5u1p",
-                      "name": "Step 04 Note Text",
+                      "name": "Step 05 Note Text",
                       "fill": "$h:neutral-2",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
                       "content": "Готово к работе",
                       "lineHeight": 1.15,
                       "fontFamily": "$h:font-primary",
-                      "fontSize": 14,
+                      "fontSize": 12,
                       "fontWeight": "700"
                     }
                   ]

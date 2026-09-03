@@ -3,8 +3,8 @@
 ## Comparison target
 
 - Source visual truth: `pencil/flows.pen` and the exact exported references under `public/demo-flows/`.
-- API source visual truth: `pencil/preesentation_api_business.pen`, frames `API-01` … `API-16` at 1920 × 1080.
-- API implementation: `http://127.0.0.1:4173/api?scene=api-01` through `api-16`; direct runtime exports live under `public/api-slides/`.
+- API source visual truth: `pencil/preesentation_api_business.pen`, retained frames `API-01` … `API-06`, `API-12`, `API-15`, plus final node `TQWD8`, all at 1920 × 1080.
+- API implementation: `http://127.0.0.1:4173/api?scene=<id>` for stable IDs `api-01` … `api-06`, `api-12`, `api-15`, and `api-17`; direct runtime exports live under `public/api-slides/`.
 - API comparison evidence: `/tmp/winwork-api-qa/reference-grid.png`, `/tmp/winwork-api-qa/rendered-grid.png`, and `/tmp/winwork-api-qa/diff-grid.png`. Every direct browser capture is 1920 × 1080 at device scale factor 1.
 - Desktop source: `public/demo-flows/object-list.png` (1599 × 1170 px, 1× source export).
 - Mobile source: `public/demo-flows/manager-orders.png` (430 × 1546 px); the visible application viewport is the top 430 × 812 px.
@@ -224,6 +224,22 @@ The source and implementation were opened together in the same browser-rendered 
 - Browser Back/Forward preserved the `smb-11` → `smb-12` transition, while a direct `smb-13` link normalized to `smb-01`. At a 390 × 844 host viewport the complete 1920 × 1080 final canvas remained visible with the intended letterboxing and no document-level overflow.
 - The mismatch ledger is empty across title, copy, hierarchy, spacing, color, imagery, and canvas geometry: both runtime exports match the selected Pencil nodes. No application console error appeared; the only warning was the expected reduced-motion notice.
 - Browser evidence: `/tmp/winwork-smb07-desktop.png`, `/tmp/winwork-smb12-final.png`, and `/tmp/winwork-smb12-mobile.png`. `pnpm check` passed the documentation, formatting, lint, type, auth, and production-build gates.
+
+### Iteration 23 — passed
+
+- Small Business now contains 13 scenes. Pencil node `AduNG` is the penultimate `smb-12`, while onboarding node `iaGLr` moved unchanged to the final `smb-13` position.
+- The four approved image fills referenced by `AduNG` were copied beside the runtime export as deterministic `smb-12-action-01.png` through `smb-12-action-04.png` assets. Their crop geometry, order, and rounded framing match the Pencil node.
+- Browser QA exercised `smb-11` → `smb-12` → `smb-13`, confirmed `12 / 13` on `AduNG`, `13 / 13` with disabled Next on the final scene, and Back/Forward across the last transition. A direct invalid `smb-14` link normalized to `smb-01`.
+- The 1920 × 1080 source canvas and a 390 × 844 host viewport rendered without clipping or document-level overflow. The mismatch ledger is empty across title, copy, four-step hierarchy, image order/crops, spacing, color, and canvas geometry; no application console error appeared, only the expected reduced-motion warning.
+- Browser evidence: `/tmp/winwork-adung-pencil-reference.png`, `/tmp/winwork-smb12-adung.png`, and `/tmp/winwork-smb12-adung-mobile.png`. The Small Business scope passes formatting and documentation checks; repository lint, typecheck, 30 auth assertions, and both production builds also pass. The aggregate `pnpm check` also passes after the concurrent API slide exports were formatted.
+
+### Iteration 24 — passed
+
+- API / Embedded now contains nine scenes. Updated Pencil nodes `HypJR`, `vg05h`, `Y1se2`, `hLUa8`, and `dI7KV` remain at stable IDs `api-02` through `api-06`; retained scenes keep `api-12` and `api-15`; node `TQWD8` is the new final scene `api-17`.
+- Former scenes `api-07` through `api-11`, `api-13`, `api-14`, and `api-16` were removed from the route and runtime exports. The production build contains only `api-01` through `api-06`, `api-12`, `api-15`, and `api-17`, plus the existing `api-01` hero asset.
+- Direct browser QA confirmed all five updated slides and the new final slide at their 1920 × 1080 source geometry. The exported `api-02` headline preserves its designed word gap across the two differently colored text layers.
+- Next advanced through `api-12` → `api-15` → `api-17`; the final scene showed `9 / 9` with Next disabled. Back/Forward preserved the sparse stable IDs, while a direct deleted `api-16` link normalized to `api-01` and retained `qa=kept`.
+- The 1280 × 720 host rendered the complete slide canvas without document overflow. No application error appeared; the only console warning was the expected reduced-motion notice. `pnpm check` passed the documentation, formatting, lint, type, 30 access-gateway assertions, and both production builds.
 
 ## Interaction and runtime evidence
 
