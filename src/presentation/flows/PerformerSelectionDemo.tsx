@@ -1,58 +1,29 @@
-import {
-  CalendarDays,
-  Check,
-  ChevronDown,
-  Eye,
-  FileText,
-  Info,
-  Search,
-  Star,
-  X,
-} from 'lucide-react';
-import { useState, type KeyboardEvent } from 'react';
+import { Check, Eye, FileText, Info, Star, X } from 'lucide-react';
+import { useState } from 'react';
 
+import { MARKETPLACE_TASKS, type MarketplaceTask } from './marketplaceData';
+import { MarketplacePage } from './MarketplacePage';
 import { DesktopShell, ProductButton } from './ProductUI';
 
 const SELECTION_TASK_TITLE = 'Грузчик. Комплектация заказов на складе';
 
-const MARKETPLACE_ROWS = [
-  {
-    created: '31.08.2026',
-    performer: 'Смирнов С. С.',
-    start: '31.08.2026 16:38',
-    number: '2abf1a0f',
-    title: 'Мерчендайзер. Проверка торговой точки',
-    total: '1,00 ₽',
-    status: 'ОПЛАЧЕН',
-  },
-  {
-    created: '25.08.2026',
-    performer: '—',
-    start: '25.08.2026 18:00',
-    number: '20ae1846',
-    title: SELECTION_TASK_TITLE,
-    total: '18 000,00 ₽',
-    status: 'ЕСТЬ ОТКЛИКИ',
-  },
-  {
-    created: '30.08.2026',
-    performer: 'Петров П. П.',
-    start: '30.08.2026 15:18',
-    number: '07f8deec',
-    title: 'Мерчендайзер. Проверка выкладки',
-    total: '6,00 ₽',
-    status: 'ОПЛАТА',
-  },
-  {
-    created: '25.08.2026',
-    performer: '—',
-    start: '25.08.2026 15:00',
-    number: '3e827f6a',
-    title: 'Авиакурьер. Тестовое задание',
-    total: '6,00 ₽',
-    status: 'ВЫПОЛНЯЕТСЯ',
-  },
-] as const;
+const SELECTION_MARKETPLACE_ROWS: readonly MarketplaceTask[] =
+  MARKETPLACE_TASKS.map((task, index) =>
+    index === 1
+      ? {
+          count: '1',
+          created: '25.08.2026',
+          performer: '—',
+          startDate: '25.08.2026',
+          startTime: '18:00',
+          number: '20ae1846',
+          taxId: '',
+          title: SELECTION_TASK_TITLE,
+          total: '18 000,00 ₽',
+          status: 'ЕСТЬ ОТКЛИКИ',
+        }
+      : task,
+  );
 
 const RESPONSES = [
   {
@@ -106,62 +77,6 @@ const DETAILS_TABS = ['Задание', 'Отклики (3)', 'Действия'
 
 type DetailsTab = (typeof DETAILS_TABS)[number];
 type ResponseDecision = 'accepted' | 'rejected';
-
-function MarketplaceFilters() {
-  return (
-    <>
-      <div className="ww-payment-market-tabs" role="tablist">
-        {[
-          'Задания',
-          'Ожидают оплаты',
-          'Активные задания',
-          'Завершенные задания',
-          'На модерации',
-          'Архив',
-        ].map((tab, index) => (
-          <button
-            aria-selected={index === 0}
-            key={tab}
-            role="tab"
-            type="button"
-          >
-            {tab}
-          </button>
-        ))}
-      </div>
-      <div className="ww-payment-filters">
-        <label>
-          <Search aria-hidden="true" size={18} />
-          <input
-            aria-label="Название или номер задания"
-            placeholder="Название или номер задания"
-          />
-        </label>
-        <label>
-          <Search aria-hidden="true" size={18} />
-          <input
-            aria-label="ФИО или ИНН исполнителя"
-            placeholder="ФИО или ИНН исполнителя"
-          />
-        </label>
-        <button aria-label="Найти" type="button">
-          <Search aria-hidden="true" size={19} />
-        </button>
-        <button className="ww-payment-date-filter" type="button">
-          <CalendarDays aria-hidden="true" size={18} />
-          02.08.2026 — 02.09.2026
-        </button>
-        <button className="ww-payment-status-filter" type="button">
-          <span>
-            <small>Статус задания</small>
-            Все статусы
-          </span>
-          <ChevronDown aria-hidden="true" size={16} />
-        </button>
-      </div>
-    </>
-  );
-}
 
 function TaskDetailsTab() {
   return (
@@ -422,96 +337,23 @@ function TaskPanel({ onClose }: { onClose: () => void }) {
 
 export function PerformerSelectionDemo() {
   const [isTaskOpen, setIsTaskOpen] = useState(false);
-  const openTargetTask = () => setIsTaskOpen(true);
-  const handleRowKeyDown = (event: KeyboardEvent<HTMLTableRowElement>) => {
-    if (event.key !== 'Enter' && event.key !== ' ') return;
-    event.preventDefault();
-    openTargetTask();
-  };
 
   return (
-    <DesktopShell activeNavigation="Маркетплейс">
-      <div className="ww-marketplace-page ww-payment-marketplace">
-        <div className="ww-page-heading">
-          <h2>Маркетплейс</h2>
-          <div className="ww-page-actions">
-            <ProductButton>
-              Разместить задание <ChevronDown aria-hidden="true" size={16} />
-            </ProductButton>
-            <ProductButton variant="secondary">
-              Реестр на редактирование
-            </ProductButton>
-          </div>
-        </div>
-        <MarketplaceFilters />
-        <div className="ww-payment-table-shell">
-          <table>
-            <thead>
-              <tr>
-                <th aria-label="Выбрать все">
-                  <input aria-label="Выбрать все задания" type="checkbox" />
-                </th>
-                <th>Создан</th>
-                <th>Начало</th>
-                <th>Номер задания</th>
-                <th>Исполнитель</th>
-                <th>Название задания</th>
-                <th>Итого</th>
-                <th>Статус</th>
-              </tr>
-            </thead>
-            <tbody>
-              {MARKETPLACE_ROWS.map((row, index) => (
-                <tr
-                  className={index === 1 ? 'is-target-task' : undefined}
-                  key={row.number}
-                  onClick={index === 1 ? openTargetTask : undefined}
-                  onKeyDown={index === 1 ? handleRowKeyDown : undefined}
-                  tabIndex={index === 1 ? 0 : undefined}
-                >
-                  <td>
-                    <input
-                      aria-label={`Выбрать задание ${row.number}`}
-                      onClick={(event) => event.stopPropagation()}
-                      type="checkbox"
-                    />
-                  </td>
-                  <td>{row.created}</td>
-                  <td>{row.start}</td>
-                  <td>{row.number}</td>
-                  <td>{row.performer}</td>
-                  <td>
-                    {index === 1 ? (
-                      <button
-                        aria-label={`Открыть задание с откликами: ${row.title}`}
-                        className="ww-payment-row-trigger"
-                        type="button"
-                      >
-                        {row.title}
-                      </button>
-                    ) : (
-                      row.title
-                    )}
-                  </td>
-                  <td>{row.total}</td>
-                  <td>
-                    <span
-                      className={`ww-payment-status${row.status === 'ЕСТЬ ОТКЛИКИ' ? ' is-responses' : ` is-${row.status.toLocaleLowerCase('ru-RU')}`}`}
-                    >
-                      {row.status}
-                    </span>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-          <footer>
-            <span>На странице: 10</span>
-            <span>1 / 2</span>
-          </footer>
-        </div>
-      </div>
-      {isTaskOpen ? <TaskPanel onClose={() => setIsTaskOpen(false)} /> : null}
+    <DesktopShell
+      activeNavigation="Маркетплейс"
+      chrome="marketplace"
+      overlay={
+        isTaskOpen ? <TaskPanel onClose={() => setIsTaskOpen(false)} /> : null
+      }
+    >
+      <MarketplacePage
+        rows={SELECTION_MARKETPLACE_ROWS}
+        taskAction={{
+          number: '20ae1846',
+          label: `Открыть задание с откликами: ${SELECTION_TASK_TITLE}`,
+          onOpen: () => setIsTaskOpen(true),
+        }}
+      />
     </DesktopShell>
   );
 }

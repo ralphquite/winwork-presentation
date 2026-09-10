@@ -6,7 +6,9 @@ import {
   FileCheck2,
   FileText,
   Gift,
+  LogOut,
   Menu,
+  Search,
   Settings,
   SlidersHorizontal,
   Users,
@@ -39,50 +41,117 @@ const NAVIGATION: readonly { icon: LucideIcon; label: string }[] = [
 type DesktopShellProps = {
   activeNavigation?: 'Маркетплейс' | 'Настройки';
   children: ReactNode;
+  chrome?: 'default' | 'marketplace';
+  overlay?: ReactNode;
 };
 
 export function DesktopShell({
   activeNavigation = 'Настройки',
   children,
+  chrome = 'default',
+  overlay,
 }: DesktopShellProps) {
+  const usesMarketplaceChrome = chrome === 'marketplace';
+
   return (
-    <div className="ww-desktop-app" data-demo-viewport="desktop">
-      <header className="ww-desktop-header">
-        <div className="ww-wordmark" aria-label="WinWork">
-          <img alt="" aria-hidden="true" src="/winwork-logo.svg" />
-        </div>
-        <div className="ww-account-strip">
-          <strong>2 801 371,00 ₽</strong>
-          <span>общий баланс юр. лица</span>
-          <strong>482 230,85 ₽</strong>
-          <span>баланс проекта</span>
-          <Bell aria-hidden="true" size={18} />
-          <button type="button">
-            1209 <ChevronDown aria-hidden="true" size={15} />
-          </button>
-          <button type="button">
-            ООО «Моя оборона» <ChevronDown aria-hidden="true" size={15} />
-          </button>
-        </div>
+    <div
+      className={`ww-desktop-app${usesMarketplaceChrome ? ' is-live-marketplace' : ''}`}
+      data-demo-viewport="desktop"
+    >
+      <header className="ww-desktop-header" inert={Boolean(overlay)}>
+        {usesMarketplaceChrome ? (
+          <>
+            <div className="ww-marketplace-balances">
+              <WalletCards aria-hidden="true" size={22} />
+              <div>
+                <span>
+                  <strong>2 801 371,00 ₽</strong> – общий баланс юр. лица
+                </span>
+                <span>
+                  <strong>482 230,85 ₽</strong> – баланс проекта
+                </span>
+              </div>
+            </div>
+            <div className="ww-marketplace-account-actions">
+              <button
+                aria-label="Уведомления"
+                className="is-icon"
+                type="button"
+              >
+                <Bell aria-hidden="true" size={21} />
+              </button>
+              <button type="button">
+                1209 <ChevronDown aria-hidden="true" size={15} />
+              </button>
+              <button type="button">
+                ООО «Моя оборона» <ChevronDown aria-hidden="true" size={15} />
+              </button>
+              <button aria-label="Выйти" className="is-icon" type="button">
+                <LogOut aria-hidden="true" size={21} />
+              </button>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="ww-wordmark" aria-label="WinWork">
+              <img alt="" aria-hidden="true" src="/winwork-logo.svg" />
+            </div>
+            <div className="ww-account-strip">
+              <strong>2 801 371,00 ₽</strong>
+              <span>общий баланс юр. лица</span>
+              <strong>482 230,85 ₽</strong>
+              <span>баланс проекта</span>
+              <Bell aria-hidden="true" size={18} />
+              <button type="button">
+                1209 <ChevronDown aria-hidden="true" size={15} />
+              </button>
+              <button type="button">
+                ООО «Моя оборона» <ChevronDown aria-hidden="true" size={15} />
+              </button>
+            </div>
+          </>
+        )}
       </header>
 
-      <aside className="ww-sidebar" aria-label="Навигация WinWork">
-        <span className="ww-sidebar-kicker">РАБОТА</span>
+      <aside
+        className="ww-sidebar"
+        aria-label="Навигация WinWork"
+        inert={Boolean(overlay)}
+      >
+        {usesMarketplaceChrome ? (
+          <div className="ww-wordmark" aria-label="WinWork">
+            <img alt="" aria-hidden="true" src="/winwork-logo.svg" />
+          </div>
+        ) : (
+          <span className="ww-sidebar-kicker">РАБОТА</span>
+        )}
         <nav>
-          {NAVIGATION.map(({ icon: Icon, label }) => (
-            <div
-              aria-current={activeNavigation === label ? 'page' : undefined}
-              className={`ww-sidebar-item${activeNavigation === label ? ' is-active' : ''}`}
-              key={label}
-            >
-              <Icon aria-hidden="true" size={18} strokeWidth={1.9} />
-              <span>{label}</span>
-            </div>
-          ))}
+          {NAVIGATION.map(({ icon: Icon, label }) => {
+            const NavigationIcon =
+              usesMarketplaceChrome && label === 'Маркетплейс' ? Search : Icon;
+
+            return (
+              <div
+                aria-current={activeNavigation === label ? 'page' : undefined}
+                className={`ww-sidebar-item${activeNavigation === label ? ' is-active' : ''}`}
+                key={label}
+              >
+                <NavigationIcon
+                  aria-hidden="true"
+                  size={18}
+                  strokeWidth={1.9}
+                />
+                <span>{label}</span>
+              </div>
+            );
+          })}
         </nav>
       </aside>
 
-      <main className="ww-desktop-content">{children}</main>
+      <main className="ww-desktop-content" inert={Boolean(overlay)}>
+        {children}
+      </main>
+      {overlay}
     </div>
   );
 }

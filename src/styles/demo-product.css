@@ -1760,11 +1760,40 @@
 }
 
 .ww-task-kind input {
-  width: 19px;
-  height: 19px;
-  flex: none;
+  display: grid;
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  place-content: center;
   margin: 0;
-  accent-color: var(--ww-blue);
+  appearance: none;
+  -webkit-appearance: none;
+  border: 2px solid #9aa1ab;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.ww-task-kind input::before {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--ww-blue);
+  content: '';
+  transform: scale(0);
+}
+
+.ww-task-kind input:checked {
+  border-color: var(--ww-blue);
+}
+
+.ww-task-kind input:checked::before {
+  transform: scale(1);
+}
+
+.ww-task-kind input:focus-visible {
+  outline: 3px solid #75a2ff;
+  outline-offset: 2px;
 }
 
 .ww-task-section {
@@ -2207,7 +2236,7 @@
   left: 0;
   display: grid;
   height: 72px;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid #eceff2;
   background: #fffffff5;
   backdrop-filter: blur(12px);
@@ -4383,8 +4412,10 @@
 
 .ww-chat-row-meta b {
   display: grid;
+  width: 21px;
   min-width: 21px;
   height: 21px;
+  justify-self: end;
   place-items: center;
   border-radius: 50%;
   background: var(--ww-mobile-blue);
@@ -4672,27 +4703,6 @@
   bottom: 82px;
 }
 
-.ww-payment-marketplace {
-  overflow: hidden;
-  background: #f7f8f9;
-}
-
-.ww-payment-marketplace .ww-page-heading {
-  margin-bottom: 25px;
-}
-
-.ww-payment-marketplace .ww-page-heading h2 {
-  font-size: 32px;
-}
-
-.ww-payment-market-tabs {
-  display: flex;
-  gap: 30px;
-  margin-bottom: 26px;
-  border-bottom: 1px solid #dfe3e8;
-}
-
-.ww-payment-market-tabs button,
 .ww-payment-panel-tabs button {
   position: relative;
   border: 0;
@@ -4702,19 +4712,11 @@
   font: inherit;
 }
 
-.ww-payment-market-tabs button {
-  min-height: 48px;
-  padding: 0 0 16px;
-  white-space: nowrap;
-}
-
-.ww-payment-market-tabs button[aria-selected='true'],
 .ww-payment-panel-tabs button[aria-selected='true'] {
   color: #2f73ff;
   font-weight: 700;
 }
 
-.ww-payment-market-tabs button[aria-selected='true']::after,
 .ww-payment-panel-tabs button[aria-selected='true']::after {
   position: absolute;
   right: 0;
@@ -4725,204 +4727,14 @@
   content: '';
 }
 
-.ww-payment-filters {
-  display: grid;
-  grid-template-columns: minmax(220px, 1fr) minmax(220px, 1fr) 48px 240px 186px;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.ww-payment-filters > label,
-.ww-payment-filters > button {
-  min-height: 48px;
-  border: 1px solid #e0e4e9;
-  border-radius: 4px;
-  background: #ffffff;
-  color: #737985;
-}
-
-.ww-payment-filters > label {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  padding: 0 13px;
-}
-
-.ww-payment-filters input {
-  width: 100%;
-  border: 0;
-  background: transparent;
-  color: #202a40;
-  font: inherit;
-  outline: none;
-}
-
-.ww-payment-filters > button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  cursor: pointer;
-}
-
-.ww-payment-filters .ww-payment-date-filter {
-  color: #2b3448;
-}
-
-.ww-payment-filters .ww-payment-status-filter {
-  justify-content: space-between;
-  padding: 0 13px;
-  color: #2b3448;
-  text-align: left;
-}
-
-.ww-payment-status-filter span {
-  display: grid;
-  gap: 3px;
-}
-
-.ww-payment-status-filter small {
-  color: #8a909b;
-  font-size: 10px;
-}
-
-.ww-payment-table-shell {
-  overflow: hidden;
-  border: 1px solid #e0e4e9;
-  border-radius: 4px;
-  background: #ffffff;
-}
-
-.ww-payment-table-shell table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-  font-size: 12px;
-}
-
-.ww-payment-table-shell th,
-.ww-payment-table-shell td {
-  overflow: hidden;
-  padding: 15px 10px;
-  border-bottom: 1px solid #e7eaee;
-  text-align: left;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.ww-payment-table-shell th {
-  height: 44px;
-  padding-top: 11px;
-  padding-bottom: 11px;
-  background: #f7f8fa;
-  color: #717886;
-  font-size: 11px;
-  font-weight: 600;
-}
-
-.ww-payment-table-shell th:first-child,
-.ww-payment-table-shell td:first-child {
-  width: 42px;
-  text-align: center;
-}
-
-.ww-payment-table-shell th:nth-child(2) {
-  width: 90px;
-}
-
-.ww-payment-table-shell th:nth-child(3) {
-  width: 126px;
-}
-
-.ww-payment-table-shell th:nth-child(4) {
-  width: 96px;
-}
-
-.ww-payment-table-shell th:nth-child(5) {
-  width: 120px;
-}
-
-.ww-payment-table-shell th:nth-child(7) {
-  width: 90px;
-}
-
-.ww-payment-table-shell th:nth-child(8) {
-  width: 110px;
-}
-
-.ww-payment-table-shell tbody tr {
-  height: 64px;
-  transition: background-color 130ms ease;
-}
-
-.ww-payment-table-shell tbody tr.is-target-task {
-  cursor: pointer;
-}
-
-.ww-payment-table-shell tbody tr.is-target-task:hover {
-  background: #f4f7ff;
-}
-
-.ww-payment-row-trigger {
-  max-width: 100%;
-  overflow: hidden;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: #2d3442;
-  cursor: pointer;
-  font: inherit;
-  text-align: left;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.ww-payment-status {
-  display: inline-flex;
-  min-width: 84px;
-  min-height: 23px;
-  align-items: center;
-  justify-content: center;
-  padding: 0 8px;
-  border-radius: 3px;
-  background: #eef1f4;
-  color: #6d7480;
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 0.035em;
-}
-
-.ww-payment-status.is-выполнен {
-  background: #dff5e5;
-  color: #20933f;
-}
-
-.ww-payment-status.is-оплачен,
 .ww-payment-task-meta strong.is-paid {
   background: #e7f0ff;
   color: #2f73ff;
 }
 
-.ww-payment-status.is-оплата {
-  background: #fff2d8;
-  color: #a56800;
-}
-
-.ww-payment-status.is-responses,
 .ww-payment-task-meta strong.is-responses {
   background: #fff2d8;
   color: #a56800;
-}
-
-.ww-payment-table-shell > footer {
-  display: flex;
-  min-height: 51px;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 44px;
-  padding: 0 20px;
-  color: #727986;
-  font-size: 12px;
 }
 
 .ww-payment-drawer-layer {
@@ -5465,11 +5277,12 @@
   font-size: 13px;
 }
 
-.ww-payment-marketplace button:focus-visible,
-.ww-payment-marketplace input:focus-visible,
+.ww-desktop-marketplace button:focus-visible,
+.ww-desktop-marketplace input:focus-visible,
+.ww-desktop-marketplace select:focus-visible,
+.ww-marketplace-table-shell tr:focus-visible,
 .ww-payment-drawer button:focus-visible,
-.ww-payment-drawer input:focus-visible,
-.ww-payment-table-shell tr:focus-visible {
+.ww-payment-drawer input:focus-visible {
   outline: 3px solid #75a2ff;
   outline-offset: 2px;
 }
@@ -5890,6 +5703,675 @@
 .ww-auth-demo input:focus-visible {
   outline: 3px solid #75a2ff;
   outline-offset: 2px;
+}
+
+/* Shared live Marketplace chrome for desktop task demos. */
+.ww-desktop-app.is-live-marketplace {
+  --ww-blue: #3f7df3;
+  --ww-blue-dark: #2f6fe8;
+  --ww-canvas: #f4f5f6;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  grid-template-columns: 250px minmax(0, 1fr);
+  grid-template-rows: 64px minmax(0, 1fr);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.ww-desktop-app.is-live-marketplace .ww-desktop-header {
+  min-width: 0;
+  grid-column: 2;
+  overflow: hidden;
+  padding: 0 max(32px, calc((100% - 1190px) / 2));
+  border: 0;
+  background: var(--ww-canvas);
+}
+
+.ww-desktop-app.is-live-marketplace .ww-sidebar {
+  grid-row: 1 / -1;
+  height: 100%;
+  min-height: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0 12px;
+  border-right-color: #edf0f3;
+  overscroll-behavior: contain;
+}
+
+.ww-desktop-app.is-live-marketplace .ww-desktop-content {
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.ww-desktop-app.is-live-marketplace .ww-desktop-content[inert],
+.ww-desktop-app.is-live-marketplace .ww-sidebar[inert] {
+  overflow: hidden;
+}
+
+.ww-desktop-app.is-live-marketplace > .ww-drawer-layer,
+.ww-desktop-app.is-live-marketplace > .ww-payment-drawer-layer {
+  overflow: hidden;
+}
+
+.ww-desktop-app.is-live-marketplace .ww-payment-drawer {
+  width: min(606px, 100%);
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+}
+
+.ww-desktop-app.is-live-marketplace .ww-payment-drawer-scrim {
+  background: #20253052;
+}
+
+.ww-desktop-app.is-live-marketplace .ww-payment-panel-scroll {
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+}
+
+.ww-desktop-app.is-live-marketplace .ww-drawer {
+  width: min(560px, 100%);
+  max-height: 100%;
+}
+
+.ww-desktop-app.is-live-marketplace .ww-drawer-body {
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.ww-desktop-app.is-live-marketplace .ww-sidebar > .ww-wordmark {
+  height: 112px;
+  padding: 0 11px;
+}
+
+.ww-desktop-app.is-live-marketplace .ww-sidebar > .ww-wordmark img {
+  width: 204px;
+  height: 46px;
+}
+
+.ww-desktop-app.is-live-marketplace .ww-sidebar nav {
+  display: grid;
+  gap: 2px;
+}
+
+.ww-desktop-app.is-live-marketplace .ww-sidebar-item {
+  position: relative;
+  min-height: 49px;
+  gap: 14px;
+  padding: 0 13px;
+  border-radius: 11px;
+  color: #202838;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ww-desktop-app.is-live-marketplace .ww-sidebar-item svg {
+  width: 21px;
+  height: 21px;
+  color: var(--ww-blue);
+  stroke-width: 1.8;
+}
+
+.ww-desktop-app.is-live-marketplace .ww-sidebar-item.is-active {
+  background: #f0f1f3;
+  font-weight: 700;
+}
+
+.ww-desktop-app.is-live-marketplace .ww-sidebar-item:nth-child(9),
+.ww-desktop-app.is-live-marketplace .ww-sidebar-item:nth-child(11) {
+  margin-top: 26px;
+}
+
+.ww-desktop-app.is-live-marketplace .ww-sidebar-item:nth-child(9)::before,
+.ww-desktop-app.is-live-marketplace .ww-sidebar-item:nth-child(11)::before {
+  position: absolute;
+  top: -14px;
+  right: -1px;
+  left: -1px;
+  height: 1px;
+  background: #e6e8eb;
+  content: '';
+}
+
+.ww-marketplace-balances {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  align-self: flex-start;
+  margin-top: 4px;
+  color: #232b3a;
+}
+
+.ww-marketplace-balances > svg {
+  margin-top: 1px;
+}
+
+.ww-marketplace-balances > div {
+  display: grid;
+  gap: 5px;
+}
+
+.ww-marketplace-balances span {
+  color: #777d86;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.ww-marketplace-balances strong {
+  color: #202632;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.ww-marketplace-account-actions {
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 12px;
+  margin-top: 7px;
+}
+
+.ww-marketplace-account-actions button {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 7px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px #1720330a;
+  color: #202632;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.ww-marketplace-account-actions button.is-icon {
+  width: 34px;
+  justify-content: center;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.ww-desktop-marketplace {
+  min-width: 1254px;
+  padding: 18px 0 48px;
+  overflow: visible;
+  background: var(--ww-canvas);
+}
+
+.ww-marketplace-heading,
+.ww-marketplace-tabs,
+.ww-marketplace-filters,
+.ww-marketplace-table-shell {
+  width: calc(100% - 64px);
+  max-width: 1190px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.ww-marketplace-heading h2 {
+  margin: 0;
+  color: #101828;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+}
+
+.ww-marketplace-heading-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.ww-marketplace-heading-actions .ww-button {
+  min-height: 48px;
+  padding: 0 14px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.ww-marketplace-heading-actions .ww-button.is-primary {
+  width: 258px;
+  justify-content: space-between;
+}
+
+.ww-marketplace-heading-actions .ww-button.is-secondary {
+  width: 314px;
+  color: #202632;
+}
+
+.ww-marketplace-heading-actions .ww-create-menu {
+  right: auto;
+  left: 0;
+}
+
+.ww-marketplace-tabs {
+  display: flex;
+  min-height: 53px;
+  align-items: end;
+  gap: 28px;
+  margin-top: 29px;
+  border-bottom: 1px solid #d7dadd;
+}
+
+.ww-marketplace-tabs button {
+  position: relative;
+  min-height: 53px;
+  padding: 0 11px 1px;
+  border: 0;
+  background: transparent;
+  color: #777c84;
+  cursor: pointer;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.ww-marketplace-tabs button[aria-selected='true'] {
+  color: #222832;
+  font-weight: 650;
+}
+
+.ww-marketplace-tabs button[aria-selected='true']::after {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 3px;
+  background: var(--ww-blue);
+  content: '';
+}
+
+.ww-marketplace-filters {
+  display: grid;
+  min-height: 80px;
+  grid-template-columns: minmax(260px, 1fr) minmax(260px, 1fr) 240px 220px;
+  align-items: center;
+  gap: 12px;
+  box-sizing: border-box;
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 3px 13px #1922380a;
+}
+
+.ww-marketplace-search,
+.ww-marketplace-worker-search,
+.ww-marketplace-date,
+.ww-marketplace-status-filter {
+  min-height: 48px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 3px;
+  background: #f4f5f7;
+}
+
+.ww-marketplace-search,
+.ww-marketplace-worker-search > label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  color: #1f2937;
+}
+
+.ww-marketplace-search input,
+.ww-marketplace-worker-search input {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: #202632;
+  font: inherit;
+  font-size: 13px;
+  outline: none;
+}
+
+.ww-marketplace-worker-search {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 48px;
+  overflow: hidden;
+}
+
+.ww-marketplace-worker-search > label {
+  min-width: 0;
+}
+
+.ww-marketplace-worker-search > button {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: var(--ww-blue);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.ww-marketplace-date {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  padding: 0 11px;
+  color: #202632;
+  cursor: pointer;
+  text-align: left;
+}
+
+.ww-marketplace-date > span,
+.ww-marketplace-status-filter > span {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.ww-marketplace-date small,
+.ww-marketplace-status-filter small {
+  color: #777d87;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.ww-marketplace-date strong {
+  overflow: hidden;
+  font-size: 12px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ww-marketplace-date > svg:last-child {
+  color: #7d8490;
+}
+
+.ww-marketplace-status-filter {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px 4px 13px;
+}
+
+.ww-marketplace-status-filter > span {
+  width: 100%;
+}
+
+.ww-marketplace-status-filter select {
+  width: 100%;
+  height: 25px;
+  padding: 0 24px 0 0;
+  border: 0;
+  background-color: transparent;
+  background-position: right center;
+  color: #202632;
+  font: inherit;
+  font-size: 12px;
+  outline: none;
+}
+
+.ww-marketplace-table-shell {
+  margin-top: 16px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 3px 13px #1922380a;
+}
+
+.ww-marketplace-table-shell table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  color: #202632;
+  font-size: 12px;
+}
+
+.ww-marketplace-table-shell col.is-select {
+  width: 43px;
+}
+
+.ww-marketplace-table-shell col.is-created,
+.ww-marketplace-table-shell col.is-start,
+.ww-marketplace-table-shell col.is-number {
+  width: 106px;
+}
+
+.ww-marketplace-table-shell col.is-performer {
+  width: 146px;
+}
+
+.ww-marketplace-table-shell col.is-count {
+  width: 68px;
+}
+
+.ww-marketplace-table-shell col.is-total {
+  width: 100px;
+}
+
+.ww-marketplace-table-shell col.is-status {
+  width: 132px;
+}
+
+.ww-marketplace-table-shell col.is-actions {
+  width: 57px;
+}
+
+.ww-marketplace-table-shell th,
+.ww-marketplace-table-shell td {
+  box-sizing: border-box;
+  padding: 12px 8px;
+  border-bottom: 1px solid #e4e6e9;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.ww-marketplace-table-shell th {
+  height: 59px;
+  color: #777d86;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.ww-marketplace-table-shell th:first-child,
+.ww-marketplace-table-shell td:first-child {
+  padding-right: 6px;
+  padding-left: 16px;
+}
+
+.ww-marketplace-table-shell th button {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}
+
+.ww-marketplace-table-shell input[type='checkbox'] {
+  width: 17px;
+  height: 17px;
+  margin: 0;
+  accent-color: var(--ww-blue);
+}
+
+.ww-marketplace-table-shell tbody tr {
+  height: 87px;
+}
+
+.ww-marketplace-table-shell tbody tr.is-target-task {
+  cursor: pointer;
+}
+
+.ww-marketplace-table-shell tbody tr.is-target-task:hover {
+  background: #f4f7ff;
+}
+
+.ww-marketplace-row-trigger {
+  max-width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.ww-marketplace-table-shell tbody td {
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.ww-marketplace-table-shell tbody td:nth-child(8) {
+  white-space: nowrap;
+}
+
+.ww-marketplace-cell-stack {
+  display: grid;
+  gap: 2px;
+}
+
+.ww-marketplace-cell-stack small {
+  color: #323947;
+  font-size: inherit;
+}
+
+.ww-marketplace-number {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.ww-marketplace-number button,
+.ww-marketplace-row-actions {
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #6f7680;
+  cursor: pointer;
+}
+
+.ww-marketplace-number button {
+  width: 16px;
+  height: 16px;
+}
+
+.ww-marketplace-row-actions {
+  width: 30px;
+  height: 34px;
+}
+
+.ww-marketplace-status {
+  display: inline-flex;
+  min-height: 20px;
+  align-items: center;
+  justify-content: center;
+  padding: 1px 10px;
+  border-radius: 999px;
+  font-size: 9px;
+  font-weight: 750;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.ww-marketplace-status.is-complete {
+  background: #e9f7e8;
+  color: #55a96b;
+}
+
+.ww-marketplace-status.is-progress {
+  background: #e9f2ff;
+  color: #578bc8;
+}
+
+.ww-marketplace-status.is-responses {
+  background: #fff3d9;
+  color: #a66b09;
+}
+
+.ww-marketplace-status.is-moderation {
+  background: #f0f1f3;
+  color: #727985;
+}
+
+.ww-marketplace-table-shell > footer {
+  display: flex;
+  min-height: 64px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  color: #202632;
+  font-size: 12px;
+}
+
+.ww-marketplace-table-shell > footer > label {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.ww-marketplace-table-shell > footer select {
+  width: 50px;
+  height: 32px;
+  padding: 0 20px 0 5px;
+  border: 0;
+  background-color: transparent;
+  background-position: right 2px center;
+  font: inherit;
+}
+
+.ww-marketplace-table-shell > footer nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ww-marketplace-table-shell > footer nav button {
+  display: grid;
+  width: 28px;
+  height: 32px;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #4d5562;
+  cursor: pointer;
+}
+
+.ww-marketplace-table-shell > footer nav button:disabled {
+  color: #c9cdd2;
+  cursor: default;
+}
+
+.ww-marketplace-table-shell > footer nav input {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 3px;
+  background: #f4f5f7;
+  color: #202632;
+  font: inherit;
+  text-align: center;
 }
 
 @media (max-width: 900px) {

@@ -391,6 +391,8 @@
         "src/presentation/flows/TaskPaymentDemo.tsx",
         "src/presentation/flows/PerformerSelectionDemo.tsx",
         "src/presentation/flows/DesktopDemos.tsx",
+        "src/presentation/flows/MarketplacePage.tsx",
+        "src/presentation/flows/marketplaceData.ts",
         "src/presentation/flows/ProductUI.tsx",
         "src/styles/demo-product.css"
       ],

@@ -11,7 +11,6 @@ import {
   Flag,
   LogOut,
   MapPin,
-  MessageCircle,
   MessageSquareText,
   Paperclip,
   Phone,
@@ -59,7 +58,6 @@ type MobileHeaderProps = {
 
 const MOBILE_NAVIGATION = [
   { id: 'orders' as const, icon: BriefcaseBusiness, label: 'Маркетплейс' },
-  { id: 'chats' as const, icon: MessageCircle, label: 'Чат' },
   { id: 'settings' as const, icon: Settings, label: 'Настройки' },
   { id: 'notifications' as const, icon: Bell, label: 'Уведомления' },
 ];
@@ -661,12 +659,12 @@ function WorkerProfileCard({
   );
 }
 
-function ContactActions() {
+function ContactActions({ onOpenChats }: { onOpenChats: () => void }) {
   return (
     <div className="ww-worker-actions">
       <h3>Контакты</h3>
       <div>
-        <button type="button">
+        <button onClick={onOpenChats} type="button">
           <MessageSquareText aria-hidden="true" size={18} /> Чат
         </button>
         <button type="button">
@@ -696,11 +694,11 @@ function ShiftLimit() {
   );
 }
 
-function PerformerPanel() {
+function PerformerPanel({ onOpenChats }: { onOpenChats: () => void }) {
   return (
     <section className="ww-worker-panel">
       <WorkerProfileCard name="Иванов Алексей Дмитриевич" />
-      <ContactActions />
+      <ContactActions onOpenChats={onOpenChats} />
       <ShiftLimit />
     </section>
   );
@@ -779,10 +777,12 @@ function OrderScreen({
   initialTab,
   onBack,
   onAssigned,
+  onOpenChats,
 }: {
   initialTab: OrderTab;
   onBack: () => void;
   onAssigned: () => void;
+  onOpenChats: () => void;
 }) {
   const [tab, setTab] = useState<OrderTab>(initialTab);
   const showResponses = initialTab === 'responses';
@@ -804,7 +804,9 @@ function OrderScreen({
         </div>
       </section>
       <OrderTabs active={tab} onChange={setTab} showResponses={showResponses} />
-      {tab === 'performer' ? <PerformerPanel /> : null}
+      {tab === 'performer' ? (
+        <PerformerPanel onOpenChats={onOpenChats} />
+      ) : null}
       {tab === 'order' ? <OrderInfoPanel /> : null}
       {tab === 'responses' ? (
         <ResponsesPanel
@@ -1094,6 +1096,7 @@ const CHAT_ROWS = [
     'Скоро буду',
     '19:45',
     'a7b8c9d0',
+    12,
   ],
   [
     'Срочная доставка цветов',
@@ -1101,6 +1104,7 @@ const CHAT_ROWS = [
     'Подготовьте документы',
     '19:30',
     'f1g2h3i4',
+    12,
   ],
   [
     'Перевозка груза по городу',
@@ -1108,6 +1112,7 @@ const CHAT_ROWS = [
     'Жду на месте',
     '19:15',
     'j5k6l7m8',
+    12,
   ],
   [
     'Помощь в переезде',
@@ -1153,25 +1158,27 @@ function ChatsScreen({ onOpenChat }: { onOpenChat: () => void }) {
         </div>
       </section>
       <section className="ww-chat-list">
-        {CHAT_ROWS.map(([title, name, message, time, id], index) => (
-          <button
-            key={id}
-            onClick={index === 0 ? onOpenChat : undefined}
-            type="button"
-          >
-            <Avatar size="medium" />
-            <span>
-              <strong>{title}</strong>
-              <small>{name}</small>
-              <p>{message}</p>
-            </span>
-            <span className="ww-chat-row-meta">
-              <time>{time}</time>
-              <small>{id}</small>
-              <b>12</b>
-            </span>
-          </button>
-        ))}
+        {CHAT_ROWS.map(
+          ([title, name, message, time, id, unreadCount], index) => (
+            <button
+              key={id}
+              onClick={index === 0 ? onOpenChat : undefined}
+              type="button"
+            >
+              <Avatar size="medium" />
+              <span>
+                <strong>{title}</strong>
+                <small>{name}</small>
+                <p>{message}</p>
+              </span>
+              <span className="ww-chat-row-meta">
+                <time>{time}</time>
+                <small>{id}</small>
+                {unreadCount ? <b>{unreadCount}</b> : null}
+              </span>
+            </button>
+          ),
+        )}
       </section>
     </div>
   );
@@ -1412,6 +1419,7 @@ export function ManagerAppDemo() {
           initialTab={orderInitialTab}
           onAssigned={() => setToast('Исполнитель выбран')}
           onBack={() => setScreen('orders')}
+          onOpenChats={() => setScreen('chats')}
         />
       ) : null}
       {screen === 'payment' ? (

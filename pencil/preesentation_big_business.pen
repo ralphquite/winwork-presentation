@@ -11112,6 +11112,1770 @@
     },
     {
       "type": "frame",
+      "id": "L4gz5t",
+      "x": 37235,
+      "y": 2969,
+      "name": "РАБОТА С НЕРЕЗИДЕНТАМИ",
+      "clip": true,
+      "width": 1920,
+      "height": 1080,
+      "fill": "$h:bg-primary",
+      "layout": "none",
+      "children": [
+        {
+          "type": "text",
+          "id": "tGhQM",
+          "x": 120,
+          "y": 58,
+          "name": "Section Indicator",
+          "fill": "$h:neutral-400",
+          "content": "F  ·  КОРПОРАТИВНЫЙ СЕГМЕНТ / РАБОТА С НЕРЕЗИДЕНТАМИ",
+          "fontFamily": "$h:font-primary",
+          "fontSize": 16,
+          "fontWeight": "700",
+          "letterSpacing": 1.1
+        },
+        {
+          "id": "w4fzX",
+          "type": "ref",
+          "ref": "CmSfJ",
+          "name": "WinWork Logo",
+          "x": 1598,
+          "y": 58,
+          "width": 202,
+          "height": 40
+        },
+        {
+          "type": "text",
+          "id": "to1EK",
+          "x": 120,
+          "y": 138,
+          "name": "Slide Title",
+          "fill": "$h:neutral-950",
+          "content": "Работа с нерезидентами",
+          "lineHeight": 1.08,
+          "fontFamily": "$h:font-primary",
+          "fontSize": 48,
+          "fontWeight": "700"
+        },
+        {
+          "type": "text",
+          "id": "r6ygM9",
+          "x": 120,
+          "y": 208,
+          "name": "Slide Subtitle",
+          "fill": "$h:neutral-600",
+          "content": "WinWork помогает контролировать сроки уведомлений МВД и автоматически готовит документы для подачи.",
+          "lineHeight": 1.3,
+          "fontFamily": "$h:font-primary",
+          "fontSize": 21,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "osDB2",
+          "x": 120,
+          "y": 292,
+          "name": "Step 1 Column",
+          "width": 533,
+          "layout": "vertical",
+          "gap": 20,
+          "children": [
+            {
+              "type": "frame",
+              "id": "R5vZE",
+              "name": "Step 1 Header",
+              "width": "fill_container",
+              "gap": 14,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "R7ExwE",
+                  "name": "Step 1 Badge",
+                  "width": 40,
+                  "height": 40,
+                  "fill": "$h:brand-blue",
+                  "cornerRadius": 20,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "jjrKE",
+                      "name": "Step 1 Number",
+                      "fill": "#FFFFFF",
+                      "content": "1",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 18,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "j26mVA",
+                  "name": "Step 1 Heading",
+                  "fill": "$h:neutral-950",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Отдельная категория исполнителей",
+                  "lineHeight": 1.15,
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 23,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "CA35J",
+              "name": "Step 1 Mock — Performers List",
+              "clip": true,
+              "width": "fill_container",
+              "height": 380,
+              "fill": "$h:surface",
+              "cornerRadius": 20,
+              "stroke": "$h:neutral-150",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 22,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "u2yKsM",
+                  "name": "Tabs Row",
+                  "width": "fill_container",
+                  "gap": 10,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "qvW1A",
+                      "name": "Tab Все исполнители",
+                      "cornerRadius": 10,
+                      "padding": [
+                        8,
+                        14
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "v6e4J",
+                          "name": "Tab Все Label",
+                          "fill": "$h:neutral-600",
+                          "content": "Все исполнители",
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "B5EsyU",
+                      "name": "Tab Нерезиденты",
+                      "fill": "$h:brand-blue-soft",
+                      "cornerRadius": 10,
+                      "gap": 8,
+                      "padding": [
+                        8,
+                        14
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "TXRDR",
+                          "name": "Tab Нерезиденты Label",
+                          "fill": "$h:brand-blue-strong",
+                          "content": "Нерезиденты",
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 14,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "C8siH",
+                          "name": "Tab Count Badge",
+                          "fill": "$h:brand-blue",
+                          "cornerRadius": 8,
+                          "padding": [
+                            2,
+                            7
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "r3Cq4H",
+                              "name": "Tab Count",
+                              "fill": "#FFFFFF",
+                              "content": "4",
+                              "fontFamily": "$h:font-primary",
+                              "fontSize": 12,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "rectangle",
+                  "id": "DuZIH",
+                  "name": "Tabs Divider",
+                  "fill": "$h:neutral-100",
+                  "width": "fill_container",
+                  "height": 1
+                },
+                {
+                  "type": "frame",
+                  "id": "nwur9",
+                  "name": "Table Header",
+                  "width": "fill_container",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "D4luO",
+                      "name": "Header Исполнитель",
+                      "fill": "$h:neutral-400",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "ИСПОЛНИТЕЛЬ",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "letterSpacing": 0.8
+                    },
+                    {
+                      "type": "text",
+                      "id": "zRrbF",
+                      "name": "Header Страна",
+                      "fill": "$h:neutral-400",
+                      "textGrowth": "fixed-width",
+                      "width": 56,
+                      "content": "СТРАНА",
+                      "textAlign": "center",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "letterSpacing": 0.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "ZNjUl",
+                      "name": "Header Статус",
+                      "fill": "$h:neutral-400",
+                      "textGrowth": "fixed-width",
+                      "width": 86,
+                      "content": "СТАТУС",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "letterSpacing": 0.8
+                    },
+                    {
+                      "type": "text",
+                      "id": "cfqWQ",
+                      "name": "Header Действие",
+                      "fill": "$h:neutral-400",
+                      "textGrowth": "fixed-width",
+                      "width": 150,
+                      "content": "СЛЕД. ДЕЙСТВИЕ",
+                      "textAlign": "right",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "letterSpacing": 0.8
+                    }
+                  ]
+                },
+                {
+                  "type": "rectangle",
+                  "id": "mrqoR",
+                  "name": "Row Divider Каримов Алишер",
+                  "fill": "$h:neutral-100",
+                  "width": "fill_container",
+                  "height": 1
+                },
+                {
+                  "type": "frame",
+                  "id": "VQ9Pk",
+                  "name": "Row Каримов Алишер",
+                  "width": "fill_container",
+                  "padding": [
+                    9,
+                    0
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ANZ2p",
+                      "name": "Name Каримов Алишер",
+                      "fill": "$h:neutral-800",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Каримов Алишер",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 15,
+                      "fontWeight": "650"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "u4Is9a",
+                      "name": "Flag Cell Узбекистан",
+                      "width": 56,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "s3Q0VJ",
+                          "name": "Flag Узбекистан",
+                          "clip": true,
+                          "width": 24,
+                          "height": 16,
+                          "cornerRadius": 3,
+                          "stroke": "$h:neutral-150",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "children": [
+                            {
+                              "type": "rectangle",
+                              "id": "hRBJ0",
+                              "name": "Stripe",
+                              "fill": "#0099B5",
+                              "width": "fill_container",
+                              "height": 5
+                            },
+                            {
+                              "type": "rectangle",
+                              "id": "NMeNj",
+                              "name": "Stripe",
+                              "fill": "#CE1126",
+                              "width": "fill_container",
+                              "height": 1
+                            },
+                            {
+                              "type": "rectangle",
+                              "id": "AZjPD",
+                              "name": "Stripe",
+                              "fill": "#FFFFFF",
+                              "width": "fill_container",
+                              "height": 4
+                            },
+                            {
+                              "type": "rectangle",
+                              "id": "C6k8Rv",
+                              "name": "Stripe",
+                              "fill": "#CE1126",
+                              "width": "fill_container",
+                              "height": 1
+                            },
+                            {
+                              "type": "rectangle",
+                              "id": "MALiy",
+                              "name": "Stripe",
+                              "fill": "#1EB53A",
+                              "width": "fill_container",
+                              "height": 5
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "RUGJW",
+                      "name": "Status Cell Каримов Алишер",
+                      "width": 86,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "SfGJh",
+                          "name": "Status Pill Каримов Алишер",
+                          "fill": "$h:brand-green-soft",
+                          "cornerRadius": 8,
+                          "padding": [
+                            4,
+                            10
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "ibE0u",
+                              "name": "Status Text Каримов Алишер",
+                              "fill": "$h:brand-green-strong",
+                              "content": "Активен",
+                              "fontFamily": "$h:font-primary",
+                              "fontSize": 12.5,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "punxS",
+                      "name": "Date Каримов Алишер",
+                      "fill": "$h:neutral-600",
+                      "textGrowth": "fixed-width",
+                      "width": 150,
+                      "content": "18 сентября",
+                      "textAlign": "right",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "rectangle",
+                  "id": "h5Uk7",
+                  "name": "Row Divider Юлдошева Мехроб",
+                  "fill": "$h:neutral-100",
+                  "width": "fill_container",
+                  "height": 1
+                },
+                {
+                  "type": "frame",
+                  "id": "xodvE",
+                  "name": "Row Юлдошева Мехроб",
+                  "width": "fill_container",
+                  "padding": [
+                    9,
+                    0
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "fXBIi",
+                      "name": "Name Юлдошева Мехроб",
+                      "fill": "$h:neutral-800",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Юлдошева Мехроб",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 15,
+                      "fontWeight": "650"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "z1gr6p",
+                      "name": "Flag Cell Таджикистан",
+                      "width": 56,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "y6fYXZ",
+                          "name": "Flag Таджикистан",
+                          "clip": true,
+                          "width": 24,
+                          "height": 16,
+                          "cornerRadius": 3,
+                          "stroke": "$h:neutral-150",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "children": [
+                            {
+                              "type": "rectangle",
+                              "id": "ijGEG",
+                              "name": "Stripe",
+                              "fill": "#CC0000",
+                              "width": "fill_container",
+                              "height": 5
+                            },
+                            {
+                              "type": "rectangle",
+                              "id": "RvN55",
+                              "name": "Stripe",
+                              "fill": "#FFFFFF",
+                              "width": "fill_container",
+                              "height": 6
+                            },
+                            {
+                              "type": "rectangle",
+                              "id": "l6QAck",
+                              "name": "Stripe",
+                              "fill": "#006600",
+                              "width": "fill_container",
+                              "height": 5
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "L7YpcA",
+                      "name": "Status Cell Юлдошева Мехроб",
+                      "width": 86,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "Qy9F2",
+                          "name": "Status Pill Юлдошева Мехроб",
+                          "fill": "$h:brand-green-soft",
+                          "cornerRadius": 8,
+                          "padding": [
+                            4,
+                            10
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "m3BJ7",
+                              "name": "Status Text Юлдошева Мехроб",
+                              "fill": "$h:brand-green-strong",
+                              "content": "Активен",
+                              "fontFamily": "$h:font-primary",
+                              "fontSize": 12.5,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "rDAqw",
+                      "name": "Date Юлдошева Мехроб",
+                      "fill": "$h:neutral-600",
+                      "textGrowth": "fixed-width",
+                      "width": 150,
+                      "content": "12 сентября",
+                      "textAlign": "right",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "rectangle",
+                  "id": "MNDj5",
+                  "name": "Row Divider Рахимов Даврон",
+                  "fill": "$h:neutral-100",
+                  "width": "fill_container",
+                  "height": 1
+                },
+                {
+                  "type": "frame",
+                  "id": "KEXHB",
+                  "name": "Row Рахимов Даврон",
+                  "width": "fill_container",
+                  "padding": [
+                    9,
+                    0
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "hE0F8",
+                      "name": "Name Рахимов Даврон",
+                      "fill": "$h:neutral-800",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Рахимов Даврон",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 15,
+                      "fontWeight": "650"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "oaOwg",
+                      "name": "Flag Cell Казахстан",
+                      "width": 56,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "NKkCf",
+                          "name": "Flag Казахстан",
+                          "clip": true,
+                          "width": 24,
+                          "height": 16,
+                          "fill": "#00AFCA",
+                          "cornerRadius": 3,
+                          "stroke": "$h:neutral-150",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "ellipse",
+                              "id": "SXCcm",
+                              "name": "Sun",
+                              "fill": "#FEC50C",
+                              "width": 6,
+                              "height": 6
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "uKVVA",
+                      "name": "Status Cell Рахимов Даврон",
+                      "width": 86,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "W2GUeJ",
+                          "name": "Status Pill Рахимов Даврон",
+                          "fill": "$h:neutral-100",
+                          "cornerRadius": 8,
+                          "padding": [
+                            4,
+                            10
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "ematP",
+                              "name": "Status Text Рахимов Даврон",
+                              "fill": "$h:neutral-600",
+                              "content": "Проверка",
+                              "fontFamily": "$h:font-primary",
+                              "fontSize": 12.5,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "OqWBc",
+                      "name": "Date Рахимов Даврон",
+                      "fill": "$h:neutral-600",
+                      "textGrowth": "fixed-width",
+                      "width": 150,
+                      "content": "25 сентября",
+                      "textAlign": "right",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "rectangle",
+                  "id": "OUPnw",
+                  "name": "Row Divider Собиров Джамшед",
+                  "fill": "$h:neutral-100",
+                  "width": "fill_container",
+                  "height": 1
+                },
+                {
+                  "type": "frame",
+                  "id": "sPYDb",
+                  "name": "Row Собиров Джамшед",
+                  "width": "fill_container",
+                  "padding": [
+                    9,
+                    0
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "f3bD4e",
+                      "name": "Name Собиров Джамшед",
+                      "fill": "$h:neutral-800",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Собиров Джамшед",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 15,
+                      "fontWeight": "650"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "EwaVh",
+                      "name": "Flag Cell Кыргызстан",
+                      "width": 56,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "u5IQ3",
+                          "name": "Flag Кыргызстан",
+                          "clip": true,
+                          "width": 24,
+                          "height": 16,
+                          "fill": "#E8112D",
+                          "cornerRadius": 3,
+                          "stroke": "$h:neutral-150",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "ellipse",
+                              "id": "LiWv4",
+                              "name": "Sun",
+                              "fill": "#FFDE00",
+                              "width": 7,
+                              "height": 7
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "QiniP",
+                      "name": "Status Cell Собиров Джамшед",
+                      "width": 86,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "PJ8Wq",
+                          "name": "Status Pill Собиров Джамшед",
+                          "fill": "$h:brand-green-soft",
+                          "cornerRadius": 8,
+                          "padding": [
+                            4,
+                            10
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "WMYD2",
+                              "name": "Status Text Собиров Джамшед",
+                              "fill": "$h:brand-green-strong",
+                              "content": "Активен",
+                              "fontFamily": "$h:font-primary",
+                              "fontSize": 12.5,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "k0B5I",
+                      "name": "Date Собиров Джамшед",
+                      "fill": "$h:neutral-600",
+                      "textGrowth": "fixed-width",
+                      "width": 150,
+                      "content": "30 сентября",
+                      "textAlign": "right",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "rectangle",
+                  "id": "QdY2L",
+                  "name": "Footer Divider",
+                  "fill": "$h:neutral-100",
+                  "width": "fill_container",
+                  "height": 1
+                },
+                {
+                  "type": "text",
+                  "id": "JiwI5",
+                  "name": "List Footer",
+                  "fill": "$h:neutral-400",
+                  "content": "Всего в категории: 4 исполнителя",
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "wQX6X",
+              "name": "Step 1 Caption",
+              "fill": "$h:neutral-600",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Нерезиденты выделены отдельно, чтобы необходимые действия не терялись среди остальных исполнителей.",
+              "lineHeight": 1.45,
+              "fontFamily": "$h:font-primary",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "yeTnO",
+          "x": 693,
+          "y": 292,
+          "name": "Step 2 Column",
+          "width": 533,
+          "layout": "vertical",
+          "gap": 20,
+          "children": [
+            {
+              "type": "frame",
+              "id": "S2Cz2",
+              "name": "Step 2 Header",
+              "width": "fill_container",
+              "gap": 14,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "QH35o",
+                  "name": "Step 2 Badge",
+                  "width": 40,
+                  "height": 40,
+                  "fill": "$h:brand-blue",
+                  "cornerRadius": 20,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "TiaSJ",
+                      "name": "Step 2 Number",
+                      "fill": "#FFFFFF",
+                      "content": "2",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 18,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "zy1RF",
+                  "name": "Step 2 Heading",
+                  "fill": "$h:neutral-950",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Срок подачи всегда под контролем",
+                  "lineHeight": 1.15,
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 23,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "V5xWtg",
+              "name": "Step 2 Mock — Deadline Column",
+              "clip": true,
+              "width": "fill_container",
+              "height": 380,
+              "fill": "$h:surface",
+              "cornerRadius": 20,
+              "stroke": "$h:neutral-150",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 12,
+              "padding": 22,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Wy3LF",
+                  "name": "Table Header",
+                  "width": "fill_container",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "dfKwg",
+                      "name": "Header Исполнитель",
+                      "fill": "$h:neutral-400",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "ИСПОЛНИТЕЛЬ",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "letterSpacing": 0.8
+                    },
+                    {
+                      "type": "frame",
+                      "id": "wqwSe",
+                      "name": "Header МВД Cell",
+                      "width": 250,
+                      "alignItems": "end",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "PwUA6",
+                          "name": "Header МВД Pill",
+                          "fill": "$h:brand-blue-soft",
+                          "cornerRadius": 8,
+                          "padding": [
+                            6,
+                            12
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "v5GOrK",
+                              "name": "Header МВД",
+                              "fill": "$h:brand-blue-strong",
+                              "content": "УВЕДОМЛЕНИЕ В МВД",
+                              "fontFamily": "$h:font-primary",
+                              "fontSize": 11,
+                              "fontWeight": "700",
+                              "letterSpacing": 0.5
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "rectangle",
+                  "id": "sQnse",
+                  "name": "Row Divider Юлдошева Мехроб",
+                  "fill": "$h:neutral-100",
+                  "width": "fill_container",
+                  "height": 1
+                },
+                {
+                  "type": "frame",
+                  "id": "fvCvH",
+                  "name": "Row Юлдошева Мехроб",
+                  "width": "fill_container",
+                  "padding": [
+                    8,
+                    0
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "R58dz",
+                      "name": "Name Юлдошева Мехроб",
+                      "fill": "$h:neutral-800",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Юлдошева Мехроб",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 15,
+                      "fontWeight": "650"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "OW8iw",
+                      "name": "МВД Cell Юлдошева Мехроб",
+                      "width": 250,
+                      "fill": "$h:bg-secondary",
+                      "cornerRadius": 10,
+                      "gap": 8,
+                      "padding": [
+                        9,
+                        12
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "OIrkU",
+                          "name": "Cell Icon Юлдошева Мехроб",
+                          "width": 16,
+                          "height": 16,
+                          "icon": "calendar",
+                          "library": "lucide",
+                          "fill": "$h:neutral-600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "bS9NO",
+                          "name": "Cell Text Юлдошева Мехроб",
+                          "fill": "$h:neutral-800",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Срок подачи: 18 сентября",
+                          "lineHeight": 1.25,
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "rectangle",
+                  "id": "tu07y",
+                  "name": "Row Divider Каримов Алишер",
+                  "fill": "$h:neutral-100",
+                  "width": "fill_container",
+                  "height": 1
+                },
+                {
+                  "type": "frame",
+                  "id": "b8NWjm",
+                  "name": "Row Каримов Алишер",
+                  "width": "fill_container",
+                  "padding": [
+                    8,
+                    0
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Pub7D",
+                      "name": "Name Каримов Алишер",
+                      "fill": "$h:neutral-800",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Каримов Алишер",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 15,
+                      "fontWeight": "650"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "HCmsV",
+                      "name": "МВД Cell Каримов Алишер",
+                      "width": 250,
+                      "fill": "$h:warning-soft",
+                      "cornerRadius": 10,
+                      "gap": 8,
+                      "padding": [
+                        9,
+                        12
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "S4vJd",
+                          "name": "Cell Icon Каримов Алишер",
+                          "width": 16,
+                          "height": 16,
+                          "icon": "triangle-alert",
+                          "library": "lucide",
+                          "fill": "#9A6A0A"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Cp5OH",
+                          "name": "Cell Text Каримов Алишер",
+                          "fill": "#9A6A0A",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Необходимо подать до 12 сентября",
+                          "lineHeight": 1.25,
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 13,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "rectangle",
+                  "id": "fr6vb",
+                  "name": "Row Divider Рахимов Даврон",
+                  "fill": "$h:neutral-100",
+                  "width": "fill_container",
+                  "height": 1
+                },
+                {
+                  "type": "frame",
+                  "id": "AVohl",
+                  "name": "Row Рахимов Даврон",
+                  "width": "fill_container",
+                  "padding": [
+                    8,
+                    0
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "klCy4",
+                      "name": "Name Рахимов Даврон",
+                      "fill": "$h:neutral-800",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Рахимов Даврон",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 15,
+                      "fontWeight": "650"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "tNkZG",
+                      "name": "МВД Cell Рахимов Даврон",
+                      "width": 250,
+                      "fill": "$h:bg-secondary",
+                      "cornerRadius": 10,
+                      "gap": 8,
+                      "padding": [
+                        9,
+                        12
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "nwNp2",
+                          "name": "Cell Icon Рахимов Даврон",
+                          "width": 16,
+                          "height": 16,
+                          "icon": "calendar",
+                          "library": "lucide",
+                          "fill": "$h:neutral-600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Z7hF4r",
+                          "name": "Cell Text Рахимов Даврон",
+                          "fill": "$h:neutral-800",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Срок подачи: 25 сентября",
+                          "lineHeight": 1.25,
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "rectangle",
+                  "id": "YiZpk",
+                  "name": "Row Divider Собиров Джамшед",
+                  "fill": "$h:neutral-100",
+                  "width": "fill_container",
+                  "height": 1
+                },
+                {
+                  "type": "frame",
+                  "id": "QVfNT",
+                  "name": "Row Собиров Джамшед",
+                  "width": "fill_container",
+                  "padding": [
+                    8,
+                    0
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "wwTjY",
+                      "name": "Name Собиров Джамшед",
+                      "fill": "$h:neutral-800",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Собиров Джамшед",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 15,
+                      "fontWeight": "650"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "KWwGV",
+                      "name": "МВД Cell Собиров Джамшед",
+                      "width": 250,
+                      "fill": "$h:brand-green-soft",
+                      "cornerRadius": 10,
+                      "gap": 8,
+                      "padding": [
+                        9,
+                        12
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "yjn9D",
+                          "name": "Cell Icon Собиров Джамшед",
+                          "width": 16,
+                          "height": 16,
+                          "icon": "circle-check",
+                          "library": "lucide",
+                          "fill": "$h:brand-green-strong"
+                        },
+                        {
+                          "type": "text",
+                          "id": "v4SWu9",
+                          "name": "Cell Text Собиров Джамшед",
+                          "fill": "$h:brand-green-strong",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Уведомление готово",
+                          "lineHeight": 1.25,
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 13,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "WNNfB",
+              "name": "Step 2 Caption",
+              "fill": "$h:neutral-600",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Когда приближается срок подачи уведомления, WinWork заранее подсвечивает это в списке исполнителей.",
+              "lineHeight": 1.45,
+              "fontFamily": "$h:font-primary",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "icon",
+          "id": "zCy46",
+          "x": 660,
+          "y": 535,
+          "name": "Step Arrow 1→2",
+          "width": 26,
+          "height": 26,
+          "icon": "chevron-right",
+          "library": "lucide",
+          "fill": "$h:brand-blue-mid"
+        },
+        {
+          "type": "icon",
+          "id": "AIjJu",
+          "x": 1233,
+          "y": 535,
+          "name": "Step Arrow 2→3",
+          "width": 26,
+          "height": 26,
+          "icon": "chevron-right",
+          "library": "lucide",
+          "fill": "$h:brand-blue-mid"
+        },
+        {
+          "type": "frame",
+          "id": "xKNDP",
+          "x": 1266,
+          "y": 292,
+          "name": "Step 3 Column",
+          "width": 533,
+          "layout": "vertical",
+          "gap": 20,
+          "children": [
+            {
+              "type": "frame",
+              "id": "cY9nD",
+              "name": "Step 3 Header",
+              "width": "fill_container",
+              "gap": 14,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "dLjN6",
+                  "name": "Step 3 Badge",
+                  "width": 40,
+                  "height": 40,
+                  "fill": "$h:brand-blue",
+                  "cornerRadius": 20,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "G3HOAp",
+                      "name": "Step 3 Number",
+                      "fill": "#FFFFFF",
+                      "content": "3",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 18,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "UZcvR",
+                  "name": "Step 3 Heading",
+                  "fill": "$h:neutral-950",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Документ формируется автоматически",
+                  "lineHeight": 1.15,
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 23,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Ewq7r",
+              "name": "Step 3 Mock — Document Card",
+              "clip": true,
+              "width": "fill_container",
+              "height": 380,
+              "fill": "$h:surface",
+              "cornerRadius": 20,
+              "stroke": "$h:neutral-150",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 14,
+              "padding": 22,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "rPf6T",
+                  "name": "Document Card",
+                  "width": "fill_container",
+                  "fill": "$h:bg-primary",
+                  "cornerRadius": 14,
+                  "gap": 14,
+                  "padding": 18,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "jSduR",
+                      "name": "Doc Icon Container",
+                      "width": 44,
+                      "height": 44,
+                      "fill": "$h:brand-blue",
+                      "cornerRadius": 12,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "T1XVi",
+                          "name": "Doc Icon",
+                          "width": 22,
+                          "height": 22,
+                          "icon": "file-text",
+                          "library": "lucide",
+                          "fill": "#FFFFFF"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "jXTvc",
+                      "name": "Doc Text Block",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "MdY38",
+                          "name": "Doc Title",
+                          "fill": "$h:neutral-950",
+                          "content": "Уведомление в МВД",
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 16,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "ZtTEk",
+                          "name": "Doc Meta",
+                          "fill": "$h:neutral-600",
+                          "content": "PDF · заполнен автоматически",
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "F6ZNd",
+                      "name": "Status Pill Готово",
+                      "fill": "$h:brand-green-soft",
+                      "cornerRadius": 9,
+                      "gap": 6,
+                      "padding": [
+                        6,
+                        12
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "wk2k1",
+                          "name": "Готово Icon",
+                          "width": 14,
+                          "height": 14,
+                          "icon": "check",
+                          "library": "lucide",
+                          "fill": "$h:brand-green-strong"
+                        },
+                        {
+                          "type": "text",
+                          "id": "OjW0N",
+                          "name": "Готово Text",
+                          "fill": "$h:brand-green-strong",
+                          "content": "Готово",
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 13,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "E7ph2",
+                  "name": "Download Button",
+                  "width": "fill_container",
+                  "height": 46,
+                  "fill": "$h:brand-blue",
+                  "cornerRadius": 12,
+                  "gap": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "bQ2Af",
+                      "name": "Download Icon",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "download",
+                      "library": "lucide",
+                      "fill": "#FFFFFF"
+                    },
+                    {
+                      "type": "text",
+                      "id": "mdPnn",
+                      "name": "Download Label",
+                      "fill": "#FFFFFF",
+                      "content": "Скачать",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 15,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "HDv5z",
+                  "name": "Document Fragment",
+                  "width": "fill_container",
+                  "fill": "$h:surface",
+                  "cornerRadius": 12,
+                  "stroke": "$h:neutral-150",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": [
+                    14,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "umcgG",
+                      "name": "Fragment Label",
+                      "fill": "$h:neutral-400",
+                      "content": "ФРАГМЕНТ ДОКУМЕНТА",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 10.5,
+                      "fontWeight": "700",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "frame",
+                      "id": "WYkWB",
+                      "name": "Fragment Row Исполнитель",
+                      "width": "fill_container",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "XKR3g",
+                          "name": "Fragment Label Исполнитель",
+                          "fill": "$h:neutral-400",
+                          "textGrowth": "fixed-width",
+                          "width": 110,
+                          "content": "Исполнитель",
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 12.5,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "pKC3T",
+                          "name": "Fragment Value Исполнитель",
+                          "fill": "$h:neutral-800",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Каримов Алишер Рустамович",
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 13,
+                          "fontWeight": "650"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Gqg9w",
+                      "name": "Fragment Row Основание",
+                      "width": "fill_container",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "SFfjr",
+                          "name": "Fragment Label Основание",
+                          "fill": "$h:neutral-400",
+                          "textGrowth": "fixed-width",
+                          "width": 110,
+                          "content": "Основание",
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 12.5,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "KpzQL",
+                          "name": "Fragment Value Основание",
+                          "fill": "$h:neutral-800",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "патент № 78 1234567",
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 13,
+                          "fontWeight": "650"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "OY8d3",
+                      "name": "Fragment Row Срок подачи",
+                      "width": "fill_container",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "gwNtV",
+                          "name": "Fragment Label Срок подачи",
+                          "fill": "$h:neutral-400",
+                          "textGrowth": "fixed-width",
+                          "width": 110,
+                          "content": "Срок подачи",
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 12.5,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Z1Ssk",
+                          "name": "Fragment Value Срок подачи",
+                          "fill": "$h:neutral-800",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "до 12 сентября 2025",
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 13,
+                          "fontWeight": "650"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tSqjF",
+              "name": "Step 3 Captions",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 10,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "P2BaR",
+                  "name": "Step 3 Caption",
+                  "fill": "$h:neutral-600",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Данные исполнителя уже есть в WinWork — платформа автоматически заполняет уведомление и формирует его в нужном формате.",
+                  "lineHeight": 1.45,
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "vXZSs",
+                  "name": "Step 3 Note",
+                  "width": "fill_container",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "n1HD8",
+                      "name": "Note Icon",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "info",
+                      "library": "lucide",
+                      "fill": "$h:brand-blue"
+                    },
+                    {
+                      "type": "text",
+                      "id": "grEMw",
+                      "name": "Note Text",
+                      "fill": "$h:neutral-800",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Заказчик скачивает документ и самостоятельно подаёт его в МВД.",
+                      "lineHeight": 1.4,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 16,
+                      "fontWeight": "650"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "RYgiC",
+          "x": 120,
+          "y": 906,
+          "name": "Summary Strip",
+          "width": 1680,
+          "height": 92,
+          "fill": "$h:neutral-950",
+          "cornerRadius": 22,
+          "padding": [
+            0,
+            32
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "RzJ8W",
+              "name": "Process Chain",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "RKCtT",
+                  "name": "Chain Item 0",
+                  "fill": "#FFFFFF",
+                  "content": "Отдельный учёт",
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 19,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "icon",
+                  "id": "GxMNp",
+                  "name": "Chain Arrow 1",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "arrow-right",
+                  "library": "lucide",
+                  "fill": "$h:brand-green"
+                },
+                {
+                  "type": "text",
+                  "id": "yKEs0",
+                  "name": "Chain Item 1",
+                  "fill": "#FFFFFF",
+                  "content": "Контроль срока",
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 19,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "icon",
+                  "id": "vpKcF",
+                  "name": "Chain Arrow 2",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "arrow-right",
+                  "library": "lucide",
+                  "fill": "$h:brand-green"
+                },
+                {
+                  "type": "text",
+                  "id": "RaseG",
+                  "name": "Chain Item 2",
+                  "fill": "#FFFFFF",
+                  "content": "Автоматически заполненное уведомление",
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 19,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "f7AYFs",
+              "name": "Accent Block",
+              "gap": 14,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "IKINf",
+                  "name": "Accent Divider",
+                  "fill": "#FFFFFF33",
+                  "width": 1,
+                  "height": 40
+                },
+                {
+                  "type": "text",
+                  "id": "a6WrJW",
+                  "name": "Accent Text",
+                  "fill": "$h:brand-green",
+                  "content": "Меньше ручной работы и ниже риск пропустить обязательный срок",
+                  "lineHeight": 1.3,
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 17,
+                  "fontWeight": "650"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
       "id": "CPLyo",
       "x": 35127,
       "y": 2969,

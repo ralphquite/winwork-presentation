@@ -13,8 +13,15 @@ import {
   Upload,
   UserPlus,
 } from 'lucide-react';
-import { useLayoutEffect, useRef, useState, type ReactNode } from 'react';
+import {
+  useLayoutEffect,
+  useRef,
+  useState,
+  type InputHTMLAttributes,
+  type ReactNode,
+} from 'react';
 
+import { MarketplacePage } from './MarketplacePage';
 import {
   Checkbox,
   DesktopShell,
@@ -93,6 +100,20 @@ const RUSSIAN_EMAIL_DOMAINS = new Set([
 ]);
 const ROUBLE_FORMATTER = new Intl.NumberFormat('ru-RU');
 
+const OBJECT_AUTOFILL_VALUES = {
+  apartment: '51',
+  building: '14',
+  house: '12',
+  managerFirstName: 'Алексей',
+  managerPatronymic: 'Андреевич',
+  managerPhone: '9898890909',
+  managerSurname: 'Афанасьев',
+  name: 'Склад на Новомосковской',
+  objectId: 'DEMO-OBJ-001',
+  smsCode: '0000',
+  street: 'ул. Новомосковская',
+} as const;
+
 type ObjectActivityName = (typeof OBJECT_ACTIVITY_OPTIONS)[number];
 type ObjectActivityPeriod = 'День' | 'Неделя' | 'Месяц';
 
@@ -116,6 +137,47 @@ type ObjectActivity = {
   reward: string;
   taskCount: string;
 };
+
+type AutoFillFieldProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  'onChange' | 'value'
+> & {
+  autoFillValue: string;
+  label: string;
+  onValueChange: (value: string) => void;
+  value: string;
+};
+
+function AutoFillField({
+  autoFillValue,
+  label,
+  onClick,
+  onPointerDown,
+  onValueChange,
+  value,
+  ...props
+}: AutoFillFieldProps) {
+  const fillIfEmpty = () => {
+    if (!value) onValueChange(autoFillValue);
+  };
+
+  return (
+    <Field
+      {...props}
+      label={label}
+      onChange={(event) => onValueChange(event.currentTarget.value)}
+      onClick={(event) => {
+        fillIfEmpty();
+        onClick?.(event);
+      }}
+      onPointerDown={(event) => {
+        fillIfEmpty();
+        onPointerDown?.(event);
+      }}
+      value={value}
+    />
+  );
+}
 
 const createObjectManager = (id: number): ObjectManager => ({
   email: '',
@@ -262,10 +324,11 @@ function ObjectManagerCard({
           </div>
         </>
       ) : (
-        <Field
+        <AutoFillField
           aria-label={`Email руководителя ${index + 1}`}
+          autoFillValue={`demo.manager${index + 1}@yandex.ru`}
           label="Email для входа"
-          onChange={(event) => changeEmail(event.currentTarget.value)}
+          onValueChange={changeEmail}
           placeholder="existing.manager@example.test"
           readOnly={isInvited}
           type="email"
@@ -293,25 +356,22 @@ function ObjectManagerCard({
 
       {isInvited ? (
         <div className="ww-manager-details">
-          <Field
+          <AutoFillField
+            autoFillValue={OBJECT_AUTOFILL_VALUES.managerSurname}
             label="Фамилия"
-            onChange={(event) =>
-              onChange({ surname: event.currentTarget.value })
-            }
+            onValueChange={(surname) => onChange({ surname })}
             value={manager.surname}
           />
-          <Field
+          <AutoFillField
+            autoFillValue={OBJECT_AUTOFILL_VALUES.managerFirstName}
             label="Имя"
-            onChange={(event) =>
-              onChange({ firstName: event.currentTarget.value })
-            }
+            onValueChange={(firstName) => onChange({ firstName })}
             value={manager.firstName}
           />
-          <Field
+          <AutoFillField
+            autoFillValue={OBJECT_AUTOFILL_VALUES.managerPatronymic}
             label="Отчество"
-            onChange={(event) =>
-              onChange({ patronymic: event.currentTarget.value })
-            }
+            onValueChange={(patronymic) => onChange({ patronymic })}
             value={manager.patronymic}
           />
           <label className="ww-field">
@@ -327,6 +387,11 @@ function ObjectManagerCard({
                     phone: event.currentTarget.value.replace(/\D/g, ''),
                   })
                 }
+                onClick={() => {
+                  if (!manager.phone) {
+                    onChange({ phone: OBJECT_AUTOFILL_VALUES.managerPhone });
+                  }
+                }}
                 placeholder="999 000-00-00"
                 type="tel"
                 value={formatObjectManagerPhone(manager.phone)}
@@ -479,13 +544,12 @@ function ObjectActivityCard({
           <Trash2 aria-hidden="true" size={16} />
         </button>
       </header>
-      <Field
+      <AutoFillField
         aria-label={`Ставка за час для ${activity.name}`}
+        autoFillValue={activity.name === 'Грузчик' ? '500' : '1000'}
         inputMode="decimal"
         label="Ставка за час"
-        onChange={(event) =>
-          onChange({ hourlyRate: event.currentTarget.value })
-        }
+        onValueChange={(hourlyRate) => onChange({ hourlyRate })}
         value={activity.hourlyRate}
       />
       <div className="ww-activity-limit-toggle">
@@ -498,20 +562,18 @@ function ObjectActivityCard({
       </div>
       {activity.limitsEnabled ? (
         <div className="ww-activity-limits">
-          <Field
+          <AutoFillField
+            autoFillValue="150000"
             inputMode="decimal"
             label="Вознаграждение ₽"
-            onChange={(event) =>
-              onChange({ reward: event.currentTarget.value })
-            }
+            onValueChange={(reward) => onChange({ reward })}
             value={activity.reward}
           />
-          <Field
+          <AutoFillField
+            autoFillValue="14"
             inputMode="numeric"
             label="Задания"
-            onChange={(event) =>
-              onChange({ taskCount: event.currentTarget.value })
-            }
+            onValueChange={(taskCount) => onChange({ taskCount })}
             value={activity.taskCount}
           />
           <SelectField
@@ -793,9 +855,10 @@ export function CreateObjectDemo() {
           <section className="ww-drawer-section">
             <h3>Адрес объекта</h3>
             <div className="ww-object-name-row">
-              <Field
+              <AutoFillField
+                autoFillValue={OBJECT_AUTOFILL_VALUES.name}
                 label="Название объекта"
-                onChange={(event) => setObjectName(event.currentTarget.value)}
+                onValueChange={setObjectName}
                 placeholder="Введите название объекта"
                 value={objectName}
               />
@@ -827,30 +890,32 @@ export function CreateObjectDemo() {
             </div>
             {!remoteWork ? (
               <>
-                <Field
+                <AutoFillField
+                  autoFillValue={OBJECT_AUTOFILL_VALUES.street}
                   label="Населённый пункт, название улицы"
-                  onChange={(event) => setStreet(event.currentTarget.value)}
+                  onValueChange={setStreet}
                   placeholder="Введите адрес"
                   value={street}
                 />
                 <div className="ww-field-grid is-three">
-                  <Field
+                  <AutoFillField
+                    autoFillValue={OBJECT_AUTOFILL_VALUES.house}
                     label="Дом/строение"
-                    onChange={(event) => setHouse(event.currentTarget.value)}
+                    onValueChange={setHouse}
                     placeholder="—"
                     value={house}
                   />
-                  <Field
+                  <AutoFillField
+                    autoFillValue={OBJECT_AUTOFILL_VALUES.building}
                     label="Корпус (необязательно)"
-                    onChange={(event) => setBuilding(event.currentTarget.value)}
+                    onValueChange={setBuilding}
                     placeholder="—"
                     value={building}
                   />
-                  <Field
+                  <AutoFillField
+                    autoFillValue={OBJECT_AUTOFILL_VALUES.apartment}
                     label="Квартира (необязательно)"
-                    onChange={(event) =>
-                      setApartment(event.currentTarget.value)
-                    }
+                    onValueChange={setApartment}
                     placeholder="—"
                     value={apartment}
                   />
@@ -860,9 +925,10 @@ export function CreateObjectDemo() {
           </section>
           <section className="ww-drawer-section">
             <h3>Внутренние примечания</h3>
-            <Field
+            <AutoFillField
+              autoFillValue={OBJECT_AUTOFILL_VALUES.objectId}
               label="Идентификатор объекта"
-              onChange={(event) => setObjectId(event.currentTarget.value)}
+              onValueChange={setObjectId}
               placeholder="Введите идентификатор"
               value={objectId}
             />
@@ -934,14 +1000,13 @@ export function CreateObjectDemo() {
             <section aria-live="polite" className="ww-sms-confirmation">
               <strong>Подтвердите кодом из СМС создание руководителей</strong>
               <span>Для демо используйте код 0000.</span>
-              <Field
+              <AutoFillField
                 autoFocus
+                autoFillValue={OBJECT_AUTOFILL_VALUES.smsCode}
                 inputMode="numeric"
                 label="Код из СМС"
                 maxLength={4}
-                onChange={(event) =>
-                  handleSmsCodeChange(event.currentTarget.value)
-                }
+                onValueChange={handleSmsCodeChange}
                 value={smsCode}
               />
               {smsError ? <p className="ww-field-error">{smsError}</p> : null}
@@ -1550,22 +1615,6 @@ export function DocumentTemplatesDemo() {
   );
 }
 
-const TASK_ROWS = [
-  [
-    'Разгрузка утренней поставки',
-    '14 августа, 10:00',
-    '3 200 ₽',
-    'Выполняется',
-  ],
-  [
-    'Комплектация интернет-заказов',
-    '14 августа, 12:00',
-    '4 000 ₽',
-    'Есть отклики',
-  ],
-  ['Инвентаризация зоны хранения', '15 августа, 09:00', '5 600 ₽', 'Черновик'],
-] as const;
-
 const TASK_OBJECTS = [
   'Склад на Новомосковской',
   'Распределительный центр «Север»',
@@ -1662,68 +1711,8 @@ export function SingleTaskDemo() {
     );
   };
 
-  return (
-    <DesktopShell activeNavigation="Маркетплейс">
-      <div className="ww-marketplace-page">
-        <PageHeading
-          actions={
-            <div className="ww-create-menu-anchor">
-              <ProductButton
-                data-demo-action="add-task"
-                onClick={() => setIsMenuOpen((open) => !open)}
-              >
-                <Plus aria-hidden="true" size={18} /> Добавить задание
-                <ChevronDown aria-hidden="true" size={16} />
-              </ProductButton>
-              {isMenuOpen ? (
-                <div className="ww-create-menu">
-                  <button
-                    data-demo-action="single-task"
-                    onClick={() => {
-                      setDrawerState('create');
-                      setIsMenuOpen(false);
-                    }}
-                    type="button"
-                  >
-                    <ClipboardList aria-hidden="true" size={19} />
-                    <span>
-                      <strong>Разовое задание</strong>
-                      <small>Создать и опубликовать одну задачу</small>
-                    </span>
-                  </button>
-                  <button type="button">
-                    <Upload aria-hidden="true" size={19} />
-                    <span>
-                      <strong>Загрузить реестр</strong>
-                      <small>Создать много заданий из файла</small>
-                    </span>
-                  </button>
-                </div>
-              ) : null}
-            </div>
-          }
-        >
-          Маркетплейс
-        </PageHeading>
-        <div className="ww-market-filters">
-          <label>
-            <Search aria-hidden="true" size={17} />
-            <input
-              aria-label="Поиск заданий"
-              placeholder="Название задания или исполнитель"
-            />
-          </label>
-          <SelectField
-            label="Статус"
-            options={['Все статусы', 'Выполняется', 'Есть отклики', 'Черновик']}
-          />
-        </div>
-        <DataTable
-          columns={['Задание', 'Дата и время', 'Вознаграждение', 'Статус']}
-          rows={TASK_ROWS}
-        />
-      </div>
-
+  const taskOverlay = drawerState ? (
+    <>
       {drawerState === 'create' ? (
         <Drawer
           className="is-task-drawer"
@@ -2014,6 +2003,54 @@ export function SingleTaskDemo() {
         </Drawer>
       ) : null}
       {toast ? <StatusToast>{toast}</StatusToast> : null}
+    </>
+  ) : null;
+
+  return (
+    <DesktopShell
+      activeNavigation="Маркетплейс"
+      chrome="marketplace"
+      overlay={taskOverlay}
+    >
+      <MarketplacePage
+        primaryAction={
+          <div className="ww-create-menu-anchor">
+            <ProductButton
+              data-demo-action="add-task"
+              onClick={() => setIsMenuOpen((open) => !open)}
+            >
+              Разместить задание
+              <ChevronDown aria-hidden="true" size={17} />
+            </ProductButton>
+            {isMenuOpen ? (
+              <div className="ww-create-menu">
+                <button
+                  data-demo-action="single-task"
+                  onClick={() => {
+                    setDrawerState('create');
+                    setIsMenuOpen(false);
+                  }}
+                  type="button"
+                >
+                  <ClipboardList aria-hidden="true" size={19} />
+                  <span>
+                    <strong>Разовое задание</strong>
+                    <small>Создать и опубликовать одну задачу</small>
+                  </span>
+                </button>
+                <button type="button">
+                  <Upload aria-hidden="true" size={19} />
+                  <span>
+                    <strong>Загрузить реестр</strong>
+                    <small>Создать много заданий из файла</small>
+                  </span>
+                </button>
+              </div>
+            ) : null}
+          </div>
+        }
+      />
+      {!drawerState && toast ? <StatusToast>{toast}</StatusToast> : null}
     </DesktopShell>
   );
 }

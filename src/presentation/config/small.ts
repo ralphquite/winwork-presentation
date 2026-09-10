@@ -33,7 +33,7 @@ const smallBusinessSlides = [
   },
   {
     frameId: 'Khndq',
-    title: 'Создайте и опубликуйте одно задание за три шага',
+    title: 'Создайте и опубликуйте задание за три шага',
     demoFlow: smallSingleTaskDemo,
   },
   {
@@ -56,10 +56,6 @@ const smallBusinessSlides = [
   {
     frameId: 'JvJtn',
     title: 'Документы, выплата и история хранятся в карточке задания',
-  },
-  {
-    frameId: 'AduNG',
-    title: 'Ежедневная работа состоит из четырёх действий',
   },
   {
     frameId: 'iaGLr',

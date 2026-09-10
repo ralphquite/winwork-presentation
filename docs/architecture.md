@@ -70,7 +70,7 @@ SceneRenderer (type dispatch + transition + error boundary)
 | Route         | Config                                  | Current state                                                                 |
 | ------------- | --------------------------------------- | ----------------------------------------------------------------------------- |
 | `/enterprise` | `src/presentation/config/enterprise.ts` | 17 Pencil-backed slides; пять сцен открывают React demo-flow                  |
-| `/api`        | `src/presentation/config/api.ts`        | 9 Pencil-backed slides; без интерактивных demo-flow                           |
+| `/api`        | `src/presentation/config/api.ts`        | 8 Pencil-backed slides; без интерактивных demo-flow                           |
 | `/small`      | `src/presentation/config/small.ts`      | 13 Pencil-backed slides; одна сцена переиспользует React demo-flow            |
 | `/court`      | `src/presentation/config/court.ts`      | 5 code-authored slides; второй, третий, четвёртый и пятый открывают demo-flow |
 
@@ -111,7 +111,7 @@ SceneRenderer (type dispatch + transition + error boundary)
 
 ## Exported slides и demo-flow
 
-`src/presentation/config/enterprise.ts` программно сопоставляет 17 элементов массива с IDs и путями `ent-01` … `ent-17`. `src/presentation/config/api.ts` задаёт девять сцен со стабильными IDs `api-01` … `api-06`, `api-12`, `api-15` и `api-17`, `src/presentation/config/small.ts` — для 13 сцен `smb-01` … `smb-13`, а `src/presentation/config/court.ts` — для пяти сцен `court-01` … `court-05`. `PencilSlide` загружает соответствующий HTML из track-specific директории в `public/` и масштабирует фиксированный canvas 1920 × 1080 по доступной области через `ResizeObserver`. Court-слайды собраны кодом в HTML/CSS и используют тот же renderer; прозрачная React-ссылка на первом слайде открывает официальный реестр ФНС, две hotspot-кнопки на втором слайде открывают регистрацию и размещение задания, CTA третьего слайда — путь исполнителя, CTA четвёртого — выбор исполнителя, а CTA пятого — подтверждение оплаты.
+`src/presentation/config/enterprise.ts` программно сопоставляет 17 элементов массива с сохранёнными стабильными IDs и путями. Новый `ent-18` расположен после `ent-13`, существующие `ent-14`, `ent-16` и `ent-17` не переименованы, а удалённый `ent-15` остаётся недоступен. `src/presentation/config/api.ts` задаёт восемь сцен со стабильными IDs `api-01`, `api-02`, `api-04` … `api-06`, `api-12`, `api-15` и `api-17`; удалённый `api-03` остаётся недоступен. `src/presentation/config/small.ts` задаёт 12 сцен `smb-01` … `smb-12`, а `src/presentation/config/court.ts` — пять сцен `court-01` … `court-05`. `PencilSlide` загружает соответствующий HTML из track-specific директории в `public/` и масштабирует фиксированный canvas 1920 × 1080 по доступной области через `ResizeObserver`. Court-слайды собраны кодом в HTML/CSS и используют тот же renderer; прозрачная React-ссылка на первом слайде открывает официальный реестр ФНС, две hotspot-кнопки на втором слайде открывают регистрацию и размещение задания, CTA третьего слайда — путь исполнителя, CTA четвёртого — выбор исполнителя, а CTA пятого — подтверждение оплаты.
 
 Десять track scenes имеют одиннадцать hotspot bindings на девять slide-bound реализаций:
 
@@ -135,7 +135,7 @@ SceneRenderer (type dispatch + transition + error boundary)
 
 `task-payment` доступен на главной QA-панели и из CTA `court-05`. Он воспроизводит Marketplace, выполненное задание, пять вкладок task drawer, подтверждение через SMS-код `0000` и финальное состояние `Отправлено` / `ОПЛАЧЕН` полностью локально, без сетевого платежа; после оплаты действие отмены задания не показывается.
 
-`performer-selection` доступен на главной QA-панели и из CTA `court-04`. Он переиспользует структуру Marketplace и task drawer из flow оплаты, открывает задание со статусом `ЕСТЬ ОТКЛИКИ`, сразу показывает вкладку `Отклики (3)` с тремя синтетическими карточками исполнителей и локальными действиями `Принять` / `Отказать`.
+`performer-selection` доступен на главной QA-панели и из CTA `court-04`. Он переиспользует общую страницу Marketplace и стили task drawer из flow оплаты, открывает задание со статусом `ЕСТЬ ОТКЛИКИ`, сразу показывает вкладку `Отклики (3)` с тремя синтетическими карточками исполнителей и локальными действиями `Принять` / `Отказать`.
 
 `performer-registration` доступен как standalone quick-access flow на главной странице и из CTA `court-03`. Это явно одобренное временное исключение из component-only правила: `PerformerRegistrationDemo.tsx` показывает 17 runtime-скриншотов по порядку внутри адаптивной рамки 375 × 932, переключает шаги кнопками/стрелками клавиатуры и оставляет вертикальный скролл внутри длинного кадра. Захваченные элементы интерфейса не объявляются интерактивными; единственный hotspot принадлежит CTA презентационного слайда, а не содержимому скриншотов.
 
@@ -148,6 +148,8 @@ SceneRenderer (type dispatch + transition + error boundary)
 - `ManagerAppDemo.tsx` содержит один bounded mobile flow с внутренним screen state для login, orders, task creation, order details, payment, settings, notifications и chats.
 - `PerformerRegistrationDemo.tsx` содержит временный screenshot-based mobile flow с локальным индексом экрана и scroll-reset при смене шага.
 - `ProductUI.tsx` владеет общими desktop primitives; `demo-product.css` — product-specific visual layer.
+- `MarketplacePage.tsx` задаёт общую desktop-страницу Маркетплейса для `single-task`, `performer-selection` и `task-payment`: заголовок, действия, вкладки, фильтры, таблицу и пагинацию. `marketplaceData.ts` содержит общие синтетические строки; сценарии выбора и оплаты подставляют своё целевое задание и локальное действие открытия. Мобильный Маркетплейс управляющего остаётся отдельной поверхностью.
+- Во всех трёх desktop-сценариях Маркетплейса шторки передаются через `DesktopShell.overlay` и рендерятся непосредственно внутри product viewport, вне прокручиваемого `main`. Затемнение закрывает всю оболочку; header, sidebar и основной контент получают `inert`, а скролл фона блокируется на время открытия шторки. Содержимое правой шторки прокручивается независимо.
 - `useTransientMessage.ts` очищает success/status messages по таймеру и при размонтировании.
 
 Desktop surface сохраняет минимальный рабочий canvas внутри overflow-safe container. Mobile surface имеет исходный viewport 430 × 812 и переходит в edge-to-edge режим на узком host viewport.

@@ -241,6 +241,69 @@ The source and implementation were opened together in the same browser-rendered 
 - Next advanced through `api-12` → `api-15` → `api-17`; the final scene showed `9 / 9` with Next disabled. Back/Forward preserved the sparse stable IDs, while a direct deleted `api-16` link normalized to `api-01` and retained `qa=kept`.
 - The 1280 × 720 host rendered the complete slide canvas without document overflow. No application error appeared; the only console warning was the expected reduced-motion notice. `pnpm check` passed the documentation, formatting, lint, type, 30 access-gateway assertions, and both production builds.
 
+### Iteration 25 — passed
+
+- The authorized live WinWork development Marketplace was inspected in Chrome at the normal 1710 px-wide viewport in both the top-of-page and pagination states. The source evidence showed the full-height 250 px navigation rail, balances and account controls above the content, stacked heading/actions, six task tabs, four-part filter card, ten-column table, wrapped row details, status pills, row actions, and split pagination footer.
+- The `single-task` Marketplace was rebuilt against that evidence without changing the other desktop demos. The rendered content starts at `x = 385`, keeps the source-aligned 1190 px content width, and measures the columns as `43 / 106 / 106 / 106 / 146 / 68 / 326 / 100 / 132 / 57` px. Visible people, identifiers, tasks, dates, and amounts remain deterministic synthetic demo data.
+- Clean Chrome QA exercised Marketplace → `Разместить задание` → `Разовое задание` → complete existing form → created-task summary → `Готово`. Reset removed the nested drawer and restored scroll position to zero; `Escape` closed the demo and restored focus to its quick-access card.
+- At 900 × 700 the dialog measured 880 × 680 px, the desktop app retained its 1180 × 820 px minimum canvas, and the 864 px-wide product surface exposed the full 1504 px scroll width instead of collapsing the table. A fresh console contained no application errors; the only entry was the expected reduced-motion warning.
+
+### Iteration 26 — partial; overlay placement corrected in iteration 28
+
+- The `single-task` Marketplace now keeps the 250 px navigation rail fixed inside the product viewport while only the content pane owns the table overflow. At 900 × 700 the outer surface stayed at `scrollLeft = 0` with `scrollWidth = 864`, the sidebar stayed at `x = 18`, and the 614 px content pane reached `scrollLeft = 640` across its 1254 px canvas.
+- The navigation rail fills the complete 600 px product surface. Opening the task drawer locks both background content and navigation at `scrollTop = 0`; the 560 px drawer body is the only vertical scroller and reached `scrollTop = 979.5` across its 1445 px content without horizontal overflow.
+- The task-type radio controls now use deterministic 20 × 20 px checked and unchecked states. Browser QA confirmed both labels remain aligned at the narrow viewport and that selecting `Регулярные задания` and returning to `Разовое задание` updates the native checked state.
+- Marketplace rows now use natural-looking synthetic names, task descriptions, identifiers, dates, and reward amounts. The scroll and radio checks passed, but the visual review missed that the drawer and scrim still belonged to the scrolling content pane: the navigation/header remained undimmed and content scroll offsets displaced the drawer. The user-supplied follow-up screenshot confirmed this defect.
+- `pnpm check` passed the documentation, formatting, lint, type, 30 access-gateway assertions, and both production builds.
+
+### Iteration 27 — passed
+
+- Enterprise now contains 16 scenes. The removed API-integration slide no longer has a runtime export or route entry; retained final scenes keep stable IDs `ent-16` and `ent-17`.
+- At the 1920 × 1080 source canvas, `ent-02` renders its title on two 54 px lines with `и исполнителями` on the second line, while its 32 px-high lead remains on one line. `ent-04` renders its title on two 56 px lines with `и используйте данные во всех заданиях` on the second line. Both runtime exports agree with the updated Pencil source.
+- Browser QA exercised `ent-14` → `ent-16` → `ent-17`, Back/Forward across the retained IDs, and the disabled Next control at `16 / 16`. A direct deleted `ent-15` link normalized to `ent-01`.
+- The 1280 × 720 host and a 390 × 844 viewport rendered `ent-02` without document overflow. No application or framework error appeared; the only console warnings were the expected reduced-motion notice and the existing Pencil-export Tailwind CDN warning.
+- Browser evidence: `/tmp/winwork-ent-02-after.png`, `/tmp/winwork-ent-04-after.png`, `/tmp/winwork-enterprise-final-16-of-16.png`, and `/tmp/winwork-ent-02-mobile.png`. `pnpm check` passed the documentation, formatting, lint, type, 30 access-gateway assertions, and both production builds.
+
+### Iteration 28 — passed
+
+- Both single-task drawer states now render through `DesktopShell.overlay`, outside the scrolling `main` and directly inside the product viewport. The header, navigation, and main content are inert while the overlay is present. The scrim covers the entire product surface; only the right drawer remains undimmed.
+- At the normal 1710 × 930 Chrome viewport, the scrim and app both measured `x = 47`, `y = 90`, `1616 × 814` px, and the drawer measured `560 × 814` px with zero top/right/bottom gaps. At 900 × 700, the scrim and app both measured `x = 18`, `y = 82`, `864 × 600` px, and the drawer measured `560 × 600` px with the same zero-gap alignment. Hit testing over the logo, top balance area, lower sidebar, and lower content returned the scrim.
+- The narrow content pane reached `scrollLeft = 640`; opening the drawer from the scrolled menu left the content at `scrollLeft = 41` without moving the overlay. Scrolling the drawer to `scrollTop = 915.5` and attempting to scroll the dimmed navigation left the background offsets unchanged. The drawer body had no horizontal overflow.
+- Fresh-tab QA passed Marketplace → create form → created summary → `Готово`, reset from an edited form, close/reopen with the original worker count, radio selection by keyboard, and `Escape` with focus restored to the quick-access card. Row `f4c8a2d5` now includes the synthetic performer `Морозов И. А.` and demo identifier.
+- `pnpm check` passed documentation, formatting, lint, types, 30 access-gateway assertions, and both production builds. The fresh browser console had no application errors; its only warning was the expected reduced-motion notice.
+
+### Iteration 29 — passed
+
+- Approved Pencil node `L4gz5t` was exported as `ent-18` and inserted after `ent-13`. Existing IDs remain stable, so the route order is now `ent-13` → `ent-18` → `ent-14`; removed `ent-15` remains unavailable and still normalizes to `ent-01`.
+- The source and direct runtime render match at 1920 × 1080. The exported root measured exactly `1920 × 1080` with matching scroll dimensions, and the slide rendered at position `14 / 17` without clipped, collapsed, or overflowing content.
+- Keyboard navigation, browser Back/Forward, preserved unrelated query parameters, and the final `ent-17` state at `17 / 17` with disabled Next all passed. A 390 × 844 host retained the complete letterboxed slide with document width equal to the 390 px viewport.
+- Browser evidence: `/tmp/winwork-pencil-ent-18/L4gz5t.png`, `/tmp/winwork-ent-18-direct.png`, `/tmp/winwork-ent-18-desktop.png`, and `/tmp/winwork-ent-18-mobile.png`. There were no failed resources or console errors; warnings were limited to the expected reduced-motion notice and the existing Pencil-export Tailwind CDN warning.
+- `pnpm check` passed documentation, formatting, lint, types, 30 access-gateway assertions, and both production builds.
+
+### Iteration 30 — passed
+
+- The approved desktop Marketplace is now shared by `single-task`, `performer-selection`, and `task-payment` through `MarketplacePage.tsx`. All three use the same heading/actions, six tabs, filter card, ten-column table, synthetic base rows, and pagination. Selection and payment retain their scenario-specific target tasks, amounts, and interactions; row `f4c8a2d5` includes its synthetic performer in every scenario. The manager's separate mobile Marketplace is unchanged by this update.
+- At 1710 × 930, the shared table retained its 1190 px width and column geometry of `43 / 106 / 106 / 106 / 146 / 68 / 326 / 100 / 132 / 57` px. At 900 × 700, the payment content reached `scrollLeft = 640` while the outer surface stayed 864 px wide with `scrollLeft = 0`, and the 250 px navigation rail remained at `x = 18` with its full 600 px height.
+- Selection and payment panels now use the shell overlay slot. At the narrow viewport, both measured `606 × 600` px at `x = 276`, `y = 82`, with zero top/right/bottom gaps; the scrim matched the entire `864 × 600` px product surface. In selection, wheel scrolling moved the panel from `494` to `895.5` px while the dimmed main stayed at `143.5` px and the sidebar stayed at zero, including a wheel attempt over the sidebar.
+- Browser QA passed selection by row/keyboard, checkbox isolation, three response cards, accept/reject, close/reopen, and reset. Payment passed all five tabs, invalid SMS feedback, local SMS `0000` confirmation, the disabled `Отправлено` state, the table's `ОПЛАЧЕН` status, and reset to `ВЫПОЛНЕН`. The shared single-task page still completed menu → edited form → created summary → `Готово` with the updated reward.
+- Court entry points `court-04` and `court-05` opened the updated flows. An arrow key inside the Marketplace search field did not change the scene, and Escape restored focus to each initiating Court CTA and each quick-access card. The browser console contained no application errors; its only warning was the expected reduced-motion notice.
+- `pnpm check` passed documentation, formatting, lint, types, 30 access-gateway assertions, and both production builds. The production build retains the non-blocking bundle-size warning.
+
+### Iteration 31 — passed
+
+- Small Business now has 12 scenes. Former slide `AduNG` was removed from the route and runtime exports, while `iaGLr` is the final `smb-12`; a direct obsolete `smb-13` link normalizes to `smb-01` without dropping unrelated query parameters.
+- Slides 3, 4, and 5 use the approved title breaks. Slide 5 places `Нужен новый исполнитель` on the left and `Уже есть исполнитель` on the right, and slide 6 no longer includes `одно` in its heading.
+- Slide 10 was synchronized with Pencil node `yHEGM`, including the updated lead, added tax step, five 100 px process cards, and final stack position. Its direct 1920 × 1080 runtime capture is byte-identical to a fresh HTML/CSS export from Pencil.
+- Browser QA passed `smb-11` → `smb-12`, the final `12 / 12` state with disabled Next, browser Back/Forward, preserved query parameters, deleted-scene normalization, and a 390 × 844 narrow host without document-level horizontal overflow. No application console errors, failed requests, or Vite error overlay were present.
+- Evidence: `/tmp/winwork-smb-05-after.png`, `/tmp/winwork-smb-10-pencil-export.png`, `/tmp/winwork-smb-10-direct.png`, `/tmp/winwork-smb-12-final.png`, and `/tmp/winwork-smb-05-mobile.png`. `pnpm check` passed documentation, formatting, lint, types, 30 access-gateway assertions, and both production builds; the production build retains the non-blocking bundle-size warning.
+
+### Iteration 32 — passed
+
+- `court-03` now labels the customer strip as `Заказчики WinWork` and renders the five supplied marks Atomy, Гемотест, Pampadu, Skillbox, and Telega.in. DNS is not referenced. Runtime copies live under the existing public `court-assets` boundary.
+- The built isolated entry at `/court-app/court.html?scene=court-03` returned HTTP 200 at 1920 × 1080 and 1280 × 800. All five images completed with non-zero natural dimensions; no placeholder copy, clipping, overlap, failed request, framework overlay, or application console warning/error was present.
+- The performer-registration CTA still opened its dialog, `Escape` closed it and restored focus, and keyboard navigation loaded `court-02`, `court-03`, and `court-04` correctly. Browser evidence: `/tmp/court-03-customers-desktop.png` and `/tmp/court-03-customers-compact.png`.
+- `pnpm check` passed the documentation, formatting, lint, types, 30 access-gateway assertions, and both production builds. The production build retains the existing non-blocking bundle-size warning.
+
 ## Interaction and runtime evidence
 
 - Create object: list → `Добавить объект` → editable drawer → add manager/activity → save → new synthetic row; reset removes the new row.
