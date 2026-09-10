@@ -50,7 +50,8 @@ const demoFlows: readonly DemoFlowDefinition[] =
 
 const demoFlowSteps = {
   registration: 'Вход → регистрация → письмо → вход в кабинет',
-  'performer-registration': '17 экранов мобильной регистрации исполнителя',
+  'performer-registration': '11 экранов мобильной регистрации исполнителя',
+  'performer-response': 'Маркетплейс → задание → отклик на рассмотрении',
   'create-object': 'Список объектов → пустая форма → заполненная форма',
   'manager-app': 'Вход → заказы → исполнитель → оплата → настройки → чаты',
   'create-activity': 'Пакеты документов → добавление вида деятельности',

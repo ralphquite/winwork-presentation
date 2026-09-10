@@ -28,7 +28,7 @@ Public court request
 
 DemoFlowModal
   -> DemoProduct(flowId)
-  -> RegistrationDemo | PerformerRegistrationDemo | TaskPaymentDemo | DesktopDemos | ManagerAppDemo
+  -> RegistrationDemo | PerformerRegistrationDemo | PerformerResponseDemo | TaskPaymentDemo | DesktopDemos | ManagerAppDemo
   -> ProductUI primitives + demo-product.css
 ```
 
@@ -65,7 +65,8 @@ DemoFlowModal
 | `src/presentation/flows/marketplaceData.ts`            | Deterministic synthetic task rows and their shared type                               | MarketplacePage and scenario-specific task overrides             |
 | `src/presentation/flows/DesktopDemos.tsx`              | Four desktop product flows and their local state                                      | Product primitives, demo CSS, reference images                   |
 | `src/presentation/flows/ManagerAppDemo.tsx`            | Stateful manager mobile app flow                                                      | Demo CSS and mobile references                                   |
-| `src/presentation/flows/PerformerRegistrationDemo.tsx` | Ordered 17-screen performer-registration viewer with step navigation and local scroll | Runtime captures, quick access, demo CSS                         |
+| `src/presentation/flows/PerformerRegistrationDemo.tsx` | Ordered 11-state performer registration with click-through navigation                 | Figma assets, quick access, demo CSS                             |
+| `src/presentation/flows/PerformerResponseDemo.tsx`     | Ordered Figma states 2.1–2.3 for the performer-response path                          | Figma assets, quick access, court binding, demo CSS              |
 | `src/presentation/flows/ProductUI.tsx`                 | Shared desktop shells, fields, drawer, modal, toast                                   | Desktop/mobile consumers and demo CSS                            |
 | `src/presentation/flows/useTransientMessage.ts`        | Self-clearing local status messages                                                   | Consumers that navigate/reset while a toast is visible           |
 | `src/styles/globals.css`                               | App shell, track selector, presentation controls, slide/modal layout                  | Runtime and responsive behavior                                  |
@@ -75,7 +76,8 @@ DemoFlowModal
 | `public/small-slides/`                                 | Runtime Small Business slide HTML and relative dependencies                           | Small config and Pencil export source                            |
 | `public/court-slides/`                                 | Runtime code-authored public court slides                                             | Court config, public assets and browser verification             |
 | `public/court-assets/`                                 | Official public marks used only by court slides                                       | Court slides and source verification                             |
-| `public/performer-registration-flow/`                  | Runtime captures for the explicitly approved temporary performer-registration flow    | Screenshot viewer and source captures                            |
+| `public/performer-registration-flow/`                  | Figma-sourced logos, flags, illustrations, and approved My Tax loading capture        | React screens, court public access                               |
+| `public/performer-response-flow/`                      | Exact Figma-sourced graphics for performer-response states 2.1–2.3                    | React screens, court public access                               |
 | `public/demo-flows/`                                   | QA-only flow screenshots                                                              | `design-qa.md`; never interactive runtime rendering              |
 | `public/winwork-logo.svg`                              | Runtime wordmark used by demo shells                                                  | Product UI and manager login                                     |
 | `pencil/*.pen`                                         | Approved editable design sources                                                      | Exported runtime/reference assets when explicitly updated        |
@@ -95,6 +97,7 @@ DemoFlowModal
 | `court-02` | `registration`           | reused as `customerRegistrationFlow`    | `RegistrationDemo`          |
 | `court-02` | `single-task`            | reused as `singleTaskFlow`              | `SingleTaskDemo`            |
 | `court-03` | `performer-registration` | reused as `performerRegistrationFlow`   | `PerformerRegistrationDemo` |
+| `court-03` | `performer-response`     | reused as `performerResponseFlow`       | `PerformerResponseDemo`     |
 | `court-04` | `performer-selection`    | reused as `performerSelectionFlow`      | `PerformerSelectionDemo`    |
 | `court-05` | `task-payment`           | reused as `paymentConfirmationFlow`     | `TaskPaymentDemo`           |
 
@@ -102,18 +105,21 @@ Quick access also exposes `task-payment` through `enterpriseDemoFlows.taskPaymen
 
 Quick access exposes `performer-selection` through `enterpriseDemoFlows.performerSelection`; `court-04` overrides its zero default bounds to align with the visible performer-selection CTA. The flow opens its target Marketplace row on the `Отклики (3)` tab and keeps all accept/reject decisions local to the modal mount.
 
-Quick access and `court-03` expose `performer-registration`. It mounts `PerformerRegistrationDemo`, renders `/performer-registration-flow/1.png` through `/17.png` in numeric order, and keeps those public runtime captures separate from QA-only `public/demo-flows/` references.
+Quick access and `court-03` expose `performer-registration`. It mounts `PerformerRegistrationDemo`, renders 11 ordered Figma-derived states, advances on any screen click, and keeps every state in one shared-height scrollable viewport. The product surfaces are React/CSS except for the explicitly approved full-screen `Мой налог` loading capture.
+
+Quick access and the second CTA on `court-03` expose `performer-response`. It mounts `PerformerResponseDemo`, renders Figma states 2.1–2.3 inside a shared-height mobile viewport, and keeps task opening, Back, response submission, and scroll reset local to the modal mount.
 
 ## Asset roles
 
-| Asset class                                | Runtime?                                 | Rule                                                                                     |
-| ------------------------------------------ | ---------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `public/enterprise-slides/*.html`          | Yes                                      | Loaded by iframe; preserve 1920 × 1080 output and relative dependencies.                 |
-| `public/enterprise-slides/*.{png,jpg,svg}` | Yes when referenced by HTML              | Keep beside exports; verify missing-resource errors.                                     |
-| `public/api-slides/*`                      | Yes when referenced by API config/HTML   | Follow the same export and dependency rules as Enterprise.                               |
-| `public/small-slides/*`                    | Yes when referenced by Small config/HTML | Follow the same export and relative-dependency rules as Enterprise.                      |
-| `public/performer-registration-flow/*.png` | Yes, public                              | Court-03 runtime captures; keep numeric ordering and GET/HEAD-only access deterministic. |
-| `public/demo-flows/*.png`                  | No                                       | Visual comparison only; do not use for interaction.                                      |
-| `public/winwork-logo.svg`                  | Yes                                      | Shared product wordmark.                                                                 |
-| `pencil/*.pen` and adjacent source assets  | No                                       | Editable design source/reference, not a browser path.                                    |
-| `/tmp/*` paths in `design-qa.md`           | No                                       | Ephemeral evidence from the recorded QA run; do not depend on them.                      |
+| Asset class                                   | Runtime?                                 | Rule                                                                                       |
+| --------------------------------------------- | ---------------------------------------- | ------------------------------------------------------------------------------------------ |
+| `public/enterprise-slides/*.html`             | Yes                                      | Loaded by iframe; preserve 1920 × 1080 output and relative dependencies.                   |
+| `public/enterprise-slides/*.{png,jpg,svg}`    | Yes when referenced by HTML              | Keep beside exports; verify missing-resource errors.                                       |
+| `public/api-slides/*`                         | Yes when referenced by API config/HTML   | Follow the same export and dependency rules as Enterprise.                                 |
+| `public/small-slides/*`                       | Yes when referenced by Small config/HTML | Follow the same export and relative-dependency rules as Enterprise.                        |
+| `public/performer-registration-flow/assets/*` | Yes, public                              | Exact Figma graphics and approved My Tax capture; keep GET/HEAD-only access deterministic. |
+| `public/performer-response-flow/assets/*`     | Yes, public                              | Exact Figma graphics for states 2.1–2.3; keep GET/HEAD-only access deterministic.          |
+| `public/demo-flows/*.png`                     | No                                       | Visual comparison only; do not use for interaction.                                        |
+| `public/winwork-logo.svg`                     | Yes                                      | Shared product wordmark.                                                                   |
+| `pencil/*.pen` and adjacent source assets     | No                                       | Editable design source/reference, not a browser path.                                      |
+| `/tmp/*` paths in `design-qa.md`              | No                                       | Ephemeral evidence from the recorded QA run; do not depend on them.                        |

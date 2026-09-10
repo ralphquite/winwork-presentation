@@ -304,6 +304,28 @@ The source and implementation were opened together in the same browser-rendered 
 - The performer-registration CTA still opened its dialog, `Escape` closed it and restored focus, and keyboard navigation loaded `court-02`, `court-03`, and `court-04` correctly. Browser evidence: `/tmp/court-03-customers-desktop.png` and `/tmp/court-03-customers-compact.png`.
 - `pnpm check` passed the documentation, formatting, lint, types, 30 access-gateway assertions, and both production builds. The production build retains the existing non-blocking bundle-size warning.
 
+### Iteration 33 — passed
+
+- The legacy 17-capture performer-registration viewer was replaced with 11 ordered states from the approved Figma file. Ten states are React/CSS product surfaces; the explicitly requested `Мой налог` loading state is the exact 430 × 979 px Figma capture. Every host exposes the same bounded viewport, long marketplace/citizenship/personal-data states scroll vertically, and changing state resets scroll to the top.
+- Company marks, citizenship icons, the `Завершите регистрацию` illustration, and the `Вы зарегистрировались` illustration now use exact individually exported Figma raster assets without CSS sprite offsets or improvised icon geometry. Visual QA covered the top and bottom of the marketplace list and the complete scrollable country list.
+- Browser QA passed all 11 click-anywhere transitions, last-state stability, reset to state 1, close/reopen, `Escape`, focus restoration, and a 390 × 844 narrow host. The desktop viewport measured 430 × 979 px in every state; long-state scroll heights were 1360 px for Marketplace, 1328 px for citizenship, and 1114 px for personal data. The completed state is clipped to the shared 979 px height so its success sheet remains visible at the bottom. Every rendered image had non-zero natural dimensions, with no failed requests or HTTP error responses.
+- Evidence: `/tmp/winwork-registration-qa-01.png`, `/tmp/winwork-registration-qa-04.png`, `/tmp/winwork-registration-qa-04-bottom.png`, `/tmp/winwork-registration-qa-05.png`, `/tmp/winwork-registration-qa-05-bottom.png`, `/tmp/winwork-registration-qa-09.png`, `/tmp/winwork-registration-qa-11.png`, and `/tmp/winwork-registration-qa-narrow.png`.
+- `pnpm check` passed the documentation contract, repository-wide Prettier, ESLint, TypeScript, 30 access-gateway assertions, and both production builds. The existing bundle-size warning remains non-blocking.
+
+### Iteration 34 — passed
+
+- Performer-registration login states now show `Войдите в приложение Win Work`, and the legal acceptance copy names the visible `Войти` button without the obsolete `KDV ID` label.
+- The shared `Мой налог` panel on states 6 and 8 now uses the exact clipped 150 × 119 px Figma export from node `10:1550`. Its image bounds match the panel bounds on both states, so the seal and lower ribbon remain fully visible and centered.
+- Playwright QA passed the login-copy assertions and rendered states 1, 6, and 8 at the shared 430 × 979 px viewport without console errors. Evidence: `/tmp/winwork-registration-fixes/01-login.png`, `/tmp/winwork-registration-fixes/06-work-format.png`, and `/tmp/winwork-registration-fixes/08-tax-connect.png`.
+
+### Iteration 35 — passed
+
+- The `performer-response` placeholder was replaced with the three approved Figma states 2.1–2.3: Marketplace, the selected merchandising task before submission, and the submitted response marked `На рассмотрении`. The surfaces are React/CSS; all visible company marks and icons use exact local Figma exports under `public/performer-response-flow/assets/`.
+- Same-viewport Playwright comparison covered all three 430 × 979 source states. The mismatch ledger is empty for content hierarchy, card geometry, date groups, sticky bottom navigation/action, response status, company card, submitted actions, typography scale, colors, and scroll position. The existing rounded modal-host boundary remains outside the product layout.
+- QA passed the target `Мерчендайзер` action, task-detail Back, response submission, final-state stability, reset, close/reopen, `Escape`, focus restoration, and a 390 × 844 narrow host. All 18 requested runtime assets returned HTTP 200 with no failed requests, framework overlay, or console warning/error.
+- The production court bundle at `/court-app/court.html?scene=court-03` opened the second CTA, completed 2.1 → 2.2 → 2.3, and restored focus to the initiating CTA after `Escape`. Evidence: `/tmp/winwork-response-render-2.1.png`, `/tmp/winwork-response-render-2.2.png`, `/tmp/winwork-response-render-2.3.png`, `/tmp/winwork-response-render-narrow.png`, and `/tmp/winwork-response-court-final.png`.
+- `pnpm check` passed the documentation contract, repository-wide Prettier, ESLint, TypeScript, 32 access-gateway assertions, and both production builds. The existing bundle-size warning remains non-blocking.
+
 ## Interaction and runtime evidence
 
 - Create object: list → `Добавить объект` → editable drawer → add manager/activity → save → new synthetic row; reset removes the new row.
@@ -314,7 +336,8 @@ The source and implementation were opened together in the same browser-rendered 
 - Legal-entity registration: sign-in → registration auto-fill → email sent → confirmed sign-in → cabinet.
 - Completed-task payment: Marketplace row 2 → all five task tabs → actions → SMS `0000` → green sent state → paid row status.
 - Performer selection: Marketplace row 2 → `ЕСТЬ ОТКЛИКИ` → `Отклики (3)` → three performer cards → local accept/reject decisions.
-- Court performer registration: `court-03` → `Показать путь исполнителя` → screenshot flow screens 1–17.
+- Court performer registration: `court-03` → `Показать путь исполнителя` → 11 Figma-derived states with click-anywhere progression, shared viewport height, and per-state vertical scrolling.
+- Court performer response: `court-03` → `Показать путь отклика исполнителя` → target task → submit response → `На рассмотрении`; Back, reset, `Escape`, focus restoration, and narrow-host adaptation passed.
 - Direct scene links, browser Back/Forward, presentation reset, modal keyboard isolation, `/enterprise`, `/api`, and `/small` all passed.
 - Fresh-tab console check had no app errors. The only warning reports that reduced motion is enabled in the test environment, which the implementation honors.
 - Fullscreen entry was attempted, but the in-app browser does not expose the Fullscreen API; the guarded fallback leaves the presentation rendered without a runtime error.
@@ -322,9 +345,9 @@ The source and implementation were opened together in the same browser-rendered 
 
 ## Implementation checklist
 
-- [x] Removed all screenshot-backed product rendering and hotspot navigation.
+- [x] Removed the legacy 17-screen screenshot renderer and hotspot navigation; retained only the explicitly approved `Мой налог` loading capture.
 - [x] Recreated the desktop and mobile product shells as React components.
-- [x] Implemented eight resettable deterministic component flows with synthetic data only, plus one explicitly approved screenshot viewer.
+- [x] Implemented resettable deterministic component flows with synthetic data only; performer registration and performer response use exact Figma assets where explicitly approved.
 - [x] Implemented real forms, tables, drawers, pickers, editor, tabs, toggles, payment sheet, and chat.
 - [x] Preserved slide entry CTAs, deep links, browser history, keyboard guards, focus restoration, and reduced motion.
 - [x] Compared source and implementation together and verified the complete primary interaction paths in the browser.

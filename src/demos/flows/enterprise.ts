@@ -10,9 +10,16 @@ export const enterpriseDemoFlows = {
   },
   performerRegistration: {
     id: 'performer-registration',
-    title: 'Flow регистрации исполнителя',
-    triggerLabel: 'Показать flow регистрации исполнителя',
-    // This screenshot-based flow is opened only from the landing-page QA panel.
+    title: 'Регистрация исполнителя',
+    triggerLabel: 'Показать регистрацию исполнителя',
+    // Quick access uses zero bounds; court-03 provides the presentation hotspot.
+    hotspot: { x: 0, y: 0, width: 0, height: 0 },
+  },
+  performerResponse: {
+    id: 'performer-response',
+    title: 'Путь отклика исполнителя',
+    triggerLabel: 'Показать путь отклика исполнителя',
+    // Quick access uses zero bounds; court-03 provides the presentation hotspot.
     hotspot: { x: 0, y: 0, width: 0, height: 0 },
   },
   createObject: {
@@ -47,7 +54,7 @@ export const enterpriseDemoFlows = {
   },
   performerSelection: {
     id: 'performer-selection',
-    title: 'Flow выбора исполнителя',
+    title: 'Выбор исполнителей',
     triggerLabel: 'Показать в WinWork: выбор исполнителя по откликам',
     // This flow is opened only from the landing-page QA panel.
     hotspot: { x: 0, y: 0, width: 0, height: 0 },

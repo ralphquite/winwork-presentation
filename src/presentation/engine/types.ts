@@ -35,6 +35,7 @@ export type SlideExternalLinkDefinition = {
 export type DemoFlowId =
   | 'registration'
   | 'performer-registration'
+  | 'performer-response'
   | 'create-object'
   | 'manager-app'
   | 'create-activity'

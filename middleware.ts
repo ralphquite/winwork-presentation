@@ -284,6 +284,7 @@ const PUBLIC_COURT_PREFIXES = [
   '/court-assets/',
   '/court-slides/',
   '/performer-registration-flow/',
+  '/performer-response-flow/',
 ] as const;
 
 function isPublicCourtPath(pathname: string) {

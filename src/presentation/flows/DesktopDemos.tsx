@@ -1665,10 +1665,8 @@ export function SingleTaskDemo() {
     null,
   );
   const [activity, setActivity] = useState<TaskActivity>('Грузчик');
-  const [citizensOnly, setCitizensOnly] = useState(false);
   const [endDate, setEndDate] = useState('2026-08-25');
   const [endTime, setEndTime] = useState('22:00');
-  const [preferredWorker, setPreferredWorker] = useState('');
   const [selectedOperations, setSelectedOperations] = useState<TaskOperation[]>(
     ['Разгрузка', 'Транспортировка'],
   );
@@ -1920,30 +1918,6 @@ export function SingleTaskDemo() {
               <h3>Название задания</h3>
               <p>{taskName}</p>
             </section>
-
-            <fieldset className="ww-task-section ww-task-additional">
-              <legend>Дополнительно</legend>
-              <Checkbox
-                checked={citizensOnly}
-                label="Только граждане РФ"
-                onChange={setCitizensOnly}
-              />
-            </fieldset>
-
-            <label className="ww-task-preferred">
-              <span>Предпочитаемый исполнитель (необязательно)</span>
-              <div>
-                <input
-                  aria-label="Предпочитаемый исполнитель"
-                  onChange={(event) =>
-                    setPreferredWorker(event.currentTarget.value)
-                  }
-                  placeholder="Исполнитель (поиск по ФИО или ИНН)"
-                  value={preferredWorker}
-                />
-                <Search aria-hidden="true" size={21} />
-              </div>
-            </label>
 
             <ProductButton
               data-demo-action="create-task"

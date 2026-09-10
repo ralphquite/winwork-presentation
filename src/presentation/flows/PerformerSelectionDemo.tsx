@@ -222,7 +222,7 @@ function ResponsesTab() {
               >
                 {decision === 'accepted' ? (
                   <>
-                    <Check aria-hidden="true" size={17} /> Принято
+                    <Check aria-hidden="true" size={17} /> Принят
                   </>
                 ) : (
                   'Принять'

@@ -52,14 +52,22 @@ Use the smallest playbook that covers the request. Paths and invariants are also
 3. Preserve the 430 × 812 product viewport, narrow-host adaptation, bottom navigation, local mutations, and reset-on-remount behavior.
 4. Check nested Back actions, main navigation, inputs, payment/chat paths, transient messages, and reference fidelity.
 
-## Change the screenshot-based performer registration flow
+## Change the performer registration flow
 
-1. Keep source captures under `screenshots_app/` and copy the approved runtime set to `public/performer-registration-flow/` without altering pixels.
-2. Keep filenames numeric and contiguous because `PerformerRegistrationDemo` derives the runtime URL from the 1-based step number.
-3. Preserve the adaptive 375 × 932 viewport, same-width image rendering, vertical overflow for long captures, scroll reset on step change, and external Previous/Next controls.
-4. Do not add hotspots to the captured product controls. The single `court-03` hotspot belongs only to the visible slide CTA.
+1. Use the approved Figma frame as the visual source and keep all 11 screens in `PerformerRegistrationDemo` in their source order.
+2. Build product surfaces with React and CSS. Store only required exported logos, flags, icons, or illustrations under `public/performer-registration-flow/assets/`; the only approved full-screen capture is the Figma-sourced `Мой налог` loading state.
+3. Preserve the shared 979 px source height, adaptive 430 px maximum width, vertical overflow for long content, and scroll reset on every step change.
+4. Keep the screen surface as the only step interaction: a click anywhere advances once, while the visual controls inside each screen remain inert.
 5. Keep `/performer-registration-flow/*` in the GET/HEAD-only public court allowlist while the flow is bound to the public `court-03` scene, and prove unrelated sales assets remain protected.
-6. Verify numeric order, all 17 image requests, Previous/Next disabled states, keyboard step navigation, reset, close/reopen, `Escape`, focus restoration, scrolling on long screens, and a narrow host viewport.
+6. Verify all 11 screens in order, click-through navigation, last-screen stability, reset, close/reopen, `Escape`, focus restoration, scrolling on long screens, equal viewport height, public assets, and a narrow host viewport.
+
+## Change the performer response flow
+
+1. Use approved Figma states 2.1–2.3 as the visual and copy source; keep the Marketplace, task detail, and submitted-response states in that order.
+2. Build the surfaces with semantic React controls and CSS. Store the exact exported images and icons under `public/performer-response-flow/assets/`; do not render the reference screens as screenshots.
+3. Preserve the adaptive 430 × 979 viewport, local screen state, Back behavior, target-task transition, submit transition, scroll reset, and submitted-state stability.
+4. Keep `/performer-response-flow/*` in the GET/HEAD-only public court allowlist while the flow is bound to public `court-03`, and prove unrelated sales assets remain protected.
+5. Verify quick access and the `court-03` CTA, states 2.1–2.3 against their Figma references, reset, close/reopen, `Escape`, focus restoration, keyboard isolation, public assets, and a narrow host viewport.
 
 ## Change presentation navigation or reset behavior
 

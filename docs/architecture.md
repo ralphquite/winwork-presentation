@@ -54,7 +54,7 @@ SceneRenderer (type dispatch + transition + error boundary)
 
 ## Access gateway
 
-Корневой `middleware.ts` работает в Vercel Edge runtime до cache и применяется ко всем путям, включая Vite assets, экспортированные HTML-слайды и их относительные изображения. Публичный allowlist ограничен `/court`, `/court-app/*`, `/court-slides/*`, `/court-assets/*`, `/performer-registration-flow/*` и `/winwork-logo.svg`; он принимает только `GET`/`HEAD`. Остальные пути остаются fail-closed, а `POST /api/auth/login` передаётся одноимённой Edge Function без чтения body. Общая криптография и cookie policy находятся в `auth/session.ts`. `pnpm dev` запускает локальный основной Vite SPA; полный access flow и отдельный court rewrite проверяются через `vercel dev`.
+Корневой `middleware.ts` работает в Vercel Edge runtime до cache и применяется ко всем путям, включая Vite assets, экспортированные HTML-слайды и их относительные изображения. Публичный allowlist ограничен `/court`, `/court-app/*`, `/court-slides/*`, `/court-assets/*`, `/performer-registration-flow/*`, `/performer-response-flow/*` и `/winwork-logo.svg`; он принимает только `GET`/`HEAD`. Остальные пути остаются fail-closed, а `POST /api/auth/login` передаётся одноимённой Edge Function без чтения body. Общая криптография и cookie policy находятся в `auth/session.ts`. `pnpm dev` запускает локальный основной Vite SPA; полный access flow и отдельный court rewrite проверяются через `vercel dev`.
 
 - `WINWORK_ACCESS_PASSWORD` — единственный credential, который вводит отдел продаж.
 - `WINWORK_SESSION_SECRET` — отдельный случайный ключ подписи, не передаваемый пользователям.
@@ -111,9 +111,9 @@ SceneRenderer (type dispatch + transition + error boundary)
 
 ## Exported slides и demo-flow
 
-`src/presentation/config/enterprise.ts` программно сопоставляет 17 элементов массива с сохранёнными стабильными IDs и путями. Новый `ent-18` расположен после `ent-13`, существующие `ent-14`, `ent-16` и `ent-17` не переименованы, а удалённый `ent-15` остаётся недоступен. `src/presentation/config/api.ts` задаёт восемь сцен со стабильными IDs `api-01`, `api-02`, `api-04` … `api-06`, `api-12`, `api-15` и `api-17`; удалённый `api-03` остаётся недоступен. `src/presentation/config/small.ts` задаёт 12 сцен `smb-01` … `smb-12`, а `src/presentation/config/court.ts` — пять сцен `court-01` … `court-05`. `PencilSlide` загружает соответствующий HTML из track-specific директории в `public/` и масштабирует фиксированный canvas 1920 × 1080 по доступной области через `ResizeObserver`. Court-слайды собраны кодом в HTML/CSS и используют тот же renderer; прозрачная React-ссылка на первом слайде открывает официальный реестр ФНС, две hotspot-кнопки на втором слайде открывают регистрацию и размещение задания, CTA третьего слайда — путь исполнителя, CTA четвёртого — выбор исполнителя, а CTA пятого — подтверждение оплаты.
+`src/presentation/config/enterprise.ts` программно сопоставляет 17 элементов массива с сохранёнными стабильными IDs и путями. Новый `ent-18` расположен после `ent-13`, существующие `ent-14`, `ent-16` и `ent-17` не переименованы, а удалённый `ent-15` остаётся недоступен. `src/presentation/config/api.ts` задаёт восемь сцен со стабильными IDs `api-01`, `api-02`, `api-04` … `api-06`, `api-12`, `api-15` и `api-17`; удалённый `api-03` остаётся недоступен. `src/presentation/config/small.ts` задаёт 12 сцен `smb-01` … `smb-12`, а `src/presentation/config/court.ts` — пять сцен `court-01` … `court-05`. `PencilSlide` загружает соответствующий HTML из track-specific директории в `public/` и масштабирует фиксированный canvas 1920 × 1080 по доступной области через `ResizeObserver`. Court-слайды собраны кодом в HTML/CSS и используют тот же renderer; прозрачная React-ссылка на первом слайде открывает официальный реестр ФНС, две hotspot-кнопки на втором слайде открывают регистрацию и размещение задания, две CTA третьего слайда — регистрацию и путь отклика исполнителя, CTA четвёртого — выбор исполнителя, а CTA пятого — подтверждение оплаты.
 
-Десять track scenes имеют одиннадцать hotspot bindings на девять slide-bound реализаций:
+Десять track scenes имеют двенадцать hotspot bindings на десять slide-bound React-компонентов:
 
 | Track          | Scene      | Flow                     |
 | -------------- | ---------- | ------------------------ |
@@ -126,6 +126,7 @@ SceneRenderer (type dispatch + transition + error boundary)
 | Court          | `court-02` | `registration`           |
 | Court          | `court-02` | `single-task`            |
 | Court          | `court-03` | `performer-registration` |
+| Court          | `court-03` | `performer-response`     |
 | Court          | `court-04` | `performer-selection`    |
 | Court          | `court-05` | `task-payment`           |
 
@@ -137,7 +138,9 @@ SceneRenderer (type dispatch + transition + error boundary)
 
 `performer-selection` доступен на главной QA-панели и из CTA `court-04`. Он переиспользует общую страницу Marketplace и стили task drawer из flow оплаты, открывает задание со статусом `ЕСТЬ ОТКЛИКИ`, сразу показывает вкладку `Отклики (3)` с тремя синтетическими карточками исполнителей и локальными действиями `Принять` / `Отказать`.
 
-`performer-registration` доступен как standalone quick-access flow на главной странице и из CTA `court-03`. Это явно одобренное временное исключение из component-only правила: `PerformerRegistrationDemo.tsx` показывает 17 runtime-скриншотов по порядку внутри адаптивной рамки 375 × 932, переключает шаги кнопками/стрелками клавиатуры и оставляет вертикальный скролл внутри длинного кадра. Захваченные элементы интерфейса не объявляются интерактивными; единственный hotspot принадлежит CTA презентационного слайда, а не содержимому скриншотов.
+`performer-registration` доступен как standalone quick-access flow на главной странице и из CTA `court-03`. `PerformerRegistrationDemo.tsx` воспроизводит 11 утверждённых Figma-состояний внутри общего viewport высотой 979 px. Основные поверхности собраны React/CSS с точными растровыми логотипами, флагами и иллюстрациями из Figma; экран загрузки `Мой налог` по явному требованию использует утверждённый full-screen capture. Клик по любой точке поверхности переводит на следующий экран, визуальные controls внутри остаются инертными, а длинное содержимое прокручивается вертикально. Локальный индекс и scroll-reset сбрасываются общей remount-границей модального окна.
+
+`performer-response` доступен на главной QA-панели и из второй CTA `court-03`. `PerformerResponseDemo.tsx` воспроизводит утверждённые Figma-состояния 2.1–2.3 в viewport 430 × 979 px: Marketplace, карточку задания до отклика и локальное состояние «На рассмотрении». Переходы выполняют семантические кнопки целевого задания и отклика, Back возвращает к Marketplace, а remount модального окна сбрасывает экран и scroll position. Сетевых вызовов, реального отклика и пользовательских данных нет.
 
 ## Product demo layer
 
@@ -146,30 +149,32 @@ SceneRenderer (type dispatch + transition + error boundary)
 - `TaskPaymentDemo.tsx` содержит standalone desktop flow оплаты выполненного задания с локальными tabs, SMS и сменой статуса.
 - `PerformerSelectionDemo.tsx` содержит standalone desktop flow выбора исполнителя по трём откликам с локальными решениями по каждой карточке.
 - `ManagerAppDemo.tsx` содержит один bounded mobile flow с внутренним screen state для login, orders, task creation, order details, payment, settings, notifications и chats.
-- `PerformerRegistrationDemo.tsx` содержит временный screenshot-based mobile flow с локальным индексом экрана и scroll-reset при смене шага.
+- `PerformerRegistrationDemo.tsx` содержит 11-экранный Figma-derived mobile flow с локальным индексом, click-through навигацией и scroll-reset при смене шага.
+- `PerformerResponseDemo.tsx` содержит трёхэкранный Figma-derived flow отклика исполнителя с локальным screen state и scroll reset.
 - `ProductUI.tsx` владеет общими desktop primitives; `demo-product.css` — product-specific visual layer.
 - `MarketplacePage.tsx` задаёт общую desktop-страницу Маркетплейса для `single-task`, `performer-selection` и `task-payment`: заголовок, действия, вкладки, фильтры, таблицу и пагинацию. `marketplaceData.ts` содержит общие синтетические строки; сценарии выбора и оплаты подставляют своё целевое задание и локальное действие открытия. Мобильный Маркетплейс управляющего остаётся отдельной поверхностью.
 - Во всех трёх desktop-сценариях Маркетплейса шторки передаются через `DesktopShell.overlay` и рендерятся непосредственно внутри product viewport, вне прокручиваемого `main`. Затемнение закрывает всю оболочку; header, sidebar и основной контент получают `inert`, а скролл фона блокируется на время открытия шторки. Содержимое правой шторки прокручивается независимо.
 - `useTransientMessage.ts` очищает success/status messages по таймеру и при размонтировании.
 
-Desktop surface сохраняет минимальный рабочий canvas внутри overflow-safe container. Mobile surface имеет исходный viewport 430 × 812 и переходит в edge-to-edge режим на узком host viewport.
+Desktop surface сохраняет минимальный рабочий canvas внутри overflow-safe container. Manager mobile surface имеет исходный viewport 430 × 812, а performer registration и performer response — общий viewport 430 × 979; все мобильные surfaces переходят в edge-to-edge режим на узком host viewport.
 
 ## Asset model
 
-| Path                                       | Role                                                                          |
-| ------------------------------------------ | ----------------------------------------------------------------------------- |
-| `public/enterprise-slides/*.html`          | Runtime slide exports loaded by iframe                                        |
-| `public/enterprise-slides/*.{png,svg,...}` | Runtime dependencies referenced relatively by exported HTML                   |
-| `public/api-slides/*`                      | Runtime API / Embedded exports and relative dependencies                      |
-| `public/small-slides/*`                    | Runtime Small Business exports and relative dependencies                      |
-| `public/court-slides/*`                    | Public code-authored court slides and shared stylesheet                       |
-| `public/court-assets/*`                    | Public official third-party marks used by the court slides                    |
-| `public/performer-registration-flow/*.png` | Public runtime captures for the explicitly approved temporary performer flow  |
-| `public/winwork-logo.svg`                  | Runtime product wordmark                                                      |
-| `public/demo-flows/*.png`                  | QA-only visual references; forbidden as interactive product surfaces          |
-| `pencil/*.pen`                             | Approved editable design sources; not browser assets                          |
-| `design-qa.md`                             | Recorded comparison and interaction evidence for the current Enterprise flows |
-| `base_documentation/`                      | Historical bootstrap intent                                                   |
+| Path                                          | Role                                                                          |
+| --------------------------------------------- | ----------------------------------------------------------------------------- |
+| `public/enterprise-slides/*.html`             | Runtime slide exports loaded by iframe                                        |
+| `public/enterprise-slides/*.{png,svg,...}`    | Runtime dependencies referenced relatively by exported HTML                   |
+| `public/api-slides/*`                         | Runtime API / Embedded exports and relative dependencies                      |
+| `public/small-slides/*`                       | Runtime Small Business exports and relative dependencies                      |
+| `public/court-slides/*`                       | Public code-authored court slides and shared stylesheet                       |
+| `public/court-assets/*`                       | Public official third-party marks used by the court slides                    |
+| `public/performer-registration-flow/assets/*` | Public Figma-sourced graphics plus the approved My Tax loading capture        |
+| `public/performer-response-flow/assets/*`     | Public exact Figma graphics for performer-response states 2.1–2.3             |
+| `public/winwork-logo.svg`                     | Runtime product wordmark                                                      |
+| `public/demo-flows/*.png`                     | QA-only visual references; forbidden as interactive product surfaces          |
+| `pencil/*.pen`                                | Approved editable design sources; not browser assets                          |
+| `design-qa.md`                                | Recorded comparison and interaction evidence for the current Enterprise flows |
+| `base_documentation/`                         | Historical bootstrap intent                                                   |
 
 При замене HTML-экспорта все относительные assets должны оставаться рядом с ним. Runtime никогда не должен зависеть от `pencil/` или `/tmp`.
 

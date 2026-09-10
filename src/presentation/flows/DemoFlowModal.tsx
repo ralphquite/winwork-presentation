@@ -33,8 +33,11 @@ export function DemoFlowModal({
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const prefersReducedMotion = useReducedMotion();
   const isMobileFlow =
-    flow.id === 'manager-app' || flow.id === 'performer-registration';
-  const isScreenshotFlow = flow.id === 'performer-registration';
+    flow.id === 'manager-app' ||
+    flow.id === 'performer-registration' ||
+    flow.id === 'performer-response';
+  const usesTallMobileViewport =
+    flow.id === 'performer-registration' || flow.id === 'performer-response';
 
   useEffect(() => {
     if (!isOpen) return;
@@ -101,7 +104,7 @@ export function DemoFlowModal({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             aria-labelledby={`${flow.id}-dialog-title`}
             aria-modal="true"
-            className={`demo-flow-dialog${isMobileFlow ? ' is-mobile-demo' : ''}${isScreenshotFlow ? ' is-screenshot-demo' : ''}`}
+            className={`demo-flow-dialog${isMobileFlow ? ' is-mobile-demo' : ''}${usesTallMobileViewport ? ' is-registration-demo' : ''}`}
             exit={{
               opacity: prefersReducedMotion ? 1 : 0,
               scale: prefersReducedMotion ? 1 : 0.99,
@@ -119,24 +122,19 @@ export function DemoFlowModal({
           >
             <header className="demo-flow-header">
               <div className="demo-flow-heading">
-                <span>
-                  {isScreenshotFlow
-                    ? 'Мобильный flow по скриншотам'
-                    : 'Интерактивное демо WinWork'}
-                </span>
                 <h2 id={`${flow.id}-dialog-title`}>{flow.title}</h2>
               </div>
               <div className="demo-flow-header-actions">
                 <button
                   aria-label={
-                    isScreenshotFlow
+                    usesTallMobileViewport
                       ? 'Вернуться к первому экрану'
                       : 'Сбросить демо'
                   }
                   className="demo-flow-icon-button"
                   onClick={() => setRevision((current) => current + 1)}
                   title={
-                    isScreenshotFlow
+                    usesTallMobileViewport
                       ? 'Вернуться к первому экрану'
                       : 'Сбросить демо'
                   }

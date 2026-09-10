@@ -95,8 +95,8 @@ expect(
 );
 
 const publicPerformerRegistrationAsset = await middleware(
-  makeRequest('/performer-registration-flow/1.png', {
-    headers: { Accept: 'image/png' },
+  makeRequest('/performer-registration-flow/assets/status-wifi.svg', {
+    headers: { Accept: 'image/svg+xml' },
   }),
 );
 expect(
@@ -105,11 +105,33 @@ expect(
 );
 
 const rejectedPublicAssetPost = await middleware(
-  makeRequest('/performer-registration-flow/1.png', { method: 'POST' }),
+  makeRequest('/performer-registration-flow/assets/status-wifi.svg', {
+    method: 'POST',
+  }),
 );
 expect(
   rejectedPublicAssetPost.status === 405,
   'Public performer registration assets must reject unsupported methods',
+);
+
+const publicPerformerResponseAsset = await middleware(
+  makeRequest('/performer-response-flow/assets/status-wifi.svg', {
+    headers: { Accept: 'image/svg+xml' },
+  }),
+);
+expect(
+  publicPerformerResponseAsset.headers.get('x-middleware-next') === '1',
+  'Performer response assets used by court-03 must remain public',
+);
+
+const rejectedPerformerResponseAssetPost = await middleware(
+  makeRequest('/performer-response-flow/assets/status-wifi.svg', {
+    method: 'POST',
+  }),
+);
+expect(
+  rejectedPerformerResponseAssetPost.status === 405,
+  'Public performer response assets must reject unsupported methods',
 );
 
 const rejectedPublicPost = await middleware(

@@ -7,6 +7,7 @@ import {
 } from './DesktopDemos';
 import { ManagerAppDemo } from './ManagerAppDemo';
 import { PerformerRegistrationDemo } from './PerformerRegistrationDemo';
+import { PerformerResponseDemo } from './PerformerResponseDemo';
 import { PerformerSelectionDemo } from './PerformerSelectionDemo';
 import { RegistrationDemo } from './RegistrationDemo';
 import { TaskPaymentDemo } from './TaskPaymentDemo';
@@ -17,6 +18,8 @@ export function DemoProduct({ flowId }: { flowId: DemoFlowId }) {
       return <RegistrationDemo />;
     case 'performer-registration':
       return <PerformerRegistrationDemo />;
+    case 'performer-response':
+      return <PerformerResponseDemo />;
     case 'create-object':
       return <CreateObjectDemo />;
     case 'manager-app':

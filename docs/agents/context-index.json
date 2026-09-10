@@ -28,6 +28,7 @@
         "public/court-slides",
         "public/court-assets",
         "public/performer-registration-flow",
+        "public/performer-response-flow",
         "public/winwork-logo.svg",
         "public/favicon.svg",
         "middleware.ts",
@@ -129,7 +130,7 @@
     },
     {
       "id": "semantic-demo-ui",
-      "rule": "Interactive product demos use semantic React controls. The explicitly approved performer-registration flow is a temporary screenshot-only viewer with navigation and scrolling, while public/demo-flows PNG files remain QA references only."
+      "rule": "Product demos use component-based React surfaces with local deterministic state. Performer registration uses 11 ordered Figma-derived screens with click-through navigation and vertical scrolling; performer response uses approved Figma states 2.1-2.3 with semantic task and response actions. public/demo-flows PNG files remain QA references only."
     },
     {
       "id": "keyboard-and-focus",
@@ -152,6 +153,7 @@
       "public/court-slides",
       "public/court-assets",
       "public/performer-registration-flow",
+      "public/performer-response-flow",
       "public/winwork-logo.svg",
       "public/favicon.svg"
     ],
@@ -318,6 +320,7 @@
         "public/court-slides",
         "public/court-assets",
         "public/performer-registration-flow",
+        "public/performer-response-flow",
         "pencil/preesentation_big_business.pen",
         "pencil/preesentation_api_business.pen",
         "pencil/preesentation_small_business.pen",
@@ -355,6 +358,7 @@
         "src/presentation/config/enterprise.ts",
         "src/presentation/config/small.ts",
         "src/presentation/slides/PencilSlide.tsx",
+        "src/presentation/flows/PerformerResponseDemo.tsx",
         "src/styles/globals.css"
       ],
       "invariantIds": [
@@ -445,14 +449,14 @@
       ]
     },
     {
-      "id": "performer-registration-screenshot-flow",
-      "intent": "Change the explicitly approved temporary performer-registration flow, its court-03 binding, ordered captures, 375 x 932 viewport, navigation, or per-screen scrolling.",
+      "id": "performer-registration-flow",
+      "intent": "Change the 11-state performer-registration flow, its court-03 binding, Figma-derived raster assets, approved My Tax loading capture, click-through navigation, shared viewport height, or per-screen scrolling.",
       "triggers": [
         "performer registration",
         "performer-registration",
-        "registration screenshot flow",
-        "screenshots_app",
-        "375x932"
+        "registration flow",
+        "Figma registration screens",
+        "430x979"
       ],
       "readFirst": [
         "src/presentation/flows/PerformerRegistrationDemo.tsx",
@@ -460,7 +464,6 @@
         "src/styles/demo-product.css"
       ],
       "changeWith": [
-        "screenshots_app",
         "public/performer-registration-flow",
         "src/demos/flows/enterprise.ts",
         "src/presentation/engine/types.ts",
@@ -480,7 +483,47 @@
       ],
       "verification": [
         "pnpm check",
-        "Verify court-03 CTA alignment and open behavior, all 17 screens in numeric order, public asset access, protected-asset isolation, Previous/Next and keyboard navigation, long-screen vertical scrolling, reset, close/reopen, focus restoration, Escape, and a narrow host viewport."
+        "Verify court-03 CTA alignment and open behavior, all 11 screens in order, public asset access, protected-asset isolation, click-anywhere navigation, last-screen stability, equal viewport height, long-screen vertical scrolling, reset, close/reopen, focus restoration, Escape, and a narrow host viewport."
+      ]
+    },
+    {
+      "id": "performer-response-flow",
+      "intent": "Change Figma states 2.1-2.3 in the performer-response flow, its quick-access or court-03 binding, exact runtime assets, 430x979 viewport, local transitions, Back behavior, or scroll reset.",
+      "triggers": [
+        "performer response",
+        "performer-response",
+        "response flow",
+        "Путь отклика исполнителя",
+        "Figma 2.1",
+        "Figma 2.2",
+        "Figma 2.3"
+      ],
+      "readFirst": [
+        "src/presentation/flows/PerformerResponseDemo.tsx",
+        "src/presentation/flows/DemoFlowModal.tsx",
+        "src/styles/demo-product.css"
+      ],
+      "changeWith": [
+        "public/performer-response-flow",
+        "src/demos/flows/enterprise.ts",
+        "src/presentation/engine/types.ts",
+        "src/presentation/flows/DemoProduct.tsx",
+        "src/app/TrackSelector.tsx",
+        "src/presentation/config/court.ts",
+        "middleware.ts",
+        "scripts/check-auth.mjs",
+        "design-qa.md"
+      ],
+      "invariantIds": [
+        "static-demo-only",
+        "resettable-local-state",
+        "keyboard-and-focus",
+        "approved-content",
+        "asset-separation"
+      ],
+      "verification": [
+        "pnpm check",
+        "Verify quick access and court-03 CTA open behavior, Figma states 2.1-2.3 in order, target-task navigation, Back, response submission, submitted-state stability, scroll reset, public asset access, protected-asset isolation, reset, close/reopen, focus restoration, Escape, keyboard isolation, and a narrow host viewport."
       ]
     },
     {

@@ -1,13 +1,4 @@
-import {
-  Check,
-  Download,
-  Eye,
-  FileText,
-  Info,
-  ShieldAlert,
-  Star,
-  X,
-} from 'lucide-react';
+import { Check, Download, Eye, FileText, Info, Star, X } from 'lucide-react';
 import { useState } from 'react';
 
 import { MARKETPLACE_TASKS, type MarketplaceTask } from './marketplaceData';
@@ -15,6 +6,7 @@ import { MarketplacePage } from './MarketplacePage';
 import { DesktopShell, ProductButton } from './ProductUI';
 
 const PAYMENT_TASK_TITLE = 'Грузчик. Разгрузка товара на складе';
+const PAYMENT_TASK_REWARD = '8 250,00 ₽';
 
 const PAYMENT_MARKETPLACE_ROWS: readonly MarketplaceTask[] =
   MARKETPLACE_TASKS.map((task, index) =>
@@ -28,7 +20,7 @@ const PAYMENT_MARKETPLACE_ROWS: readonly MarketplaceTask[] =
           number: '8f3eba07',
           taxId: '770000000005',
           title: PAYMENT_TASK_TITLE,
-          total: '100 000,00 ₽',
+          total: PAYMENT_TASK_REWARD,
           status: 'ВЫПОЛНЕН',
         }
       : task,
@@ -84,7 +76,7 @@ function TaskDetailsTab() {
       <dl className="ww-payment-detail-grid">
         <div>
           <dt>Вознаграждение, ₽</dt>
-          <dd>100 000,00 ₽</dd>
+          <dd>{PAYMENT_TASK_REWARD}</dd>
         </div>
         <div>
           <dt>Тип оплаты</dt>
@@ -195,27 +187,13 @@ function ActionTab({
         </div>
         <div>
           <dt>Вознаграждение, ₽</dt>
-          <dd>100 000,00 ₽</dd>
+          <dd>{PAYMENT_TASK_REWARD}</dd>
         </div>
         <div className="is-notes">
           <dt>Дополнительная информация</dt>
           <dd>Доехать на автобусе</dd>
         </div>
       </dl>
-      <section className="ww-payment-risk">
-        <ShieldAlert aria-hidden="true" size={22} />
-        <div>
-          <strong>Есть риски</strong>
-          <ul>
-            <li>
-              <b>Аннулированные чеки.</b> Исполнитель ранее аннулировал ваши
-              чеки.
-            </li>
-          </ul>
-          <ProductButton variant="secondary">Сформировать отчет</ProductButton>
-        </div>
-      </section>
-
       {paymentStep === 'ready' ? (
         <div className="ww-payment-actions-footer">
           <ProductButton data-demo-action="confirm-payment" onClick={onConfirm}>

@@ -552,16 +552,6 @@ select {
   min-width: 0;
 }
 
-.demo-flow-heading > span {
-  display: block;
-  margin-bottom: 4px;
-  color: #75a2ff;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-}
-
 .demo-flow-heading h2 {
   overflow: hidden;
   margin: 0;
@@ -813,10 +803,6 @@ select {
 
   .track-selector-brand {
     width: min(158px, 100%);
-  }
-
-  .demo-flow-heading > span {
-    display: none;
   }
 
   .demo-flow-header {

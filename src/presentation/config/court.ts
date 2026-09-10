@@ -15,8 +15,13 @@ const singleTaskFlow = {
 
 const performerRegistrationFlow = {
   ...enterpriseDemoFlows.performerRegistration,
-  hotspot: { x: 104, y: 584, width: 423, height: 76 },
+  hotspot: { x: 104, y: 584, width: 436, height: 76 },
   triggerLabel: 'Показать путь исполнителя',
+} as const;
+
+const performerResponseFlow = {
+  ...enterpriseDemoFlows.performerResponse,
+  hotspot: { x: 556, y: 584, width: 440, height: 76 },
 } as const;
 
 const paymentConfirmationFlow = {
@@ -48,7 +53,7 @@ const courtSlides = [
   },
   {
     title: 'Открытый доступ для исполнителей',
-    demoFlows: [performerRegistrationFlow],
+    demoFlows: [performerRegistrationFlow, performerResponseFlow],
   },
   {
     title: 'Выбор исполнителей из откликов',
