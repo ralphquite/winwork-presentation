@@ -8766,7 +8766,7 @@
                   "name": "Временная блокировка Icon",
                   "width": 28,
                   "height": 28,
-                  "icon": "lock",
+                  "icon": "russian-ruble",
                   "library": "lucide",
                   "fill": "$h:neutral-600"
                 }
@@ -8785,7 +8785,7 @@
                   "id": "tnlZb",
                   "name": "Временная блокировка Title",
                   "fill": "$h:neutral-950",
-                  "content": "Временная блокировка",
+                  "content": "Одинаковые выплаты",
                   "fontFamily": "$h:font-primary",
                   "fontSize": 22,
                   "fontWeight": "700"
@@ -8797,7 +8797,7 @@
                   "fill": "$h:neutral-600",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
-                  "content": "отдельные исполнители — на заданный срок",
+                  "content": "Проверяет суммы выплат по актам одному и тому же исполнителю",
                   "lineHeight": 1.3,
                   "fontFamily": "$h:font-primary",
                   "fontSize": 17,
@@ -14052,9 +14052,9 @@
     },
     {
       "type": "frame",
-      "id": "ygsEo",
+      "id": "y6mu2I",
       "x": 20361,
-      "y": 2969,
+      "y": 1759,
       "name": "РАЗДЕЛ E — ПОДКЛЮЧЕНИЕ И ПРИВЛЕЧЕНИЕ / ENT-19",
       "clip": true,
       "width": 1920,
@@ -14067,7 +14067,7 @@
         {
           "type": "rectangle",
           "cornerRadius": 2,
-          "id": "S3gqgM",
+          "id": "b8fbVL",
           "x": 147,
           "y": 298,
           "name": "Scenario Timeline",
@@ -14077,7 +14077,7 @@
         },
         {
           "type": "text",
-          "id": "QWFFt",
+          "id": "y6FMqH",
           "x": 120,
           "y": 58,
           "name": "Section Indicator",
@@ -14089,7 +14089,7 @@
           "letterSpacing": 1.1
         },
         {
-          "id": "Vm2KL",
+          "id": "KRt0T",
           "type": "ref",
           "ref": "CmSfJ",
           "name": "WinWork Logo",
@@ -14100,7 +14100,7 @@
         },
         {
           "type": "frame",
-          "id": "UEHTN",
+          "id": "u4x5g",
           "x": 120,
           "y": 765,
           "name": "Business Message",
@@ -14117,7 +14117,7 @@
           "children": [
             {
               "type": "icon",
-              "id": "fHlkp",
+              "id": "Lpaom",
               "name": "Business Message Icon",
               "width": 24,
               "height": 24,
@@ -14127,7 +14127,7 @@
             },
             {
               "type": "text",
-              "id": "xW3Um",
+              "id": "BydWJ",
               "name": "Business Message Text",
               "fill": "#FFFFFF",
               "textGrowth": "fixed-width",
@@ -14142,7 +14142,7 @@
         },
         {
           "type": "text",
-          "id": "nuB8u",
+          "id": "ADrQY",
           "x": 120,
           "y": 892,
           "name": "Connection Flow Label",
@@ -14155,7 +14155,7 @@
         },
         {
           "type": "frame",
-          "id": "qMWhW",
+          "id": "hF5XG",
           "x": 120,
           "y": 920,
           "name": "Connection Flow",
@@ -14166,7 +14166,7 @@
           "children": [
             {
               "type": "frame",
-              "id": "Fjm1O",
+              "id": "NqCSr",
               "name": "Flow Step 1",
               "width": "fill_container",
               "height": 64,
@@ -14180,7 +14180,7 @@
               "children": [
                 {
                   "type": "icon",
-                  "id": "B875qv",
+                  "id": "aCjC8",
                   "name": "Flow Step 1 Icon",
                   "width": 22,
                   "height": 22,
@@ -14190,7 +14190,7 @@
                 },
                 {
                   "type": "text",
-                  "id": "muHf8",
+                  "id": "zsL8J",
                   "name": "Flow Step 1 Text",
                   "fill": "$h:neutral-950",
                   "content": "QR / SMS / ссылка / реестр",
@@ -14202,7 +14202,7 @@
             },
             {
               "type": "icon",
-              "id": "s8uEXs",
+              "id": "VHybI",
               "name": "Flow Arrow 1",
               "width": 20,
               "height": 20,
@@ -14212,7 +14212,7 @@
             },
             {
               "type": "frame",
-              "id": "bdl0t",
+              "id": "QXmiT",
               "name": "Flow Step 2",
               "width": "fill_container",
               "height": 64,
@@ -14226,7 +14226,7 @@
               "children": [
                 {
                   "type": "icon",
-                  "id": "KiXRY",
+                  "id": "q5UMtN",
                   "name": "Flow Step 2 Icon",
                   "width": 22,
                   "height": 22,
@@ -14236,7 +14236,7 @@
                 },
                 {
                   "type": "text",
-                  "id": "d1E0Z",
+                  "id": "Qix8c",
                   "name": "Flow Step 2 Text",
                   "fill": "$h:neutral-950",
                   "content": "Регистрация исполнителя",
@@ -14248,7 +14248,7 @@
             },
             {
               "type": "icon",
-              "id": "ViCS5",
+              "id": "DAjj7",
               "name": "Flow Arrow 2",
               "width": 20,
               "height": 20,
@@ -14258,7 +14258,7 @@
             },
             {
               "type": "frame",
-              "id": "RpTja",
+              "id": "U3UpO",
               "name": "Flow Step 3",
               "width": "fill_container",
               "height": 64,
@@ -14272,7 +14272,7 @@
               "children": [
                 {
                   "type": "icon",
-                  "id": "A3wOpN",
+                  "id": "Ink6z",
                   "name": "Flow Step 3 Icon",
                   "width": 22,
                   "height": 22,
@@ -14282,7 +14282,7 @@
                 },
                 {
                   "type": "text",
-                  "id": "jWJcp",
+                  "id": "ohjF0",
                   "name": "Flow Step 3 Text",
                   "fill": "$h:neutral-950",
                   "content": "Видит ваши задания",
@@ -14294,7 +14294,7 @@
             },
             {
               "type": "icon",
-              "id": "wNhHL",
+              "id": "q8Q1S",
               "name": "Flow Arrow 3",
               "width": 20,
               "height": 20,
@@ -14304,7 +14304,7 @@
             },
             {
               "type": "frame",
-              "id": "Q87gk",
+              "id": "G8MYLy",
               "name": "Flow Step 4",
               "width": "fill_container",
               "height": 64,
@@ -14318,7 +14318,7 @@
               "children": [
                 {
                   "type": "icon",
-                  "id": "s1LQfP",
+                  "id": "PjeJA",
                   "name": "Flow Step 4 Icon",
                   "width": 22,
                   "height": 22,
@@ -14328,7 +14328,7 @@
                 },
                 {
                   "type": "text",
-                  "id": "u5VKL",
+                  "id": "d1wjcP",
                   "name": "Flow Step 4 Text",
                   "fill": "$h:neutral-950",
                   "content": "Откликается",
@@ -14343,7 +14343,7 @@
         {
           "type": "rectangle",
           "cornerRadius": 21,
-          "id": "mTkTk",
+          "id": "h23NEb",
           "x": 1182,
           "y": 147,
           "fill": {
@@ -14357,7 +14357,7 @@
         },
         {
           "type": "frame",
-          "id": "FBbWa",
+          "id": "P4tKL",
           "x": 120,
           "y": 253,
           "name": "01 Number",
@@ -14370,7 +14370,7 @@
           "children": [
             {
               "type": "text",
-              "id": "Vn39F",
+              "id": "d9LhE",
               "name": "01 Label",
               "fill": "#FFFFFF",
               "content": "01",
@@ -14382,7 +14382,7 @@
         },
         {
           "type": "text",
-          "id": "gj4Bm",
+          "id": "HnACd",
           "x": 120,
           "y": 125,
           "name": "01 Title",
@@ -14396,7 +14396,7 @@
         },
         {
           "type": "frame",
-          "id": "H5WpT",
+          "id": "i1g9s",
           "x": 204,
           "y": 269,
           "name": "Frame 5",
@@ -14406,7 +14406,7 @@
           "children": [
             {
               "type": "text",
-              "id": "QPBVr",
+              "id": "TCQ5N",
               "name": "01 Title",
               "fill": "$h:neutral-950",
               "textGrowth": "fixed-width",
@@ -14418,7 +14418,7 @@
             },
             {
               "type": "text",
-              "id": "PcwFB",
+              "id": "skSal",
               "name": "01 Description",
               "fill": "$h:neutral-600",
               "textGrowth": "fixed-width",
@@ -14431,7 +14431,7 @@
             },
             {
               "type": "frame",
-              "id": "jdnkz",
+              "id": "ZsBaa",
               "name": "Registry Conversion Flow",
               "width": "fill_container",
               "height": 48,
@@ -14440,7 +14440,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "N7mLwg",
+                  "id": "HHiiV",
                   "name": "База исполнителей",
                   "width": "fill_container",
                   "height": 48,
@@ -14452,7 +14452,7 @@
                   "children": [
                     {
                       "type": "icon",
-                      "id": "gxDlW",
+                      "id": "xCAa2",
                       "name": "База исполнителей Icon",
                       "width": 19,
                       "height": 19,
@@ -14462,7 +14462,7 @@
                     },
                     {
                       "type": "text",
-                      "id": "L8lCZ",
+                      "id": "EYWop",
                       "name": "База исполнителей Text",
                       "fill": "$h:neutral-800",
                       "content": "База исполнителей",
@@ -14474,7 +14474,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "dJrYs",
+                  "id": "deSbo",
                   "name": "SMS / реестр",
                   "width": "fill_container",
                   "height": 48,
@@ -14486,7 +14486,7 @@
                   "children": [
                     {
                       "type": "icon",
-                      "id": "HJF8J",
+                      "id": "dWnth",
                       "name": "SMS / реестр Icon",
                       "width": 19,
                       "height": 19,
@@ -14496,7 +14496,7 @@
                     },
                     {
                       "type": "text",
-                      "id": "uMn4U",
+                      "id": "Y7eRM",
                       "name": "SMS / реестр Text",
                       "fill": "$h:neutral-800",
                       "content": "SMS / реестр ИНН",
@@ -14508,7 +14508,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "C6yZEj",
+                  "id": "z6NFe",
                   "name": "Подключённый пул",
                   "width": "fill_container",
                   "height": 48,
@@ -14520,7 +14520,7 @@
                   "children": [
                     {
                       "type": "icon",
-                      "id": "NS3yM",
+                      "id": "kzs9R",
                       "name": "Подключённый пул Icon",
                       "width": 19,
                       "height": 19,
@@ -14530,7 +14530,7 @@
                     },
                     {
                       "type": "text",
-                      "id": "EQwDU",
+                      "id": "h0Pi8W",
                       "name": "Подключённый пул Text",
                       "fill": "$h:neutral-800",
                       "content": "Подключённый пул",
@@ -14546,7 +14546,7 @@
         },
         {
           "type": "frame",
-          "id": "jWRTd",
+          "id": "Rxk7I",
           "x": 102,
           "y": 444,
           "name": "02 Onsite Acquisition",
@@ -14558,7 +14558,7 @@
           "children": [
             {
               "type": "frame",
-              "id": "QhJX1",
+              "id": "Qx85I",
               "x": 18,
               "y": 18,
               "name": "02 Number",
@@ -14571,7 +14571,7 @@
               "children": [
                 {
                   "type": "text",
-                  "id": "WWHiu",
+                  "id": "LRECq",
                   "name": "02 Label",
                   "fill": "#FFFFFF",
                   "content": "02",
@@ -14583,7 +14583,7 @@
             },
             {
               "type": "text",
-              "id": "nEYoZ",
+              "id": "TGzrY",
               "x": 101,
               "y": 30,
               "name": "02 Title",
@@ -14597,7 +14597,7 @@
             },
             {
               "type": "frame",
-              "id": "yahqE",
+              "id": "dG0Ln",
               "x": 18,
               "y": 90,
               "name": "Frame 9",
@@ -14607,7 +14607,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "PhJJF",
+                  "id": "kzfAj",
                   "name": "Frame 6",
                   "fill": "#ffffffff",
                   "cornerRadius": 805,
@@ -14622,7 +14622,7 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "K4DkW",
+                      "id": "vQQUQ",
                       "name": "База исполнителей Text",
                       "fill": "$h:neutral-800",
                       "content": "Ссылки в чатах",
@@ -14634,7 +14634,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "kGNjI",
+                  "id": "AJiLO",
                   "name": "Frame 7",
                   "fill": "#ffffffff",
                   "cornerRadius": 805,
@@ -14649,7 +14649,7 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "ewirW",
+                      "id": "Q9rXkn",
                       "name": "База исполнителей Text",
                       "fill": "$h:neutral-800",
                       "content": "QR коды на объектах",
@@ -14661,7 +14661,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "k0szdx",
+                  "id": "L2EXS6",
                   "name": "Frame 8",
                   "fill": "#ffffffff",
                   "cornerRadius": 805,
@@ -14676,7 +14676,7 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "BOCbs",
+                      "id": "DWSnI",
                       "name": "База исполнителей Text",
                       "fill": "$h:neutral-800",
                       "content": "Реферральная программа",
@@ -14688,7 +14688,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "a58XF",
+                  "id": "eVg75",
                   "name": "Frame 8",
                   "fill": "#ffffffff",
                   "cornerRadius": 805,
@@ -14703,7 +14703,7 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "byzJy",
+                      "id": "e6Auu",
                       "name": "База исполнителей Text",
                       "fill": "$h:neutral-800",
                       "content": "Публикация в социальных сетях",
@@ -14719,7 +14719,7 @@
         },
         {
           "type": "frame",
-          "id": "bvVb8",
+          "id": "QIa3V",
           "x": 120,
           "y": 616,
           "name": "03 Number",
@@ -14734,7 +14734,7 @@
           "children": [
             {
               "type": "text",
-              "id": "zogUt",
+              "id": "JGcdp",
               "name": "03 Label",
               "fill": "$h:brand-blue",
               "content": "03",
@@ -14746,7 +14746,7 @@
         },
         {
           "type": "frame",
-          "id": "rhdqk",
+          "id": "ohJiZ",
           "x": 204,
           "y": 633,
           "name": "Frame 4",
@@ -14756,7 +14756,7 @@
           "children": [
             {
               "type": "text",
-              "id": "NX8HP",
+              "id": "CzOpa",
               "name": "03 Title",
               "fill": "$h:neutral-950",
               "textGrowth": "fixed-width",
@@ -14768,7 +14768,7 @@
             },
             {
               "type": "text",
-              "id": "IWGTO",
+              "id": "rgpw2",
               "name": "03 Description",
               "fill": "$h:neutral-600",
               "textGrowth": "fixed-width",
@@ -14781,7 +14781,7 @@
             },
             {
               "type": "frame",
-              "id": "JoHgq",
+              "id": "De2Cn",
               "name": "Referral Flow",
               "width": 800,
               "height": 30,
@@ -14790,7 +14790,7 @@
               "children": [
                 {
                   "type": "text",
-                  "id": "HKaqb",
+                  "id": "FmelB",
                   "name": "Referral Step 1",
                   "fill": "$h:neutral-800",
                   "content": "Исполнитель",
@@ -14800,7 +14800,7 @@
                 },
                 {
                   "type": "icon",
-                  "id": "wtZLn",
+                  "id": "oizrj",
                   "name": "Referral Arrow 1",
                   "width": 18,
                   "height": 18,
@@ -14810,7 +14810,7 @@
                 },
                 {
                   "type": "text",
-                  "id": "fzArI",
+                  "id": "vI7Lu",
                   "name": "Referral Step 2",
                   "fill": "$h:neutral-800",
                   "content": "приглашает",
@@ -14820,7 +14820,7 @@
                 },
                 {
                   "type": "icon",
-                  "id": "EKDub",
+                  "id": "wiegq",
                   "name": "Referral Arrow 2",
                   "width": 18,
                   "height": 18,
@@ -14830,7 +14830,7 @@
                 },
                 {
                   "type": "text",
-                  "id": "k4AaYZ",
+                  "id": "fJozx",
                   "name": "Referral Step 3",
                   "fill": "$h:neutral-800",
                   "content": "новый исполнитель",
@@ -14840,7 +14840,7 @@
                 },
                 {
                   "type": "icon",
-                  "id": "AipRS",
+                  "id": "Kx15Y",
                   "name": "Referral Arrow 3",
                   "width": 18,
                   "height": 18,
@@ -14850,7 +14850,7 @@
                 },
                 {
                   "type": "text",
-                  "id": "IBia0",
+                  "id": "NTsBU",
                   "name": "Referral Step 4",
                   "fill": "$h:brand-green-strong",
                   "content": "первое задание",
@@ -14864,7 +14864,7 @@
         },
         {
           "type": "text",
-          "id": "UV9AF",
+          "id": "mHjuI",
           "x": 120,
           "y": 201,
           "name": "01 Description",
@@ -14876,6 +14876,849 @@
           "fontFamily": "$h:font-primary",
           "fontSize": 19,
           "fontWeight": "normal"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "Lr0k6",
+      "x": 20361,
+      "y": 2969,
+      "name": "РАЗДЕЛ E — ПОДКЛЮЧЕНИЕ И ПРИВЛЕЧЕНИЕ / ENT-19",
+      "clip": true,
+      "width": 1920,
+      "height": 1080,
+      "fill": "$h:bg-primary",
+      "stroke": "#ff0000ff",
+      "strokeAlignment": "inner",
+      "layout": "none",
+      "children": [
+        {
+          "type": "text",
+          "id": "QWFFt",
+          "x": 120,
+          "y": 58,
+          "name": "Section Indicator",
+          "fill": "$h:neutral-400",
+          "content": "E  ·  КОРПОРАТИВНЫЙ СЕГМЕНТ / ПРИВЛЕЧЕНИЕ",
+          "fontFamily": "$h:font-primary",
+          "fontSize": 16,
+          "fontWeight": "700",
+          "letterSpacing": 1.1
+        },
+        {
+          "id": "Vm2KL",
+          "type": "ref",
+          "ref": "CmSfJ",
+          "name": "WinWork Logo",
+          "width": 202,
+          "height": 40,
+          "x": 1598,
+          "y": 58
+        },
+        {
+          "type": "text",
+          "id": "z1cNy",
+          "x": 120,
+          "y": 306,
+          "name": "Channels Label",
+          "fill": "$h:neutral-400",
+          "content": "ЧЕТЫРЕ СПОСОБА УВЕЛИЧИТЬ ОХВАТ",
+          "fontFamily": "$h:font-primary",
+          "fontSize": 14,
+          "fontWeight": "800",
+          "letterSpacing": 1
+        },
+        {
+          "type": "rectangle",
+          "cornerRadius": 21,
+          "id": "mTkTk",
+          "x": 1280,
+          "y": 147,
+          "name": "QR Photo",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "ChatGPT%20Image%2025%20%D0%B0%D0%B2%D0%B3.%202026%20%D0%B3.%2C%2018_25_37.png",
+            "mode": "fill"
+          },
+          "width": 520,
+          "height": 507
+        },
+        {
+          "type": "frame",
+          "id": "jy2rz",
+          "x": 120,
+          "y": 116,
+          "name": "Header",
+          "width": 1090,
+          "layout": "vertical",
+          "gap": 14,
+          "children": [
+            {
+              "type": "text",
+              "id": "E6Oes",
+              "name": "Title",
+              "fill": "$h:neutral-950",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Привлекайте больше исполнителей на свои объекты",
+              "lineHeight": 1.15,
+              "fontFamily": "$h:font-primary",
+              "fontSize": 38,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "OLGAw",
+              "name": "Subtitle",
+              "fill": "$h:neutral-600",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Распространяйте ваши задания через удобные каналы — исполнители сразу переходят к конкретному заданию и откликаются.",
+              "lineHeight": 1.35,
+              "fontFamily": "$h:font-primary",
+              "fontSize": 20,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "STkFS",
+              "name": "Helper",
+              "fill": "$h:neutral-400",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Маркетплейс WinWork обеспечивает основной поток исполнителей, а дополнительные каналы увеличивают охват именно ваших заданий.",
+              "lineHeight": 1.35,
+              "fontFamily": "$h:font-primary",
+              "fontSize": 15,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "XAp4I",
+          "x": 120,
+          "y": 338,
+          "name": "Channels Grid",
+          "width": 1100,
+          "layout": "vertical",
+          "gap": 20,
+          "children": [
+            {
+              "type": "frame",
+              "id": "v9n1G",
+              "name": "Channels Row 1",
+              "width": "fill_container",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "TErb3",
+                  "name": "Channel / Ссылки на задания",
+                  "width": "fill_container",
+                  "height": 148,
+                  "fill": "$h:surface",
+                  "cornerRadius": 20,
+                  "stroke": "$h:neutral-150",
+                  "strokeWidth": 1,
+                  "gap": 16,
+                  "padding": 22,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Ayp3l",
+                      "name": "Icon Container",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "$h:brand-blue-soft",
+                      "cornerRadius": 14,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "Og8AH",
+                          "name": "Icon",
+                          "width": 24,
+                          "height": 24,
+                          "icon": "link",
+                          "library": "lucide",
+                          "fill": "$h:brand-blue"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "tswfq",
+                      "name": "Texts",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 5,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "keeUE",
+                          "name": "Title",
+                          "fill": "$h:neutral-950",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Ссылки на задания",
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 17,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "pe2am",
+                          "name": "Description",
+                          "fill": "$h:neutral-600",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Делитесь ссылкой в рабочих чатах и сообществах — она ведёт прямо на задание вашей компании.",
+                          "lineHeight": 1.35,
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "eXaJu",
+                  "name": "Channel / QR-коды на объектах",
+                  "width": "fill_container",
+                  "height": 148,
+                  "fill": "$h:surface",
+                  "cornerRadius": 20,
+                  "stroke": "$h:neutral-150",
+                  "strokeWidth": 1,
+                  "gap": 16,
+                  "padding": 22,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "QBjXN",
+                      "name": "Icon Container",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "$h:brand-blue-soft",
+                      "cornerRadius": 14,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "Io5nk",
+                          "name": "Icon",
+                          "width": 24,
+                          "height": 24,
+                          "icon": "qr-code",
+                          "library": "lucide",
+                          "fill": "$h:brand-blue"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "PEsh4",
+                      "name": "Texts",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 5,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "rNgfG",
+                          "name": "Title",
+                          "fill": "$h:neutral-950",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "QR-коды на объектах",
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 17,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "ncsHp",
+                          "name": "Description",
+                          "fill": "$h:neutral-600",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Размещайте коды в магазинах, складах и офисах — там, где их увидят исполнители.",
+                          "lineHeight": 1.35,
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "k12YLu",
+              "name": "Channels Row 2",
+              "width": "fill_container",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "JAlnh",
+                  "name": "Channel / Реферальная программа",
+                  "width": "fill_container",
+                  "height": 148,
+                  "fill": "$h:surface",
+                  "cornerRadius": 20,
+                  "stroke": "$h:neutral-150",
+                  "strokeWidth": 1,
+                  "gap": 16,
+                  "padding": 22,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "OuJsS",
+                      "name": "Icon Container",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "$h:brand-blue-soft",
+                      "cornerRadius": 14,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "p2Deck",
+                          "name": "Icon",
+                          "width": 24,
+                          "height": 24,
+                          "icon": "user-plus",
+                          "library": "lucide",
+                          "fill": "$h:brand-blue"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n7ucW",
+                      "name": "Texts",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 5,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "GZWop",
+                          "name": "Title",
+                          "fill": "$h:neutral-950",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Реферальная программа",
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 17,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "H6Qd0P",
+                          "name": "Description",
+                          "fill": "$h:neutral-600",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Исполнители приглашают друзей и знакомых в WinWork — и приводят их на ваши задания.",
+                          "lineHeight": 1.35,
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "fYmdU",
+                  "name": "Channel / Соцсети и локальные каналы",
+                  "width": "fill_container",
+                  "height": 148,
+                  "fill": "$h:surface",
+                  "cornerRadius": 20,
+                  "stroke": "$h:neutral-150",
+                  "strokeWidth": 1,
+                  "gap": 16,
+                  "padding": 22,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "rLPBS",
+                      "name": "Icon Container",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "$h:brand-blue-soft",
+                      "cornerRadius": 14,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "bAVKO",
+                          "name": "Icon",
+                          "width": 24,
+                          "height": 24,
+                          "icon": "megaphone",
+                          "library": "lucide",
+                          "fill": "$h:brand-blue"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Wz6Em",
+                      "name": "Texts",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 5,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "AI5wW",
+                          "name": "Title",
+                          "fill": "$h:neutral-950",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Соцсети и локальные каналы",
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 17,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "vn18p",
+                          "name": "Description",
+                          "fill": "$h:neutral-600",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Публикуйте предложения о подработке там, где находится ваша потенциальная аудитория.",
+                          "lineHeight": 1.35,
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "GUbIK",
+          "x": 1280,
+          "y": 679,
+          "name": "Photo Caption",
+          "width": 520,
+          "layout": "vertical",
+          "gap": 3,
+          "children": [
+            {
+              "type": "text",
+              "id": "CMkwP",
+              "name": "Caption Title",
+              "fill": "$h:neutral-950",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "QR-код прямо на объекте",
+              "fontFamily": "$h:font-primary",
+              "fontSize": 16,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "pxF0R",
+              "name": "Caption Text",
+              "fill": "$h:neutral-600",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Исполнитель сканирует его и сразу переходит к вашему заданию.",
+              "lineHeight": 1.3,
+              "fontFamily": "$h:font-primary",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "vhpue",
+          "x": 120,
+          "y": 741,
+          "name": "Conversion Chain",
+          "width": 1680,
+          "height": 64,
+          "gap": 12,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "h1JStY",
+              "name": "Chain Step 1",
+              "width": 196,
+              "height": 64,
+              "fill": "$h:surface",
+              "cornerRadius": 16,
+              "stroke": "$h:neutral-150",
+              "strokeWidth": 1,
+              "gap": 10,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "waXVQ",
+                  "name": "Icon",
+                  "width": 22,
+                  "height": 22,
+                  "icon": "clipboard-list",
+                  "library": "lucide",
+                  "fill": "$h:brand-blue"
+                },
+                {
+                  "type": "text",
+                  "id": "WriU6",
+                  "name": "Label",
+                  "fill": "$h:neutral-950",
+                  "content": "Ваше задание",
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 18,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "icon",
+              "id": "uUssS",
+              "name": "Arrow 1",
+              "width": 20,
+              "height": 20,
+              "icon": "arrow-right",
+              "library": "lucide",
+              "fill": "$h:neutral-400"
+            },
+            {
+              "type": "frame",
+              "id": "t56Pt",
+              "name": "Chain Step 2",
+              "width": 316,
+              "height": 64,
+              "fill": "$h:surface",
+              "cornerRadius": 16,
+              "stroke": "$h:neutral-150",
+              "strokeWidth": 1,
+              "gap": 10,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "C9w8cL",
+                  "name": "Icon",
+                  "width": 22,
+                  "height": 22,
+                  "icon": "share-2",
+                  "library": "lucide",
+                  "fill": "$h:brand-blue"
+                },
+                {
+                  "type": "text",
+                  "id": "Z1mV4",
+                  "name": "Label",
+                  "fill": "$h:neutral-950",
+                  "content": "Ссылка · QR · рекомендация",
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 18,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "icon",
+              "id": "mo2CF",
+              "name": "Arrow 2",
+              "width": 20,
+              "height": 20,
+              "icon": "arrow-right",
+              "library": "lucide",
+              "fill": "$h:neutral-400"
+            },
+            {
+              "type": "frame",
+              "id": "P8TRc",
+              "name": "Chain Step 3",
+              "width": 256,
+              "height": 64,
+              "fill": "$h:surface",
+              "cornerRadius": 16,
+              "stroke": "$h:neutral-150",
+              "strokeWidth": 1,
+              "gap": 10,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "Q5zy5",
+                  "name": "Icon",
+                  "width": 22,
+                  "height": 22,
+                  "icon": "user-plus",
+                  "library": "lucide",
+                  "fill": "$h:brand-blue"
+                },
+                {
+                  "type": "text",
+                  "id": "yWwp7",
+                  "name": "Label",
+                  "fill": "$h:neutral-950",
+                  "content": "Новый исполнитель",
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 18,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "icon",
+              "id": "dVKTi",
+              "name": "Arrow 3",
+              "width": 20,
+              "height": 20,
+              "icon": "arrow-right",
+              "library": "lucide",
+              "fill": "$h:neutral-400"
+            },
+            {
+              "type": "frame",
+              "id": "DhTKk",
+              "name": "Chain Step 4",
+              "width": 216,
+              "height": 64,
+              "fill": "$h:surface",
+              "cornerRadius": 16,
+              "stroke": "$h:neutral-150",
+              "strokeWidth": 1,
+              "gap": 10,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "Rizqd",
+                  "name": "Icon",
+                  "width": 22,
+                  "height": 22,
+                  "icon": "send",
+                  "library": "lucide",
+                  "fill": "$h:brand-blue"
+                },
+                {
+                  "type": "text",
+                  "id": "EilYx",
+                  "name": "Label",
+                  "fill": "$h:neutral-950",
+                  "content": "Отклик",
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 18,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "icon",
+              "id": "vOvbE",
+              "name": "Arrow 4",
+              "width": 20,
+              "height": 20,
+              "icon": "arrow-right",
+              "library": "lucide",
+              "fill": "$h:neutral-400"
+            },
+            {
+              "type": "frame",
+              "id": "lWyyk",
+              "name": "Chain Result",
+              "width": 520,
+              "height": 64,
+              "fill": "$h:brand-green",
+              "cornerRadius": 16,
+              "gap": 12,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "JSq45",
+                  "name": "Avatar Cluster",
+                  "width": 56,
+                  "height": 28,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "mcifx",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Avatar А",
+                      "width": 28,
+                      "height": 28,
+                      "fill": "$h:brand-blue",
+                      "cornerRadius": 14,
+                      "stroke": "#FFFFFF",
+                      "strokeWidth": 2,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "sQRs1",
+                          "name": "Initial",
+                          "fill": "#FFFFFF",
+                          "content": "А",
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 11,
+                          "fontWeight": "800"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "b7YiOv",
+                      "x": 15,
+                      "y": 0,
+                      "name": "Avatar М",
+                      "width": 28,
+                      "height": 28,
+                      "fill": "$h:brand-green-strong",
+                      "cornerRadius": 14,
+                      "stroke": "#FFFFFF",
+                      "strokeWidth": 2,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "X72Ke",
+                          "name": "Initial",
+                          "fill": "#FFFFFF",
+                          "content": "М",
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 11,
+                          "fontWeight": "800"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "H5YYR9",
+                      "x": 30,
+                      "y": 0,
+                      "name": "Avatar Д",
+                      "width": 28,
+                      "height": 28,
+                      "fill": "$h:warning",
+                      "cornerRadius": 14,
+                      "stroke": "#FFFFFF",
+                      "strokeWidth": 2,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "PPwTx",
+                          "name": "Initial",
+                          "fill": "#FFFFFF",
+                          "content": "Д",
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 11,
+                          "fontWeight": "800"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "w4Kwf2",
+                  "name": "Result Label",
+                  "fill": "$h:neutral-950",
+                  "content": "Больше кандидатов на выбор",
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 18,
+                  "fontWeight": "800"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "tU02O",
+          "x": 120,
+          "y": 821,
+          "name": "Existing Performers Note",
+          "width": 1680,
+          "height": 64,
+          "fill": "$h:neutral-100",
+          "cornerRadius": 16,
+          "gap": 12,
+          "padding": [
+            12,
+            20
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon",
+              "id": "amVdC",
+              "name": "Icon",
+              "width": 22,
+              "height": 22,
+              "icon": "users",
+              "library": "lucide",
+              "fill": "$h:brand-blue"
+            },
+            {
+              "type": "text",
+              "id": "MMvgg",
+              "name": "Note Bold",
+              "fill": "$h:neutral-950",
+              "content": "Уже работаете со своими исполнителями?",
+              "fontFamily": "$h:font-primary",
+              "fontSize": 16,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "k7XLew",
+              "name": "Note Text",
+              "fill": "$h:neutral-600",
+              "content": "Их также можно подключить к WinWork и приглашать на ваши задания.",
+              "fontFamily": "$h:font-primary",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            }
+          ]
         }
       ]
     }

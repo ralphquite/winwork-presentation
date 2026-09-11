@@ -135,6 +135,7 @@
   overflow: visible;
   background: #ffffff;
   color: #0a0d14;
+  cursor: pointer;
 }
 
 .ww-response-statusbar {
@@ -553,10 +554,6 @@ button.ww-response-card-action {
   gap: 28px;
 }
 
-.ww-response-detail.is-submitted .ww-response-detail-content {
-  padding-top: 44px;
-}
-
 .ww-response-detail-top {
   display: flex;
   flex-direction: column;
@@ -655,14 +652,7 @@ button.ww-response-card-action {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 4px;
-}
-
-.ww-response-detail.is-submitted .ww-response-review-status,
-.ww-response-detail.is-submitted
-  .ww-response-review-status
-  + .ww-response-divider {
-  transform: translateY(-64px);
+  gap: 8px;
 }
 
 .ww-response-review-status span {

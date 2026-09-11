@@ -326,6 +326,23 @@ The source and implementation were opened together in the same browser-rendered 
 - The production court bundle at `/court-app/court.html?scene=court-03` opened the second CTA, completed 2.1 → 2.2 → 2.3, and restored focus to the initiating CTA after `Escape`. Evidence: `/tmp/winwork-response-render-2.1.png`, `/tmp/winwork-response-render-2.2.png`, `/tmp/winwork-response-render-2.3.png`, `/tmp/winwork-response-render-narrow.png`, and `/tmp/winwork-response-court-final.png`.
 - `pnpm check` passed the documentation contract, repository-wide Prettier, ESLint, TypeScript, 32 access-gateway assertions, and both production builds. The existing bundle-size warning remains non-blocking.
 
+### Iteration 36 — passed
+
+- Rechecked the submitted performer-response state against Figma node `15:2763`. The `На рассмотрении` status and `Отклик на рассмотрении у заказчика` explanation now remain in normal document flow as the first content block inside the secondary task card; the erroneous negative vertical translation was removed.
+- At the source viewport, the rendered task card measured 398 × 362 px, matching the Figma node geometry. The status block stayed fully inside its 16 px card padding, with the specified 8 px internal gap and the divider immediately below it.
+- Playwright passed the full Marketplace → target task → submit response path, Back, reset, close/reopen, focus restoration, and the 390 × 844 narrow host. All 18 performer-response assets returned HTTP 200; there were no failed requests, framework overlays, or console warnings/errors. Evidence: `/tmp/winwork-response-render-2.3.png`.
+
+### Iteration 37 — passed
+
+- Figma node `15:2763` confirms that the submitted response state retains the same 44 px navigation bar as the preceding task-detail state. Screen 2.3 now reuses `DetailHeader`, including the exported back icon and centered `Отклик` title, instead of reserving an empty 44 px spacer.
+- Playwright completed 2.1 → 2.2 → 2.3, found the header and back control visible on 2.3, then used that control to return to 2.2 with its bottom response action restored. The corrected status block remained fully inside the 398 × 362 px task card. No failed requests, framework overlay, or console warning/error was present. Evidence: `/tmp/winwork-response-render-2.3-header.png`.
+
+### Iteration 38 — passed
+
+- All three performer-response surfaces now support click-anywhere progression: any ordinary click on 2.1 advances to 2.2, and any ordinary click on 2.2 advances to 2.3. Screen 2.3 remains stable on further clicks.
+- Existing semantic controls avoid duplicate transitions. The target-task and bottom response buttons advance exactly one state, while each header Back button stops propagation and returns to the preceding state.
+- Playwright exercised non-CTA clicks on the `Главный` heading and task title, confirmed the complete 2.1 → 2.2 → 2.3 sequence, clicked ordinary content on the final state, and then verified 2.3 → Back → 2.2. Reset, close/reopen, focus restoration, and the 390 × 844 narrow host also passed without failed requests, framework overlays, or console warnings/errors.
+
 ## Interaction and runtime evidence
 
 - Create object: list → `Добавить объект` → editable drawer → add manager/activity → save → new synthetic row; reset removes the new row.

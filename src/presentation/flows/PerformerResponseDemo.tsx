@@ -101,7 +101,14 @@ function MarketplaceTaskCard({
   onOpen?: () => void;
 }) {
   const action = onOpen ? (
-    <button className="ww-response-card-action" onClick={onOpen} type="button">
+    <button
+      className="ww-response-card-action"
+      onClick={(event) => {
+        event.stopPropagation();
+        onOpen();
+      }}
+      type="button"
+    >
       Откликнуться
     </button>
   ) : (
@@ -157,7 +164,10 @@ function BottomNavigation() {
 
 function MarketplaceScreen({ onOpen }: { onOpen: () => void }) {
   return (
-    <section className="ww-response-screen ww-response-marketplace">
+    <section
+      className="ww-response-screen ww-response-marketplace"
+      onClick={onOpen}
+    >
       <StatusBar />
       <header className="ww-response-marketplace-header">
         <div>
@@ -204,7 +214,14 @@ function MarketplaceScreen({ onOpen }: { onOpen: () => void }) {
 function DetailHeader({ onBack }: { onBack: () => void }) {
   return (
     <div className="ww-response-detail-header">
-      <button aria-label="Вернуться к заданиям" onClick={onBack} type="button">
+      <button
+        aria-label="Вернуться к заданиям"
+        onClick={(event) => {
+          event.stopPropagation();
+          onBack();
+        }}
+        type="button"
+      >
         <img alt="" src={`${ASSET_ROOT}/back.svg`} />
       </button>
       <strong>Отклик</strong>
@@ -304,9 +321,10 @@ function DetailScreen({
   return (
     <section
       className={`ww-response-screen ww-response-detail${submitted ? ' is-submitted' : ''}`}
+      onClick={onAdvance}
     >
       <StatusBar />
-      {submitted ? null : <DetailHeader onBack={onBack} />}
+      <DetailHeader onBack={onBack} />
       <main className="ww-response-detail-content">
         <div className="ww-response-detail-top">
           <TaskSummary submitted={submitted} />
@@ -322,7 +340,13 @@ function DetailScreen({
       </main>
       {submitted ? null : (
         <div className="ww-response-bottom-sheet">
-          <button onClick={onAdvance} type="button">
+          <button
+            onClick={(event) => {
+              event.stopPropagation();
+              onAdvance();
+            }}
+            type="button"
+          >
             Откликнуться
           </button>
           <i aria-hidden="true" />
