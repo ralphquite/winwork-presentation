@@ -694,20 +694,51 @@ body {
   line-height: 1.4;
 }
 
-.evidence-note {
-  display: flex;
+.payment-support {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 488px;
   align-items: center;
-  gap: 20px;
+  gap: 28px;
   margin-top: 32px;
-  padding: 22px 26px;
-  border: 1px solid #b8e3d5;
-  border-radius: 18px;
-  background: #f0fbf7;
-  color: #174b3d;
-  font-size: 19px;
-  line-height: 1.4;
 }
 
-.evidence-note strong {
-  font-weight: 800;
+.partner-proof--payment {
+  display: grid;
+  grid-template-columns: 214px minmax(0, 1fr) 238px;
+  align-items: center;
+  gap: 24px;
+  min-height: 142px;
+  padding: 22px 24px;
+  border-radius: 22px;
+}
+
+.partner-proof--payment .fns-logo {
+  width: 214px;
+}
+
+.partner-proof--payment .proof-kicker {
+  margin-top: 0;
+  font-size: 21px;
+}
+
+.partner-proof--payment .proof-title {
+  margin-top: 7px;
+  font-size: 20px;
+}
+
+.partner-proof--payment .proof-text {
+  margin-top: 9px;
+  font-size: 16px;
+}
+
+.partner-proof--payment .registry-link {
+  min-height: 62px;
+  margin-top: 0;
+  padding: 0 18px;
+  font-size: 17px;
+}
+
+.payment-support .process-cta .cta {
+  width: 100%;
+  margin-top: 0;
 }

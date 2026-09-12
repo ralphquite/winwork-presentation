@@ -38,8 +38,8 @@ type MarketplaceCard = {
   address: string;
   company: string;
   date: string;
-  duration: string;
-  logo: 'atomy' | 'dns' | 'kruiz' | 'painting' | 'spar';
+  duration?: string;
+  logo: 'hp-group' | 'operator' | 'perspektiva' | 'spar-tomsk';
   price: string;
   role: string;
   time: string;
@@ -53,55 +53,53 @@ type Country = {
 
 const MARKETPLACE_CARDS: MarketplaceCard[] = [
   {
-    address: 'ул. Ленина, Ставрополь, Ставропольский край, Россия, 355012',
-    company: 'Атоми Ру',
+    address: 'г Томск, ул 30 летия Победы, д 5',
+    company: 'ООО “Перспектива”',
     date: '11 июня',
-    duration: '4 часа',
-    logo: 'atomy',
-    price: '3100₽',
-    role: 'Продавец консультант',
-    time: '10:00 - 14:00',
+    duration: '9 часов',
+    logo: 'perspektiva',
+    price: '1744₽',
+    role: 'Мерчендайзер',
+    time: '8:00 - 17:00',
   },
   {
-    address: 'ул. Канашская, 16а, Нижний Новгород, 603089',
-    company: 'Спар',
+    address: 'г Томск, пер Дербышевский, д 17',
+    company: 'ООО “Спар-Томск”',
     date: '11 июня',
-    duration: '2 часа',
-    logo: 'spar',
-    price: '1 700₽',
-    role: 'Администратор',
-    time: '12:00 - 14:00',
+    duration: '5 часов',
+    logo: 'spar-tomsk',
+    price: '1 365₽',
+    role: 'Фасовщик',
+    time: '18:00 - 23:00',
   },
   {
-    address:
-      'ул. Абрикосовая, 7 корпус 1, Сочи, Краснодарский край, Россия, 354003',
-    company: 'Круиз Онлайн',
+    address: 'Обл Московская, г Клин',
+    company: 'ООО “ HP Групп профешинал”',
     date: '12 июня',
     duration: '10 часов',
-    logo: 'kruiz',
-    price: '4 700₽',
-    role: 'Консультант',
-    time: '10:00 - 20:00',
+    logo: 'hp-group',
+    price: '2 054₽',
+    role: 'Уборка и клининг',
+    time: '8:00 - 18:00',
   },
   {
-    address: 'ул. Новый Арбат, стр 11, Москва, Россия, 10912',
-    company: 'Живопись маслом',
+    address: 'г Астрахант, ул Ботвина, д 59',
+    company: 'ИП Бециева Малика Вахаевна',
     date: '13 июня',
     duration: '4 часа',
-    logo: 'painting',
+    logo: 'operator',
     price: '4 200₽',
-    role: 'Учитель живописи для детей',
+    role: 'Оператор',
     time: '10:00 - 14:00',
   },
   {
-    address: 'ул. Новый Арбат, стр 11, Томск, Россия, 10912',
-    company: 'ДНС',
+    address: 'Все регионы, Все города, Рябиновая',
+    company: 'ООО “ HP Групп профешинал”',
     date: '13 июня',
-    duration: '4 часа',
-    logo: 'dns',
-    price: '4 200₽',
-    role: 'Менеджер торгового зала',
-    time: '12:00 - 16:00',
+    logo: 'hp-group',
+    price: '41 182,98₽',
+    role: 'Ассистент',
+    time: 'Не указан',
   },
 ];
 
@@ -231,14 +229,9 @@ function CodeScreen() {
 }
 
 function BrandLogo({ type }: { type: MarketplaceCard['logo'] }) {
-  const source =
-    type === 'atomy'
-      ? `${ASSET_ROOT}/brand-atomy.png`
-      : `${ASSET_ROOT}/brand-${type}.png`;
-
   return (
     <span aria-hidden="true" className={`ww-pr-brand-logo is-${type}`}>
-      <img alt="" src={source} />
+      <img alt="" src={`${ASSET_ROOT}/brand-${type}.png`} />
     </span>
   );
 }
@@ -257,8 +250,9 @@ function MarketplaceTaskCard({ card }: { card: MarketplaceCard }) {
       <div className="ww-pr-task-footer">
         <span>
           <strong>{card.price}</strong>
-          <small>
-            {card.time} <i>({card.duration})</i>
+          <small className={card.duration ? undefined : 'is-muted'}>
+            {card.time}
+            {card.duration ? <i> ({card.duration})</i> : null}
           </small>
         </span>
         <span className="ww-pr-card-action">Откликнуться</span>

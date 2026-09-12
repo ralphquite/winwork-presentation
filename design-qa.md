@@ -343,6 +343,20 @@ The source and implementation were opened together in the same browser-rendered 
 - Existing semantic controls avoid duplicate transitions. The target-task and bottom response buttons advance exactly one state, while each header Back button stops propagation and returns to the preceding state.
 - Playwright exercised non-CTA clicks on the `Главный` heading and task title, confirmed the complete 2.1 → 2.2 → 2.3 sequence, clicked ordinary content on the final state, and then verified 2.3 → Back → 2.2. Reset, close/reopen, focus restoration, and the 390 × 844 narrow host also passed without failed requests, framework overlays, or console warnings/errors.
 
+### Iteration 39 — passed
+
+- Performer-registration Marketplace states 4 and 11 now use the five task records from Figma node `10:963`: `Мерчендайзер`, `Фасовщик`, `Уборка и клининг`, `Оператор`, and `Ассистент`, including the approved companies, addresses, rewards, times, durations, and the final `Не указан` state.
+- The four distinct company marks are exact locally stored Figma image exports. Browser measurements matched the designed visual bounds: `25 × 24`, `37 × 9`, `36 × 35`, and `25 × 25` px; the shared HP Group mark is reused for its two cards.
+- Playwright opened the quick-access flow, advanced to screen 4, verified all five complete card strings and all image natural dimensions, scrolled through the 430 × 979 viewport, then advanced to screen 11 and confirmed the registration-success sheet over the updated Marketplace. No failed requests, framework overlay, or console warning/error was present.
+- Evidence: `/tmp/ww-figma-main-10-963.png`, `/tmp/ww-main-top.png`, `/tmp/ww-main-bottom.png`, and `/tmp/ww-main-final.png`. `pnpm check` passed the documentation contract, repository-wide Prettier, ESLint, TypeScript, 32 access-gateway assertions, and both production builds; the existing bundle-size warning remains non-blocking.
+
+### Iteration 40 — passed
+
+- Rechecked the performer-response flow against the revised Figma states: Marketplace node `29:1047`, task-detail node `15:2719`, and submitted-response node `15:2763`. All five Marketplace cards now use the approved roles, companies, addresses, prices, times, and durations; both detail states consistently show the updated `ООО “Перспектива”` merchandising task and its revised order metadata.
+- The four revised company marks are exact local Figma PNG exports under `public/performer-response-flow/assets/`. The Marketplace and detail variants of the `Перспектива` mark were byte-identical, so both states reuse one 25 × 24 px runtime asset; the other source images loaded at 370 × 91, 444 × 434, and 316 × 316 px with their Figma display sizes preserved in CSS.
+- Browser QA at the exact internal 430 × 979 px viewport confirmed all three states, loaded every rendered logo with non-zero natural dimensions, completed 2.1 → 2.2 → 2.3 through ordinary screen clicks, kept 2.3 stable on a further click, returned 2.3 → 2.2 → 2.1 through Back, reset to state 1, closed with `Escape`, and restored focus to the opener. The `court-03` CTA opened the same revised state 2.1; no application error was logged.
+- `pnpm check` passed the documentation contract, repository-wide Prettier, ESLint, TypeScript, 32 access-gateway assertions, and both production builds. The existing bundle-size warning remains non-blocking.
+
 ## Interaction and runtime evidence
 
 - Create object: list → `Добавить объект` → editable drawer → add manager/activity → save → new synthetic row; reset removes the new row.

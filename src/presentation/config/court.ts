@@ -26,7 +26,7 @@ const performerResponseFlow = {
 
 const paymentConfirmationFlow = {
   ...enterpriseDemoFlows.taskPayment,
-  hotspot: { x: 1328, y: 870, width: 488, height: 76 },
+  hotspot: { x: 1328, y: 783, width: 488, height: 76 },
   triggerLabel: 'Показать подтверждение оплаты задания',
 } as const;
 

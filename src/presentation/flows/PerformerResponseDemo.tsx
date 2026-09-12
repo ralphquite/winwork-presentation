@@ -1,76 +1,91 @@
 import { useEffect, useRef, useState } from 'react';
 
 const SCREEN_COUNT = 3;
-const TARGET_TASK_INDEX = 1;
+const TARGET_TASK_INDEX = 0;
 const ASSET_ROOT = '/performer-response-flow/assets';
+
+type BrandLogoType = 'company' | 'hp-group' | 'perspektiva' | 'spar-tomsk';
 
 type MarketplaceCard = {
   address: string;
   company: string;
   date: string;
-  duration: string;
-  logo: 'atomy' | 'dns' | 'kruiz' | 'painting' | 'spar';
+  duration?: string;
+  logo: BrandLogoType;
   price: string;
   role: string;
   time: string;
 };
 
+const TARGET_TASK = {
+  address: 'г Томск, ул 30 летия Победы, д 5',
+  company: 'ООО “Перспектива”',
+  detailDate: '12 сентября',
+  detailTime: '8:00 — 17:00',
+  duration: '9 часов',
+  legalEntity: 'ООО “Перспектива”',
+  logo: 'perspektiva',
+  orderNumber: '1924801284019',
+  price: '1 744₽',
+  publicationDate: '10.09.2026 09:21',
+  role: 'Мерчендайзер',
+  time: '8:00 - 17:00',
+} as const;
+
 const MARKETPLACE_CARDS: readonly MarketplaceCard[] = [
   {
-    address: 'ул. Ленина, Ставрополь, Ставропольский край, Россия, 355012',
-    company: 'Атоми Ру',
+    address: TARGET_TASK.address,
+    company: TARGET_TASK.company,
     date: '11 июня',
-    duration: '4 часа',
-    logo: 'atomy',
-    price: '3100₽',
-    role: 'Продавец консультант',
-    time: '10:00 - 14:00',
+    duration: TARGET_TASK.duration,
+    logo: TARGET_TASK.logo,
+    price: TARGET_TASK.price,
+    role: TARGET_TASK.role,
+    time: TARGET_TASK.time,
   },
   {
-    address: 'ул. Канашская, 16а, Нижний Новгород, 603089',
-    company: 'Спар',
+    address: 'г Томск, пер Дербышевский, д 17',
+    company: 'ООО “Спар-Томск”',
     date: '11 июня',
-    duration: '8 часов',
-    logo: 'spar',
-    price: '9 400₽',
-    role: 'Мерчендайзер',
-    time: '10:00 - 18:00',
+    duration: '5 часов',
+    logo: 'spar-tomsk',
+    price: '1 365₽',
+    role: 'Фасовщик',
+    time: '18:00 - 23:00',
   },
   {
-    address:
-      'ул. Абрикосовая, 7 корпус 1, Сочи, Краснодарский край, Россия, 354003',
-    company: 'Круиз Онлайн',
+    address: 'Обл Московская, г Клин',
+    company: 'ООО “ HP Групп профешинал”',
     date: '12 июня',
     duration: '10 часов',
-    logo: 'kruiz',
-    price: '4 700₽',
-    role: 'Консультант',
-    time: '10:00 - 20:00',
+    logo: 'hp-group',
+    price: '2 054₽',
+    role: 'Уборка и клининг',
+    time: '8:00 - 18:00',
   },
   {
-    address: 'ул. Новый Арбат, стр 11, Москва, Россия, 10912',
-    company: 'Живопись маслом',
+    address: 'г Астрахант, ул Ботвина, д 59',
+    company: 'ИП Бещева Малика Вахаевна',
     date: '13 июня',
     duration: '4 часа',
-    logo: 'painting',
+    logo: 'company',
     price: '4 200₽',
-    role: 'Учитель живописи для детей',
+    role: 'Оператор',
     time: '10:00 - 14:00',
   },
   {
-    address: 'ул. Новый Арбат, стр 11, Томск, Россия, 10912',
-    company: 'ДНС',
+    address: 'Все регионы, Все города, Рябиновая',
+    company: 'ООО “ HP Групп профешинал”',
     date: '13 июня',
-    duration: '2 часа',
-    logo: 'dns',
-    price: '1 700₽',
-    role: 'Менеджер торгового зала',
-    time: '12:00 - 14:00',
+    logo: 'hp-group',
+    price: '41 182,98₽',
+    role: 'Ассистент',
+    time: 'Не указан',
   },
 ];
 
 const TASK_DESCRIPTION =
-  'Обязанности мерчендайзера в супермаркете включают в себя выкладку товаров, поддержание привлекательного внешнего вида торговых полок и контроль за сроками годности продукции. Важно следить за наличием товаров и их правильным размещением, чтобы покупатели могли легко находить нужные продукты. Также необходимо взаимодействовать с клиентами, предоставляя информацию о товарах и акциях. Соблюдение чистоты и порядка в торговом зале является обязательным, а за несоблюдение стандартов предусмотрены меры ответственности.';
+  'Задачи: Подтядка товаров на полках, Размещение акционных товаров на полках, Снятие товаров с истекшим сроком годности, Установка акционных ценников. Желаемое время начала работы 08:00. При себе иметь мед книжку и сменную одежду.';
 
 function StatusBar() {
   return (
@@ -85,7 +100,7 @@ function StatusBar() {
   );
 }
 
-function BrandLogo({ type }: { type: MarketplaceCard['logo'] }) {
+function BrandLogo({ type }: { type: BrandLogoType }) {
   return (
     <span aria-hidden="true" className={`ww-response-brand is-${type}`}>
       <img alt="" src={`${ASSET_ROOT}/brand-${type}.png`} />
@@ -129,7 +144,13 @@ function MarketplaceTaskCard({
         <span>
           <strong>{card.price}</strong>
           <small>
-            {card.time} <i>({card.duration})</i>
+            {card.time}
+            {card.duration ? (
+              <>
+                {' '}
+                <i>({card.duration})</i>
+              </>
+            ) : null}
           </small>
         </span>
         {action}
@@ -243,26 +264,22 @@ function TaskSummary({ submitted }: { submitted: boolean }) {
         </>
       ) : null}
       <div className="ww-response-role-price">
-        <h2>Мерчендайзер</h2>
-        <strong>9 400₽</strong>
+        <h2>{TARGET_TASK.role}</h2>
+        <strong>{TARGET_TASK.price}</strong>
       </div>
       <div className="ww-response-divider" />
       <div className="ww-response-date-time">
-        <strong>10 июля</strong>
+        <strong>{TARGET_TASK.detailDate}</strong>
         <span>
-          10:00 — 18:00 <small>(8 часов)</small>
+          {TARGET_TASK.detailTime} <small>({TARGET_TASK.duration})</small>
         </span>
       </div>
       <div className="ww-response-divider" />
-      <p className="ww-response-address">
-        ул. Канашская, 16а, Нижний Новгород, 603089
-      </p>
+      <p className="ww-response-address">{TARGET_TASK.address}</p>
       <span className="ww-response-map-link">Показать на карте</span>
       <div className="ww-response-divider" />
       <div className="ww-response-chips">
-        <span>Физлица</span>
-        <span>ИП</span>
-        <span>Самозанятые</span>
+        <span>СМЗ</span>
       </div>
     </article>
   );
@@ -271,12 +288,12 @@ function TaskSummary({ submitted }: { submitted: boolean }) {
 function CompanyCard() {
   return (
     <article className="ww-response-company-card">
-      <BrandLogo type="spar" />
+      <BrandLogo type={TARGET_TASK.logo} />
       <div>
-        <strong>Спар</strong>
+        <strong>{TARGET_TASK.company}</strong>
         <span>
           <img alt="" src={`${ASSET_ROOT}/star.svg`} />
-          <b>4.6</b> из 5 <i>21 отзыв</i>
+          <b>5,0</b> из 5 <i>37 отзывов</i>
         </span>
       </div>
       <img alt="" src={`${ASSET_ROOT}/company-chevron.svg`} />
@@ -293,17 +310,18 @@ function TaskDetails() {
       </div>
       <div>
         <dt>Юридическое лицо</dt>
-        <dd>ООО «Спар»</dd>
+        <dd>{TARGET_TASK.legalEntity}</dd>
       </div>
       <div>
         <dt>Номер заказа</dt>
         <dd className="ww-response-order-number">
-          156647859 <img alt="" src={`${ASSET_ROOT}/copy.svg`} />
+          {TARGET_TASK.orderNumber}{' '}
+          <img alt="" src={`${ASSET_ROOT}/copy.svg`} />
         </dd>
       </div>
       <div>
         <dt>Дата публикации</dt>
-        <dd>10.07.2026 09:22</dd>
+        <dd>{TARGET_TASK.publicationDate}</dd>
       </div>
     </dl>
   );
