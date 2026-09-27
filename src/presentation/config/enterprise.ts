@@ -24,15 +24,15 @@ const enterpriseSlides = [
     demoFlow: enterpriseDemoFlows.createObject,
   },
   {
+    id: 'ent-06',
+    frameId: 'L2ehaf',
+    title: 'Доступ сотрудников настраивается по ролям',
+  },
+  {
     id: 'ent-05',
     frameId: 'AOoMH',
     title: 'Руководитель объекта работает с телефона в рамках своих полномочий',
     demoFlow: enterpriseDemoFlows.managerApp,
-  },
-  {
-    id: 'ent-06',
-    frameId: 'L2ehaf',
-    title: 'Доступ сотрудников настраивается по ролям',
   },
   {
     id: 'ent-07',
@@ -53,14 +53,14 @@ const enterpriseSlides = [
     demoFlow: enterpriseDemoFlows.singleTask,
   },
   {
-    id: 'ent-10',
-    frameId: 'sGz1w',
-    title: 'Получайте отклики из маркетплейса и своего пула',
-  },
-  {
     id: 'ent-11',
     frameId: 'Lr0k6',
     title: 'Привлекайте больше исполнителей на свои объекты',
+  },
+  {
+    id: 'ent-10',
+    frameId: 'sGz1w',
+    title: 'Получайте отклики из маркетплейса и своего пула',
   },
   {
     id: 'ent-12',
