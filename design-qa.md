@@ -357,6 +357,37 @@ The source and implementation were opened together in the same browser-rendered 
 - Browser QA at the exact internal 430 × 979 px viewport confirmed all three states, loaded every rendered logo with non-zero natural dimensions, completed 2.1 → 2.2 → 2.3 through ordinary screen clicks, kept 2.3 stable on a further click, returned 2.3 → 2.2 → 2.1 through Back, reset to state 1, closed with `Escape`, and restored focus to the opener. The `court-03` CTA opened the same revised state 2.1; no application error was logged.
 - `pnpm check` passed the documentation contract, repository-wide Prettier, ESLint, TypeScript, 32 access-gateway assertions, and both production builds. The existing bundle-size warning remains non-blocking.
 
+### Iteration 41 — passed
+
+- Pencil node `rHcx4` was saved in `pencil/court_presentation.pen`, exported as `court-06`, and appended after the existing five public Court scenes. The source and runtime retain the approved 1920 × 1080 frame, title, period, and six metrics: `3 000+`, `250 000+`, `513 000`, `230 846`, `4 млрд ₽`, and `118 млн ₽`.
+- Direct `/court?scene=court-06&qa=kept` QA returned HTTP 200 with six scene-picker options, `6 / 6`, disabled Next, a loaded `court-06.html` iframe, and no framework overlay. The 1440 × 1000 host rendered the complete slide at 1440 × 810 px; the 900 × 700 host rendered it at 900 × 506.25 px without clipping or overflow.
+- Navigation passed `court-06` → Previous to `court-05` → ArrowRight to `court-06` → browser Back/Forward while preserving `qa=kept`. The direct slide asset returned HTTP 200. The console had no application errors; its only warning was the expected reduced-motion notice.
+- Evidence: `/tmp/winwork-court-06-desktop.png` and `/tmp/winwork-court-06-compact.png`. `pnpm check` passed the documentation contract, repository-wide Prettier, ESLint, TypeScript, 32 access-gateway assertions, and both production builds; the existing bundle-size warning remains non-blocking.
+
+### Iteration 42 — passed
+
+- The offline Court entry now renders exactly three always-visible bottom-left controls: Previous, Next, and return to the first slide. The standard scene picker, counter, and fullscreen corner button remain unchanged in the web Court entry and the protected presentation tracks.
+- Off-target clicks in the offline file now stop before changing a flow and apply a two-pass shimmer/outline to the current top-layer target actions. Browser checks covered both slide hotspots and the legal-entity registration target; hidden Marketplace rows behind an open task panel are not highlighted. Performer-registration click-anywhere progression remains unchanged.
+- The measured `court-03` hotspots now match the rendered CTAs within 0.03 px. On `court-04`, the three upper cards, two lower signal cards, and CTA all measure 548 px wide; the CTA and hotspot both measure `x = 1268`, `y = 722.02`, `548 × 76`. The `court-05` FNS overlay opened a new tab and requested exactly `https://npd.nalog.ru/aggregators/`.
+- Completed-task payment now opens its target row on `Действия` while keeping all five tabs enabled. Its performer card uses the same card structure and styling as performer selection; `12 оценок` opens the shared accessible review drawer and returns focus to its trigger after close.
+- `court-06` retains its title, date range, and all six approved metrics while its participant, activity, period, and finance blocks now use the same bordered, rounded, softly shadowed card language as the earlier Court slides. The matching Pencil nodes were updated with the same card properties.
+- Regular Playwright was used because the Browser plugin was not available. The final 3,129,185-byte HTML opened directly through `file://` with networking disabled and passed all six scenes, all six Court flows, hash Back/Forward, reset, focus restoration, Escape after a flow screen transition, three-button bounds at 900 × 700, embedded assets, zero HTTP requests, and zero console errors. SHA-256: `f126b08746b80cd4761572120482a323f0e8f73108d53f2b5cf1f136083325a4`.
+- Evidence: `/tmp/court-03-offline-hints.png`, `/tmp/court-04-final.png`, `/tmp/court-payment-performer-card.png`, `/tmp/offline-court-06-file-final.png`, and `/tmp/offline-court-narrow-final.png`.
+
+### Iteration 43 — passed
+
+- Offline off-target hints now appear only inside demo dialogs and use a static outline: computed animation is `none` and no shimmer pseudo-element is present. Blank clicks on each of the six slide backgrounds produce zero hints. The performer-selection task drawer and nested reviews opt out entirely; the initial Marketplace target still hints normally, and clicking it clears the previous hint.
+- Court hover/focus overlays now measure the actual `data-demo-flow` CTA or link bounds and corner radius after document/font readiness. Embedded Court documents use `srcDoc` so the same shared renderer can measure them through `file://`; config bounds remain the fallback for unmarked exported slides. Browser measurements on all five interactive slides differed by less than 0.02 px at 1440 × 900 and at 900 × 700 with Arial substituted for the system font.
+- Regular Playwright was used because the Browser plugin was not available. Direct-file QA with networking disabled verified all six scenes and dialogs, legal-entity registration hints and transition, the single-task form, performer registration advance/reset, response submission, selection reviews/accept/reset without drawer hints, payment through SMS `0000`, hash Back/Forward, reset, shortcuts, Escape, focus restoration, embedded images, zero HTTP requests, and zero console errors.
+- Web smoke checks at 1440 × 900 verified `/enterprise?scene=ent-04`, `/api`, `/small?scene=smb-06`, and `/court-app/court.html?scene=court-03`: standard controls, rendered slides, and demo open/close/focus restoration where available all passed without console errors. `pnpm check` and `git diff --check` passed; the existing bundle-size warning remains non-blocking.
+- Evidence: `/tmp/court-outlines-fixed.png`, `/tmp/court-outline-only-hint.png`, `/tmp/court-selection-no-hints.png`, and `/tmp/court-outlines-narrow.png`. The rebuilt HTML is 3,129,405 bytes; SHA-256: `917175e317ca7f9087c6cd942758b1d0becdfd245a568d16fbbd0a25cdefd0cc`.
+
+### Iteration 44 — passed
+
+- Completed-task payment now uses `1234` for both the SMS placeholder and local validation. Clicking or focusing the empty field fills that code automatically; manual editing remains available, and reset/reopen clears the field.
+- Direct-file Playwright QA with networking disabled passed click autofill, keyboard autofill, successful payment, invalid-code feedback and recovery, reset/reopen, Escape/focus restoration, keyboard isolation, and the same payment path at 1440 × 900 and 900 × 700. There were zero HTTP requests and zero console errors. `pnpm check` and `git diff --check` passed.
+- Evidence: `/tmp/court-payment-code-autofill.png`. The rebuilt offline HTML is 3,129,448 bytes; SHA-256: `e6f071be70ed3062e016cb27f5cd0d14fc59fe604f41a684d160ee1c95e5c5d3`.
+
 ## Interaction and runtime evidence
 
 - Create object: list → `Добавить объект` → editable drawer → add manager/activity → save → new synthetic row; reset removes the new row.
@@ -365,7 +396,7 @@ The source and implementation were opened together in the same browser-rendered 
 - Templates: activity drawer → anchored contract/act dropdown → search/select/save; contract create action → editable document editor → save and select.
 - Single task: marketplace → `Добавить задание` → `Разовое задание` → form → created-task details.
 - Legal-entity registration: sign-in → registration auto-fill → email sent → confirmed sign-in → cabinet.
-- Completed-task payment: Marketplace row 2 → all five task tabs → actions → SMS `0000` → green sent state → paid row status.
+- Completed-task payment: Marketplace row 2 → all five task tabs → actions → SMS `1234` (empty field fills on click/focus) → green sent state → paid row status.
 - Performer selection: Marketplace row 2 → `ЕСТЬ ОТКЛИКИ` → `Отклики (3)` → three performer cards → local accept/reject decisions.
 - Court performer registration: `court-03` → `Показать путь исполнителя` → 11 Figma-derived states with click-anywhere progression, shared viewport height, and per-state vertical scrolling.
 - Court performer response: `court-03` → `Показать путь отклика исполнителя` → target task → submit response → `На рассмотрении`; Back, reset, `Escape`, focus restoration, and narrow-host adaptation passed.
@@ -385,3 +416,217 @@ The source and implementation were opened together in the same browser-rendered 
 - [x] Passed the full repository gate.
 
 final result: passed
+
+## 2026-09-21 — commission-reduction onboarding
+
+- Added the protected `/onboarding` catalog and self-contained `dist/offline/Открыть онбординг WinWork.html`; the same React components serve both entries. The first flow opens automatically with an introduction, four anchored action steps and a completion guide. Help before the bell exposes progress, resume/repeat and explicitly upcoming scenarios.
+- Reference: the authorized dev start page, tariff and empty 600px application drawer. Inspected at 2560 × 1267; copied original SVG/QR assets and Roboto/Montserrat fonts. Compared local screens at the same viewport, adjusting grid, banner, table rows and form positions. Data is synthetic. This is visual inspection, not a numerical zero-difference pixel-diff certification.
+- The precise success copy and 408px dialog layout were recovered from the loaded dev frontend's commission-reduction success handler and shared dialog styles. No real application was submitted. After confirmation closes, the banner remains and 7% is still displayed; only the onboarding task is marked complete.
+- Browser checks passed for guided and unguided demo submission, invalid passport feedback, missing attachment validation, demo attachment/remove/reattach, help, completion, first-open/reset, preserved dismissal and fixture progress after reload, Escape, focus restoration and success-dialog Tab wrapping. Inspected the drawer and guide at 900 × 700 and the completed flow at 1440 × 900. Browser console reported no errors or warnings.
+- State assertions passed for validation, safe fixture reconstruction, excluding typed passport values and filenames from storage, recovering incomplete readiness, corrupt storage and reset. `pnpm check` passed, including 32 gateway assertions and all builds; packaging asserts that CSS assets and scripts are embedded and includes a network-blocking CSP.
+- Verification limit: Browser Use blocked `file://` navigation by its URL policy. Its file chooser also lacked file-URL access, so physical JPG/PNG selection could not be completed through automation. The single-file artifact was built and statically checked, but an actual double-click launch with networking disabled remains a manual check. The synthetic attachment path was fully exercised in the browser.
+
+## 2026-09-21 — click-only onboarding form
+
+- Fields now fill deterministic synthetic values on click or Enter/Space, including citizenship; focus via Tab alone leaves the field empty. The original selfie surface attaches the demo marker immediately. There is no file input or native picker; drag/drop also only attaches the synthetic marker.
+- Browser verification passed: all individual field clicks, keyboard citizenship activation, selfie before the final field, automatic advance to Send, repeated passport/photo clicks without duplicates, removal/re-attachment, reload restoring the filled form, successful submission and reset. DOM check confirmed one attachment and zero file inputs; console errors were empty.
+- Added the canonical `docs/skills/winwork-onboarding/SKILL.md`, routed from `AGENTS.md` and `context-index.json`, and linked it into `~/.codex/skills/winwork-onboarding`. It records the click-only interaction contract and concrete extension points for later scenarios.
+- `pnpm check` passed and rebuilt the standalone onboarding HTML. The earlier `file://` automation restriction still applies; physical file selection is no longer part of the requested demo behavior.
+
+## 2026-09-21 — top-up invoice and filled-field correction
+
+- Corrected a split selector in `onboarding.css`: the input selector had accidentally joined the read-only cursor rule, leaving sizing and padding on selects only. All eleven application fields now share the 56px height and 26px top padding. Browser geometry confirmed labels end above values; screenshots confirmed passport, company, email and telephone content, including a 390px-wide drawer.
+- As explicitly requested, invoice and QR actions now occupy a separate pale-blue card above bank requisites. Checked at 2560px and 1280px viewport widths; controls stay within the card.
+- Inspected the authorized live invoice screen and QR popover. Recreated Back, the 550px form, PDF/XLSX choice, amount and generation action. The source handler downloads a file, without an email or success modal. No real invoice or payment was created.
+- Verified amount activation with Space, browser download events for both PDF and XLSX, fresh reopening, Back/Escape focus restoration, QR dismissal, and hiding/restoring the commission guide when visiting the invoice. The PDF was rendered and inspected; PDF text and XLSX numeric amount were checked. The QR encodes only a non-payment demo marker.
+- Passed `pnpm check`. The regenerated 570,135-byte offline HTML contains byte-identical PDF/XLSX fixtures and the corrected shared input rule; no external script tags remain. Actual `file://` execution remains unverified because of the previously observed browser-tool restriction. Web UI verification and static artifact checks do not substitute for that test.
+
+## 2026-09-21 — native-looking field activation
+
+- Removed the blue focus outline from onboarding product fields, following the user's explicit WinWork reference correction. Button/radio focus indicators and guide target highlights remain scoped separately.
+- Browser checks confirmed `outline-style: none` on activated passport, email and invoice-amount inputs. The filled passport screenshot retained its spacing without a surrounding blue frame. `pnpm check` passed and rebuilt the offline HTML (570,221 bytes); direct `file://` verification remains subject to the earlier tool restriction.
+
+## Company-information onboarding · 2026-09-21
+
+- Inspected the authorized Chrome `/aggregator/settings/company` source and compared its filled public-profile layout with the semantic local form at the same 2560px desktop width. Source viewport height was 1267px; local desktop captures used 1323px, so this was a geometry/content comparison, not a pixel-diff claim. The local public card measures 900 × 822px, matching the source; logo is 112px, inputs 56px, description 113px, with separate labels and paired phone/email. Legal/review data and the attached logo are explicitly synthetic. Empty and filled local forms were visually inspected, including email/tel values and no blue input-focus outline.
+- Completed the company scenario through home, Settings, company tab, all fixtures and Save. Confirmed the source-derived “Публичный профиль обновлён” toast, completion in both catalogs and restored fields after reload. Also exercised dismissed guidance, empty-name validation, partial save without completion, Tab without filling, Enter/Space filling, repeated activation, logo removal/re-attachment after other fields, pause/resume, Escape, help focus trapping/restoration, hash Back/Forward and focus restoration to the correct catalog card. Company reset preserved tariff progress. Tested 800/820 × 900 and 390 × 844 browser surfaces: the desktop canvas scrolls; the completion card and action remain operable. Temporary viewport overrides were reset.
+- Rechecked the existing tariff flow from its saved form checkpoint through final-field entry and the original success dialog; both flows report completion in the shared help. Early development HMR errors were observed while extracting the shell and extending the effect dependency list; they are distinct from the successful final type/lint/build verification.
+- `pnpm check` passes, including documentation, formatting, lint, types, 32 auth assertions and both offline packages. Additional ephemeral state checks cover incomplete/corrupt checkpoints, storage denial, safe fixture-only serialization and independent resets. `git diff --check` passes.
+- `dist/offline/Открыть онбординг WinWork.html` was rebuilt with both scenarios and embedded dependencies; packaging assertions reject external CSS assets/scripts and its CSP forbids connections. Direct `file://` QA was blocked by the browser tool's URL security policy in this session. No offline browser execution or zero-runtime-request claim is made.
+
+### Softer onboarding target outlines · 2026-09-21
+
+The shared `[data-tour-active='true']` outline now uses the same RGB color (71, 115, 237) at 70% opacity with a 6px base corner radius. Existing rounded logo surfaces keep their own radius. Verified in Chrome at 2560 × 1323 on the tariff passport group and company brand-name field: both compute a 2px `rgba(71, 115, 237, 0.7)` outline and 6px radius; screenshots confirm rounded corners. The change applies to both onboarding flows and their shared offline build.
+
+## First marketplace task onboarding · 2026-09-21
+
+- Inspected the authorized Chrome Dev session for ООО «Ф»: empty list, single-task creation drawer, filled fields/work items, created row, read-only detail and empty responses. The user explicitly authorized creating a synthetic Dev task. The street input stayed invalid even after entry, so the live reference task used remote work. The future task became visible after clearing the date filter; its status was “Создан”. Runtime demo data and the task number are synthetic.
+- Compared source and local screenshots at the same 1710 × 930 viewport. Recreated the company-only navigation, underline tabs, filters/table, 552px creation panel, 630px detail panel and shared form controls. Filled fields retain floating labels above values. The existing onboarding help control and prototype tools remain deliberate additions.
+- Chrome QA passed the guided address path and unguided remote path, click/Enter/Space fixtures, Tab without filling, repeat clicks, additional-work removal/replacement, required-field gating, creation, single table row, detail, empty responses, reload of a ready form, pause/resume, Escape and focus restoration. Help focus wraps, the three-flow catalog works, and marketplace reset preserves visible tariff/company progress. Checked older tariff CTA and company profile navigation. No console errors were recorded in the local demo.
+- Inspected the detail and completion guide at 800 × 900: the panel stays within the viewport and the guide leaves its response-tab target available. The wide table intentionally uses the existing overflow-safe desktop canvas.
+- State assertions passed for incomplete forms, extra work, audience selection, remote/address readiness, fixture-only persistence, invalid checkpoint recovery, storage denial and independent reset. `pnpm check` passed, including all builds and 32 access-gateway assertions. The standalone HTML is rebuilt with all three flows.
+- Direct `file://` opening was blocked by the browser tool URL policy. Packaging assertions confirm embedded CSS assets/scripts and CSP `connect-src 'none'`; offline browser execution and runtime network inspection are not claimed.
+
+## 2026-09-21 — account top-up onboarding and in-card reset
+
+- Added the second catalog/help entry, `#topup`, with four guided steps on the existing shared tariff and invoice screens. Commission completion links into top-up; its prepared-invoice result links into the first marketplace task. The catalog/help report invoice preparation, never a credited balance.
+- Verified optional copying (clipboard digits match the synthetic account) and a PDF requisites download, disabled generation before amount entry, Space activation, reload at the generation step, XLSX download and the final guide. Both inter-flow transitions were exercised. The source service was not mutated. The new requisites PDF was rendered and visually inspected.
+- Checked pause/resume after leaving for Home, help focus trap and Escape restoration, four help entries from the company flow, catalog completion, and resetting only top-up while tariff completion and marketplace progress remained intact. State checks covered malformed/denied storage, valid checkpoints, resume pages and completion validation.
+- At 1280 × 800 the invoice guide stayed within the viewport without intersecting the form. At 390 × 844 every catalog reset remained inside its own card, all cards fit the viewport and there were no nested buttons. Field activation retains the user's no-blue-outline correction.
+- The complete `pnpm check` gate passed. Offline PDF/XLSX assets are bundled with the same components; direct `file://` execution remains unverified because of the earlier browser-tool restriction.
+
+## Onboarding training entry — 2026-09-21
+
+- User-requested header change: pale-blue “Обучение” button with “Пройдено N из 4”, shared by tariff, top-up, company and marketplace. Existing question icon retained; unrelated screens follow their prior reference.
+- Chromium opened the rebuilt single HTML through `file://` with networking disabled. Completing the company profile changed the header from 0/4 to 1/4 immediately; reload and all four flow entries retained 1/4. Reset returned it to 0/4. The help-panel count matched.
+- Mouse/Enter opened the help list; Escape restored focus to the training button in all four flows. No console errors or HTTP requests. Header checked at 1920, 1440, 1280, 1120, 1080, 700 and 390px; narrow hosts retain the existing scrollable desktop canvas. Balance descriptions collapse below 1200px to leave room for the wider training entry.
+
+## 2026-09-25 — tariff and top-up tab redesign
+
+- Replaced the combined tab with “Тариф” and “Пополнение”. The tariff occupies one full-width card with the requested two-column grouping. Top-up has an inline amount/PDF/Excel form and permanently visible QR on the left, copyable requisites on the right. The three notices use the same existing pale-blue treatment and Roboto body type; the page title retains bundled Montserrat. No new font files or palette colors were introduced.
+- Inspected both tabs in Chrome from the rebuilt `file://` HTML and in the local Vite app. Verified PDF and XLSX downloads, the requisites PDF, copy feedback, unchanged zero balance, persisted amount/format/prepared state after reload, keyboard tab switching and invoice retention across tabs. Native Chrome's downloads list showed all three generated files as complete.
+- Passed all four guided top-up steps, empty-amount disabling, Tab without filling, Space to fill, preparation result, pause after switching away, resume to the correct tab, and Escape/focus restoration. Completed the synthetic commission application and confirmed success; switching between tabs preserves its invoice values. Catalog reset cleared only top-up and retained the completed commission scenario.
+- Visually inspected at the default 1710px viewport and at 1100px. At 1100px both top-up cards had matching 389px client/scroll widths. At 700px the existing 1080px desktop canvas remains horizontally scrollable; neither tariff column has internal overflow. Viewport override was reset afterward. Filled amount stays below its floating label.
+- Local browser computed styles confirmed Montserrat 32px for the page heading and Roboto 22px / 16px for the card heading / action. Browser console reported no warnings or errors during the checked flows. Migration/resume checks covered old v1 tariff/invoice checkpoints, format retention, v2 reload and rejection of an invalid prepared-without-amount state.
+- Fresh comparison to live dev fonts was blocked: `my-smz-partner-front-dev.apibank.tech` failed DNS resolution and Chrome showed a network error. Existing source font provenance is from 2026-09-21; a fresh live match is not claimed. The browser extension later blocked `file://` inspection; networking-disabled runtime inspection was therefore not completed. The offline packager's embedded-asset assertions passed and CSP still blocks network connections.
+- `pnpm check` passed (documentation, formatting, lint, TypeScript, 32 auth assertions and all builds). The offline HTML was rebuilt from the same components. No commit, push or deployment was performed.
+
+## 2026-09-25 — tariff balance, ruble glyph and top-up guidance refinement
+
+- Fresh read-only inspection of the authorized dev Chrome tab succeeded after the earlier connection failure: the page title uses Montserrat 32px/700, the card title Roboto 22px/700, tabs Roboto 16px/400, the ruble balance symbol Roboto 15px/400, and the application button Montserrat 15px/500. No source application, invoice or payment was submitted.
+- Font cmap inspection identified missing U+20BD in the original four Latin/Cyrillic files. Official ruble-only variable subsets of the same Roboto/Montserrat families now provide the glyph through scoped font-face rules. Binary checks confirm U+20BD exists in both new files; screenshots show consistent rubles in balances, rates and the filled amount. No new family or palette color was added.
+- All payment groups are now on the right of the tariff card. The enlarged commission block and document/check prices occupy the left. At 1710px, both columns measured 512px tall, with no internal horizontal overflow. At 1100px, both remained 512px tall and overflow-free.
+- Top-up uses a shared company-account warning above equal-height cards, compact paired BIC/bank and INN/KPP rows, and an always-open 132px QR. The persistent amount-demo caption was removed. At 1710px the completed cards measured 645px tall; at 1100px their client/scroll widths both measured 389px. At 700px, the existing 1080px desktop canvas remains scrollable, with no internal card overflow.
+- Exercised the updated four-step guide: navigate to the top-up tab (two prompts within step 1), review methods, fill amount, choose format/generate. Confirmed empty generation is disabled, Tab does not fill, Space and click do fill, PDF/XLSX preparation works, Back returns to amount/methods, and switching away pauses/resuming restores the tab. The generation guide highlights both the format choices and button; measured no intersection with its target at 1100px. Reload retained the selected XLSX and prepared state; Escape returned focus to training. Reset retained the independently completed commission flow.
+- Current screenshots: `/tmp/winwork-tariff-refined.png` and `/tmp/winwork-topup-refined.png` (local QA evidence, not runtime assets). Direct `file://` execution was not repeated because of the browser tool's URL restriction; current browser checks use the same components through local Vite.
+- `pnpm check` passed: documentation, formatting, lint, TypeScript, all 32 auth assertions and all builds. Browser console had no warnings/errors. The rebuilt 670,102-byte onboarding HTML contains both exact ruble-font payloads, omits the old demo caption and retains `connect-src 'none'`. No commit, push or deployment was performed.
+
+## 2026-09-27 — shared top-up bank selection
+
+- Moved all three bank choices above the top-up cards and matched the PDF/Excel radio-choice styling. Bank selection now updates the QR, visible/copyable requisites, requisites PDF and generated PDF/XLSX together. QR is a separate card above the invoice on the left; requisites remain on the right. Renamed both action headings, removed the visible QR demo caption and repeat-download action, retained the prepared-file status.
+- Chrome inspection confirmed all three card headings are 22px; QR instructions and the format legend are 16px. At 1100 × 850 both columns measured 389px with equal 687px heights and no internal horizontal overflow. The generation tip did not intersect its highlighted controls. The viewport override was reset. Default-view evidence: `/tmp/winwork-global-bank-final.png`.
+- Verified all three bank options, distinct QR sources and account values, native radio arrow-key selection, four-step guidance, empty-amount guard, Space entry, PDF/XLSX preparation, Back, tab pause/resume, bank/format/amount retention after reload and reset back to Т-банк. Switching bank clears preparation while retaining amount and format. Copying the ТКБ account returned the matching synthetic value to the clipboard. A clean reload and subsequent interaction produced no new console warnings/errors; intermediate HMR errors during the schema change were resolved by reload.
+- Regenerated the three synthetic invoice/QR/requisites bundles from `bankRequisites.ts`. All six PDFs are one page and their extracted values match the UI fixtures; all three spreadsheets match and store 25000 as a number. Visually inspected the longest-bank-name invoice and requisites PDF with Poppler: no clipping or overlapping text. QR payloads remain bank-specific non-payment markers.
+- State assertions passed for v1/v2 migration, each bank's schema-v3 persistence, completed resume and malformed storage. `pnpm check` passed, including documentation, format, lint, TypeScript, 32 auth assertions and every build. The rebuilt 944,132-byte offline HTML embeds all nine downloadable files, omits the removed labels and keeps `connect-src 'none'`. Direct `file://` execution was not repeated because of the browser tool restriction. No commit, push or deployment.
+
+### Shared bank card and notice placement — 2026-09-27
+
+- Wrapped the shared bank choices in the same white card primitive as the other top-up cards (24px padding, 8px radius), expanded the choices across the available width, and placed the company-account notice directly under the requisites heading. Removed the instructional invoice notice.
+- Chrome measured the bank card and two-column area at the same 1190px width. At 1100px viewport they both measured 802px, without internal overflow; the relocated notice's client/scroll widths both measured 341px. Changing the bank still updated the visible account and QR. The viewport was restored. Evidence: `/tmp/winwork-bank-card-final.png`.
+
+## 2026-09-28 — единый офлайн-файл для продаж
+
+- `pnpm build:sales:offline` создаёт `dist/offline/Открыть продажи WinWork.html` (54 641 898 байт). Используются общая главная, три sales-конфига, существующие React flow и стандартные controls; парольный шлюз в файле отсутствует.
+- Chromium / Playwright, `file://`, viewport 1440 × 1000, сеть отключена: открыты все 37 слайдов (17 Enterprise, 12 Small, 8 API); проверены slide images, CSS backgrounds, fonts, hotspots, scene picker, прямые valid/invalid ссылки, сохранение постороннего query, Back/Forward, reload, стрелки, reset и возврат на главную.
+- Все 10 quick-access flow открыты, сброшены и повторно открыты. Пройдены регистрация юрлица, 11 экранов регистрации исполнителя, отклик и Back, создание объекта с руководителем/доверенностью/SMS, оплата в приложении управляющего, сохранение вида деятельности, редактор шаблона, создание задания, принятие/отказ исполнителю и SMS-оплата выполненного задания. Escape, восстановление фокуса и изоляция клавиатурной навигации презентации проверены.
+- Пройдены четыре onboarding-сценария в `#/onboarding#<flow>`, возврат в каталог и на главную. В пополнении скачаны встроенные PDF и XLSX для каждого из трёх банков. Навигация web `/onboarding#tariff` и отдельного onboarding HTML сохранена.
+- Сравнение с исходными web exports при одинаковом viewport и одинаковом Inter: `ent-01`, `ent-05`, `ent-10`, `ent-12`, `ent-16`, `ent-17`, `smb-10`, `api-01` — 373 Pencil-узла, ноль различий по геометрии и проверенным стилям (типографика, цвета, отступы, gap, скругления). Включены все четыре экспорта с бывшим Tailwind CDN; utility CSS теперь собирается локально. Изображения не пересоздавались.
+- Дополнительно проверены узкое окно 430 × 800 и отсутствие Fullscreen API. Общие embedding helpers проверены на Court: шесть слайдов, hotspots, изображения, reset, восстановление фокуса и manifest без sales exports.
+- Во всех офлайн-проверках: ноль HTTP-запросов и ошибок приложения/консоли. `pnpm check` прошёл, включая 32 auth-assertions и все сборки. Скрипты, screenshots и результаты текущего прогона: `/tmp/winwork-sales-offline-qa/` (временное QA-доказательство, не runtime-зависимость).
+
+## 2026-10-07 — компактная плашка обучения
+
+- По запросу пользователя общая плашка перед колокольчиком приведена к соседним селекторам: белый фон, высота 32px, скругление 8px и та же тень. Значок вопроса уменьшен до 18px; «Обучение» (600) и «N из 4» (400) размещены в одну строку шрифтом 15px. Видимое «Пройдено» убрано.
+- Chromium / Playwright, 1710 × 930 и 390 × 844: проверены web `/onboarding`, отдельный onboarding HTML и onboarding внутри sales HTML. Во всех четырёх сценариях на главной и целевой странице размеры и стили плашки совпали с соседними селекторами; название и счётчик имеют одинаковую вертикальную позицию. На узком окне сохранён прокручиваемый desktop canvas.
+- Проверены открытие списка четырёх сценариев, фокус на закрытии, Tab/Shift+Tab внутри списка, Escape, восстановление фокуса, повторное открытие через Enter и закрытие кнопкой. Реальное локальное заполнение и сохранение публичного профиля изменило счётчик 0 → 1; сброс вернул 0. Сценарии и их прогресс не изменялись в коде.
+- Оба пересобранных HTML открыты через `file://` с отключённой сетью: ноль HTTP-запросов, ошибок приложения и предупреждений/ошибок консоли. Скриншоты: `/tmp/winwork-training-header.png`, `/tmp/winwork-training-offline-desktop.png`, `/tmp/winwork-training-offline-narrow.png`; временный проверочный скрипт — `/tmp/winwork-training-qa.mjs`.
+- Форматирование, lint, TypeScript, все 32 auth-assertions и `pnpm build` прошли. Общий `pnpm check` остановился на шести ранее отсутствующих PNG-целях в `For Printing/without_logos/README.md`; эта папка не затрагивалась. Коммит, пуш и деплой не выполнялись.
+
+## 2026-10-08 — колокольчик перед карточками шапки
+
+- Кнопка «Уведомления» перенесена в начало общей `.wo-account`: перед «Обучением», проектом и компанией. Порядок DOM и Tab совпадает с визуальным; стили карточек сохранены. Текущая документация обновлена.
+- Chromium / Playwright, `file://`, сеть отключена, 1710 × 930 и 390 × 844: в отдельных onboarding и sales HTML проверены все четыре сценария на главной и целевой странице. Колокольчик первый, его правая граница находится левее всех карточек; клик показывает «Новых уведомлений нет», следующий Tab фокусирует «Обучение». Открытие/повторное открытие помощи, её focus trap, Escape и восстановление фокуса работают; счётчик проходит 0 → 1 → 0 после локального сохранения профиля и сброса.
+- Ноль HTTP-запросов, ошибок приложения и предупреждений/ошибок консоли. Скриншоты: `/tmp/winwork-header-bell-first.png`, `/tmp/winwork-header-bell-desktop.png`, `/tmp/winwork-header-bell-narrow.png`; временный скрипт — `/tmp/winwork-bell-position-qa.mjs`.
+- Форматирование, lint, 32 auth-assertions и полная сборка с TypeScript прошли; оба офлайн-файла пересобраны. `pnpm check` по-прежнему останавливается на шести отсутствующих PNG-целях в `For Printing/without_logos/README.md`. Коммит, пуш и деплой не выполнялись.
+
+## 2026-11-09 — автономная «Подрядная схема»
+
+- Сопоставлены таблицы заказчика и подрядчика и панель подписания с [актуальными фреймами Figma](https://www.figma.com/design/WwZNRrCGSRZK1OwtXHI7WQ?node-id=1-7753) при размере продуктового экрана 1610 × 1136. Сверены колонки, вложенное меню, правая панель и фон. Шаг 13 использует обновлённый фрейм `1:7771`: подрядчик видит две подписи других сторон и подписывает акты. Кнопки оплаты появляются только на стороне заказчика на шаге 14.
+- В Google Chrome, `file://`, с отключённой сетью пройдены 37 состояний и 17 этапов. Проверены встроенные изображения, история, прямые ссылки, сброс, полноэкранный режим и одновременная смена роли и экрана. HTTP-запросов и ошибок консоли не было.
+- При 390 × 820 проверены прокрутка формы создания, видимость кнопки оплаты, правое выравнивание панели, отдельное положение мобильной кнопки и индикатора, доступность навигации. Снимки: `/private/tmp/winwork-contracting-qa-01a1bc82/`.
+- Быстрые проверки, сборки и все 12 тестов Playwright прошли. Отдельно пройдены существующие демо оплаты (автозаполнение, неверный и верный коды) и отклика (открытие, отправка, возврат) в автономном sales-файле.
+
+### Карточки ролей и подсказки действий — 2026-11-09
+
+- В Google Chrome на 1440 × 900 и 390 × 820 проверены встроенный логотип WinWork, соседние кнопки «Назад» и «Далее», цветные карточки без рамок и увеличенное описание. Снимки с экранами отклика, создания, подписания и таблицы: `/private/tmp/winwork-contracting-cues-01a1bc82/`.
+- В автономном файле с отключённой сетью пройдены все 37 состояний. На 21 экране подсвечивается одна нужная кнопка, вкладка или строка; в остальных состояниях подсказки нет. При уменьшенном движении обводка остаётся видимой без анимации. В узком окне форма создания прокручивается отдельно от закреплённой кнопки. Ноль HTTP-запросов и ошибок консоли.
+
+### Обновлённое завершение задания — 2026-11-09
+
+- Сверены [новые шаги 10–15 в Figma](https://www.figma.com/design/WwZNRrCGSRZK1OwtXHI7WQ?node-id=13-5631). Исполнитель подтверждает выполнение первым; заказчик ждёт подпись подрядчика, затем принимает работу и подтверждает оплату по СМС. После оплаты заказчику показан один подписанный документ, подрядчику — три.
+- В Google Chrome через `file://` пройдены все 35 состояний и 15 этапов: ноль HTTP-запросов и ошибок консоли. На 1440 × 900 обе карточки документов подрядчика видны над кнопкой подписания. На 390 × 820 кнопки подтверждения и оплаты остаются видимыми. При смене роли цвет сохраняется только на активной карточке. Снимки: `/private/tmp/winwork-contracting-flow-v2-01a1bc82/`.
+- Прошли 13 браузерных тестов; после поправки отступов повторно прошли три теста подрядной схемы. Отдельно пройдена стандартная оплата с СМС в автономном sales-файле.
+
+### Тексты и данные таблиц — 2026-11-09
+
+- В Chrome с отключённой сетью проверены видимый текст и подписи элементов на всех 35 экранах. Убраны пометки «демо», согласованы имена и компании между таблицами, карточками и приложением исполнителя. Вымышленные реквизиты не проходят проверку контрольной цифры, телефоны скрыты частично.
+- На 1440 × 900 проверены таблицы и карточки с новыми именами, на 390 × 820 — экран отклика, подтверждение выполнения и панель откликов. HTTP-запросов и ошибок не было. Сборка и все 13 браузерных тестов прошли.
+
+### Вводные слайды — 2026-11-09
+
+- Фреймы `aSI4z`, `PYie0`, `U2e3V`, `Y9Q12` и `lc1hA` из `pencil/outsource_shchema.pen` экспортированы как HTML/CSS. В Google Chrome при 1920 × 1080 сверены композиция, заголовки и подписи пяти слайдов с PNG из Pencil. Inter загрузился из файла, холст каждого слайда поместился целиком. Сравнение сохранено в `/private/tmp/winwork-contracting-slides.V8wajZ/pencil-vs-chrome.png`.
+- При 430 × 800 и 1440 × 1000 границы области клика «Показать в WinWork» совпали с видимой кнопкой с точностью до 0,5 px. Проверены переход кнопкой и стрелкой, возврат на пятый слайд, сохранение параметров хеша, сброс на обложку и полноэкранный режим, включая отсутствие Fullscreen API.
+- Отдельная копия HTML открылась через `file://` с отключённой сетью. Пройдены пять слайдов и все 35 состояний прототипа, сверены подсветка трёх ролей и оба варианта таблицы. Зафиксировано ноль HTTP-запросов и ошибок консоли. Все 14 браузерных тестов прошли.
+
+### Постоянная панель навигации — 2026-11-09
+
+- В Google Chrome при 1920 × 1080, 1440 × 1000, 390 × 820 и 320 × 568 одна панель видна без наведения. Положение, размеры и фон совпали на пятом слайде и первом экране прототипа. Кнопки и список поместились в панели, которая расположена ниже области слайда или прототипа.
+- При переходе через Enter фокус остался на кнопке «Следующая сцена». В автономном HTML с отключённой сетью проверены переход в обе стороны, выбор этапов, все 35 состояний, полноэкранный режим и сброс. HTTP-запросов и ошибок браузера не было. Все 14 браузерных тестов прошли.
+
+### Карточка текущего шага — 2026-11-09
+
+- В Google Chrome при 1440 × 1000, 390 × 820 и 320 × 568 сверены первый этап и экран «Предложение отправлено». Шапка начинается с плашек ролей. Серые плашки темнее фона. Белая карточка вмещает заголовок и описание, номер этапа виден справа, экран прототипа и панель управления расположены ниже.
+- В автономном HTML с отключённой сетью проверены карточки всех 35 состояний и номера 15 этапов. HTTP-запросов и ошибок браузера не было. Все 14 браузерных тестов прошли.
+
+### Версии для отдельных ролей и прототип без слайдов — 2026-11-10
+
+- В Google Chrome через `file://` с отключённой сетью пройдены 35 экранов прототипа без слайдов, 16 экранов заказчика и 10 экранов подрядчика. У прототипа совпадают порядок, роли и подписи всех экранов с полной версией. Прямые ссылки на исключённые сцены возвращают к началу соответствующего файла.
+- В обеих ролевых версиях проверены пять слайдов. На 1920 × 1080 и 390 × 820 область клика «Показать в WinWork» совпала с кнопкой на слайде, а переход, выбор этапа, история и сброс сработали. Экраны оплаты заказчика, подписания подрядчика и выплаты исполнителю при 1920 × 1080 совпали с исходными областями продукта по пикселям.
+- Подписанные документы доступны в соответствующих кабинетах. При проверке не было HTTP-запросов и ошибок браузера. Снимки и проверочный скрипт сохранены в `/private/tmp/winwork-contracting-editions.pj4o0n/`.
+
+### Приложение исполнителя в ролевых версиях — 2026-11-10
+
+- В Google Chrome без сети пройдены 25 экранов версии для заказчика и 19 экранов версии для подрядчика. В каждой версии проверены все девять экранов приложения исполнителя, этапы в панели и переключение подсветки ролей. Графика приложения загрузилась, прямые ссылки на кабинет другой стороны вернули к обложке.
+- При 1920 × 1080 экран отклика исполнителя совпал с исходным по пикселям. При 390 × 820 сверены плашки двух ролей, мобильный экран и кнопка отклика. На пятом слайде обе роли помечены «В демо». Проверена подпись о публикации задания заказчиком и появлении строки в разделе подрядчика «Задания клиентов». Снимки сохранены в `/private/tmp/winwork-contracting-performer-editions.dUt07i/`.
+
+### Краткая версия подрядной схемы для заказчика
+
+- В Google Chrome через `file://` при 1600 × 950 проверены девять оригинальных PNG из [упрощённой страницы Figma](https://www.figma.com/design/WwZNRrCGSRZK1OwtXHI7WQ?node-id=33-2185). Байты каждого встроенного изображения совпали с экспортом: выбор подрядчика, подписанный договор, лимиты, создание задания в веб-кабинете и приложении, оплата в двух интерфейсах и акт от подрядчика. Длинные экраны показаны крупными фрагментами без изменения изображений; у мобильной оплаты отдельно видны данные задания и кнопка из нижней части того же экрана.
+- Первые четыре слайда совпали с исходной версией. Пятый заменён на статический обзор «Подрядная схема в трёх шагах» без кнопки запуска прототипа. Проверены все шесть обновлённых слайдов, отсутствие обрезанного содержимого, встроенный Inter и все изображения. На 390 × 820 слайд создания задания помещается целиком.
+- Сеть была отключена; HTTP-запросов и ошибок браузера не было. Снимки и проверочный скрипт сохранены в `/private/tmp/winwork-figma-originals-review.z0kqfq/`. Исходный HTML для заказчика сохранён без изменений.
+
+### Краткая версия из обновлённого Pencil — 2026-11-12
+
+- Сопоставлены десять указанных фреймов из `pencil/outsource_shchema.pen` и кадры HTML в Google Chrome при 1920 × 1080. Сверены композиция, текст, кадрирование скриншотов и иллюстрация на итоговом слайде. На 390 × 820 проверены масштаб слайда создания задания и панель навигации. Снимки: `/private/tmp/winwork-brief-pencil.gQGe76/`.
+- В режиме `file://` без сети пройдены все десять слайдов. Проверены стрелки и кнопки панели, список сцен, история, прямые ссылки, сброс и полноэкранный режим. Ссылка `ctr-brief-limits` открывает девятый слайд. Inter и десять изображений встроены; HTTP-запросов и ошибок браузера не было. Прошли все 18 браузерных тестов.
+
+### Таблица «Мои исполнители» — 2026-11-16
+
+- В [кадре Figma](https://www.figma.com/design/WwZNRrCGSRZK1OwtXHI7WQ?node-id=81-8108) показана таблица заданий «Маркетплейса». Размеры перенесены в таблицу исполнителей: Roboto 12 px, заголовок 44 px, строка 56 px. Заголовок страницы сохранил Montserrat 32 px. Названия столбцов сверены с разделом «Мои исполнители» в dev-версии WinWork.
+- В Google Chrome при 1710 × 950 проверены перетаскивание заголовков и строк меню «Столбцы», изменение ширины указателем и клавиатурой, возврат исходной ширины двойным щелчком, фильтры по значению и диапазону дат, сортировка по нескольким полям, показ и скрытие столбцов, поиск, пагинация, карточка исполнителя и возврат фокуса по Escape. На 390 × 820 проверены горизонтальная прокрутка, закреплённые шапка и ФИО и размещение меню.
+- Автономный HTML проверен в изолированном Google Chrome с отключённой сетью. Тест подставлял HTML как тело документа и блокировал все остальные HTTP-запросы. Шрифты и изображения загрузились из файла сборки, ошибок и дополнительных запросов не было. Сохранение настроек проверено перезагрузкой документа.
+- Повторный UX-аудит в Chrome: сопоставлены меню столбца и видимости свойств в открытой таблице Notion. В WinWork выровнены панель и меню (Roboto 14/20 px), ИНН (12/16 px), кнопки и поиск (36 px). Сохранены шапка 44 px, строки 56 px и заголовок Montserrat 32/36 px. Уменьшены отступы над таблицей: при 1710 × 930 все десять строк страницы видны целиком. Ширина столбцов по умолчанию растёт вместе с текстом; проверены все 30 строк при девяти сочетаниях 12/13/14 px и 44/56/64 px без обрезанных подписей.
+- Повторно пройдены фильтры с возвратом и пустым поиском столбцов, сортировка дат и её сброс, перемещение столбцов стрелками, Tab/Shift+Tab и Escape. При 1366 × 768, 1024 × 768 и 390 × 820 меню остаются внутри экрана, заголовок длинного меню закреплён. Готовый HTML открыт через локальный preview в пользовательском Chrome; отдельно проверен без сети с подстановкой документа, без дополнительных HTTP-запросов и ошибок. `pnpm check` прошёл, включая 18 браузерных тестов проекта. Снимки: `/Users/ralphquite/.codex/visualizations/2026/11/16/01a1e444-9c91-7581-ad95-87bed1f96e42/winwork-performers-polished.png` и `winwork-performers-polished-columns.png` в той же папке.
+
+### Отчёты по подрядной схеме
+
+- Сверены кабинет подрядчика из [Figma](https://www.figma.com/design/WwZNRrCGSRZK1OwtXHI7WQ?node-id=81-8658), [пример таблицы из Figma](https://www.figma.com/design/WwZNRrCGSRZK1OwtXHI7WQ?node-id=77-6236) и открытый в Chrome раздел отчётов dev-кабинета. В прототипе сохранены меню, шрифты, вкладки, серые поля фильтров и белые таблицы. Название готового отчёта открывает отдельный экран просмотра в том же окне; загрузка XLSX доступна и из списка, и из просмотра.
+- В Google Chrome через `file://` без сети проверены список, форма и просмотр при 1610 × 1139 и доступность формы при 390 × 820. Проверены обе роли, период и статусы, пустой результат, возврат, сохранение отчёта после перезагрузки и выгрузка XLSX. В браузере не было HTTP-запросов и необработанных ошибок.
+
+### Повторный UX-проход по отчётам — 2026-11-16
+
+- Повторно сверены таблицы и кабинет из Figma, уведомление о формировании отчёта в узле `77:7346` и раздел отчётов открытого dev-кабинета. Уплотнён экран просмотра; в форме появились изменяемое название, три режима выбора статусов и предварительное количество заданий. Добавлены уведомление с переходом к готовому отчёту, создание похожего отчёта, вход из строки компании, фильтр компании, сброс и сортировка списка.
+- В подключённом Google Chrome при 1710 × 930 и 390 × 820 пройдены обе роли, создание из списка компаний, ошибки периода и пустого выбора статусов, предупреждение о пустой выборке, формирование и открытие, поиск и сброс, возврат и история, сохранение после перезагрузки и независимые фильтры ролей. Сортировка сохранилась после возврата из просмотра. По Escape панель закрылась с возвратом фокуса. На узком экране кнопки закреплены, ошибка прокручивается в видимую область, горизонтального переполнения страницы нет.
+- XLSX скачан из просмотра: проверены ZIP CRC, XML и соответствие двум выбранным заданиям. Ошибок и предупреждений консоли не было. Снимки до и после: `/private/tmp/winwork-reports-ux-review/`. Этот повторный проход выполнен через разрешённый пользователем локальный сервер `127.0.0.1:5188`; прямой `file://` в этой сессии не перепроверялся из-за ограничения браузерного инструмента.
+
+### Типографика таблиц отчётов — 2026-11-16
+
+- По замечанию пользователя убраны полужирные названия и оформление названий как синих подчёркнутых ссылок. Размеры сверены с таблицей «Маркетплейса» в [Figma, `81:8108`](https://www.figma.com/design/WwZNRrCGSRZK1OwtXHI7WQ?node-id=81-8108), а обычное начертание шапки и нейтральные цвета — с таблицей документов `77:6307`. В таблицах этого прототипа установлен Roboto Regular 12/14 px, основной текст `#252E42`, вторичный `#808080`, белая шапка 44 px, базовая строка 56 px и разделитель `#E9E9E9`. Длинные названия могут увеличивать высоту строки. Изменения применены к обеим ролям, списку компаний и просмотру отчётов.
+- В подключённом Chrome при 1710 × 930 проверены фактические computed styles: название, ячейки и шапка имеют вес 400; название без подчёркивания и синего цвета. Проверены обе роли, просмотр, возврат, открытие строки мышью и названия через Enter. Консоль без ошибок и предупреждений. Сборка отчётов и `pnpm check:quick` прошли. Снимок: `/private/tmp/winwork-reports-ux-review/08-table-typography.jpg`. Dev-кабинет в этом проходе был недоступен (`ERR_CONNECTION_CLOSED`), сверка выполнена по Figma.
+
+### Типы и значки «Мои исполнители» — 2026-11-16
+
+- В открытом dev-кабинете WinWork сверены все 11 столбцов, исходный аватар, шесть флагов, оба значка «Мой налог», состояния документов и четыре варианта оплаты. В `src/assets/performers/` сохранены 18 оригинальных SVG из отображаемой страницы; они встроены в автономный HTML. ФИО, ИНН и сочетания значений остаются вымышленными. НПД хранит права на уплату налога, оплата — тип реквизитов, документы — собственные состояния; пустая ячейка отличается от отказа/отсутствия.
+- В подключённом Google Chrome при 1710 × 930 проверены вид ячеек, выбор карты и СБП одним фильтром, пересечение с разрешением на уплату НПД, два уровня сортировки, изменение их приоритета, скрытие столбца, перемещение клавиатурой, изменение ширины и сохранение настроек после перезагрузки. Ошибок и предупреждений консоли нет.
+- В отдельном тестовом Google Chrome проверены перетаскивание заголовка и строки в меню «Столбцы», изменение ширины мышью, скрытие и сохранение порядка, сброс, фильтры, хронологическая сортировка, пустой поиск и Escape с возвратом фокуса из карточки. Проверка выполнялась на локальном HTTP-адресе собранного HTML; после загрузки сеть отключалась. Прямой `file://` заблокирован политикой браузерного инструмента и в этой задаче не проверен.
+- Снимки: `/Users/ralphquite/.codex/visualizations/2026/11/16/01a1e509-4fe4-7c01-9799-744b42a9b692/performers-restored.jpg` и `performers-payment-filter.jpg` в той же папке. При 390 × 820 проверены границы меню НПД, отсутствие горизонтального переполнения страницы и возврат фокуса по Escape; при прокрутке шапка закреплена. Все изображения загрузились из `data:`; после отключения сети не было дополнительных HTTP-запросов и ошибок. Сборки и семь web smoke-тестов проекта прошли. Полный `pnpm check` не заявляется: проверки с `file://` недоступны, а финальная проверка документации попала на параллельное обновление README и новых документов (отсутствовавшие на момент проверки ссылки и форматирование).

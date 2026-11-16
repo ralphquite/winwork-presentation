@@ -1,0 +1,282 @@
+.contracting-performer {
+  position: relative;
+  display: grid;
+  width: min(428px, 100%);
+  height: 100%;
+  min-height: 0;
+  max-height: 979px;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid #e9ebef;
+  border-radius: 20px;
+  background: #ffffff;
+  color: #0a0d14;
+  font-family:
+    Onest,
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+}
+
+.contracting-performer button:disabled {
+  opacity: 1;
+  cursor: default;
+}
+
+.contracting-performer-scroll {
+  overflow: auto;
+  padding-bottom: 20px;
+  overscroll-behavior: contain;
+  scrollbar-color: #a0a8b2 transparent;
+  scrollbar-width: thin;
+}
+
+.contracting-performer-scroll:focus-visible {
+  outline-offset: -3px;
+}
+
+.contracting-performer .ww-response-address {
+  white-space: normal;
+}
+
+.contracting-performer .ww-response-chips {
+  flex-wrap: wrap;
+}
+
+.contracting-performer .ww-response-review-status {
+  --performer-status-bg: #d9e9ff;
+  --performer-status-text: #2a73ff;
+  --performer-status-border: #2a73ff;
+}
+
+.contracting-performer .ww-response-review-status[data-tone='warning'] {
+  --performer-status-bg: #fff2e9;
+  --performer-status-text: #fe761a;
+  --performer-status-border: #fe761a;
+}
+
+.contracting-performer .ww-response-review-status[data-tone='assigned'] {
+  --performer-status-bg: #ebf9ef;
+  --performer-status-text: #23873f;
+  --performer-status-border: #32c15a;
+}
+
+.contracting-performer .ww-response-review-status[data-tone='active'] {
+  --performer-status-bg: #23873f;
+  --performer-status-text: #ffffff;
+  --performer-status-border: #23873f;
+}
+
+.contracting-performer .ww-response-review-status[data-tone='complete'] {
+  --performer-status-bg: #e9ebef;
+  --performer-status-text: #7a808b;
+  --performer-status-border: #aaafb8;
+}
+
+.contracting-performer .ww-response-review-status > span {
+  height: auto;
+  min-height: 26px;
+  border-color: var(--performer-status-border);
+  background: var(--performer-status-bg);
+  color: var(--performer-status-text);
+  font-weight: 500;
+}
+
+.contracting-performer-company > p {
+  margin: 0 0 4px;
+  color: #7a808b;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.contracting-performer .ww-response-company-card {
+  grid-template-columns: 42px minmax(0, 1fr) 24px;
+}
+
+.contracting-performer .contracting-performer-brand {
+  border-radius: 12px;
+}
+
+.contracting-performer-brand.is-contractor {
+  background: #beeeee;
+}
+
+.contracting-performer-brand.is-customer {
+  background: #ff2c5c;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.contracting-performer-brand img {
+  width: 24px;
+  height: 24px;
+}
+
+.contracting-performer .ww-response-company-card div span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contracting-performer .ww-response-company-card div span img {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.contracting-performer .ww-response-company-card div span i {
+  color: #2a73ff;
+}
+
+.contracting-performer-openings {
+  display: flex;
+  min-height: 82px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 24px;
+  background: #f6f8fa;
+}
+
+.contracting-performer-openings > div {
+  display: grid;
+  gap: 8px;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.contracting-performer-openings strong,
+.contracting-performer-detail-title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.contracting-performer-actions {
+  display: grid;
+  gap: 8px;
+}
+
+.contracting-performer-actions[data-actions='chat-and-cancel'] {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.contracting-performer-actions button,
+.contracting-performer-document {
+  min-height: 48px;
+  padding: 5px 12px;
+  border: 0;
+  border-radius: 14px;
+  background: #d9e9ff;
+  color: #2a73ff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.contracting-performer-actions button + button,
+.contracting-performer-document {
+  background: #e9ebef;
+  color: #0a0d14;
+}
+
+.contracting-performer-detail-title {
+  margin: 28px 16px 12px;
+}
+
+.contracting-performer .ww-response-details {
+  margin-top: 28px;
+}
+
+.contracting-performer-detail-title + .ww-response-details {
+  margin-top: 0;
+}
+
+.contracting-performer .ww-response-details > div:first-child {
+  min-height: 0;
+}
+
+.contracting-performer .ww-response-details > div:last-child {
+  border-bottom: 0;
+}
+
+.contracting-performer .ww-response-details .is-description dd {
+  display: block;
+}
+
+.contracting-performer-document {
+  display: flex;
+  width: calc(100% - 32px);
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 16px auto 0;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.contracting-performer .contracting-performer-sheet {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  height: auto;
+  gap: 12px;
+  padding: 12px 12px 8px;
+}
+
+.contracting-performer-sheet-copy {
+  margin: 0 4px;
+  text-align: center;
+}
+
+.contracting-performer-sheet-copy h3 {
+  max-width: 27ch;
+  margin: 4px auto 6px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.contracting-performer-sheet-copy p {
+  margin: 0;
+  color: #7a808b;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.contracting-performer
+  .contracting-performer-sheet
+  > .contracting-performer-home-indicator {
+  position: static;
+  width: 134px;
+  height: 5px;
+  justify-self: center;
+  margin-top: 4px;
+  transform: none;
+  border-radius: 10px;
+  background: #0a0d14;
+}
+
+@media (max-height: 640px) {
+  .contracting-performer .contracting-performer-sheet {
+    gap: 10px;
+  }
+
+  .contracting-performer-sheet button {
+    height: 44px;
+  }
+
+  .contracting-performer
+    .contracting-performer-sheet
+    > .contracting-performer-home-indicator {
+    margin-top: 0;
+  }
+}

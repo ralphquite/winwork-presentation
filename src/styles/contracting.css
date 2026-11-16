@@ -1,0 +1,278 @@
+.ww-contracting {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px 18px 0;
+  background: #eaf0f8;
+  color: #1d2b42;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.ww-contracting-header {
+  display: grid;
+  gap: 10px;
+}
+
+.ww-contracting-roles {
+  display: grid;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-auto-flow: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ww-contracting-roles > li {
+  --role-ink: #194b60;
+  --role-fill: #abd5e4;
+  display: flex;
+  min-width: 0;
+  min-height: 68px;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 14px;
+  border-radius: 11px;
+  background: #dce1e9;
+  color: #454a53;
+}
+
+.ww-contracting-roles > [data-role='contractor'] {
+  --role-ink: #285333;
+  --role-fill: #b8dfb1;
+}
+
+.ww-contracting-roles > [data-role='performer'] {
+  --role-ink: #344781;
+  --role-fill: #bdc9fa;
+}
+
+.ww-contracting-roles > [aria-current='true'] {
+  background: var(--role-fill);
+  color: var(--role-ink);
+}
+
+.ww-contracting-role-icon {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex: none;
+  place-items: center;
+  border-radius: 9px;
+  background: #ffffffb8;
+}
+
+.ww-contracting-roles strong,
+.ww-contracting-roles small {
+  display: block;
+}
+
+.ww-contracting-roles strong {
+  font-size: 18px;
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+.ww-contracting-roles small {
+  margin-top: 3px;
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.ww-contracting-caption {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 16px;
+  padding: 12px 16px;
+  border: 1px solid #dce4ef;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.ww-contracting-caption-progress {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.ww-contracting-stage-number,
+.ww-contracting-substep {
+  flex: none;
+  color: #3c557a;
+  font-size: 11px;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.ww-contracting-stage-number {
+  padding: 5px 8px;
+  border: 1px solid #d4deeb;
+  border-radius: 6px;
+  background: #f4f7fc;
+}
+
+.ww-contracting-caption h1 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 750;
+  line-height: 1.25;
+}
+
+.ww-contracting-caption p {
+  margin: 4px 0 0;
+  color: #263850;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.ww-contracting-stage {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  overflow: hidden;
+  border: 1px solid #cbd8e8;
+  border-radius: 12px;
+  background: #f4f6fa;
+  box-shadow: 0 2px 9px #20365712;
+}
+
+.ww-contracting-stage[data-role='performer'] {
+  background: #e3e9f6;
+}
+
+.ww-contracting-stage[data-role='performer'] > div > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ww-contracting-stage
+  :where([data-contracting-hint], .ww-settlement-actions [data-demo-action]) {
+  position: relative;
+  scroll-margin: 8px;
+}
+
+.ww-contracting-stage
+  :where(
+    [data-contracting-hint],
+    .ww-settlement-actions [data-demo-action]
+  )::after {
+  position: absolute;
+  z-index: 2;
+  inset: -4px;
+  padding: 2px;
+  border-radius: inherit;
+  background: linear-gradient(
+      115deg,
+      #5389ef 12%,
+      #4b79ec 28%,
+      #79dcf3 43%,
+      #d2f6ff 48%,
+      #8ea6ff 54%,
+      #6d73e7 63%,
+      #5389ef 85%
+    )
+    100% 50% / 260% 100%;
+  content: '';
+  filter: drop-shadow(0 0 2px #417af74d);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: ww-contracting-hint-sheen 3.6s ease-in-out infinite alternate;
+}
+
+.ww-contracting-stage tr[data-contracting-hint]::after {
+  inset: 1px 3px;
+  border-radius: 6px;
+}
+
+.ww-contracting-stage
+  :is(.ww-settlement-tabs, .contracting-task-drawer-tabs)
+  [data-contracting-hint]::after {
+  inset: 3px -4px;
+  border-radius: 6px;
+}
+
+@keyframes ww-contracting-hint-sheen {
+  from {
+    background-position: 100% 50%;
+  }
+  to {
+    background-position: 0% 50%;
+  }
+}
+
+@media (max-width: 690px) {
+  .ww-contracting {
+    gap: 7px;
+    padding: 8px 8px 0;
+  }
+
+  .ww-contracting-header {
+    gap: 6px;
+  }
+
+  .ww-contracting-role-icon {
+    display: none;
+  }
+
+  .ww-contracting-roles {
+    gap: 5px;
+  }
+
+  .ww-contracting-roles > li {
+    min-height: 57px;
+    align-items: flex-start;
+    gap: 3px;
+    padding: 7px;
+  }
+
+  .ww-contracting-roles strong {
+    font-size: clamp(11px, 3.35vw, 13px);
+  }
+
+  .ww-contracting-roles small {
+    font-size: 10px;
+  }
+
+  .ww-contracting-caption {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px;
+    padding: 8px 10px;
+  }
+
+  .ww-contracting-caption-progress {
+    grid-row: 1;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-self: end;
+    gap: 8px;
+  }
+
+  .ww-contracting-caption h1 {
+    font-size: 16px;
+  }
+
+  .ww-contracting-caption p {
+    font-size: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ww-contracting-stage
+    :where(
+      [data-contracting-hint],
+      .ww-settlement-actions [data-demo-action]
+    )::after {
+    background-position: 35% 50%;
+    animation: none;
+  }
+}

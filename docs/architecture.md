@@ -2,6 +2,8 @@
 
 ## Назначение и граница
 
+Продуктовый смысл и область работы описаны в [WinWork-контексте](winwork/README.md) и [истории проекта](project-context.md). Эта страница описывает местный frontend; наличие функции в продуктовом каталоге не означает её полную реализацию здесь.
+
 Репозиторий содержит защищённое статическое React SPA для детерминированных sales-презентаций и изолированную публичную React-точку входа для `/court`. Это не production WinWork: продуктового сетевого слоя, аккаунтов, базы данных, аналитики и реальных пользовательских данных нет. Единственная серверная граница — Vercel password gateway из Routing Middleware и одной login-функции с двумя server-only secrets. Все состояния самой презентации локальны и сбрасываются remount’ом.
 
 ## Поток выполнения
@@ -48,9 +50,19 @@ SceneRenderer (type dispatch + transition + error boundary)
         +-- demo  --> DemoScene generic fixture placeholder
         |
         +-- media --> MediaScene placeholder
+        |
+        +-- component --> React scene (offline contracting)
 ```
 
-Все tracks используют общий `Presentation` и `SceneRenderer`. Защищённые tracks входят через основной router; `/court` использует отдельный Vite entry, но импортирует тот же engine и data-only config. Track config задаёт только порядок и данные сцен; новый track не должен создавать отдельный движок.
+Все tracks используют общий `Presentation` и `SceneRenderer`. Защищённые tracks входят через основной router; `/court` использует отдельный Vite entry, но импортирует тот же engine. Track config задаёт порядок и содержимое сцен; новый track не должен создавать отдельный движок.
+
+«Подрядная схема» использует изолированный Vite entry `src/contracting/offline-main.tsx` и hash-историю общего движка. Одна постоянно видимая панель управляет слайдами Pencil и прототипом. При сборке для каждого автономного файла выбираются вводные слайды и этапы нужных ролей. Кнопка на последнем слайде открывает первый доступный этап, а список в панели показывает этапы текущей версии. Сценарий и сборка описаны в [contracting.md](contracting.md).
+
+Оффлайн Court-сборка входит через `src/court/offline-main.tsx` и также импортирует неизменённые `courtPresentation`, общий `Presentation`, renderer и demo-flow. Помимо `HashRouter` и встроенного asset transport, entry выбирает узкий вариант presentation chrome с тремя постоянно видимыми кнопками и монтирует `OfflineInteractionHints`: off-target click внутри demo-flow временно выделяет доступные действия верхнего видимого слоя только обводкой, без блика и пульсации. На слайдах и при открытой шторке выбора исполнителей подсказки отключены. Web-входы продолжают использовать стандартные controls. `publicAssetUrl` возвращает обычные публичные пути в web-сборках, а в автономном файле получает заранее встроенные `data:` URL для Court-слайдов и изображений. `publicAssetDocument` декодирует встроенный HTML для `iframe.srcDoc`, чтобы renderer мог измерять настоящие границы и скругления CTA.
+
+`PencilSlide` совмещает обводки наведения и фокуса с элементами `data-demo-flow`, `data-presentation-next` и ссылками внутри документа слайда после его загрузки и готовности шрифтов. `ResizeObserver` обновляет размеры при изменении вёрстки. Координаты из config остаются fallback для демо и ссылок в экспортах без семантических меток.
+
+Наблюдатель элементов iframe создаётся через `slideDocument.defaultView.ResizeObserver` в контексте самого документа. Документы без целевых элементов, включая начальный `about:blank`, не наблюдаются: это исключает цикл уведомлений Chrome при загрузке и смене слайдов. Chrome smoke-тесты собирают также `window.error`, поскольку такие события могут не попасть в Playwright `pageerror`.
 
 ## Access gateway
 
@@ -67,12 +79,12 @@ SceneRenderer (type dispatch + transition + error boundary)
 
 ## Маршруты и готовность
 
-| Route         | Config                                  | Current state                                                                 |
-| ------------- | --------------------------------------- | ----------------------------------------------------------------------------- |
-| `/enterprise` | `src/presentation/config/enterprise.ts` | 17 Pencil-backed slides; пять сцен открывают React demo-flow                  |
-| `/api`        | `src/presentation/config/api.ts`        | 8 Pencil-backed slides; без интерактивных demo-flow                           |
-| `/small`      | `src/presentation/config/small.ts`      | 13 Pencil-backed slides; одна сцена переиспользует React demo-flow            |
-| `/court`      | `src/presentation/config/court.ts`      | 5 code-authored slides; второй, третий, четвёртый и пятый открывают demo-flow |
+| Route         | Config                                  | Current state                                                                          |
+| ------------- | --------------------------------------- | -------------------------------------------------------------------------------------- |
+| `/enterprise` | `src/presentation/config/enterprise.ts` | 17 Pencil-backed slides; пять сцен открывают React demo-flow                           |
+| `/api`        | `src/presentation/config/api.ts`        | 8 Pencil-backed slides; без интерактивных demo-flow                                    |
+| `/small`      | `src/presentation/config/small.ts`      | 12 Pencil-backed slides; одна сцена переиспользует React demo-flow                     |
+| `/court`      | `src/presentation/config/court.ts`      | 6 slides: пять code-authored и финальный Pencil export; слайды 2–5 открывают demo-flow |
 
 `src/app/TrackSelector.tsx` показывает текущую готовность tracks и пытается войти в fullscreen перед переходом. Ошибка или отсутствие Fullscreen API не блокирует навигацию.
 
@@ -81,9 +93,9 @@ SceneRenderer (type dispatch + transition + error boundary)
 `src/presentation/engine/types.ts` — authoritative contract:
 
 - `PresentationConfig` ограничивает текущие track IDs и содержит ordered `scenes`.
-- `PresentationScene` — discriminated union `slide | demo | media`.
+- `PresentationScene` — discriminated union `slide | demo | media | component`; компонентная сцена передаёт React-содержимое через ту же границу перехода и сброса.
 - `SlideSceneDefinition` может содержать `pencil` metadata, один legacy `demoFlow` или несколько `demoFlows`.
-- `DemoFlowId` — закрытый union девяти реализованных flows; существующие реализации могут переиспользоваться в разных tracks.
+- `DemoFlowId` — закрытый union десяти реализованных flows; существующие реализации могут переиспользоваться в разных tracks.
 - `DemoFlowDefinition.hotspot` задаётся в координатах исходного canvas 1920 × 1080.
 
 `SceneRenderer` и `DemoProduct` используют exhaustive switches. При расширении union нужно синхронно обновлять все dispatch points.
@@ -111,7 +123,7 @@ SceneRenderer (type dispatch + transition + error boundary)
 
 ## Exported slides и demo-flow
 
-`src/presentation/config/enterprise.ts` программно сопоставляет 17 элементов массива с сохранёнными стабильными IDs и путями. На позициях 5–6 идут `ent-06` → `ent-05`, на позициях 10–11 — `ent-11` → `ent-10`; IDs, HTML-файлы и demo bindings следуют за содержимым слайда. Новый `ent-18` расположен после `ent-13`, существующие `ent-14`, `ent-16` и `ent-17` не переименованы, а удалённый `ent-15` остаётся недоступен. `src/presentation/config/api.ts` задаёт восемь сцен со стабильными IDs `api-01`, `api-02`, `api-04` … `api-06`, `api-12`, `api-15` и `api-17`; удалённый `api-03` остаётся недоступен. `src/presentation/config/small.ts` задаёт 12 сцен `smb-01` … `smb-12`, а `src/presentation/config/court.ts` — пять сцен `court-01` … `court-05`. `PencilSlide` загружает соответствующий HTML из track-specific директории в `public/` и масштабирует фиксированный canvas 1920 × 1080 по доступной области через `ResizeObserver`. Court-слайды собраны кодом в HTML/CSS и используют тот же renderer; прозрачная React-ссылка на первом слайде открывает официальный реестр ФНС, две hotspot-кнопки на втором слайде открывают регистрацию и размещение задания, две CTA третьего слайда — регистрацию и путь отклика исполнителя, CTA четвёртого — выбор исполнителя, а CTA пятого — подтверждение оплаты.
+`src/presentation/config/enterprise.ts` программно сопоставляет 17 элементов массива с сохранёнными стабильными IDs и путями. На позициях 5–6 идут `ent-06` → `ent-05`, на позициях 10–11 — `ent-11` → `ent-10`; IDs, HTML-файлы и demo bindings следуют за содержимым слайда. Новый `ent-18` расположен после `ent-13`, существующие `ent-14`, `ent-16` и `ent-17` не переименованы, а удалённый `ent-15` остаётся недоступен. `src/presentation/config/api.ts` задаёт восемь сцен со стабильными IDs `api-01`, `api-02`, `api-04` … `api-06`, `api-12`, `api-15` и `api-17`; удалённый `api-03` остаётся недоступен. `src/presentation/config/small.ts` задаёт 12 сцен `smb-01` … `smb-12`, а `src/presentation/config/court.ts` — шесть сцен `court-01` … `court-06`. `PencilSlide` загружает соответствующий HTML из track-specific директории в `public/` и масштабирует фиксированный canvas 1920 × 1080 по доступной области через `ResizeObserver`. Первые пять Court-слайдов собраны кодом в HTML/CSS, а финальный слайд статистики экспортирован из Pencil-кадра `rHcx4`; все они используют тот же renderer. Прозрачная React-ссылка на первом слайде открывает официальный реестр ФНС, две hotspot-кнопки на втором слайде открывают регистрацию и размещение задания, две CTA третьего слайда — регистрацию и путь отклика исполнителя, CTA четвёртого — выбор исполнителя, а CTA пятого — подтверждение оплаты.
 
 Десять track scenes имеют двенадцать hotspot bindings на десять slide-bound React-компонентов:
 
@@ -134,7 +146,7 @@ SceneRenderer (type dispatch + transition + error boundary)
 
 `registration` доступен и как standalone quick-access flow на главной QA-панели, и из `court-02`. Его sign-in, registration, email-sent и signed-in состояния живут локально в `RegistrationDemo.tsx` и сбрасываются через общую remount-границу модального окна.
 
-`task-payment` доступен на главной QA-панели и из CTA `court-05`. Он воспроизводит Marketplace, выполненное задание, пять вкладок task drawer, подтверждение через SMS-код `0000` и финальное состояние `Отправлено` / `ОПЛАЧЕН` полностью локально, без сетевого платежа; после оплаты действие отмены задания не показывается.
+`task-payment` доступен на главной QA-панели и из CTA `court-05`. Он воспроизводит Marketplace, выполненное задание, пять вкладок task drawer, подтверждение через SMS-код `1234` и финальное состояние `Отправлено` / `ОПЛАЧЕН` полностью локально, без сетевого платежа; после оплаты действие отмены задания не показывается. Пустое поле SMS показывает placeholder `1234` и заполняется этим кодом по клику или клавиатурному фокусу; ручное редактирование остаётся доступным.
 
 `performer-selection` доступен на главной QA-панели и из CTA `court-04`. Он переиспользует общую страницу Marketplace и стили task drawer из flow оплаты, открывает задание со статусом `ЕСТЬ ОТКЛИКИ`, сразу показывает вкладку `Отклики (3)` с тремя синтетическими карточками исполнителей и локальными действиями `Принять` / `Отказать`.
 
@@ -166,7 +178,7 @@ Desktop surface сохраняет минимальный рабочий canvas 
 | `public/enterprise-slides/*.{png,svg,...}`    | Runtime dependencies referenced relatively by exported HTML                   |
 | `public/api-slides/*`                         | Runtime API / Embedded exports and relative dependencies                      |
 | `public/small-slides/*`                       | Runtime Small Business exports and relative dependencies                      |
-| `public/court-slides/*`                       | Public code-authored court slides and shared stylesheet                       |
+| `public/court-slides/*`                       | Public code-authored and Pencil-exported court slides with shared styles      |
 | `public/court-assets/*`                       | Public official third-party marks used by the court slides                    |
 | `public/performer-registration-flow/assets/*` | Public Figma-sourced graphics plus the approved My Tax loading capture        |
 | `public/performer-response-flow/assets/*`     | Public exact Figma graphics for performer-response states 2.1–2.3             |
@@ -184,8 +196,24 @@ Desktop surface сохраняет минимальный рабочий canvas 
 
 ## Build и deployment
 
-Основной Vite build собирает защищённый SPA, второй build через `vite.court.config.ts` добавляет изолированный public entry в `dist/court-app/`. Vercel сначала запускает middleware; `/court` rewrites в `/court-app/court.html`, а защищённые filesystem misses идут в основной `/index.html`. Поэтому public bundle и его slides можно allowlist’ить по префиксу, не открывая основной SPA bundle или sales assets. Vercel компилирует `middleware.ts` и `api/` по compiler options корневого `tsconfig.json`; project reference на `tsconfig.node.json` для этого отдельного шага недостаточен. Относительные импорты server-side TypeScript используют runtime-окончание `.js`, которое TypeScript связывает с исходным `.ts` и Vercel сохраняет как поддерживаемый Edge import. CI устанавливает frozen pnpm lockfile под Node version из `.node-version` и запускает `pnpm check`; environment values на этапе CI не требуются, потому что gateway читает их только во время Vercel request.
+Основной Vite build собирает защищённый SPA, второй build через `vite.court.config.ts` добавляет изолированный public entry в `dist/court-app/`. Vercel сначала запускает middleware; `/court` rewrites в `/court-app/court.html`, а защищённые filesystem misses идут в основной `/index.html`. Поэтому public bundle и его slides можно allowlist’ить по префиксу, не открывая основной SPA bundle или sales assets. Vercel компилирует `middleware.ts` и `api/` по compiler options корневого `tsconfig.json`; project reference на `tsconfig.node.json` для этого отдельного шага недостаточен. Относительные импорты server-side TypeScript используют runtime-окончание `.js`, которое TypeScript связывает с исходным `.ts` и Vercel сохраняет как поддерживаемый Edge import.
+
+Третий build target через `vite.court-offline.config.ts` собирает Court entry без `publicDir`, после чего `scripts/package-offline-court.mjs` встраивает JavaScript, CSS, шесть slide documents и только необходимые публичные Court/flow assets в `dist/offline/Открыть презентацию WinWork.html`. Локальные пути разрешаются через manifest в `data:` URL, web-font запрос финального Pencil-слайда удаляется в пользу его system-font fallback, а CSP запрещает фоновые подключения. Staging-каталог удаляется после упаковки. Итог открывается напрямую через `file://`; внешний реестр ФНС остаётся обычной пользовательской ссылкой и не является runtime-зависимостью презентации.
+
+Sales offline build через `vite.sales-offline.config.ts` использует `src/app/offline-main.tsx` и `createSalesRoutes(true)`: те же страницы и компоненты, но `createHashRouter` и скрытый gateway logout. `src/presentation/config/sales.ts` задаёт общий список tracks для router и build-manifest. `scripts/package-offline-sales.mjs` встраивает 37 активных слайдов из manifest, изображения (включая CSS backgrounds и соседние logos), Inter из `src/assets/sales/`, обе performer asset directories и manager login graphic. Для четырёх экспортов с Tailwind CDN utility CSS компилируется установленным Tailwind при сборке; внешний script удаляется. Onboarding imports включают шрифты и PDF/Excel; его hash в общем файле — `#/onboarding#topup`, а каталог содержит возврат на главную. `scripts/offline-assets.mjs` переиспользуется Court и Sales; Court сохраняет собственный ограниченный manifest. CSP запрещает runtime-сеть, JS/CSS/data assets встроены, staging удаляется. Результат — `dist/offline/Открыть продажи WinWork.html`.
+
+CI устанавливает frozen pnpm lockfile под Node version из `.node-version`, Google Chrome и запускает `pnpm check` (статические проверки, build, web/offline smoke); полный build создаёт автономные Court, Onboarding и Sales HTML-файлы. Environment values на этапе CI не требуются, потому что gateway читает их только во время Vercel request.
 
 ## Расширение
 
 Перед изменением используйте task-specific playbook в [`agents/change-playbooks.md`](agents/change-playbooks.md). Новый scene type допустим только если `slide`, `demo` и `media` не выражают требование; новый track добавляется data config + shallow route + selector card, без нового runtime.
+
+## Standalone onboarding
+
+The protected `/onboarding` route and standalone offline entry share `OnboardingPrototype` and the tariff/top-up/company/marketplace React flows through `OnboardingShell` and `OnboardingHelp`. This is a task catalog with `#tariff` / `#topup` / `#company` / `#marketplace` navigation, separate from track/scene dispatch. Its isolated styles and assets do not enter the public Court bundle. Contextual cards measure target bounds; the local help panel supports resume/repeat. Safe local-storage checkpoints persist only fixture-field identifiers and completion flags. See [onboarding.md](onboarding.md) for flow boundaries, source evidence and offline packaging.
+
+## Standalone feature prototypes
+
+Отчёты входят через `contracting-reports-offline.html` и `src/contracting/reports/offline-main.tsx`, используют `HashRouter` и общую `ContractingShell`, но не слайдовый `Presentation`. `ContractingReports.tsx` управляет ролью, навигацией, параметрами отчётов, локальным хранением и временем готовности; `data.ts` вычисляет выборку/итоги; `workbook.ts` создаёт XLSX в браузере. Сохраняются параметры, а не неизменяемый снимок строк. Контракт и бизнес-смысл — в [reports.md](reports.md).
+
+Таблица «Мои исполнители» имеет отдельный вход `src/performers/offline-main.tsx` и упаковку `scripts/build-offline-performers.mjs`; переиспользует кабинет, хранит настройки локально. Эти прототипы не добавляют production API или маршруты в sales-приложение. Отдельные сборки не входят в обычный `pnpm build`/`pnpm check`.

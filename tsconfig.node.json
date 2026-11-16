@@ -18,8 +18,14 @@
   "include": [
     "vite.config.ts",
     "vite.court.config.ts",
+    "vite.court-offline.config.ts",
+    "vite.onboarding-offline.config.ts",
     "middleware.ts",
     "auth/**/*.ts",
-    "api/**/*.ts"
+    "api/**/*.ts",
+    "vite.sales-offline.config.ts",
+    "vite.contracting-offline.config.ts",
+    "playwright.config.ts",
+    "tests/**/*.ts"
   ]
 }

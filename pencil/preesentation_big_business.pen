@@ -1,5 +1,5 @@
 {
-  "version": "2.17",
+  "version": "2.22",
   "children": [
     {
       "type": "frame",
@@ -2976,7 +2976,7 @@
             "type": "image",
             "enabled": true,
             "url": "ChatGPT%20Image%2025%20%D0%B0%D0%B2%D0%B3.%202026%20%D0%B3.%2C%2020_36_52.png",
-            "mode": "fill"
+            "mode": "cover"
           },
           "width": 967,
           "height": 544
@@ -3364,7 +3364,7 @@
             "type": "image",
             "enabled": true,
             "url": "image-10.png",
-            "mode": "fill"
+            "mode": "cover"
           },
           "width": 391,
           "height": 1406,
@@ -3382,7 +3382,7 @@
             "type": "image",
             "enabled": true,
             "url": "image-11.png",
-            "mode": "fill"
+            "mode": "cover"
           },
           "width": 391,
           "height": 1083,
@@ -4431,7 +4431,7 @@
             "type": "image",
             "enabled": true,
             "url": "image.png",
-            "mode": "fill"
+            "mode": "cover"
           },
           "width": 534,
           "height": 597,
@@ -5605,7 +5605,7 @@
             "type": "image",
             "enabled": true,
             "url": "image-12.png",
-            "mode": "fill"
+            "mode": "cover"
           },
           "width": 736,
           "height": 519
@@ -5930,7 +5930,7 @@
             "type": "image",
             "enabled": true,
             "url": "ChatGPT%20Image%2025%20%D0%B0%D0%B2%D0%B3.%202026%20%D0%B3.%2C%2020_45_48.png",
-            "mode": "fill"
+            "mode": "cover"
           },
           "width": 870,
           "height": 490
@@ -6510,7 +6510,7 @@
             "type": "image",
             "enabled": true,
             "url": "image-2.png",
-            "mode": "fill"
+            "mode": "cover"
           },
           "width": 388,
           "height": 1058,
@@ -6528,7 +6528,7 @@
             "type": "image",
             "enabled": true,
             "url": "%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%C2%A0%E2%80%94%202026-08-25%20%D0%B2%C2%A017.55.27.png",
-            "mode": "fill"
+            "mode": "cover"
           },
           "width": 416,
           "height": 300,
@@ -6541,8 +6541,8 @@
     {
       "type": "frame",
       "id": "PgLFk",
-      "x": 22383,
-      "y": 1815,
+      "x": 22564,
+      "y": 302,
       "name": "РАЗДЕЛ C — МАССОВЫЕ ОПЕРАЦИИ / ENT-12",
       "clip": true,
       "width": 1920,
@@ -7461,7 +7461,7 @@
             "type": "image",
             "enabled": true,
             "url": "%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%C2%A0%E2%80%94%202026-08-25%20%D0%B2%C2%A019.08.12.png",
-            "mode": "fill"
+            "mode": "cover"
           },
           "width": 652,
           "height": 434,
@@ -8964,7 +8964,7 @@
             "type": "image",
             "enabled": true,
             "url": "image-4.png",
-            "mode": "fill"
+            "mode": "cover"
           },
           "width": 750,
           "height": 201
@@ -8978,7 +8978,7 @@
             "type": "image",
             "enabled": true,
             "url": "image-5.png",
-            "mode": "fill"
+            "mode": "cover"
           },
           "width": 750,
           "height": 226
@@ -9463,7 +9463,7 @@
             "type": "image",
             "enabled": true,
             "url": "image-6.png",
-            "mode": "fill"
+            "mode": "cover"
           },
           "width": 440,
           "height": 954,
@@ -9838,7 +9838,7 @@
             "type": "image",
             "enabled": true,
             "url": "image-7.png",
-            "mode": "fill"
+            "mode": "cover"
           },
           "width": 420,
           "height": 718,
@@ -9855,7 +9855,7 @@
             "type": "image",
             "enabled": true,
             "url": "image-8.png",
-            "mode": "fill"
+            "mode": "cover"
           },
           "width": 390,
           "height": 406
@@ -12876,6 +12876,577 @@
     },
     {
       "type": "frame",
+      "id": "mOsS2",
+      "x": 39402,
+      "y": 2969,
+      "name": "Статистика сервиса",
+      "clip": true,
+      "width": 1920,
+      "height": 1080,
+      "fill": "$h:surface",
+      "layout": "none",
+      "children": [
+        {
+          "type": "text",
+          "id": "Be77y",
+          "x": 120,
+          "y": 58,
+          "name": "Раздел — статистика сервиса",
+          "fill": "$h:neutral-600",
+          "content": "WINWORK  /  СТАТИСТИКА СЕРВИСА",
+          "fontFamily": "$h:font-primary",
+          "fontSize": 16,
+          "fontWeight": "700",
+          "letterSpacing": 1.1
+        },
+        {
+          "id": "p845aY",
+          "type": "ref",
+          "ref": "CmSfJ",
+          "name": "WinWork — логотип",
+          "x": 1598,
+          "y": 58,
+          "width": 202,
+          "height": 40
+        },
+        {
+          "type": "frame",
+          "id": "t9h8lU",
+          "x": 120,
+          "y": 124,
+          "name": "Заголовок слайда",
+          "width": 1680,
+          "layout": "vertical",
+          "gap": 12,
+          "children": [
+            {
+              "type": "text",
+              "id": "IOLWj",
+              "name": "Статистика сервиса WinWork",
+              "fill": "$h:neutral-950",
+              "content": "Статистика сервиса WinWork",
+              "lineHeight": 1.1,
+              "fontFamily": "$h:font-primary",
+              "fontSize": 52,
+              "fontWeight": "700",
+              "letterSpacing": -1
+            },
+            {
+              "type": "text",
+              "id": "Z3otvK",
+              "name": "Подзаголовок",
+              "fill": "$h:neutral-600",
+              "content": "Количественные показатели работы платформы",
+              "fontFamily": "$h:font-primary",
+              "fontSize": 26,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "T7fUha",
+          "x": 120,
+          "y": 264,
+          "name": "Масштаб платформы — заголовок",
+          "fill": "$h:neutral-600",
+          "content": "ЗАРЕГИСТРИРОВАННЫЕ УЧАСТНИКИ",
+          "fontFamily": "$h:font-primary",
+          "fontSize": 18,
+          "fontWeight": "700",
+          "letterSpacing": 0.6
+        },
+        {
+          "type": "frame",
+          "id": "iuqRy",
+          "x": 120,
+          "y": 302,
+          "name": "Зарегистрированные участники",
+          "width": 1680,
+          "height": 162,
+          "gap": 64,
+          "children": [
+            {
+              "type": "frame",
+              "id": "WagRZ",
+              "name": "зарегистрированных компаний-заказчиков",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "$h:surface",
+              "stroke": "$h:neutral-250",
+              "strokeWidth": {
+                "top": 1
+              },
+              "layout": "vertical",
+              "gap": 12,
+              "padding": [
+                18,
+                0
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "X2rgo",
+                  "name": "Значение и пиктограмма",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "AzqGt",
+                      "name": "Количество — 3 000+",
+                      "fill": "$h:neutral-950",
+                      "content": "3 000+",
+                      "lineHeight": 1.05,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 72,
+                      "fontWeight": "700",
+                      "letterSpacing": -1.5
+                    },
+                    {
+                      "type": "icon",
+                      "id": "liqxB",
+                      "x": 772,
+                      "y": 20,
+                      "name": "Пиктограмма — зарегистрированных компаний-заказчиков",
+                      "enabled": false,
+                      "width": 36,
+                      "height": 36,
+                      "icon": "building-2",
+                      "library": "lucide",
+                      "fill": "$h:brand-blue"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "D8h37",
+                  "name": "Подпись метрики",
+                  "fill": "$h:neutral-950",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "зарегистрированных компаний-заказчиков",
+                  "lineHeight": 1.25,
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 25,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "W1Gph",
+              "name": "зарегистрированных исполнителей",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "$h:surface",
+              "stroke": "$h:neutral-250",
+              "strokeWidth": {
+                "top": 1
+              },
+              "layout": "vertical",
+              "gap": 12,
+              "padding": [
+                18,
+                0
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "W0H5i",
+                  "name": "Значение и пиктограмма",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "NCtMZ",
+                      "name": "Количество — 250 000+",
+                      "fill": "$h:neutral-950",
+                      "content": "250 000+",
+                      "lineHeight": 1.05,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 72,
+                      "fontWeight": "700",
+                      "letterSpacing": -1.5
+                    },
+                    {
+                      "type": "icon",
+                      "id": "eBfgY",
+                      "x": 772,
+                      "y": 20,
+                      "name": "Пиктограмма — зарегистрированных исполнителей",
+                      "enabled": false,
+                      "width": 36,
+                      "height": 36,
+                      "icon": "users",
+                      "library": "lucide",
+                      "fill": "$h:brand-green-strong"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "Pr1vF",
+                  "name": "Подпись метрики",
+                  "fill": "$h:neutral-950",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "зарегистрированных исполнителей",
+                  "lineHeight": 1.25,
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 25,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ngQ4T",
+          "x": 120,
+          "y": 504,
+          "name": "Активность сервиса за период",
+          "width": 1680,
+          "layout": "vertical",
+          "gap": 26,
+          "children": [
+            {
+              "type": "frame",
+              "id": "WRQuu",
+              "name": "Выделенный период статистики активности",
+              "width": "fill_container",
+              "fill": "$h:bg-secondary",
+              "stroke": "$h:neutral-800",
+              "strokeWidth": {
+                "left": 4
+              },
+              "layout": "vertical",
+              "gap": 8,
+              "padding": [
+                18,
+                24
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "VR73I",
+                  "name": "Активность сервиса — заголовок",
+                  "fill": "$h:neutral-600",
+                  "content": "АКТИВНОСТЬ СЕРВИСА · ПЕРИОД СТАТИСТИКИ",
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 18,
+                  "fontWeight": "700",
+                  "letterSpacing": 0.6
+                },
+                {
+                  "type": "text",
+                  "id": "NLDoC",
+                  "name": "Период статистики",
+                  "fill": "$h:neutral-950",
+                  "content": "С 1 января по 1 сентября 2026 года",
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 38,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "VehHB",
+              "name": "Показатели активности",
+              "width": "fill_container",
+              "gap": 64,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "gbvXj",
+                  "name": "откликов на задания",
+                  "width": "fill_container",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "a9VaV",
+                      "x": 36,
+                      "y": 33,
+                      "name": "Пиктограмма — откликов на задания",
+                      "enabled": false,
+                      "width": 30,
+                      "height": 30,
+                      "icon": "message-square",
+                      "library": "lucide",
+                      "fill": "$h:brand-blue"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "awVQk",
+                      "name": "Число и подпись",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 4,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "zFTFt",
+                          "name": "Количество — 513 000",
+                          "fill": "$h:neutral-950",
+                          "content": "513 000",
+                          "lineHeight": 1.05,
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 60,
+                          "fontWeight": "700",
+                          "letterSpacing": -1
+                        },
+                        {
+                          "type": "text",
+                          "id": "wMp3i",
+                          "name": "Подпись активности",
+                          "fill": "$h:neutral-600",
+                          "content": "откликов на задания",
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 24,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "icon",
+                  "id": "mGXCk",
+                  "x": 824,
+                  "y": 32,
+                  "name": "Связь активности",
+                  "enabled": false,
+                  "width": 32,
+                  "height": 32,
+                  "icon": "arrow-right",
+                  "library": "lucide",
+                  "fill": "$h:neutral-400"
+                },
+                {
+                  "type": "frame",
+                  "id": "ddDgG",
+                  "name": "выполненных заявок",
+                  "width": "fill_container",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "HshVU",
+                      "x": 36,
+                      "y": 33,
+                      "name": "Пиктограмма — выполненных заявок",
+                      "enabled": false,
+                      "width": 30,
+                      "height": 30,
+                      "icon": "clipboard-check",
+                      "library": "lucide",
+                      "fill": "$h:brand-blue"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "xX871",
+                      "name": "Число и подпись",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 4,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "vYYt6",
+                          "name": "Количество — 230 846",
+                          "fill": "$h:neutral-950",
+                          "content": "230 846",
+                          "lineHeight": 1.05,
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 60,
+                          "fontWeight": "700",
+                          "letterSpacing": -1
+                        },
+                        {
+                          "type": "text",
+                          "id": "RXK88",
+                          "name": "Подпись активности",
+                          "fill": "$h:neutral-600",
+                          "content": "выполненных заявок",
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 24,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "fnLix",
+          "x": 120,
+          "y": 794,
+          "name": "Финансовый масштаб — заголовок",
+          "fill": "$h:neutral-600",
+          "content": "ФИНАНСОВЫЕ ПОКАЗАТЕЛИ",
+          "fontFamily": "$h:font-primary",
+          "fontSize": 18,
+          "fontWeight": "700",
+          "letterSpacing": 0.6
+        },
+        {
+          "type": "frame",
+          "id": "Hz1ji",
+          "x": 120,
+          "y": 834,
+          "name": "Финансовые показатели",
+          "width": 1680,
+          "height": 170,
+          "gap": 64,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "GgZmP",
+              "name": "оборот выплат",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "$h:surface",
+              "stroke": "$h:neutral-250",
+              "strokeWidth": {
+                "top": 1
+              },
+              "padding": [
+                20,
+                0
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "pjmCC",
+                  "name": "Сумма и описание",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Vgjyk",
+                      "name": "Сумма — 4 млрд ₽",
+                      "fill": "$h:neutral-950",
+                      "content": "4 млрд ₽",
+                      "lineHeight": 1.05,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 60,
+                      "fontWeight": "700",
+                      "letterSpacing": -1
+                    },
+                    {
+                      "type": "text",
+                      "id": "Kcn4h",
+                      "name": "Подпись финансовой метрики",
+                      "fill": "$h:neutral-950",
+                      "content": "оборот выплат",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 24,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "icon",
+                  "id": "p4Up1O",
+                  "x": 760,
+                  "y": 76,
+                  "name": "Пиктограмма — оборот выплат",
+                  "enabled": false,
+                  "width": 32,
+                  "height": 32,
+                  "icon": "wallet",
+                  "library": "lucide",
+                  "fill": "$h:brand-blue-strong"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "k5P2VU",
+              "name": "налогов уплачено через сервис",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "$h:surface",
+              "stroke": "$h:neutral-250",
+              "strokeWidth": {
+                "top": 1
+              },
+              "padding": [
+                20,
+                0
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "XQOkZ",
+                  "name": "Сумма и описание",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "kUOVr",
+                      "name": "Сумма — 118 млн ₽",
+                      "fill": "$h:neutral-950",
+                      "content": "118 млн ₽",
+                      "lineHeight": 1.05,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 60,
+                      "fontWeight": "700",
+                      "letterSpacing": -1
+                    },
+                    {
+                      "type": "text",
+                      "id": "hfZaf",
+                      "name": "Подпись финансовой метрики",
+                      "fill": "$h:neutral-950",
+                      "content": "налогов уплачено через сервис",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 24,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "icon",
+                  "id": "cI249",
+                  "x": 760,
+                  "y": 76,
+                  "name": "Пиктограмма — налогов уплачено через сервис",
+                  "enabled": false,
+                  "width": 32,
+                  "height": 32,
+                  "icon": "receipt-text",
+                  "library": "lucide",
+                  "fill": "$h:neutral-950"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
       "id": "CPLyo",
       "x": 35127,
       "y": 2969,
@@ -14053,8 +14624,8 @@
     {
       "type": "frame",
       "id": "y6mu2I",
-      "x": 20361,
-      "y": 1759,
+      "x": 20542,
+      "y": 246,
       "name": "РАЗДЕЛ E — ПОДКЛЮЧЕНИЕ И ПРИВЛЕЧЕНИЕ / ENT-19",
       "clip": true,
       "width": 1920,
@@ -14350,7 +14921,7 @@
             "type": "image",
             "enabled": true,
             "url": "ChatGPT%20Image%2025%20%D0%B0%D0%B2%D0%B3.%202026%20%D0%B3.%2C%2018_25_37.png",
-            "mode": "fill"
+            "mode": "cover"
           },
           "width": 659,
           "height": 721
@@ -14940,7 +15511,7 @@
             "type": "image",
             "enabled": true,
             "url": "ChatGPT%20Image%2025%20%D0%B0%D0%B2%D0%B3.%202026%20%D0%B3.%2C%2018_25_37.png",
-            "mode": "fill"
+            "mode": "cover"
           },
           "width": 520,
           "height": 507

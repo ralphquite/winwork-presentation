@@ -1,6 +1,820 @@
 {
   "version": "2.17",
-  "children": [],
+  "children": [
+    {
+      "type": "frame",
+      "id": "rHcx4",
+      "x": -960,
+      "y": -540,
+      "name": "Статистика сервиса",
+      "clip": true,
+      "width": 1920,
+      "height": 1080,
+      "fill": "$h:surface",
+      "layout": "none",
+      "children": [
+        {
+          "type": "text",
+          "id": "aaVnA",
+          "x": 120,
+          "y": 58,
+          "name": "Раздел — статистика сервиса",
+          "fill": "$h:neutral-600",
+          "content": "WINWORK  /  СТАТИСТИКА СЕРВИСА",
+          "fontFamily": "$h:font-primary",
+          "fontSize": 16,
+          "fontWeight": "700",
+          "letterSpacing": 1.1
+        },
+        {
+          "type": "frame",
+          "id": "qBk27",
+          "x": 1598,
+          "y": 58,
+          "name": "WinWork — логотип",
+          "width": 202,
+          "height": 40,
+          "gap": 10,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "DBxh7",
+              "name": "WinWork Logo",
+              "context": "span",
+              "clip": true,
+              "width": 202,
+              "height": 40,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "path",
+                  "id": "kR5Ca",
+                  "x": 42.7,
+                  "y": 0,
+                  "geometry": "M0.00134 21.682l0 10.308c0.0008 0.59515 0.23798 1.1656 0.65938 1.58587 0.42139 0.42027 0.99248 0.65593 1.58762 0.65513l10.331 0c1.09 0 1.998-0.774 2.203-1.8l0-0.006 0.003-0.01699c0.055-0.27 3.963-19.903 4.566-21.94801 0.044-0.146 0.25-0.836 0.373-1.78 0.01301-0.10408 0.02368-0.20844 0.032-0.313l0-6.87c0-0.825-0.67-1.497-1.5-1.497l-6.886 0c-0.56395 0.00095-1.07972 0.31813-1.335 0.821-0.487 0.99-9.453 18.915-9.90699 19.803 0 0.003-0.006 0.012-0.00901 0.02-0.146 0.299-0.117 0.69-0.117 1.041l-0.001-0.003z",
+                  "fill": {
+                    "type": "gradient",
+                    "gradientType": "linear",
+                    "enabled": true,
+                    "rotation": -180,
+                    "size": {
+                      "height": 1.0000874951413106
+                    },
+                    "colors": [
+                      {
+                        "color": "#51DB51",
+                        "position": 0
+                      },
+                      {
+                        "color": "#009907",
+                        "position": 1
+                      }
+                    ],
+                    "center": {
+                      "x": 0.500059352310139,
+                      "y": 0.4999561071118105
+                    }
+                  },
+                  "width": 22.578676496233257,
+                  "height": 39.121148518153596
+                },
+                {
+                  "type": "path",
+                  "id": "q5tkA",
+                  "x": 28.69,
+                  "y": 0.02,
+                  "geometry": "M12.563 33.10204c0 0 0.009 0.013 0.012 0.02099q0.006 0.008 0.011 0.02001c0.4093 0.66919 1.13757 1.0769 1.922 1.076l10.322 0c0.59212 0.00372 1.16142-0.22821 1.58237-0.64466 0.42095-0.41645 0.65899-0.98322 0.66163-1.57534l0-10.216c0.00061-0.42017-0.11911-0.83172-0.345-1.186l-0.012-0.021c-0.015-0.026-12.194-19.443-12.206-19.464q-0.001-0.005-0.012-0.017c-0.40664-0.67983-1.14083-1.09573-1.933-1.095l-10.323 0c-0.59195-0.00346-1.16099 0.22859-1.58172 0.64501-0.42073 0.41642-0.65863 0.98303-0.66128 1.57499l0 10.215c0 0.427 0.123 0.827 0.334 1.166l0.011 0.02 12.22 19.482-0.002-0.001z",
+                  "fill": "#51DB51",
+                  "width": 30.941720145089285,
+                  "height": 39.107523845774786
+                },
+                {
+                  "type": "path",
+                  "id": "wtkye",
+                  "x": 9,
+                  "y": 0,
+                  "geometry": "M19.637 20.645c0 0-0.008-0.015-0.008-0.02-0.455-0.891-9.419-18.814-9.907-19.805 0-0.003-0.006-0.011-0.009-0.02-0.249-0.476-0.75-0.8-1.327-0.8l-6.886 0c-0.82687 0-1.4978 0.66914-1.5 1.496l0 6.871c0.012 0.14 0.026 0.252 0.032 0.313 0.123 0.944 0.328 1.634 0.372 1.78 0.6 2.045 4.511 21.679 4.567 21.948 0 0 0 0.009 0.003 0.017l0 0.006c0.21231 1.04787 1.13384 1.80083 2.203 1.8l10.33 0c0.59523 0.00106 1.16647-0.23451 1.58792-0.65484 0.42145-0.42033 0.65855-0.99094 0.65908-1.58616l0-10.308c0-0.354 0.027-0.745-0.117-1.04l0 0.003z",
+                  "fill": {
+                    "type": "gradient",
+                    "gradientType": "linear",
+                    "enabled": true,
+                    "rotation": -180,
+                    "size": {
+                      "height": 1.0000875578314188
+                    },
+                    "colors": [
+                      {
+                        "color": "#2A73FF",
+                        "position": 0
+                      },
+                      {
+                        "color": "#1B3A6A",
+                        "position": 1
+                      }
+                    ],
+                    "center": {
+                      "x": 0.5001010288054322,
+                      "y": 0.5000437789159925
+                    }
+                  },
+                  "width": 22.578295026506694,
+                  "height": 39.12114606585928
+                },
+                {
+                  "type": "path",
+                  "id": "Mu8BR",
+                  "x": 14.65,
+                  "y": 0.02,
+                  "geometry": "M14.508 33.10204l12.22-19.48 0.012-0.021c0.211-0.339 0.334-0.74 0.334-1.166l0-10.214c-0.00238-0.59231-0.2403-1.15933-0.66128-1.57599-0.42098-0.41666-0.99043-0.64873-1.58272-0.64501l-10.322 0c-0.814 0-1.53 0.43-1.922 1.075q-0.006 0.008-0.011 0.02l-0.012 0.018c-0.012 0.02-12.191 19.438-12.206 19.464l-0.012 0.02001q-0.006 0.008-0.011 0.021c-0.211 0.339-0.334 0.74-0.334 1.166l0 10.214c0.00238 0.59213 0.24016 1.159 0.66092 1.57563 0.42076 0.41664 0.98995 0.64882 1.58208 0.64536l10.323 0c0.814 0 1.529-0.43 1.921-1.075 0.003-0.006 0.01-0.012 0.012-0.02q0.006-0.008 0.012-0.021l-0.003-0.001z",
+                  "fill": "#2A73FF",
+                  "width": 30.94171469552176,
+                  "height": 39.107521942683626
+                },
+                {
+                  "type": "path",
+                  "id": "eaSV1",
+                  "x": 76.62,
+                  "y": 10.13,
+                  "geometry": "M16.33799 11.73551l-2.293-11.045-5.02999 0-2.337 11.045-2.204-11.045-4.474 0 3.584 15.766 5.609 0 2.26999-10.645 2.293 10.646 5.386 0 3.517-15.766-4.23 0-2.091 11.044z m12.428-7.014l-3.94 0 0 11.735 3.94 0 0-11.735z m12.00801 0.512q-0.934-0.757-2.582-0.758-0.421 0-1.02401 0.09-0.6 0.089-1.246 0.378-0.624 0.267-1.18 0.846l-0.223-1.069-3.628 0 0 11.737 3.94001 0 0-6.057q0-0.646 0.19999-1.158 0.222-0.535 0.668-0.846 0.469-0.314 1.158-0.312 0.534 0 0.868 0.223 0.332 0.2 0.512 0.534 0.2 0.334 0.267 0.735 0.088 0.38 0.08899 0.735l0 6.146 3.94001 0 0-6.48q0-1.49-0.40101-2.74-0.401-1.248-1.358-2.004m18.096 6.502l-2.293-11.045-5.02999 0-2.337 11.045-2.204-11.045-4.473 0 3.583 15.766 5.609 0 2.26999-10.645 2.293 10.645 5.386 0 3.517-15.766-4.22899 0-2.09201 11.045z m15.52701-6.703q-1.356-0.735-3.071-0.735c-1.144 0-2.129 0.237-3.05 0.713q-1.38 0.713-2.22501 2.093-0.82399 1.357-0.82399 3.34c0 1.322 0.27499 2.391 0.82399 3.296 0.52664 0.87117 1.29089 1.57401 2.20302 2.026q1.40199 0.69 3.13901 0.69 1.73701 0 3.093-0.66799c0.89604-0.45052 1.63936-1.15524 2.13699-2.02601q0.78-1.334 0.77901-3.251c0-1.278-0.27499-2.441-0.823-3.36299-0.50989-0.89934-1.26721-1.63341-2.18201-2.11501m-1.046 6.525c-0.13478 0.35958-0.37535 0.66988-0.69001 0.89q-0.48801 0.356-1.335 0.357-0.847 0-1.336-0.334c-0.31497-0.22563-0.5614-0.534-0.71199-0.891q-0.2-0.556-0.2-1.114 0-0.556 0.2-1.113 0.201-0.58 0.69-0.98 0.51199-0.4 1.358-0.4c0.565 0 1.024 0.133 1.33501 0.4q0.49 0.4 0.69 0.98 0.201 0.58 0.20101 1.113 0 0.535-0.20101 1.092m12.963-7.082q-0.446 0-0.979 0.067c-0.3757 0.0504-0.73843 0.17154-1.06902 0.357q-0.534 0.287-0.979 0.935l-0.267-1.114-3.45 0 0 11.737 3.939 0 0-5.345q0-1.18 0.423-1.759c0.28331-0.3915 0.69188-0.67447 1.15801-0.802 0.50571-0.14968 1.03061-0.22448 1.55799-0.222l0.756 0 0-3.808c-0.13225-0.0207-0.26627-0.02807-0.39999-0.022-0.22966-0.01561-0.45981-0.02328-0.69-0.023m11.60499 5.834l3.62801-5.59-4.407 0-2.44901 4.142-1.179 0 0-8.172-3.94 0 0 15.766 3.94 0 0-4.075 1.24601 0 2.537 4.075 4.541 0-3.91701-6.146z m-71.13401-6.391c0.71062 0.01587 1.37414-0.35423 1.73402-0.96719 0.35986-0.61297 0.35966-1.37272-0.00051-1.9855-0.36018-0.61278-1.02389-0.98254-1.7345-0.96631-1.06496 0.02406-1.91573 0.89427-1.91572 1.9595 0 1.06523 0.85077 1.93544 1.91572 1.9595",
+                  "fill": "#252E42",
+                  "width": 116.38399396623883,
+                  "height": 18.80858612060547
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "hE58j",
+          "x": 120,
+          "y": 124,
+          "name": "Заголовок слайда",
+          "width": 1680,
+          "layout": "vertical",
+          "gap": 12,
+          "children": [
+            {
+              "type": "text",
+              "id": "n7V8C",
+              "name": "Статистика сервиса WinWork",
+              "fill": "$h:neutral-950",
+              "content": "Статистика сервиса WinWork",
+              "lineHeight": 1.1,
+              "fontFamily": "$h:font-primary",
+              "fontSize": 52,
+              "fontWeight": "700",
+              "letterSpacing": -1
+            },
+            {
+              "type": "text",
+              "id": "Bq9z8",
+              "name": "Подзаголовок",
+              "fill": "$h:neutral-600",
+              "content": "Количественные показатели работы платформы",
+              "fontFamily": "$h:font-primary",
+              "fontSize": 26,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "CpGdp",
+          "x": 120,
+          "y": 264,
+          "name": "Масштаб платформы — заголовок",
+          "fill": "$h:neutral-600",
+          "content": "ЗАРЕГИСТРИРОВАННЫЕ УЧАСТНИКИ",
+          "fontFamily": "$h:font-primary",
+          "fontSize": 18,
+          "fontWeight": "700",
+          "letterSpacing": 0.6
+        },
+        {
+          "type": "frame",
+          "id": "OEDkq",
+          "x": 120,
+          "y": 302,
+          "name": "Зарегистрированные участники",
+          "width": 1680,
+          "height": 162,
+          "gap": 64,
+          "children": [
+            {
+              "type": "frame",
+              "id": "ABU8C",
+              "name": "зарегистрированных компаний-заказчиков",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "$h:surface",
+              "cornerRadius": 24,
+              "stroke": "$h:neutral-150",
+              "strokeWidth": 1,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#142B5C0D",
+                "offset": {
+                  "x": 0,
+                  "y": 18
+                },
+                "blur": 44
+              },
+              "layout": "vertical",
+              "gap": 12,
+              "padding": [
+                18,
+                28
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "ltxPr",
+                  "name": "Значение и пиктограмма",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "l6dXI",
+                      "name": "Количество — 3 000+",
+                      "fill": "$h:neutral-950",
+                      "content": "3 000+",
+                      "lineHeight": 1.05,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 72,
+                      "fontWeight": "700",
+                      "letterSpacing": -1.5
+                    },
+                    {
+                      "type": "icon",
+                      "id": "U4GMlk",
+                      "x": 772,
+                      "y": 20,
+                      "name": "Пиктограмма — зарегистрированных компаний-заказчиков",
+                      "enabled": false,
+                      "width": 36,
+                      "height": 36,
+                      "icon": "building-2",
+                      "library": "lucide",
+                      "fill": "$h:brand-blue"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "sTz2Q",
+                  "name": "Подпись метрики",
+                  "fill": "$h:neutral-950",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "зарегистрированных компаний-заказчиков",
+                  "lineHeight": 1.25,
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 25,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "FR94C",
+              "name": "зарегистрированных исполнителей",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "$h:surface",
+              "cornerRadius": 24,
+              "stroke": "$h:neutral-150",
+              "strokeWidth": 1,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#142B5C0D",
+                "offset": {
+                  "x": 0,
+                  "y": 18
+                },
+                "blur": 44
+              },
+              "layout": "vertical",
+              "gap": 12,
+              "padding": [
+                18,
+                28
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "A2qsu",
+                  "name": "Значение и пиктограмма",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Q2fMd",
+                      "name": "Количество — 250 000+",
+                      "fill": "$h:neutral-950",
+                      "content": "250 000+",
+                      "lineHeight": 1.05,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 72,
+                      "fontWeight": "700",
+                      "letterSpacing": -1.5
+                    },
+                    {
+                      "type": "icon",
+                      "id": "NdxKz",
+                      "x": 772,
+                      "y": 20,
+                      "name": "Пиктограмма — зарегистрированных исполнителей",
+                      "enabled": false,
+                      "width": 36,
+                      "height": 36,
+                      "icon": "users",
+                      "library": "lucide",
+                      "fill": "$h:brand-green-strong"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "pZk7S",
+                  "name": "Подпись метрики",
+                  "fill": "$h:neutral-950",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "зарегистрированных исполнителей",
+                  "lineHeight": 1.25,
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 25,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "j34en4",
+          "x": 120,
+          "y": 504,
+          "name": "Активность сервиса за период",
+          "width": 1680,
+          "layout": "vertical",
+          "gap": 26,
+          "children": [
+            {
+              "type": "frame",
+              "id": "Oq2ZC",
+              "name": "Выделенный период статистики активности",
+              "width": "fill_container",
+              "fill": "$h:bg-secondary",
+              "cornerRadius": 22,
+              "stroke": "$h:neutral-150",
+              "strokeWidth": 1,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#142B5C0A",
+                "offset": {
+                  "x": 0,
+                  "y": 16
+                },
+                "blur": 38
+              },
+              "layout": "vertical",
+              "gap": 8,
+              "padding": [
+                18,
+                26
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "F8KRI9",
+                  "name": "Активность сервиса — заголовок",
+                  "fill": "$h:neutral-600",
+                  "content": "АКТИВНОСТЬ СЕРВИСА · ПЕРИОД СТАТИСТИКИ",
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 18,
+                  "fontWeight": "700",
+                  "letterSpacing": 0.6
+                },
+                {
+                  "type": "text",
+                  "id": "YC6tu",
+                  "name": "Период статистики",
+                  "fill": "$h:neutral-950",
+                  "content": "С 1 января по 1 сентября 2026 года",
+                  "fontFamily": "$h:font-primary",
+                  "fontSize": 38,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "CtBlB",
+              "name": "Показатели активности",
+              "width": "fill_container",
+              "gap": 64,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "G3Wkih",
+                  "name": "откликов на задания",
+                  "width": "fill_container",
+                  "height": 132,
+                  "fill": "$h:surface",
+                  "cornerRadius": 24,
+                  "stroke": "$h:neutral-150",
+                  "strokeWidth": 1,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#142B5C0D",
+                    "offset": {
+                      "x": 0,
+                      "y": 18
+                    },
+                    "blur": 44
+                  },
+                  "padding": [
+                    18,
+                    28
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "HDj18",
+                      "x": 36,
+                      "y": 33,
+                      "name": "Пиктограмма — откликов на задания",
+                      "enabled": false,
+                      "width": 30,
+                      "height": 30,
+                      "icon": "message-square",
+                      "library": "lucide",
+                      "fill": "$h:brand-blue"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "mf2Q1",
+                      "name": "Число и подпись",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 4,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "O55r7V",
+                          "name": "Количество — 513 000",
+                          "fill": "$h:neutral-950",
+                          "content": "513 000",
+                          "lineHeight": 1.05,
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 60,
+                          "fontWeight": "700",
+                          "letterSpacing": -1
+                        },
+                        {
+                          "type": "text",
+                          "id": "F0ODX6",
+                          "name": "Подпись активности",
+                          "fill": "$h:neutral-600",
+                          "content": "откликов на задания",
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 24,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "icon",
+                  "id": "NIXq5",
+                  "x": 824,
+                  "y": 32,
+                  "name": "Связь активности",
+                  "enabled": false,
+                  "width": 32,
+                  "height": 32,
+                  "icon": "arrow-right",
+                  "library": "lucide",
+                  "fill": "$h:neutral-400"
+                },
+                {
+                  "type": "frame",
+                  "id": "ULz0R",
+                  "name": "выполненных заявок",
+                  "width": "fill_container",
+                  "height": 132,
+                  "fill": "$h:surface",
+                  "cornerRadius": 24,
+                  "stroke": "$h:neutral-150",
+                  "strokeWidth": 1,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#142B5C0D",
+                    "offset": {
+                      "x": 0,
+                      "y": 18
+                    },
+                    "blur": 44
+                  },
+                  "padding": [
+                    18,
+                    28
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "a4yT4M",
+                      "x": 36,
+                      "y": 33,
+                      "name": "Пиктограмма — выполненных заявок",
+                      "enabled": false,
+                      "width": 30,
+                      "height": 30,
+                      "icon": "clipboard-check",
+                      "library": "lucide",
+                      "fill": "$h:brand-blue"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "J3v7Hi",
+                      "name": "Число и подпись",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 4,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "M7C0q",
+                          "name": "Количество — 230 846",
+                          "fill": "$h:neutral-950",
+                          "content": "230 846",
+                          "lineHeight": 1.05,
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 60,
+                          "fontWeight": "700",
+                          "letterSpacing": -1
+                        },
+                        {
+                          "type": "text",
+                          "id": "h5osvG",
+                          "name": "Подпись активности",
+                          "fill": "$h:neutral-600",
+                          "content": "выполненных заявок",
+                          "fontFamily": "$h:font-primary",
+                          "fontSize": 24,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "iPMyx",
+          "x": 120,
+          "y": 794,
+          "name": "Финансовый масштаб — заголовок",
+          "fill": "$h:neutral-600",
+          "content": "ФИНАНСОВЫЕ ПОКАЗАТЕЛИ",
+          "fontFamily": "$h:font-primary",
+          "fontSize": 18,
+          "fontWeight": "700",
+          "letterSpacing": 0.6
+        },
+        {
+          "type": "frame",
+          "id": "h0bOa",
+          "x": 120,
+          "y": 834,
+          "name": "Финансовые показатели",
+          "width": 1680,
+          "height": 170,
+          "gap": 64,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "trnnR",
+              "name": "оборот выплат",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "$h:surface",
+              "cornerRadius": 24,
+              "stroke": "$h:neutral-150",
+              "strokeWidth": 1,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#142B5C0D",
+                "offset": {
+                  "x": 0,
+                  "y": 18
+                },
+                "blur": 44
+              },
+              "padding": [
+                20,
+                28
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "CLwmF",
+                  "name": "Сумма и описание",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "P0ezW",
+                      "name": "Сумма — 4 млрд ₽",
+                      "fill": "$h:neutral-950",
+                      "content": "4 млрд ₽",
+                      "lineHeight": 1.05,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 60,
+                      "fontWeight": "700",
+                      "letterSpacing": -1
+                    },
+                    {
+                      "type": "text",
+                      "id": "t0wwLO",
+                      "name": "Подпись финансовой метрики",
+                      "fill": "$h:neutral-950",
+                      "content": "оборот выплат",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 24,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "icon",
+                  "id": "exGDQ",
+                  "x": 760,
+                  "y": 76,
+                  "name": "Пиктограмма — оборот выплат",
+                  "enabled": false,
+                  "width": 32,
+                  "height": 32,
+                  "icon": "wallet",
+                  "library": "lucide",
+                  "fill": "$h:brand-blue-strong"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "jjMBK",
+              "name": "налогов уплачено через сервис",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "$h:surface",
+              "cornerRadius": 24,
+              "stroke": "$h:neutral-150",
+              "strokeWidth": 1,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#142B5C0D",
+                "offset": {
+                  "x": 0,
+                  "y": 18
+                },
+                "blur": 44
+              },
+              "padding": [
+                20,
+                28
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "RWvmz",
+                  "name": "Сумма и описание",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "yd1az",
+                      "name": "Сумма — 118 млн ₽",
+                      "fill": "$h:neutral-950",
+                      "content": "118 млн ₽",
+                      "lineHeight": 1.05,
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 60,
+                      "fontWeight": "700",
+                      "letterSpacing": -1
+                    },
+                    {
+                      "type": "text",
+                      "id": "AJI6C",
+                      "name": "Подпись финансовой метрики",
+                      "fill": "$h:neutral-950",
+                      "content": "налогов уплачено через сервис",
+                      "fontFamily": "$h:font-primary",
+                      "fontSize": 24,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "icon",
+                  "id": "W1gs0",
+                  "x": 760,
+                  "y": 76,
+                  "name": "Пиктограмма — налогов уплачено через сервис",
+                  "enabled": false,
+                  "width": 32,
+                  "height": 32,
+                  "icon": "receipt-text",
+                  "library": "lucide",
+                  "fill": "$h:neutral-950"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "h:surface": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "h:neutral-600": {
+      "type": "color",
+      "value": "#5E6A7D"
+    },
+    "h:font-primary": {
+      "type": "string",
+      "value": "Inter"
+    },
+    "h:neutral-950": {
+      "type": "color",
+      "value": "#172033"
+    },
+    "h:neutral-250": {
+      "type": "color",
+      "value": "#CCD4DF"
+    },
+    "h:neutral-150": {
+      "type": "color",
+      "value": "#DBE5F5"
+    },
+    "h:brand-blue": {
+      "type": "color",
+      "value": "#2A73FF"
+    },
+    "h:brand-green-strong": {
+      "type": "color",
+      "value": "#179E48"
+    },
+    "h:bg-secondary": {
+      "type": "color",
+      "value": "#F1F5F9"
+    },
+    "h:neutral-800": {
+      "type": "color",
+      "value": "#263248"
+    },
+    "h:neutral-400": {
+      "type": "color",
+      "value": "#94A0B2"
+    },
+    "h:brand-blue-strong": {
+      "type": "color",
+      "value": "#1555D8"
+    }
+  },
   "fileToken": "68c616d5-d3d4-4d89-a757-8a08f62d0d38",
   "fonts": [
     {

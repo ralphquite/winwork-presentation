@@ -1,0 +1,41 @@
+version = 1
+name = "WinWork"
+
+[setup]
+script = ""
+
+[[actions]]
+name = "Установить зависимости"
+icon = "tool"
+command = "pnpm install --frozen-lockfile && pnpm doctor"
+
+[[actions]]
+name = "Запустить проект"
+icon = "run"
+command = "pnpm dev"
+
+[[actions]]
+name = "Открыть в Chrome"
+icon = "run"
+command = "open -a 'Google Chrome' http://127.0.0.1:5173"
+platform = "darwin"
+
+[[actions]]
+name = "Быстрая проверка"
+icon = "test"
+command = "pnpm check:quick"
+
+[[actions]]
+name = "Полная проверка"
+icon = "test"
+command = "pnpm check"
+
+[[actions]]
+name = "Браузерные тесты Chrome"
+icon = "test"
+command = "pnpm test:e2e"
+
+[[actions]]
+name = "Собрать продажи офлайн"
+icon = "tool"
+command = "pnpm build:sales:offline"

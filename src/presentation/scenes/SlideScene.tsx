@@ -3,10 +3,11 @@ import { PencilSlide } from '../slides/PencilSlide';
 import type { SlideSceneDefinition } from '../engine/types';
 
 type SlideSceneProps = {
+  onNext: () => void;
   scene: SlideSceneDefinition;
 };
 
-export function SlideScene({ scene }: SlideSceneProps) {
+export function SlideScene({ onNext, scene }: SlideSceneProps) {
   if (scene.pencil) {
     return (
       <PencilSlide
@@ -15,6 +16,11 @@ export function SlideScene({ scene }: SlideSceneProps) {
         documentPath={scene.pencil.documentPath}
         externalLinks={scene.externalLinks}
         height={scene.pencil.height}
+        nextAction={
+          scene.nextButtonLabel
+            ? { label: scene.nextButtonLabel, onClick: onNext }
+            : undefined
+        }
         title={scene.title}
         width={scene.pencil.width}
       />

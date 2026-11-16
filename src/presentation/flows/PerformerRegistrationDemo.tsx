@@ -20,8 +20,14 @@ import {
   type ReactNode,
 } from 'react';
 
+import { publicAssetUrl } from '../publicAssetUrl';
+
 const SCREEN_COUNT = 11;
 const ASSET_ROOT = '/performer-registration-flow/assets';
+
+function performerRegistrationAsset(fileName: string) {
+  return publicAssetUrl(`${ASSET_ROOT}/${fileName}`);
+}
 
 type ScreenProps = {
   children: ReactNode;
@@ -129,9 +135,9 @@ function StatusBar({ time = '9:30' }: { time?: string }) {
     <div aria-hidden="true" className="ww-pr-statusbar">
       <span>{time}</span>
       <span className="ww-pr-statusbar-icons">
-        <img alt="" src={`${ASSET_ROOT}/status-wifi.svg`} />
-        <img alt="" src={`${ASSET_ROOT}/status-signal.svg`} />
-        <img alt="" src={`${ASSET_ROOT}/status-battery.svg`} />
+        <img alt="" src={performerRegistrationAsset('status-wifi.svg')} />
+        <img alt="" src={performerRegistrationAsset('status-signal.svg')} />
+        <img alt="" src={performerRegistrationAsset('status-battery.svg')} />
       </span>
     </div>
   );
@@ -158,7 +164,11 @@ function RegistrationTop() {
 
 function WinWorkLogo() {
   return (
-    <img alt="WinWork" className="ww-pr-winwork-logo" src="/winwork-logo.svg" />
+    <img
+      alt="WinWork"
+      className="ww-pr-winwork-logo"
+      src={publicAssetUrl('/winwork-logo.svg')}
+    />
   );
 }
 
@@ -168,7 +178,7 @@ function LoginField({ filled }: { filled: boolean }) {
       <img
         alt=""
         className="ww-pr-login-country-icon"
-        src={`${ASSET_ROOT}/flag-russia.png`}
+        src={performerRegistrationAsset('flag-russia.png')}
       />
       <span>
         <small>Телефон</small>
@@ -231,7 +241,7 @@ function CodeScreen() {
 function BrandLogo({ type }: { type: MarketplaceCard['logo'] }) {
   return (
     <span aria-hidden="true" className={`ww-pr-brand-logo is-${type}`}>
-      <img alt="" src={`${ASSET_ROOT}/brand-${type}.png`} />
+      <img alt="" src={performerRegistrationAsset(`brand-${type}.png`)} />
     </span>
   );
 }
@@ -314,7 +324,7 @@ function MarketplaceContent({ showAlert }: { showAlert: boolean }) {
             <img
               alt=""
               className="ww-pr-registration-alert-art"
-              src={`${ASSET_ROOT}/registration-alert.png`}
+              src={performerRegistrationAsset('registration-alert.png')}
             />
           </section>
         ) : null}
@@ -355,7 +365,7 @@ function MarketplaceScreen({ completed = false }: { completed?: boolean }) {
             <img
               alt=""
               className="ww-pr-success-icon"
-              src={`${ASSET_ROOT}/registration-success.png`}
+              src={performerRegistrationAsset('registration-success.png')}
             />
             <h2>Вы зарегистрировались</h2>
             <p>Для получения выплат, добавьте реквизиты</p>
@@ -374,7 +384,7 @@ function CountryIcon({ icon, wide = false }: Pick<Country, 'icon' | 'wide'>) {
       <img
         alt=""
         className={wide ? 'is-wide' : undefined}
-        src={`${ASSET_ROOT}/${icon}`}
+        src={performerRegistrationAsset(icon)}
       />
     </span>
   );
@@ -425,7 +435,7 @@ function TaxLogoPanel() {
     <div className="ww-pr-tax-logo-panel">
       <img
         alt="Федеральная налоговая служба"
-        src={`${ASSET_ROOT}/tax-logo.png`}
+        src={performerRegistrationAsset('tax-logo.png')}
       />
     </div>
   );
@@ -557,7 +567,7 @@ function TaxLoadingScreen() {
       <img
         alt="Экран загрузки приложения «Мой налог»"
         className="ww-pr-tax-loading-image"
-        src={`${ASSET_ROOT}/tax-app-loading.png`}
+        src={performerRegistrationAsset('tax-app-loading.png')}
       />
     </Screen>
   );

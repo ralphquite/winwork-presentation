@@ -1,6 +1,7 @@
 import { Check, ChevronDown, CircleCheck, EyeOff } from 'lucide-react';
 import { useState, type InputHTMLAttributes, type ReactNode } from 'react';
 
+import { publicAssetUrl } from '../publicAssetUrl';
 import { DesktopShell } from './ProductUI';
 
 type AuthScreen = 'sign-in' | 'sign-up' | 'email-sent' | 'signed-in';
@@ -85,6 +86,7 @@ function AuthBenefits({ onRegister }: { onRegister?: () => void }) {
         {onRegister ? (
           <button
             className="ww-auth-benefits-register"
+            data-offline-hint-target="true"
             onClick={onRegister}
             type="button"
           >
@@ -106,7 +108,11 @@ function AuthFrame({
   return (
     <div className="ww-auth-demo" data-demo-viewport="desktop">
       <section className="ww-auth-primary">
-        <img alt="WinWork" className="ww-auth-logo" src="/winwork-logo.svg" />
+        <img
+          alt="WinWork"
+          className="ww-auth-logo"
+          src={publicAssetUrl('/winwork-logo.svg')}
+        />
         {children}
         <span className="ww-auth-copyright">© 2026 WinWork</span>
       </section>

@@ -12,6 +12,8 @@ const ignoredDirectories = new Set([
   'coverage',
   'dist',
   'node_modules',
+  'playwright-report',
+  'test-results',
 ]);
 const errors = [];
 

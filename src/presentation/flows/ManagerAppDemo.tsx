@@ -33,6 +33,7 @@ import {
   type KeyboardEvent,
   type ReactNode,
 } from 'react';
+import { publicAssetUrl } from '../publicAssetUrl';
 
 import { Toggle } from './ProductUI';
 import { useTransientMessage } from './useTransientMessage';
@@ -143,11 +144,15 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
       <img
         className="ww-mobile-login-logo"
         alt="WinWork"
-        src="/winwork-logo.svg"
+        src={publicAssetUrl('/winwork-logo.svg')}
       />
       <form autoComplete="off" onSubmit={submit}>
         <label className="ww-mobile-login-field">
-          <img alt="" aria-hidden="true" src="/demo-assets/IYshz.png" />
+          <img
+            alt=""
+            aria-hidden="true"
+            src={publicAssetUrl('/demo-assets/IYshz.png')}
+          />
           <input
             aria-label="Телефон"
             autoComplete="off"

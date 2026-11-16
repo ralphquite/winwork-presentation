@@ -180,6 +180,7 @@ function MarketplaceTable({ rows, taskAction }: MarketplaceTableProps) {
                     <button
                       aria-label={action.label}
                       className="ww-marketplace-row-trigger"
+                      data-offline-hint-target="true"
                       type="button"
                     >
                       {row.title}

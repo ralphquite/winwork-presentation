@@ -53,6 +53,35 @@ export function DemoFlowModal({
     };
   }, [isOpen, triggerRef]);
 
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleGlobalEscape = (event: globalThis.KeyboardEvent) => {
+      if (event.key !== 'Escape') return;
+
+      const nestedDialog =
+        event.target instanceof Element
+          ? event.target.closest('[role="dialog"]')
+          : null;
+
+      if (
+        nestedDialog &&
+        !nestedDialog.classList.contains('demo-flow-dialog')
+      ) {
+        return;
+      }
+
+      event.preventDefault();
+      event.stopPropagation();
+      setRevision((current) => current + 1);
+      onClose();
+    };
+
+    window.addEventListener('keydown', handleGlobalEscape, true);
+    return () =>
+      window.removeEventListener('keydown', handleGlobalEscape, true);
+  }, [isOpen, onClose]);
+
   const closeDialog = () => {
     setRevision((current) => current + 1);
     onClose();

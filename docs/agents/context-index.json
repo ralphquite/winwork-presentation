@@ -3,8 +3,8 @@
   "schemaVersion": 1,
   "project": {
     "name": "winwork-sales-demo",
-    "kind": "protected-sales-presentations-plus-public-court-presentation",
-    "runtime": "Vercel Edge Routing Middleware + React 19 + TypeScript + Vite + React Router + Tailwind CSS + Motion",
+    "kind": "winwork-product-design-prototypes-and-presentations",
+    "runtime": "React 19 + TypeScript + Vite + React Router + Tailwind CSS + Motion; Vercel access gateway; self-contained offline presentations and local feature prototypes",
     "packageManager": "pnpm@11",
     "node": ">=24 <25",
     "entrypoints": [
@@ -12,8 +12,16 @@
       "middleware.ts",
       "src/main.tsx",
       "src/court/main.tsx",
+      "src/court/offline-main.tsx",
       "src/app/router.tsx",
-      "src/presentation/engine/Presentation.tsx"
+      "src/presentation/engine/Presentation.tsx",
+      "src/onboarding/offline-main.tsx",
+      "src/app/offline-main.tsx",
+      "src/contracting/offline-main.tsx",
+      "src/performers/offline-main.tsx",
+      "README.md",
+      "docs/winwork/README.md",
+      "src/contracting/reports/offline-main.tsx"
     ]
   },
   "sourcePriority": [
@@ -41,13 +49,34 @@
         ".github/workflows/ci.yml",
         "vite.config.ts",
         "vite.court.config.ts",
+        "vite.court-offline.config.ts",
         "court.html",
+        "court-offline.html",
+        "scripts/package-offline-court.mjs",
         "tsconfig.json",
         "tsconfig.app.json",
         "tsconfig.node.json",
         "eslint.config.js",
         "prettier.config.mjs",
-        "vercel.json"
+        "vercel.json",
+        "vite.onboarding-offline.config.ts",
+        "onboarding-offline.html",
+        "scripts/package-offline-onboarding.mjs",
+        "src/assets/sales",
+        "sales-offline.html",
+        "vite.sales-offline.config.ts",
+        "scripts/package-offline-sales.mjs",
+        "contracting-offline.html",
+        "vite.contracting-offline.config.ts",
+        "scripts/package-offline-contracting.mjs",
+        "scripts/offline-assets.mjs",
+        ".codex/config.toml",
+        ".codex/environments/environment.toml",
+        "playwright.config.ts",
+        "tests",
+        "scripts/doctor.mjs",
+        ".vscode/settings.json",
+        ".vscode/extensions.json"
       ]
     },
     {
@@ -63,7 +92,7 @@
     {
       "rank": 4,
       "status": "historical",
-      "paths": ["base_documentation"]
+      "paths": ["base_documentation", "description"]
     }
   ],
   "commands": {
@@ -75,7 +104,15 @@
     "lint": "pnpm lint",
     "typecheck": "pnpm typecheck",
     "build": "pnpm build",
-    "fullGate": "pnpm check"
+    "offlineCourtBuild": "pnpm build:court:offline",
+    "fullGate": "pnpm check",
+    "offlineOnboardingBuild": "pnpm build:onboarding:offline",
+    "offlineSalesBuild": "pnpm build:sales:offline",
+    "offlineContractingBuild": "pnpm build:contracting:offline",
+    "offlinePerformersBuild": "pnpm build:performers:offline",
+    "offlineContractingTest": "pnpm test:contracting",
+    "offlineContractingReportsBuild": "pnpm build:contracting:reports",
+    "offlineContractingReportsTest": "pnpm test:contracting:reports"
   },
   "routes": [
     {
@@ -142,7 +179,15 @@
     },
     {
       "id": "asset-separation",
-      "rule": "Runtime exports live under public; editable Pencil sources and ephemeral QA evidence are never runtime dependencies."
+      "rule": "Web slide exports live under public. Contracting slide exports are build inputs under src/assets/contracting/slides and are embedded in the standalone file. Editable Pencil sources and ephemeral QA evidence are never runtime dependencies."
+    },
+    {
+      "id": "offline-court",
+      "rule": "The self-contained offline Court file reuses the same six-scene config, engine, renderer, and demo components. Its only shell-level differences are hash routing, embedded local asset transport, three always-visible navigation buttons, and contextual action hints; no protected-track slide exports are packaged."
+    },
+    {
+      "id": "offline-sales",
+      "rule": "Single-file sales reuses web routes, three sales configs and all demo/onboarding components; only hash routing, embedded assets and logout visibility differ. No runtime network or password, no changes to deployed access rules."
     }
   ],
   "assets": {
@@ -155,29 +200,231 @@
       "public/performer-registration-flow",
       "public/performer-response-flow",
       "public/winwork-logo.svg",
-      "public/favicon.svg"
+      "public/favicon.svg",
+      "src/assets/onboarding",
+      "src/assets/contracting"
     ],
     "referencePaths": ["public/demo-flows", "pencil", "design-qa.md"],
-    "historicalPaths": ["base_documentation"]
+    "historicalPaths": ["base_documentation", "description"]
   },
   "taskAreas": [
     {
       "id": "orientation-and-scope",
-      "intent": "Understand repository purpose, current readiness, boundaries, and source precedence.",
+      "intent": "Understand WinWork, repository purpose, presentation and feature-prototype scope, current readiness and source precedence.",
       "triggers": [
         "orientation",
         "scope",
         "repository overview",
-        "what is implemented"
+        "what is implemented",
+        "что такое WinWork",
+        "контекст проекта",
+        "новый агент",
+        "назначение проекта"
       ],
-      "readFirst": ["AGENTS.md", "README.md", "docs/architecture.md"],
-      "changeWith": ["docs/agents/context-index.json"],
+      "readFirst": [
+        "AGENTS.md",
+        "README.md",
+        "docs/winwork/README.md",
+        "docs/project-context.md"
+      ],
+      "changeWith": [
+        "docs/README.md",
+        "docs/winwork/sources.md",
+        "docs/architecture.md",
+        "docs/agents/context-index.json"
+      ],
       "invariantIds": [
         "static-demo-only",
         "access-gateway",
         "approved-content"
       ],
       "verification": ["pnpm docs:check"]
+    },
+    {
+      "id": "winwork-product-context",
+      "intent": "Understand WinWork functionality, roles, terminology, current user requirements and source freshness before designing a feature; distinguish real-product descriptions from local implementation and future proposals.",
+      "triggers": [
+        "WinWork functionality",
+        "product context",
+        "функционал WinWork",
+        "новая функция",
+        "роли",
+        "лимиты заданий",
+        "лимиты часов",
+        "проверки на риски",
+        "вакансии",
+        "portfolio",
+        "ChatGPT context"
+      ],
+      "readFirst": [
+        "docs/winwork/README.md",
+        "docs/winwork/features.md",
+        "docs/winwork/sources.md"
+      ],
+      "changeWith": [
+        "docs/project-context.md",
+        "docs/contracting.md",
+        "docs/reports.md",
+        "docs/onboarding.md",
+        "docs/agents/context-index.json",
+        "description/02-feature-catalog.md"
+      ],
+      "invariantIds": ["static-demo-only", "approved-content"],
+      "verification": [
+        "pnpm docs:check",
+        "pnpm format:check",
+        "git diff --check",
+        "For runtime changes, also select the relevant implementation task area and run its checks. Do not treat a dated claim or assistant proposal as released production behavior."
+      ]
+    },
+    {
+      "id": "public-court-presentation",
+      "intent": "Understand or maintain the court presentation rationale, six scenes, public/offline boundaries and printing references.",
+      "triggers": [
+        "court",
+        "презентация для суда",
+        "судебная презентация",
+        "печать Court",
+        "court-offline"
+      ],
+      "readFirst": [
+        "docs/court.md",
+        "src/presentation/config/court.ts",
+        "src/court/main.tsx",
+        "src/court/offline-main.tsx"
+      ],
+      "changeWith": [
+        "public/court-slides",
+        "public/court-assets",
+        "src/presentation/flows",
+        "scripts/package-offline-court.mjs",
+        "middleware.ts",
+        "docs/architecture.md",
+        "design-qa.md"
+      ],
+      "invariantIds": [
+        "static-demo-only",
+        "access-gateway",
+        "shared-engine",
+        "offline-court",
+        "approved-content"
+      ],
+      "verification": [
+        "pnpm check",
+        "For runtime changes, follow the complete offline Court matrix in AGENTS.md; verify public asset isolation. Printed captures are dated references and require a separate comparison."
+      ]
+    },
+    {
+      "id": "development-environment",
+      "intent": "Set up local development with Codex, environment diagnostics, editor integration and Google Chrome regression checks.",
+      "triggers": [
+        "development setup",
+        "local environment",
+        "Codex actions",
+        "doctor",
+        "browser tests",
+        "Playwright",
+        "Chrome",
+        "editor setup",
+        "check:quick"
+      ],
+      "readFirst": [
+        "docs/development.md",
+        "package.json",
+        ".codex/config.toml",
+        ".codex/environments/environment.toml",
+        "scripts/doctor.mjs",
+        "playwright.config.ts",
+        ".github/workflows/ci.yml"
+      ],
+      "changeWith": [
+        "tests",
+        "tsconfig.node.json",
+        ".node-version",
+        ".npmrc",
+        ".gitignore",
+        ".prettierignore",
+        ".vscode/settings.json",
+        ".vscode/extensions.json",
+        "scripts/check-docs.mjs",
+        "README.md",
+        "AGENTS.md",
+        "docs/agents/context-index.json",
+        "docs/agents/file-map.md",
+        "docs/agents/change-playbooks.md"
+      ],
+      "invariantIds": [
+        "static-demo-only",
+        "access-gateway",
+        "keyboard-and-focus"
+      ],
+      "verification": ["pnpm doctor", "pnpm check", "git diff --check"]
+    },
+    {
+      "id": "offline-onboarding",
+      "intent": "Recreate authorized WinWork web flows with contextual onboarding and a standalone offline catalog.",
+      "triggers": [
+        "onboarding",
+        "first steps",
+        "commission reduction",
+        "tariff",
+        "/onboarding",
+        "company information",
+        "public profile",
+        "#company",
+        "first marketplace task",
+        "#marketplace",
+        "single task onboarding",
+        "account top-up",
+        "#topup",
+        "invoice"
+      ],
+      "readFirst": [
+        "docs/skills/winwork-onboarding/SKILL.md",
+        "docs/onboarding.md",
+        "prompts/onboarding-ux-rules.md",
+        "src/onboarding/TariffOnboardingDemo.tsx",
+        "src/onboarding/tariffState.ts",
+        "src/onboarding/TariffPage.tsx",
+        "src/onboarding/TopUpOnboardingDemo.tsx",
+        "src/onboarding/topUpState.ts",
+        "src/onboarding/CompanyOnboardingDemo.tsx",
+        "src/onboarding/companyState.ts",
+        "src/onboarding/MarketplaceOnboardingDemo.tsx",
+        "src/onboarding/MarketplaceTaskForm.tsx",
+        "src/onboarding/marketplaceState.ts"
+      ],
+      "changeWith": [
+        "src/onboarding/OnboardingPrototype.tsx",
+        "src/onboarding/TopUpInvoice.tsx",
+        "src/onboarding/bankRequisites.ts",
+        "src/onboarding/topUpAssets.ts",
+        "src/onboarding/onboardingTypes.ts",
+        "src/onboarding/OnboardingTour.tsx",
+        "src/onboarding/offline-main.tsx",
+        "src/styles/onboarding.css",
+        "src/assets/onboarding",
+        "src/app/router.tsx",
+        "src/app/TrackSelector.tsx",
+        "vite.onboarding-offline.config.ts",
+        "scripts/package-offline-onboarding.mjs",
+        "package.json",
+        "design-qa.md",
+        "src/onboarding/OnboardingShell.tsx",
+        "src/onboarding/OnboardingHelp.tsx"
+      ],
+      "invariantIds": [
+        "static-demo-only",
+        "access-gateway",
+        "semantic-demo-ui",
+        "keyboard-and-focus"
+      ],
+      "verification": [
+        "pnpm check",
+        "Verify guided and unguided tariff and company flows, click/keyboard fixtures, empty-name validation, logo/selfie removal and replacement, save/submission, reload checkpoints, independent reset, pause/resume, both help entries, focus and narrow host; open the single HTML through file:// with networking disabled and check no HTTP requests or console errors.",
+        "Verify top-up tab and shared bank keyboard navigation, all three bank-specific QR/requisites/PDF/Excel bundles, bank-change preparation reset, v1/v2 checkpoint migration, bank/amount/format retention, pause/resume and independent reset.",
+        "Verify marketplace creation with all visible click fixtures, remote/address modes, additional work removal/replacement, audience readiness, new row, read-only details, zero responses, reload, Escape/focus, pause/resume, independent reset, and narrow host."
+      ]
     },
     {
       "id": "access-gateway",
@@ -232,6 +479,7 @@
         "fullscreen entry"
       ],
       "readFirst": [
+        "src/app/salesRoutes.tsx",
         "src/app/router.tsx",
         "src/app/TrackSelector.tsx",
         "src/presentation/engine/types.ts",
@@ -306,6 +554,7 @@
         "slide image"
       ],
       "readFirst": [
+        "docs/project-context.md",
         "src/presentation/config/enterprise.ts",
         "src/presentation/config/api.ts",
         "src/presentation/config/small.ts",
@@ -324,6 +573,7 @@
         "pencil/preesentation_big_business.pen",
         "pencil/preesentation_api_business.pen",
         "pencil/preesentation_small_business.pen",
+        "pencil/court_presentation.pen",
         "docs/agents/file-map.md"
       ],
       "invariantIds": [
@@ -394,6 +644,7 @@
         "src/presentation/flows/RegistrationDemo.tsx",
         "src/presentation/flows/TaskPaymentDemo.tsx",
         "src/presentation/flows/PerformerSelectionDemo.tsx",
+        "src/presentation/flows/PerformerReviewsDrawer.tsx",
         "src/presentation/flows/DesktopDemos.tsx",
         "src/presentation/flows/MarketplacePage.tsx",
         "src/presentation/flows/marketplaceData.ts",
@@ -603,14 +854,22 @@
         "lint",
         "CI",
         "build",
-        "Vercel"
+        "Vercel",
+        "offline",
+        "one-click HTML",
+        "file://"
       ],
       "readFirst": [
         "package.json",
         "vite.config.ts",
         "vite.court.config.ts",
+        "vite.court-offline.config.ts",
         "court.html",
+        "court-offline.html",
         "src/court/main.tsx",
+        "src/court/offline-main.tsx",
+        "src/court/OfflineInteractionHints.tsx",
+        "scripts/package-offline-court.mjs",
         "tsconfig.app.json",
         "eslint.config.js",
         ".github/workflows/ci.yml",
@@ -618,15 +877,33 @@
       ],
       "changeWith": [
         "pnpm-lock.yaml",
+        "src/presentation/publicAssetUrl.ts",
+        "src/presentation/slides/PencilSlide.tsx",
+        "src/presentation/engine/Presentation.tsx",
+        "src/presentation/engine/PresentationControls.tsx",
+        "src/styles/globals.css",
+        "public/court-slides",
+        "public/court-assets",
+        "public/performer-registration-flow",
+        "public/performer-response-flow",
         "middleware.ts",
         ".env.example",
         "README.md",
-        "AGENTS.md"
+        "AGENTS.md",
+        "vite.sales-offline.config.ts",
+        "scripts/package-offline-sales.mjs",
+        "scripts/offline-assets.mjs"
       ],
-      "invariantIds": ["static-demo-only", "access-gateway", "shared-engine"],
+      "invariantIds": [
+        "static-demo-only",
+        "access-gateway",
+        "shared-engine",
+        "offline-court"
+      ],
       "verification": [
         "pnpm check",
-        "Verify direct SPA route refresh when routing or deployment config changes."
+        "Verify direct SPA route refresh when routing or deployment config changes.",
+        "For offline Court changes, open dist/offline/Открыть презентацию WinWork.html through file:// with networking disabled and verify the three always-visible controls, contextual action hints, all six scenes, hash Back/Forward, shortcuts, every Court demo flow, embedded assets, zero HTTP requests, and console health."
       ]
     },
     {
@@ -638,7 +915,10 @@
         "documentation",
         "context index",
         "file map",
-        "playbook"
+        "playbook",
+        "контекст",
+        "документация",
+        "история решений"
       ],
       "readFirst": [
         "AGENTS.md",
@@ -651,13 +931,174 @@
         "docs/agents/file-map.md",
         "docs/agents/change-playbooks.md",
         "docs/architecture.md",
-        "README.md"
+        "README.md",
+        "docs/README.md",
+        "docs/winwork/README.md",
+        "docs/winwork/features.md",
+        "docs/winwork/sources.md",
+        "docs/project-context.md",
+        "description/README.md"
       ],
       "invariantIds": ["approved-content", "asset-separation"],
       "verification": [
         "pnpm docs:check",
         "pnpm format:check",
         "git diff --check"
+      ]
+    },
+    {
+      "id": "offline-contracting",
+      "intent": "Maintain the five standalone WinWork contracting editions, including the full deck, prototype-only demo, role-specific decks and short customer deck.",
+      "triggers": [
+        "contracting scheme",
+        "подрядная схема",
+        "подрядчик",
+        "подписание актов",
+        "задачи клиентов"
+      ],
+      "readFirst": [
+        "docs/contracting.md",
+        "src/contracting/introSlides.ts",
+        "src/contracting/customerBriefSlides.ts",
+        "src/contracting/scenario.tsx",
+        "src/contracting/ContractingPresentation.tsx",
+        "src/contracting/fixtures.ts"
+      ],
+      "changeWith": [
+        "src/contracting",
+        "src/assets/contracting",
+        "src/assets/contracting/customer-brief",
+        "pencil/outsource_shchema.pen",
+        "src/presentation/engine/PresentationControls.tsx",
+        "src/presentation/flows/TaskPaymentControls.tsx",
+        "contracting-offline.html",
+        "vite.contracting-offline.config.ts",
+        "scripts/package-offline-contracting.mjs",
+        "tests/contracting.spec.ts"
+      ],
+      "invariantIds": [
+        "static-demo-only",
+        "shared-engine",
+        "url-scene-state",
+        "semantic-demo-ui",
+        "approved-content"
+      ],
+      "verification": [
+        "pnpm check",
+        "Open all five standalone files with no network. Verify the sequence from performer confirmation to contractor signature and customer payment, plus the slides, history, performer stages and cabinet scope of each interactive edition. Verify the ten Pencil slides in the short customer deck, their embedded images, and navigation by picker, arrows, history and reset."
+      ]
+    },
+    {
+      "id": "offline-contracting-reports",
+      "intent": "Understand and maintain customer/contractor report requirements, selection semantics, same-window preview and XLSX in the standalone local prototype.",
+      "triggers": [
+        "отчёты по подрядной схеме",
+        "contracting reports",
+        "реестр заданий",
+        "отчёты",
+        "отчеты",
+        "сводка по подрядчикам",
+        "сводка по клиентам",
+        "XLSX"
+      ],
+      "readFirst": [
+        "docs/reports.md",
+        "docs/contracting.md",
+        "src/contracting/reports/ContractingReports.tsx",
+        "src/contracting/reports/data.ts"
+      ],
+      "changeWith": [
+        "src/contracting/ContractingShell.tsx",
+        "src/contracting/reports",
+        "contracting-reports-offline.html",
+        "scripts/package-offline-contracting.mjs",
+        "tests/contracting-reports.spec.ts"
+      ],
+      "invariantIds": [
+        "static-demo-only",
+        "semantic-demo-ui",
+        "keyboard-and-focus"
+      ],
+      "verification": [
+        "pnpm check",
+        "pnpm build:contracting:reports",
+        "pnpm test:contracting:reports",
+        "Check both roles, date and status filtering, generation, table preview, browser history, and XLSX export in offline Google Chrome."
+      ]
+    },
+    {
+      "id": "offline-performers-table",
+      "intent": "Maintain the standalone My Performers table prototype with synthetic WinWork data.",
+      "triggers": [
+        "Мои исполнители",
+        "performers table",
+        "column visibility",
+        "performers:offline"
+      ],
+      "readFirst": [
+        "README.md",
+        "src/performers/PerformersTable.tsx",
+        "src/performers/performerTable.ts",
+        "src/performers/PerformerCell.tsx"
+      ],
+      "changeWith": [
+        "src/performers/performers.css",
+        "src/assets/performers",
+        "src/contracting/ContractingShell.tsx",
+        "performers-offline.html",
+        "scripts/build-offline-performers.mjs",
+        "design-qa.md"
+      ],
+      "invariantIds": [
+        "static-demo-only",
+        "semantic-demo-ui",
+        "approved-content",
+        "keyboard-and-focus"
+      ],
+      "verification": [
+        "pnpm check",
+        "pnpm build:performers:offline",
+        "Verify column drag and resize, visibility, filters, sorting, sticky headers and identity, persistence and reset in Google Chrome with networking disabled."
+      ]
+    },
+    {
+      "id": "offline-sales",
+      "intent": "Package the complete sales landing, three presentations, all demos and onboarding as one password-free offline HTML.",
+      "triggers": [
+        "offline sales",
+        "all presentations offline",
+        "single sales file",
+        "sales-offline",
+        "Открыть продажи WinWork.html"
+      ],
+      "readFirst": [
+        "src/app/salesRoutes.tsx",
+        "src/app/offline-main.tsx",
+        "src/presentation/config/sales.ts",
+        "vite.sales-offline.config.ts",
+        "scripts/package-offline-sales.mjs",
+        "scripts/offline-assets.mjs"
+      ],
+      "changeWith": [
+        "sales-offline.html",
+        "src/app/TrackSelector.tsx",
+        "src/app/router.tsx",
+        "src/presentation/publicAssetUrl.ts",
+        "src/onboarding/OnboardingPrototype.tsx",
+        "src/assets/sales",
+        "package.json",
+        "tsconfig.node.json",
+        "README.md"
+      ],
+      "invariantIds": [
+        "static-demo-only",
+        "access-gateway",
+        "shared-engine",
+        "offline-sales"
+      ],
+      "verification": [
+        "pnpm check",
+        "Open the sales HTML through file:// with networking disabled; verify 37 slides, all 10 demos and four onboarding flows, downloads, direct links/history/home/reset, fullscreen fallback, focus/Escape, embedded assets, zero HTTP requests and console health."
       ]
     }
   ]

@@ -1,12 +1,31 @@
-import { useCallback, useEffect, useState } from 'react';
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useState,
+  type ComponentType,
+  type ReactNode,
+} from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-import { PresentationControls } from './PresentationControls';
+import {
+  PresentationControls,
+  type PresentationControlsProps,
+  type PresentationScenePicker,
+} from './PresentationControls';
 import { SceneRenderer } from './SceneRenderer';
-import type { PresentationConfig } from './types';
+import type { ComponentSceneDefinition, PresentationConfig } from './types';
 
 type PresentationProps = {
   config: PresentationConfig;
+  controlsVariant?: PresentationControlsProps['controlsVariant'];
+  componentLayout?: ComponentType<PresentationLayoutProps>;
+  getScenePicker?: (sceneId: string) => PresentationScenePicker | undefined;
+};
+
+export type PresentationLayoutProps = {
+  scene: ComponentSceneDefinition;
+  children: ReactNode;
 };
 
 function isEditableTarget(target: EventTarget | null) {
@@ -21,7 +40,12 @@ function isEditableTarget(target: EventTarget | null) {
   );
 }
 
-export function Presentation({ config }: PresentationProps) {
+export function Presentation({
+  config,
+  controlsVariant = 'default',
+  componentLayout: ComponentLayout,
+  getScenePicker,
+}: PresentationProps) {
   const [searchParams, setSearchParams] = useSearchParams();
   const [revision, setRevision] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(
@@ -114,13 +138,15 @@ export function Presentation({ config }: PresentationProps) {
     goToScene(0);
   }, [goToScene]);
 
-  useEffect(() => {
+  // A key pressed as the scene commits must see the same index as the controls.
+  useLayoutEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (
         event.defaultPrevented ||
         event.altKey ||
         event.ctrlKey ||
         event.metaKey ||
+        document.querySelector('[data-presentation-modal="true"]') ||
         isEditableTarget(event.target)
       ) {
         return;
@@ -142,19 +168,34 @@ export function Presentation({ config }: PresentationProps) {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [goToNextScene, goToPreviousScene, toggleFullscreen]);
 
+  const controls: PresentationControlsProps = {
+    config,
+    controlsVariant,
+    currentIndex,
+    isFullscreen,
+    onNext: goToNextScene,
+    onPrevious: goToPreviousScene,
+    onReset: resetPresentation,
+    onSceneChange: goToScene,
+    onToggleFullscreen: toggleFullscreen,
+    scenePicker: getScenePicker?.(currentScene.id),
+  };
+  const content = (
+    <SceneRenderer
+      onNext={goToNextScene}
+      revision={revision}
+      scene={currentScene}
+    />
+  );
+
   return (
-    <main className="presentation-shell">
-      <PresentationControls
-        config={config}
-        currentIndex={currentIndex}
-        isFullscreen={isFullscreen}
-        onNext={goToNextScene}
-        onPrevious={goToPreviousScene}
-        onReset={resetPresentation}
-        onSceneChange={goToScene}
-        onToggleFullscreen={toggleFullscreen}
-      />
-      <SceneRenderer revision={revision} scene={currentScene} />
+    <main className="presentation-shell" data-controls={controlsVariant}>
+      <PresentationControls {...controls} />
+      {ComponentLayout && currentScene.type === 'component' ? (
+        <ComponentLayout scene={currentScene}>{content}</ComponentLayout>
+      ) : (
+        content
+      )}
     </main>
   );
 }

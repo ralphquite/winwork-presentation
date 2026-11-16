@@ -24,6 +24,8 @@ import {
   type TextareaHTMLAttributes,
 } from 'react';
 
+import { publicAssetUrl } from '../publicAssetUrl';
+
 const NAVIGATION: readonly { icon: LucideIcon; label: string }[] = [
   { icon: Users, label: 'Мои исполнители' },
   { icon: BriefcaseBusiness, label: 'Маркетплейс' },
@@ -42,75 +44,88 @@ type DesktopShellProps = {
   activeNavigation?: 'Маркетплейс' | 'Настройки';
   children: ReactNode;
   chrome?: 'default' | 'marketplace';
+  className?: string;
+  contentAs?: 'div' | 'main';
+  headerContent?: ReactNode;
   overlay?: ReactNode;
+  sidebarContent?: ReactNode;
 };
 
 export function DesktopShell({
   activeNavigation = 'Настройки',
   children,
   chrome = 'default',
+  className = '',
+  contentAs: Content = 'main',
+  headerContent,
   overlay,
+  sidebarContent,
 }: DesktopShellProps) {
   const usesMarketplaceChrome = chrome === 'marketplace';
 
   return (
     <div
-      className={`ww-desktop-app${usesMarketplaceChrome ? ' is-live-marketplace' : ''}`}
+      className={`ww-desktop-app${usesMarketplaceChrome ? ' is-live-marketplace' : ''} ${className}`.trim()}
       data-demo-viewport="desktop"
     >
       <header className="ww-desktop-header" inert={Boolean(overlay)}>
-        {usesMarketplaceChrome ? (
-          <>
-            <div className="ww-marketplace-balances">
-              <WalletCards aria-hidden="true" size={22} />
-              <div>
-                <span>
-                  <strong>2 801 371,00 ₽</strong> – общий баланс юр. лица
-                </span>
-                <span>
-                  <strong>482 230,85 ₽</strong> – баланс проекта
-                </span>
+        {headerContent ??
+          (usesMarketplaceChrome ? (
+            <>
+              <div className="ww-marketplace-balances">
+                <WalletCards aria-hidden="true" size={22} />
+                <div>
+                  <span>
+                    <strong>2 801 371,00 ₽</strong> – общий баланс юр. лица
+                  </span>
+                  <span>
+                    <strong>482 230,85 ₽</strong> – баланс проекта
+                  </span>
+                </div>
               </div>
-            </div>
-            <div className="ww-marketplace-account-actions">
-              <button
-                aria-label="Уведомления"
-                className="is-icon"
-                type="button"
-              >
-                <Bell aria-hidden="true" size={21} />
-              </button>
-              <button type="button">
-                1209 <ChevronDown aria-hidden="true" size={15} />
-              </button>
-              <button type="button">
-                ООО «Моя оборона» <ChevronDown aria-hidden="true" size={15} />
-              </button>
-              <button aria-label="Выйти" className="is-icon" type="button">
-                <LogOut aria-hidden="true" size={21} />
-              </button>
-            </div>
-          </>
-        ) : (
-          <>
-            <div className="ww-wordmark" aria-label="WinWork">
-              <img alt="" aria-hidden="true" src="/winwork-logo.svg" />
-            </div>
-            <div className="ww-account-strip">
-              <strong>2 801 371,00 ₽</strong>
-              <span>общий баланс юр. лица</span>
-              <strong>482 230,85 ₽</strong>
-              <span>баланс проекта</span>
-              <Bell aria-hidden="true" size={18} />
-              <button type="button">
-                1209 <ChevronDown aria-hidden="true" size={15} />
-              </button>
-              <button type="button">
-                ООО «Моя оборона» <ChevronDown aria-hidden="true" size={15} />
-              </button>
-            </div>
-          </>
-        )}
+              <div className="ww-marketplace-account-actions">
+                <button
+                  aria-label="Уведомления"
+                  className="is-icon"
+                  type="button"
+                >
+                  <Bell aria-hidden="true" size={21} />
+                </button>
+                <button type="button">
+                  1209 <ChevronDown aria-hidden="true" size={15} />
+                </button>
+                <button type="button">
+                  ООО «Моя оборона» <ChevronDown aria-hidden="true" size={15} />
+                </button>
+                <button aria-label="Выйти" className="is-icon" type="button">
+                  <LogOut aria-hidden="true" size={21} />
+                </button>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="ww-wordmark" aria-label="WinWork">
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  src={publicAssetUrl('/winwork-logo.svg')}
+                />
+              </div>
+              <div className="ww-account-strip">
+                <strong>2 801 371,00 ₽</strong>
+                <span>общий баланс юр. лица</span>
+                <strong>482 230,85 ₽</strong>
+                <span>баланс проекта</span>
+                <Bell aria-hidden="true" size={18} />
+                <button type="button">
+                  1209 <ChevronDown aria-hidden="true" size={15} />
+                </button>
+                <button type="button">
+                  ООО «Моя оборона» <ChevronDown aria-hidden="true" size={15} />
+                </button>
+              </div>
+            </>
+          ))}
       </header>
 
       <aside
@@ -118,39 +133,51 @@ export function DesktopShell({
         aria-label="Навигация WinWork"
         inert={Boolean(overlay)}
       >
-        {usesMarketplaceChrome ? (
-          <div className="ww-wordmark" aria-label="WinWork">
-            <img alt="" aria-hidden="true" src="/winwork-logo.svg" />
-          </div>
-        ) : (
-          <span className="ww-sidebar-kicker">РАБОТА</span>
-        )}
-        <nav>
-          {NAVIGATION.map(({ icon: Icon, label }) => {
-            const NavigationIcon =
-              usesMarketplaceChrome && label === 'Маркетплейс' ? Search : Icon;
-
-            return (
-              <div
-                aria-current={activeNavigation === label ? 'page' : undefined}
-                className={`ww-sidebar-item${activeNavigation === label ? ' is-active' : ''}`}
-                key={label}
-              >
-                <NavigationIcon
+        {sidebarContent ?? (
+          <>
+            {usesMarketplaceChrome ? (
+              <div className="ww-wordmark" aria-label="WinWork">
+                <img
+                  alt=""
                   aria-hidden="true"
-                  size={18}
-                  strokeWidth={1.9}
+                  src={publicAssetUrl('/winwork-logo.svg')}
                 />
-                <span>{label}</span>
               </div>
-            );
-          })}
-        </nav>
+            ) : (
+              <span className="ww-sidebar-kicker">РАБОТА</span>
+            )}
+            <nav>
+              {NAVIGATION.map(({ icon: Icon, label }) => {
+                const NavigationIcon =
+                  usesMarketplaceChrome && label === 'Маркетплейс'
+                    ? Search
+                    : Icon;
+
+                return (
+                  <div
+                    aria-current={
+                      activeNavigation === label ? 'page' : undefined
+                    }
+                    className={`ww-sidebar-item${activeNavigation === label ? ' is-active' : ''}`}
+                    key={label}
+                  >
+                    <NavigationIcon
+                      aria-hidden="true"
+                      size={18}
+                      strokeWidth={1.9}
+                    />
+                    <span>{label}</span>
+                  </div>
+                );
+              })}
+            </nav>
+          </>
+        )}
       </aside>
 
-      <main className="ww-desktop-content" inert={Boolean(overlay)}>
+      <Content className="ww-desktop-content" inert={Boolean(overlay)}>
         {children}
-      </main>
+      </Content>
       {overlay}
     </div>
   );
@@ -315,30 +342,45 @@ export function Toggle({ checked, label, onChange }: ToggleProps) {
 type DrawerProps = {
   children: ReactNode;
   className?: string;
-  onClose: () => void;
+  closeIcon?: ReactNode;
+  label?: string;
+  onClose?: () => void;
   title: string;
 };
 
 export function Drawer({
   children,
   className = '',
+  closeIcon = <X aria-hidden="true" size={21} />,
+  label,
   onClose,
   title,
 }: DrawerProps) {
   return (
     <div className="ww-drawer-layer">
-      <button
-        aria-label="Закрыть боковую панель"
-        className="ww-drawer-scrim"
-        onClick={onClose}
-        type="button"
-      />
-      <aside aria-label={title} className={`ww-drawer ${className}`.trim()}>
+      {onClose ? (
+        <button
+          aria-label="Закрыть боковую панель"
+          className="ww-drawer-scrim"
+          onClick={onClose}
+          type="button"
+        />
+      ) : (
+        <div aria-hidden="true" className="ww-drawer-scrim" />
+      )}
+      <aside
+        aria-label={label ?? title}
+        className={`ww-drawer ${className}`.trim()}
+      >
         <header>
           <h2>{title}</h2>
-          <button aria-label="Закрыть" onClick={onClose} type="button">
-            <X aria-hidden="true" size={21} />
-          </button>
+          {onClose ? (
+            <button aria-label="Закрыть" onClick={onClose} type="button">
+              {closeIcon}
+            </button>
+          ) : (
+            <span aria-hidden="true">{closeIcon}</span>
+          )}
         </header>
         <div className="ww-drawer-body">{children}</div>
       </aside>

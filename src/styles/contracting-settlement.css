@@ -1,0 +1,259 @@
+.ww-contracting
+  .ww-contracting-viewport
+  .ww-contracting-settlement
+  .ww-drawer-body {
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  gap: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.ww-contracting .ww-contracting-desktop .ww-contracting-settlement > header {
+  padding-bottom: 17px;
+}
+
+.ww-settlement-meta {
+  flex: none;
+  padding: 0 20px;
+  font-size: 13px;
+}
+
+.ww-settlement-views {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 6px;
+  color: #6d7380;
+}
+
+.ww-settlement-meta > div {
+  display: flex;
+  min-height: 39px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border-block: 1px solid #e4e7eb;
+}
+
+.ww-settlement-meta strong {
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #e4f4e6;
+  color: #247238;
+  font-size: 11px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.ww-settlement-meta strong.is-progress {
+  background: #e7efff;
+  color: #275ec2;
+}
+
+.ww-settlement-tabs {
+  display: flex;
+  flex: none;
+  justify-content: space-between;
+  gap: 10px;
+  overflow-x: auto;
+  margin: 0 20px;
+  padding: 0;
+  border-bottom: 1px solid #e4e7eb;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.ww-settlement-tabs li {
+  padding: 10px 0 8px;
+  border-bottom: 2px solid transparent;
+  color: #6d7380;
+}
+
+.ww-settlement-tabs li[aria-current='true'] {
+  border-color: #2a73ff;
+  color: #252e42;
+  font-weight: 650;
+}
+
+.ww-contracting
+  .ww-contracting-settlement
+  .ww-drawer-body
+  > .ww-settlement-scroll {
+  min-height: 0;
+  flex: 0 1 auto;
+  overflow: auto;
+  padding: 12px 20px 14px;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+.ww-settlement-scroll:focus-visible {
+  outline: 2px solid #2a73ff;
+  outline-offset: -2px;
+}
+
+.ww-settlement-scroll .ww-settlement-notice {
+  gap: 10px;
+  margin: 0 0 10px;
+  padding: 10px 12px;
+  border-radius: 9px;
+  color: #252e42;
+}
+
+.ww-settlement-notice > svg {
+  flex: none;
+  color: #2a73ff;
+}
+
+.ww-settlement-notice p {
+  margin-top: 3px;
+  font-size: 13px;
+}
+
+.ww-settlement-fields {
+  display: grid;
+  gap: 7px;
+  margin: 0 0 10px;
+}
+
+.ww-settlement-fields > div {
+  padding: 6px 10px;
+  border-bottom: 1px solid #e2e5e9;
+  border-radius: 4px;
+  background: #f3f4f6;
+}
+
+.ww-settlement-fields dt,
+.ww-settlement-document span {
+  color: #6d7380;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.ww-settlement-fields dd {
+  margin: 2px 0 0;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.ww-settlement-documents {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ww-settlement-document {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 11px;
+  padding: 9px 11px;
+  border-radius: 5px;
+  background: #f3f4f6;
+  color: #6d7380;
+}
+
+.ww-settlement-document > div {
+  display: grid;
+  gap: 2px;
+}
+
+.ww-settlement-document strong {
+  color: #252e42;
+  font-size: 14px;
+  font-weight: 550;
+  line-height: 19px;
+}
+
+.ww-settlement-document small {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #247238;
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 17px;
+}
+
+.ww-settlement-open-document {
+  color: #2a73ff;
+}
+
+.ww-settlement-actions {
+  flex: none;
+  padding: 9px 20px 14px;
+  border-top: 1px solid #e6e8ec;
+  background: #ffffff;
+}
+
+.ww-settlement-actions :is(button, input) {
+  pointer-events: none;
+}
+
+.ww-settlement-actions > .ww-button,
+.ww-settlement-actions .ww-payment-actions-footer > .ww-button {
+  width: 100%;
+  min-height: 40px;
+}
+
+.ww-settlement-actions .ww-payment-actions-footer {
+  gap: 0;
+  margin: 0;
+}
+
+.ww-settlement-total {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.ww-settlement-total strong {
+  color: #245fd9;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.ww-settlement-actions .ww-payment-code-form {
+  gap: 7px;
+}
+
+@media (min-width: 691px) and (max-height: 980px) {
+  .ww-contracting .ww-contracting-desktop .ww-contracting-settlement > header {
+    padding-block: 16px 10px;
+  }
+
+  .ww-settlement-fields {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  }
+
+  .ww-settlement-fields > :last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 550px) {
+  .ww-settlement-meta,
+  .ww-settlement-actions {
+    padding-inline: 12px;
+  }
+
+  .ww-contracting
+    .ww-contracting-settlement
+    .ww-drawer-body
+    > .ww-settlement-scroll {
+    padding-inline: 12px;
+  }
+
+  .ww-settlement-tabs {
+    gap: 6px;
+    margin-inline: 12px;
+    font-size: 13px;
+  }
+}

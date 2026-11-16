@@ -1,0 +1,867 @@
+.ww-contracting-viewport {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.ww-contracting-viewport button[aria-disabled='true'] {
+  pointer-events: none;
+}
+
+.ww-contracting-canvas {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.ww-desktop-app.ww-contracting-desktop {
+  --ww-blue: #2a73ff;
+  --ww-blue-dark: #1c64ea;
+  --ww-border: #e9e9e9;
+  --ww-canvas: #f4f5f6;
+  --ww-control: #f4f5f6;
+  --ww-muted: #808080;
+  --ww-text: #252e42;
+  --ww-contracting-gutter: 48px;
+  /* The drawer is positioned against the viewport outside the scrolling canvas. */
+  position: static;
+  min-width: 1060px;
+  min-height: 0;
+  grid-template-columns: 276px minmax(0, 1fr);
+  font-family: 'WinWork Roboto', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.ww-contracting-desktop .ww-desktop-header {
+  min-width: 0;
+  grid-column: 2;
+  padding: 0 var(--ww-contracting-gutter);
+  border: 0;
+  background: var(--ww-canvas);
+}
+
+.ww-contracting-desktop .ww-sidebar {
+  position: static;
+  grid-row: 1 / -1;
+  min-height: 0;
+  padding: 0 12px 24px 24px;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.ww-contracting-desktop .ww-desktop-content {
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.ww-contracting-desktop .ww-desktop-content[inert],
+.ww-contracting-desktop .ww-sidebar[inert] {
+  overflow: hidden;
+}
+
+.ww-contracting-account,
+.ww-contracting-account-actions,
+.ww-contracting-account-item,
+.ww-contracting-balance {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.ww-contracting-account {
+  width: 100%;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.ww-contracting-balance {
+  gap: 8px;
+}
+
+.ww-contracting-account-actions {
+  gap: 12px;
+}
+
+.ww-contracting-account-actions > img:last-child {
+  margin-left: 12px;
+}
+
+.ww-contracting-account-item {
+  min-height: 32px;
+  gap: 4px;
+  padding: 0 14px;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 1px 6px #4444441a;
+  font-weight: 500;
+}
+
+.ww-contracting-sidebar-head {
+  display: flex;
+  height: 82px;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 24px;
+}
+
+.ww-contracting-sidebar-head > img {
+  margin-top: 7px;
+}
+
+.ww-contracting-wordmark {
+  display: flex;
+  align-items: center;
+  gap: 9.45px;
+}
+
+.ww-contracting-desktop .ww-sidebar .ww-contracting-navigation {
+  display: block;
+}
+
+.ww-contracting-nav-row,
+.ww-contracting-nav-child {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 12px;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: 20px;
+  text-align: left;
+}
+
+.ww-contracting-nav-row {
+  min-height: 44px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.ww-contracting-nav-row > span {
+  flex: 1;
+}
+
+.ww-contracting-nav-row > img.is-up {
+  transform: rotate(180deg);
+}
+
+.ww-contracting-nav-child {
+  min-height: 32px;
+  align-items: flex-start;
+  padding-bottom: 12px;
+  font-size: 14px;
+}
+
+.ww-contracting-nav-children {
+  padding-left: 32px;
+}
+
+.ww-contracting-navigation [aria-current='page'],
+.ww-contracting-navigation [data-active='true'] {
+  color: var(--ww-blue);
+}
+
+.ww-contracting-nav-child[aria-current='page'],
+.ww-contracting-nav-child[data-active='true'] {
+  font-weight: 700;
+}
+
+.ww-contracting-navigation button {
+  cursor: pointer;
+}
+
+.ww-contracting-navigation button:hover {
+  background: #f4f5f6;
+}
+
+.ww-contracting-nav-utilities {
+  padding-top: 12px;
+  border-top: 1px solid var(--ww-border);
+}
+
+.ww-contracting-section-header {
+  display: grid;
+  max-width: 1100px;
+  justify-items: start;
+}
+
+.ww-contracting-section-header h1 {
+  margin: 0 0 32px;
+  font-family: 'WinWork Montserrat', 'WinWork Roboto', Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 36px;
+}
+
+.ww-contracting-section-tabs {
+  display: flex;
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid #dde9ff;
+  border-radius: 8px;
+  background: #dde9ff;
+  white-space: nowrap;
+}
+
+.ww-contracting-section-tabs span {
+  padding: 6px 16px;
+  background: white;
+}
+
+.ww-contracting-section-tabs [aria-current='page'] {
+  background: var(--ww-blue);
+  color: white;
+  font-weight: 500;
+}
+
+.ww-contracting-mode-tabs {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  background: white;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.ww-contracting-mode-tabs span {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.ww-contracting-mode-tabs [aria-current='page'] {
+  border-color: var(--ww-blue);
+  background: #ecf3ff;
+}
+
+.ww-contracting-partners {
+  padding: 48px var(--ww-contracting-gutter);
+}
+
+.ww-contracting-partners > section {
+  max-width: 1100px;
+}
+
+.ww-contracting-partners p,
+.ww-contracting-partners h2,
+.ww-contracting-partners h3,
+.ww-contracting-partners dl,
+.ww-contracting-partners dd,
+.ww-contracting-partner-drawer :is(p, h3, dl, dd) {
+  margin: 0;
+}
+
+.ww-contracting-partners .ww-button,
+.ww-contracting-drawer .ww-button {
+  min-height: 40px;
+  padding: 7px 16px;
+  font-family: 'WinWork Montserrat', 'WinWork Roboto', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.ww-contracting-partners .ww-button[aria-disabled='true'],
+.ww-contracting-drawer .ww-button[aria-disabled='true'] {
+  pointer-events: none;
+}
+
+.ww-contracting-partners .ww-button.is-danger,
+.ww-contracting-drawer .ww-button.is-danger {
+  border-color: #900;
+  color: #900;
+}
+
+.ww-contracting-partners > .ww-contracting-summary {
+  display: grid;
+  gap: 24px;
+  margin-top: 32px;
+  padding: 24px;
+  border-radius: 16px;
+  background: white;
+}
+
+.ww-contracting-partners > .ww-contracting-summary.is-application {
+  max-width: 634px;
+  justify-items: start;
+}
+
+.ww-contracting-summary.is-application .ww-button {
+  width: 100%;
+}
+
+.ww-contracting-summary.is-application .ww-contracting-status {
+  padding: 4px 14px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.ww-contracting-summary-lead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.ww-contracting-summary-lead > div {
+  display: grid;
+  gap: 4px;
+}
+
+.ww-contracting-summary-lead .ww-button {
+  min-height: 32px;
+  flex: none;
+  padding: 3px 18px;
+  font-size: 15px;
+}
+
+.ww-contracting-tariff-link {
+  color: var(--ww-blue);
+  text-decoration: underline;
+}
+
+.ww-contracting-status {
+  display: inline-block;
+  flex: none;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 14px;
+  white-space: nowrap;
+}
+
+.ww-contracting-status.is-success {
+  background: #e3f2e5;
+  color: #009907;
+}
+
+.ww-contracting-status.is-info {
+  background: #e5efff;
+  color: #1b64f2;
+}
+
+.ww-contracting-status.is-danger {
+  background: #f4e4e4;
+  color: #900;
+}
+
+.ww-contracting-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.ww-contracting-metrics > div {
+  display: grid;
+  gap: 4px;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--ww-control);
+}
+
+.ww-contracting-metrics dt {
+  color: var(--ww-muted);
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.ww-contracting-metrics dd {
+  font-weight: 500;
+}
+
+.ww-contracting-commission h3 {
+  margin-bottom: 4px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.ww-contracting-commission .ww-contracting-metrics > div {
+  gap: 0;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--ww-border);
+  border-radius: 4px 4px 0 0;
+}
+
+.ww-contracting-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.ww-contracting-summary:has(.ww-contracting-commission) + .ww-contracting-list {
+  margin-top: 32px;
+}
+
+.ww-contracting-list-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ww-contracting-list-head h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.ww-contracting-list-head .ww-button.is-danger {
+  min-height: 32px;
+  padding: 3px 10px;
+  background: transparent;
+  font-size: 15px;
+}
+
+.ww-contracting-list-filters {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 12px;
+  padding: 11px 12px;
+  border: 1px solid var(--ww-border);
+  border-radius: 8px;
+  background: white;
+}
+
+.ww-contracting-filter {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  border-bottom: 1px solid var(--ww-border);
+  border-radius: 4px 4px 0 0;
+  background: var(--ww-control);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.ww-contracting-filter > span {
+  display: grid;
+  flex: 1;
+}
+
+.ww-contracting-filter small {
+  color: var(--ww-muted);
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.ww-contracting-filter input {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  opacity: 1;
+  background: transparent;
+  color: var(--ww-text);
+  font: inherit;
+}
+
+.ww-contracting-filter input::placeholder {
+  opacity: 1;
+  color: var(--ww-muted);
+}
+
+.ww-table-shell.ww-contracting-table {
+  border: 0;
+  border-radius: 8px;
+}
+
+.ww-contracting-table col.is-date {
+  width: 137px;
+}
+
+.ww-contracting-table col.is-tax-id {
+  width: 145px;
+}
+
+.ww-contracting-table col.is-percent {
+  width: 81px;
+}
+
+.ww-contracting-table col.is-client-status {
+  width: 240px;
+}
+
+.ww-contracting-table col.is-partner-status {
+  width: 214px;
+}
+
+.ww-table-shell.ww-contracting-table :is(th, td) {
+  height: 58px;
+  padding: 0 16px;
+  border-color: var(--ww-border);
+  font-size: 13px;
+  line-height: 18px;
+  text-align: left;
+}
+
+.ww-table-shell.ww-contracting-table th {
+  height: 50px;
+  background: white;
+  color: var(--ww-muted);
+  font-weight: 400;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.ww-table-shell.ww-contracting-table :is(th, td):last-child {
+  width: auto;
+  text-align: left;
+}
+
+.ww-contracting-table-sort {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ww-table-shell.ww-contracting-table footer {
+  min-height: 54px;
+  padding: 0 16px;
+  color: var(--ww-text);
+  font-size: 13px;
+}
+
+.ww-contracting-page-size,
+.ww-contracting-page-size > span,
+.ww-contracting-pagination,
+.ww-contracting-page-arrows {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ww-contracting-page-size {
+  gap: 16px;
+}
+
+.ww-contracting-page-arrows {
+  gap: 16px;
+}
+
+.ww-contracting-page-arrows.is-back {
+  margin-right: 16px;
+}
+
+.ww-contracting-page-arrows.is-forward {
+  margin-left: 16px;
+}
+
+.ww-contracting-page-arrows.is-forward img {
+  transform: rotate(180deg);
+}
+
+.ww-contracting-page-arrows::before,
+.ww-contracting-page-arrows::after {
+  display: block;
+  width: 1px;
+  height: 10px;
+  background: currentColor;
+}
+
+.ww-contracting-page-arrows.is-back::before {
+  margin-right: -15px;
+  color: var(--ww-muted);
+  content: '';
+}
+
+.ww-contracting-page-arrows.is-forward::after {
+  margin-left: -15px;
+  content: '';
+}
+
+.ww-contracting-page-current {
+  display: grid;
+  place-items: center;
+  border-bottom: 1px solid #252e4226;
+}
+
+.ww-contracting-page-current > * {
+  grid-area: 1 / 1;
+}
+
+.ww-contracting-table .ww-contracting-empty {
+  padding: 24px 16px;
+  color: var(--ww-muted);
+  font-size: 14px;
+  text-align: center;
+}
+
+.ww-contracting-desktop .ww-drawer-scrim {
+  background: #20253052;
+}
+
+.ww-contracting-desktop .ww-drawer.ww-contracting-drawer {
+  width: min(552px, 100%);
+  max-height: 100%;
+  color: var(--ww-text);
+}
+
+.ww-contracting-desktop .ww-contracting-drawer > header {
+  min-height: 0;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 24px 24px 32px;
+  border-bottom: 0;
+}
+
+.ww-contracting-desktop .ww-contracting-drawer > header h2 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.ww-contracting-drawer > header > span {
+  display: grid;
+  min-height: 32px;
+  flex: none;
+  place-items: center;
+}
+
+.ww-contracting-drawer > .ww-drawer-body {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  padding: 0 24px 24px;
+  color: inherit;
+}
+
+.ww-contracting-drawer > .ww-drawer-body > * {
+  flex-shrink: 0;
+}
+
+.ww-contracting-catalog-filters,
+.ww-contracting-catalog,
+.ww-contracting-drawer-overview,
+.ww-contracting-drawer-section,
+.ww-contracting-drawer-actions {
+  display: grid;
+  gap: 12px;
+}
+
+.ww-contracting-catalog {
+  gap: 8px;
+}
+
+.ww-contracting-catalog-filters .ww-contracting-filter {
+  border-radius: 12px;
+}
+
+.ww-contracting-catalog-card {
+  display: grid;
+  gap: 6px;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--ww-control);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.ww-contracting-catalog-company {
+  display: flex;
+  min-height: 42px;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.ww-contracting-catalog-company > div {
+  flex: 1;
+}
+
+.ww-contracting-catalog-company h3 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.ww-contracting-catalog-company span {
+  color: var(--ww-muted);
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.ww-contracting-catalog-company .ww-button {
+  width: 50px;
+  min-height: 42px;
+  flex: none;
+  padding: 0;
+}
+
+.ww-contracting-catalog-terms {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.ww-contracting-drawer .ww-contracting-catalog-terms {
+  margin-top: 6px;
+}
+
+.ww-contracting-catalog-terms > div {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  gap: 5px;
+  padding: 8px;
+  border-radius: 8px;
+  background: white;
+}
+
+.ww-contracting-catalog-terms dt {
+  color: var(--ww-muted);
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.ww-contracting-catalog-terms dd {
+  color: var(--ww-blue);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.ww-contracting-drawer-section h3 {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.ww-contracting-contract {
+  display: flex;
+  min-height: 80px;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 4px;
+  background: var(--ww-control);
+}
+
+.ww-contracting-contract > div {
+  display: grid;
+  flex: 1;
+}
+
+.ww-contracting-contract > img {
+  flex: none;
+}
+
+.ww-contracting-contract-title {
+  text-decoration: underline;
+}
+
+.ww-contracting-contract-expiry,
+.ww-contracting-contract-signature {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.ww-contracting-contract-expiry {
+  color: var(--ww-muted);
+}
+
+.ww-contracting-contract-signature {
+  display: flex;
+  align-items: center;
+  color: #009907;
+  font-weight: 500;
+}
+
+.ww-contracting-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--ww-control);
+}
+
+.ww-contracting-notice strong {
+  font-weight: 500;
+}
+
+.ww-contracting-notice.is-active strong {
+  color: var(--ww-blue);
+}
+
+.ww-contracting-notice p {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.ww-contracting-client-info h3 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.ww-contracting-client-info dl > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+}
+
+.ww-contracting-client-info dl > div + div {
+  border-top: 1px solid #ccc;
+}
+
+.ww-contracting-client-info dt {
+  color: var(--ww-muted);
+  font-weight: 500;
+}
+
+.ww-contracting-client-info dd {
+  text-align: right;
+}
+
+.ww-contracting-drawer-actions {
+  gap: 16px;
+}
+
+.ww-contracting-drawer-footer {
+  margin-top: auto;
+}
+
+.ww-contracting-drawer-footer .ww-button {
+  width: 100%;
+}
+
+@media (max-width: 1260px) {
+  .ww-desktop-app.ww-contracting-desktop {
+    --ww-contracting-gutter: 32px;
+    grid-template-columns: 248px minmax(0, 1fr);
+  }
+
+  .ww-contracting-desktop .ww-sidebar {
+    padding-left: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ww-contracting-desktop .ww-button {
+    transition: none;
+  }
+}

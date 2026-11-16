@@ -9,8 +9,11 @@
     "pnpm": ">=11 <12"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build && vite build --config vite.court.config.ts",
+    "dev": "vite --host 127.0.0.1 --port 5173 --strictPort",
+    "doctor": "node scripts/doctor.mjs",
+    "build": "tsc -b && vite build && vite build --config vite.court.config.ts && pnpm build:court:offline && pnpm build:onboarding:offline && pnpm build:sales:offline",
+    "build:onboarding:offline": "vite build --config vite.onboarding-offline.config.ts && node scripts/package-offline-onboarding.mjs",
+    "build:court:offline": "vite build --config vite.court-offline.config.ts && node scripts/package-offline-court.mjs",
     "preview": "vite preview",
     "auth:check": "node --experimental-strip-types scripts/check-auth.mjs",
     "docs:check": "node scripts/check-docs.mjs",
@@ -18,7 +21,18 @@
     "typecheck": "tsc -b --pretty false",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "check": "pnpm docs:check && pnpm format:check && pnpm lint && pnpm typecheck && pnpm auth:check && pnpm build"
+    "check:quick": "pnpm docs:check && pnpm format:check && pnpm lint && pnpm typecheck && pnpm auth:check",
+    "test": "pnpm test:e2e",
+    "test:e2e": "playwright test smoke.spec.ts",
+    "test:e2e:headed": "playwright test smoke.spec.ts --headed",
+    "test:offline": "playwright test offline.spec.ts",
+    "check": "pnpm check:quick && pnpm build && pnpm build:contracting:offline && pnpm test:e2e && pnpm test:offline && pnpm test:contracting",
+    "build:sales:offline": "vite build --config vite.sales-offline.config.ts && node scripts/package-offline-sales.mjs",
+    "build:contracting:offline": "node scripts/package-offline-contracting.mjs",
+    "build:performers:offline": "node scripts/build-offline-performers.mjs",
+    "test:contracting": "playwright test contracting.spec.ts",
+    "build:contracting:reports": "node scripts/package-offline-contracting.mjs reports",
+    "test:contracting:reports": "playwright test contracting-reports.spec.ts"
   },
   "dependencies": {
     "@vercel/functions": "^3.9.5",

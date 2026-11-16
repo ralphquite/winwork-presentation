@@ -1,0 +1,881 @@
+.ww-reports-app {
+  width: 100%;
+  height: 100dvh;
+}
+
+.ww-reports-app .ww-contracting-desktop {
+  min-width: 0;
+  grid-template-columns: 276px minmax(0, 1fr);
+  --ww-contracting-gutter: clamp(22px, 3vw, 48px);
+}
+
+.ww-report-content {
+  max-width: 1510px;
+  margin-inline: auto;
+  padding: 48px var(--ww-contracting-gutter) 56px;
+}
+
+.ww-report-content .ww-contracting-section-header {
+  max-width: none;
+}
+
+.ww-report-content .ww-contracting-section-header h1 {
+  margin-bottom: 24px;
+}
+
+.ww-report-content .ww-contracting-section-tabs a {
+  padding: 6px 16px;
+  background: white;
+  text-decoration: none;
+}
+
+.ww-report-content .ww-contracting-section-tabs [aria-current='page'] {
+  background: var(--ww-blue);
+  color: white;
+}
+
+.ww-report-content .ww-contracting-mode-tabs {
+  grid-auto-columns: minmax(0, 1fr);
+  grid-auto-flow: column;
+  grid-template-columns: none;
+}
+
+.ww-report-content .ww-contracting-mode-tabs a {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.ww-report-content .ww-contracting-mode-tabs a:hover,
+.ww-reports-app .ww-contracting-nav-child:is(a):hover {
+  background: #f2f6ff;
+}
+
+.ww-report-content .ww-contracting-mode-tabs [aria-current='page'] {
+  border-color: var(--ww-blue);
+  background: #ecf3ff;
+}
+
+.ww-report-body {
+  margin-top: 32px;
+}
+
+.ww-report-heading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px 20px;
+  margin-bottom: 20px;
+}
+
+.ww-report-heading h2,
+.ww-report-dialog h2 {
+  margin: 0;
+  font-family: 'WinWork Montserrat', 'WinWork Roboto', Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.28;
+}
+
+.ww-report-heading p,
+.ww-report-dialog header p {
+  margin: 6px 0 0;
+  color: #616a7b;
+  font-size: 15px;
+}
+
+.ww-report-content h2:focus {
+  outline: none;
+}
+
+.ww-report-primary,
+.ww-report-outline {
+  min-height: 42px;
+  border-radius: 8px;
+  font-family: 'WinWork Montserrat', 'WinWork Roboto', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.ww-report-outline {
+  border-color: #b9ccf2;
+  background: #fff;
+  color: #195ed6;
+}
+
+.ww-report-outline:hover {
+  background: #f0f5ff;
+}
+
+.ww-report-filters,
+.ww-report-parameters,
+.ww-report-totals > div,
+.ww-report-table-card {
+  border: 1px solid var(--ww-border);
+  border-radius: 10px;
+  background: white;
+}
+
+.ww-report-filters {
+  display: grid;
+  grid-template-columns: minmax(180px, 1.35fr) minmax(145px, 1fr) minmax(
+      135px,
+      1fr
+    );
+  gap: 12px;
+  margin-bottom: 18px;
+  padding: 12px;
+}
+
+.ww-report-search,
+.ww-report-field {
+  display: flex;
+  min-width: 0;
+  min-height: 48px;
+  border-bottom: 1px solid #d4d7dc;
+  border-radius: 5px 5px 0 0;
+  background: #f4f5f6;
+}
+
+.ww-report-search {
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+}
+
+.ww-report-search svg {
+  flex: none;
+}
+
+.ww-report-field {
+  flex-direction: column;
+  justify-content: center;
+  padding: 4px 10px 5px 12px;
+}
+
+.ww-report-field > span {
+  color: #626b79;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.ww-report-content :is(.ww-report-search, .ww-report-field) :is(input, select),
+.ww-report-dialog .ww-report-field :is(input, select) {
+  width: 100%;
+  min-width: 0;
+  min-height: 21px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: #252e42;
+  font:
+    400 14px/20px 'WinWork Roboto',
+    Arial,
+    sans-serif;
+}
+
+.ww-report-content .ww-report-field select,
+.ww-report-dialog .ww-report-field select {
+  appearance: auto;
+}
+
+.ww-report-content :is(a, button, input, select):focus-visible,
+.ww-report-dialog :is(button, input, select):focus-visible {
+  outline: 2px solid #2a73ff;
+  outline-offset: 2px;
+}
+
+.ww-report-table-card {
+  overflow: hidden;
+  border-color: #e9e9e9;
+  border-radius: 8px;
+}
+
+.ww-report-table-scroll {
+  overflow-x: auto;
+}
+
+.ww-report-table-card table {
+  width: 100%;
+  min-width: 665px;
+  border-collapse: collapse;
+  text-align: left;
+  font-family: 'WinWork Roboto', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  color: #252e42;
+}
+
+.ww-report-table-card :is(th, td) {
+  padding: 8px;
+  border-bottom: 1px solid #e9e9e9;
+  vertical-align: middle;
+}
+
+.ww-report-table-card th {
+  height: 44px;
+  color: #808080;
+  background: #fff;
+  font-weight: 400;
+}
+
+.ww-report-table-card td {
+  height: 56px;
+}
+
+.ww-report-table-card tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.ww-report-table-card tbody tr:hover {
+  background: #f8faff;
+}
+
+.ww-report-table-card td small {
+  display: block;
+  margin-top: 2px;
+  color: #808080;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.ww-report-link {
+  color: inherit;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.ww-report-nowrap,
+.ww-report-number,
+.ww-report-badge {
+  white-space: nowrap;
+}
+
+.ww-report-number {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.ww-report-table-footer {
+  padding: 16px 8px;
+  border-top: 1px solid #e9e9e9;
+  color: #808080;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.ww-report-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 6px;
+  border-radius: 30px;
+  background: #eef0f3;
+  color: #525b69;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+.ww-report-badge.is-success,
+.ww-report-badge.status-done {
+  background: #e5f6e8;
+  color: #187338;
+}
+
+.ww-report-badge.is-processing,
+.ww-report-badge.status-active,
+.ww-report-badge.status-published {
+  background: #e7efff;
+  color: #195ed6;
+}
+
+.ww-report-badge.status-payment,
+.ww-report-badge.status-review {
+  background: #fff1dc;
+  color: #8a5000;
+}
+
+.ww-report-spinner {
+  width: 12px;
+  height: 12px;
+  border: 1.5px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: ww-report-spin 800ms linear infinite;
+}
+
+@keyframes ww-report-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ww-report-spinner {
+    animation: none;
+  }
+}
+
+.ww-report-muted {
+  color: #656e7b;
+}
+
+.ww-report-icon {
+  display: inline-grid;
+  width: 34px;
+  height: 34px;
+  flex: none;
+  place-items: center;
+  border-radius: 6px;
+  color: #252e42;
+  cursor: pointer;
+}
+
+.ww-report-icon:hover {
+  background: #ebf2ff;
+  color: #195ed6;
+}
+
+.ww-report-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 12px;
+  color: #195ed6;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.ww-report-parameters {
+  padding: 14px 16px;
+}
+
+.ww-report-parameters dl,
+.ww-report-totals {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+}
+
+.ww-report-parameters dt,
+.ww-report-totals dt {
+  color: #616a7b;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.ww-report-parameters dd {
+  margin: 4px 0 0;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.ww-report-totals {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-block: 14px 20px;
+}
+
+.ww-report-totals > div {
+  padding: 12px 15px;
+}
+
+.ww-report-totals dd {
+  margin: 4px 0 0;
+  font:
+    700 20px/28px 'WinWork Montserrat',
+    'WinWork Roboto',
+    Arial,
+    sans-serif;
+  white-space: nowrap;
+}
+
+.ww-report-detail-tools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--ww-border);
+}
+
+.ww-report-detail-tools h3 {
+  margin: 0;
+  font:
+    700 16px/24px 'WinWork Montserrat',
+    'WinWork Roboto',
+    Arial,
+    sans-serif;
+}
+
+.ww-report-detail-tools .ww-report-search {
+  width: min(280px, 58%);
+  min-height: 38px;
+}
+
+.ww-report-empty {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding: 32px 16px;
+  color: #616a7b;
+  text-align: center;
+}
+
+.ww-report-empty p {
+  margin: 0;
+}
+
+.ww-report-dialog {
+  --ww-blue: #2a73ff;
+  --ww-blue-dark: #1c64ea;
+  position: fixed;
+  inset: 0 0 0 auto;
+  width: min(502px, 100%);
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: white;
+  color: #252e42;
+  box-shadow: -4px 0 20px #222d4626;
+}
+
+.ww-report-dialog::backdrop {
+  background: #252e4252;
+}
+
+.ww-report-dialog form {
+  display: grid;
+  height: 100%;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+}
+
+.ww-report-dialog header,
+.ww-report-dialog footer {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 22px 24px;
+}
+
+.ww-report-dialog header {
+  justify-content: space-between;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.ww-report-dialog footer {
+  justify-content: flex-end;
+  border-top: 1px solid #e9e9e9;
+}
+
+.ww-report-form-body {
+  display: grid;
+  overflow-y: auto;
+  align-content: start;
+  gap: 16px;
+  padding: 20px 24px 24px;
+}
+
+.ww-report-field-help,
+.ww-report-form-body fieldset p {
+  margin: 0;
+  color: #616a7b;
+  font-size: 13px;
+}
+
+.ww-report-field-help {
+  margin-top: -12px;
+}
+
+.ww-report-form-body fieldset {
+  display: grid;
+  min-width: 0;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.ww-report-form-body legend {
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.ww-report-date-fields,
+.ww-report-status-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px 12px;
+}
+
+.ww-report-status-options label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 30px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.ww-report-status-options input {
+  width: 16px;
+  height: 16px;
+  accent-color: #2a73ff;
+}
+
+.ww-report-presets {
+  display: flex;
+  gap: 7px;
+}
+
+.ww-report-preset {
+  padding: 2px 10px;
+  border: 1px solid #cbd3e2;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.ww-report-preset[aria-pressed='true'],
+.ww-report-preset:hover {
+  border-color: #6e9df7;
+  background: #ecf3ff;
+  color: #195ed6;
+}
+
+.ww-report-form-body .ww-report-error {
+  color: #b42318;
+}
+
+@media (max-width: 1050px) {
+  .ww-reports-app .ww-contracting-desktop {
+    grid-template-columns: 204px minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 820px) {
+  .ww-reports-app .ww-contracting-desktop {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 54px minmax(0, 1fr);
+  }
+
+  .ww-reports-app .ww-sidebar {
+    display: none;
+  }
+
+  .ww-reports-app .ww-contracting-desktop .ww-desktop-header {
+    grid-column: 1;
+    height: 54px;
+  }
+
+  .ww-reports-app .ww-desktop-content {
+    grid-column: 1;
+  }
+
+  .ww-report-content {
+    padding-top: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ww-reports-app .ww-contracting-desktop {
+    --ww-contracting-gutter: 14px;
+  }
+
+  .ww-reports-app .ww-contracting-account-actions > :not(:nth-last-child(2)) {
+    display: none;
+  }
+
+  .ww-report-content .ww-contracting-section-tabs {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .ww-report-content .ww-contracting-section-tabs a {
+    padding-inline: 10px;
+  }
+
+  .ww-report-content .ww-contracting-mode-tabs {
+    gap: 5px;
+    padding: 6px;
+  }
+
+  .ww-report-content .ww-contracting-mode-tabs a {
+    padding-inline: 4px;
+    font-size: 13px;
+  }
+
+  .ww-report-filters,
+  .ww-report-totals,
+  .ww-report-parameters dl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ww-report-filters .ww-report-search {
+    grid-column: 1 / -1;
+  }
+
+  .ww-report-dialog :is(header, footer, .ww-report-form-body) {
+    padding-inline: 16px;
+  }
+}
+
+.ww-report-filters {
+  grid-template-columns: minmax(200px, 1.3fr) repeat(3, minmax(150px, 1fr));
+}
+
+.ww-report-status-mode {
+  display: grid;
+  gap: 8px;
+  padding-block: 4px;
+}
+
+.ww-report-status-mode label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.ww-report-status-mode input {
+  accent-color: #2a73ff;
+  width: 17px;
+  height: 17px;
+}
+
+.ww-report-status-options {
+  margin: 4px 0 0 25px;
+  padding: 10px 0 0;
+  border-top: 1px solid #e9e9e9;
+}
+
+.ww-report-preview {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 8px;
+  background: #f4f7fc;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.ww-report-preview svg {
+  flex: none;
+  color: #2a73ff;
+}
+
+.ww-report-preview p {
+  margin: 4px 0 0;
+  color: #616a7b;
+  font-size: 13px;
+}
+
+.ww-report-filter-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin: -4px 0 14px;
+  color: #616a7b;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.ww-report-filter-summary button {
+  flex: none;
+  color: #195ed6;
+  cursor: pointer;
+}
+
+.ww-report-filter-summary button:hover {
+  text-decoration: underline;
+}
+
+.ww-report-filter-summary.ww-report-inset {
+  margin: 0;
+  padding: 10px 14px;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.ww-report-sort {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.ww-report-open-row {
+  cursor: pointer;
+}
+
+.ww-report-open-row .ww-report-link {
+  display: inline-block;
+  max-width: 380px;
+}
+
+.ww-report-heading-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ww-report-notice {
+  position: fixed;
+  top: 76px;
+  right: 24px;
+  z-index: 10;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  width: min(450px, calc(100vw - 32px));
+  padding: 20px;
+  border: 1px solid #e9e9e9;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 3px 18px #252e4226;
+  color: #252e42;
+  font:
+    15px/22px 'WinWork Roboto',
+    Arial,
+    sans-serif;
+}
+
+.ww-report-notice > svg {
+  flex: none;
+  color: #2a73ff;
+}
+
+.ww-report-notice p {
+  margin: 6px 0;
+}
+
+.ww-report-notice a {
+  display: inline-flex;
+  padding-block: 4px;
+  color: #195ed6;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.ww-report-notice .ww-report-icon {
+  margin: -7px -7px 0 auto;
+}
+
+.ww-report-storage-warning {
+  position: fixed;
+  bottom: 12px;
+  right: 24px;
+  max-width: calc(100vw - 32px);
+  padding: 12px;
+  border-radius: 8px;
+  background: #fff1dc;
+  color: #725000;
+  font-size: 14px;
+}
+
+.ww-report-results-count {
+  margin: 2px 0 0;
+  color: #616a7b;
+  font-size: 13px;
+}
+
+.is-report-detail .ww-report-content {
+  padding-top: 24px;
+}
+
+.is-report-detail .ww-contracting-section-header h1 {
+  margin-bottom: 14px;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.is-report-detail .ww-report-body {
+  margin-top: 22px;
+}
+
+.ww-report-details .ww-report-heading > div:first-child {
+  flex: 1 1 430px;
+}
+
+.ww-report-details .ww-report-heading h2 {
+  max-width: 900px;
+  font-size: 22px;
+}
+
+.ww-report-details .ww-report-totals {
+  gap: 0;
+  margin-block: 12px 18px;
+  border: 1px solid #e9e9e9;
+  border-radius: 8px;
+  background: white;
+}
+
+.ww-report-details .ww-report-totals > div {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 10px 16px;
+}
+
+.ww-report-details .ww-report-totals > div + div {
+  border-left: 1px solid #e9e9e9;
+}
+
+.ww-report-details .ww-report-totals dd {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.ww-report-dialog .ww-report-name-field {
+  min-height: 58px;
+}
+
+@media (max-width: 1250px) {
+  .ww-report-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .ww-report-notice {
+    top: 62px;
+    right: 16px;
+    padding: 16px;
+  }
+  .ww-report-filters .ww-report-search {
+    grid-column: 1 / -1;
+  }
+  .ww-report-filters .ww-report-field:last-child {
+    grid-column: 1 / -1;
+  }
+  .ww-report-filter-summary {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .ww-report-heading-actions {
+    width: 100%;
+  }
+  .ww-report-heading-actions .ww-button {
+    flex: 1;
+  }
+  .ww-report-details .ww-report-totals > div:nth-child(3) {
+    border-left: 0;
+  }
+  .ww-report-status-options {
+    grid-template-columns: 1fr;
+  }
+}

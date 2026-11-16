@@ -426,6 +426,10 @@ select {
   color: #172033;
 }
 
+.presentation-shell[data-controls='always-visible'] {
+  flex-direction: column;
+}
+
 .pencil-slide-stage {
   position: relative;
   width: 100%;
@@ -716,6 +720,48 @@ select {
   opacity: 0.3;
 }
 
+.presentation-offline-controls {
+  position: fixed;
+  z-index: 60;
+  bottom: 18px;
+  left: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid #ffffff38;
+  border-radius: 16px;
+  background: #172033e8;
+  box-shadow: 0 16px 42px #17203345;
+}
+
+.presentation-offline-controls .presentation-control-button {
+  width: 42px;
+  height: 42px;
+  border-color: #ffffff2e;
+  background: #ffffff17;
+  color: #ffffff;
+}
+
+.presentation-offline-controls .presentation-control-button:hover {
+  background: #ffffff2b;
+}
+
+.presentation-offline-controls .presentation-control-button:disabled {
+  cursor: default;
+  opacity: 0.32;
+}
+
+.presentation-offline-controls .presentation-control-button:focus-visible {
+  outline: 3px solid #75a2ff;
+  outline-offset: 2px;
+}
+
+[data-presentation-mode='offline-court'] .offline-action-hint {
+  outline: 4px solid #2a73ff;
+  outline-offset: 4px;
+}
+
 .presentation-scene-counter {
   min-width: 58px;
   text-align: center;
@@ -738,6 +784,52 @@ select {
   border-color: #ffffff26;
   background: #263248;
   color: #ffffff;
+}
+
+[data-controls='always-visible'] .presentation-control-zone {
+  position: static;
+  order: 1;
+  height: auto;
+  flex: none;
+  padding: 8px 12px 12px;
+}
+
+[data-controls='always-visible'] .presentation-controls {
+  max-width: 100%;
+  opacity: 1;
+  transform: none;
+}
+
+[data-controls='always-visible'] .presentation-control-button {
+  flex: none;
+}
+
+[data-controls='always-visible'] .presentation-scene-picker {
+  min-width: 0;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 480px) {
+  [data-controls='always-visible'] .presentation-controls {
+    width: 100%;
+    gap: 5px;
+    padding: 6px;
+  }
+
+  [data-controls='always-visible'] .presentation-scene-counter {
+    min-width: 44px;
+    font-size: 12px;
+  }
+
+  [data-controls='always-visible'] .presentation-scene-picker {
+    flex: 1 1 0;
+    padding-inline: 6px;
+  }
+
+  [data-controls='always-visible'] .presentation-control-button {
+    width: 40px;
+    padding-inline: 0;
+  }
 }
 
 @media (max-width: 900px) {

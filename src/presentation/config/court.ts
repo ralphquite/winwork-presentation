@@ -15,13 +15,13 @@ const singleTaskFlow = {
 
 const performerRegistrationFlow = {
   ...enterpriseDemoFlows.performerRegistration,
-  hotspot: { x: 104, y: 584, width: 436, height: 76 },
+  hotspot: { x: 104, y: 584.16, width: 436.31, height: 76 },
   triggerLabel: 'Показать путь исполнителя',
 } as const;
 
 const performerResponseFlow = {
   ...enterpriseDemoFlows.performerResponse,
-  hotspot: { x: 556, y: 584, width: 440, height: 76 },
+  hotspot: { x: 556.31, y: 584.16, width: 440.31, height: 76 },
 } as const;
 
 const paymentConfirmationFlow = {
@@ -32,7 +32,7 @@ const paymentConfirmationFlow = {
 
 const performerSelectionFlow = {
   ...enterpriseDemoFlows.performerSelection,
-  hotspot: { x: 1358, y: 723, width: 458, height: 76 },
+  hotspot: { x: 1268, y: 722.02, width: 548, height: 76 },
   triggerLabel: 'Показать выбор исполнителей',
 } as const;
 
@@ -62,6 +62,17 @@ const courtSlides = [
   {
     title: 'Подтверждение оплаты и уплата НПД',
     demoFlows: [paymentConfirmationFlow],
+    externalLinks: [
+      {
+        bounds: { x: 1037, y: 789.7, width: 238, height: 62 },
+        href: 'https://npd.nalog.ru/aggregators/',
+        label: 'Открыть перечень ФНС России',
+      },
+    ],
+  },
+  {
+    title: 'Статистика сервиса WinWork',
+    frameId: 'rHcx4',
   },
 ] as const;
 
@@ -83,7 +94,7 @@ export const courtPresentation = {
       ...('demoFlows' in slide ? { demoFlows: slide.demoFlows } : {}),
       pencil: {
         documentPath: `/court-slides/court-${slideNumber}.html`,
-        frameId: `court-${slideNumber}`,
+        frameId: 'frameId' in slide ? slide.frameId : `court-${slideNumber}`,
         height: 1080,
         width: 1920,
       },

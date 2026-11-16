@@ -1,9 +1,18 @@
 import { Check, Download, Eye, FileText, Info, Star, X } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { MARKETPLACE_TASKS, type MarketplaceTask } from './marketplaceData';
 import { MarketplacePage } from './MarketplacePage';
-import { DesktopShell, ProductButton } from './ProductUI';
+import {
+  PerformerReviewsDrawer,
+  type PerformerReviewsProfile,
+} from './PerformerReviewsDrawer';
+import { DesktopShell } from './ProductUI';
+import {
+  PAYMENT_SMS_CODE,
+  TaskPaymentControls,
+  type PaymentStep,
+} from './TaskPaymentControls';
 
 const PAYMENT_TASK_TITLE = 'Грузчик. Разгрузка товара на складе';
 const PAYMENT_TASK_REWARD = '8 250,00 ₽';
@@ -26,6 +35,49 @@ const PAYMENT_MARKETPLACE_ROWS: readonly MarketplaceTask[] =
       : task,
   );
 
+const PAYMENT_PERFORMER = {
+  id: 'payment-ivanov',
+  name: 'Иванов Иван Иванович',
+  reviews: [
+    {
+      date: '18 августа, 18:40',
+      dateTime: '2026-08-18T18:40:00',
+      rating: 5,
+      text: 'Задание выполнил аккуратно и в согласованный срок. Был на связи с координатором.',
+    },
+    {
+      date: '3 августа, 12:15',
+      dateTime: '2026-08-03T12:15:00',
+      rating: 5,
+      text: 'Приехал заранее, быстро включился в работу. Замечаний по результату нет.',
+    },
+    {
+      date: '22 июля, 20:06',
+      dateTime: '2026-07-22T20:06:00',
+      rating: 4,
+      text: 'Ответственный исполнитель, все документы подготовил заранее.',
+    },
+    {
+      date: '9 июля, 17:32',
+      dateTime: '2026-07-09T17:32:00',
+      rating: 5,
+      text: 'Справился с большим объёмом разгрузки без задержек.',
+    },
+    {
+      date: '28 июня, 11:48',
+      dateTime: '2026-06-28T11:48:00',
+      rating: 5,
+      text: 'Пунктуальный и вежливый, соблюдал правила склада.',
+    },
+    {
+      date: '14 июня, 19:20',
+      dateTime: '2026-06-14T19:20:00',
+      rating: 5,
+      text: 'Работу приняли с первого раза. Готовы пригласить исполнителя снова.',
+    },
+  ],
+} as const satisfies PerformerReviewsProfile;
+
 const DETAILS_TABS = [
   'Задание',
   'Исполнитель',
@@ -35,7 +87,6 @@ const DETAILS_TABS = [
 ] as const;
 
 type DetailsTab = (typeof DETAILS_TABS)[number];
-type PaymentStep = 'ready' | 'code' | 'paid';
 
 function TaskDetailsTab() {
   return (
@@ -116,17 +167,25 @@ function TaskDetailsTab() {
   );
 }
 
-function PerformerTab() {
+function PerformerTab({
+  onOpenReviews,
+}: {
+  onOpenReviews: (trigger: HTMLButtonElement) => void;
+}) {
   return (
     <div className="ww-payment-tab-content">
-      <article className="ww-payment-performer-card">
+      <article className="ww-payment-performer-card ww-selection-response-card">
         <span className="ww-payment-avatar" aria-hidden="true">
           ИИ
         </span>
         <div className="ww-payment-performer-heading">
-          <strong>Иванов Иван Иванович</strong>
-          <span>Отклик просмотрен</span>
-          <p>30 Aug, 17:10 · ИП</p>
+          <div className="ww-selection-name-row">
+            <strong>{PAYMENT_PERFORMER.name}</strong>
+            <span>Отклик просмотрен</span>
+          </div>
+          <p>
+            30 Aug, 17:10 · <b>ИП</b> · PDF
+          </p>
         </div>
         <button aria-label="Открыть сообщения" type="button">
           <FileText aria-hidden="true" size={20} />
@@ -136,17 +195,40 @@ function PerformerTab() {
           <p>
             <Star aria-hidden="true" fill="currentColor" size={21} />
             <strong>4,8</strong>
-            <span>12 оценок</span>
+            <button
+              aria-label={`12 оценок, открыть отзывы об исполнителе ${PAYMENT_PERFORMER.name}`}
+              className="ww-selection-reviews-trigger"
+              data-offline-hint-target="true"
+              onClick={(event) => onOpenReviews(event.currentTarget)}
+              type="button"
+            >
+              12 оценок
+            </button>
           </p>
           <p>
             <span className="ww-payment-progress-dot" />
             100% · Выполнил 19 заданий из 19
           </p>
         </section>
+        <dl className="ww-selection-personal-data">
+          <div>
+            <dt>Дата рождения</dt>
+            <dd>11.04.1987</dd>
+          </div>
+          <div>
+            <dt>Пол</dt>
+            <dd>Мужской</dd>
+          </div>
+          <div>
+            <dt>Телефон</dt>
+            <dd>+7 900 000 00 05</dd>
+          </div>
+        </dl>
         <footer>
           <strong>Доход в качестве самозанятого за год:</strong> 186 400 ₽
           <br />
-          <strong>Оставшихся заданий до лимита в августе:</strong> 3 из 3
+          <strong>Количество оставшихся заданий до лимита в августе:</strong> 3
+          из 3
         </footer>
       </article>
     </div>
@@ -194,60 +276,14 @@ function ActionTab({
           <dd>Доехать на автобусе</dd>
         </div>
       </dl>
-      {paymentStep === 'ready' ? (
-        <div className="ww-payment-actions-footer">
-          <ProductButton data-demo-action="confirm-payment" onClick={onConfirm}>
-            Подтвердить и оплатить
-          </ProductButton>
-          <ProductButton variant="danger">Отменить задание</ProductButton>
-        </div>
-      ) : paymentStep === 'code' ? (
-        <div className="ww-payment-code-form">
-          <label>
-            <span>Введите код из СМС</span>
-            <input
-              aria-label="Введите код из СМС"
-              inputMode="numeric"
-              maxLength={4}
-              onChange={(event) =>
-                onCodeChange(event.currentTarget.value.replace(/\D/g, ''))
-              }
-              placeholder="0000"
-              value={code}
-            />
-          </label>
-          <p>
-            Запросить повторно можно через <strong>00:55</strong>
-          </p>
-          <ProductButton
-            data-demo-action="pay-task"
-            disabled={code.length !== 4}
-            onClick={onPay}
-          >
-            Оплатить
-          </ProductButton>
-          {error ? (
-            <p
-              aria-live="polite"
-              className="ww-payment-code-error"
-              role="alert"
-            >
-              {error}
-            </p>
-          ) : null}
-        </div>
-      ) : (
-        <div className="ww-payment-actions-footer">
-          <ProductButton
-            aria-live="polite"
-            className="ww-payment-sent"
-            disabled
-          >
-            <Check aria-hidden="true" size={18} />
-            Отправлено
-          </ProductButton>
-        </div>
-      )}
+      <TaskPaymentControls
+        code={code}
+        error={error}
+        onCodeChange={onCodeChange}
+        onConfirm={onConfirm}
+        onPay={onPay}
+        step={paymentStep}
+      />
     </div>
   );
 }
@@ -304,16 +340,22 @@ function TaskPanel({
   onClose: () => void;
   onPaid: () => void;
 }) {
-  const [activeTab, setActiveTab] = useState<DetailsTab>('Задание');
+  const [activeTab, setActiveTab] = useState<DetailsTab>('Действия');
   const [paymentStep, setPaymentStep] = useState<PaymentStep>(
     initialPaid ? 'paid' : 'ready',
   );
   const [code, setCode] = useState('');
   const [error, setError] = useState<string | null>(null);
+  const [isReviewsOpen, setIsReviewsOpen] = useState(false);
+  const reviewTriggerRef = useRef<HTMLButtonElement>(null);
   const paid = paymentStep === 'paid';
 
+  useEffect(() => {
+    if (!isReviewsOpen) reviewTriggerRef.current?.focus();
+  }, [isReviewsOpen]);
+
   const pay = () => {
-    if (code !== '0000') {
+    if (code !== PAYMENT_SMS_CODE) {
       setError('Неверный код из СМС');
       return;
     }
@@ -331,7 +373,11 @@ function TaskPanel({
         onClick={onClose}
         type="button"
       />
-      <aside aria-label="Панель задания" className="ww-payment-drawer">
+      <aside
+        aria-label="Панель задания"
+        className="ww-payment-drawer"
+        inert={isReviewsOpen}
+      >
         <header>
           <div>
             <h2>{PAYMENT_TASK_TITLE}</h2>
@@ -368,7 +414,14 @@ function TaskPanel({
         </div>
         <div className="ww-payment-panel-scroll">
           {activeTab === 'Задание' ? <TaskDetailsTab /> : null}
-          {activeTab === 'Исполнитель' ? <PerformerTab /> : null}
+          {activeTab === 'Исполнитель' ? (
+            <PerformerTab
+              onOpenReviews={(trigger) => {
+                reviewTriggerRef.current = trigger;
+                setIsReviewsOpen(true);
+              }}
+            />
+          ) : null}
           {activeTab === 'Действия' ? (
             <ActionTab
               code={code}
@@ -389,6 +442,12 @@ function TaskPanel({
           {activeTab === 'История' ? <HistoryTab paid={paid} /> : null}
         </div>
       </aside>
+      {isReviewsOpen ? (
+        <PerformerReviewsDrawer
+          onClose={() => setIsReviewsOpen(false)}
+          response={PAYMENT_PERFORMER}
+        />
+      ) : null}
     </div>
   );
 }

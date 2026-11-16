@@ -1,8 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 
+import { publicAssetUrl } from '../publicAssetUrl';
+
 const SCREEN_COUNT = 3;
 const TARGET_TASK_INDEX = 0;
 const ASSET_ROOT = '/performer-response-flow/assets';
+
+function performerResponseAsset(fileName: string) {
+  return publicAssetUrl(`${ASSET_ROOT}/${fileName}`);
+}
 
 type BrandLogoType = 'company' | 'hp-group' | 'perspektiva' | 'spar-tomsk';
 
@@ -87,14 +93,24 @@ const MARKETPLACE_CARDS: readonly MarketplaceCard[] = [
 const TASK_DESCRIPTION =
   'Задачи: Подтядка товаров на полках, Размещение акционных товаров на полках, Снятие товаров с истекшим сроком годности, Установка акционных ценников. Желаемое время начала работы 08:00. При себе иметь мед книжку и сменную одежду.';
 
-function StatusBar() {
+export function PerformerStatusBar({
+  icons,
+}: {
+  icons?: readonly [wifi: string, signal: string, battery: string];
+}) {
+  const [wifi, signal, battery] =
+    icons ??
+    ['status-wifi.svg', 'status-signal.svg', 'status-battery.svg'].map(
+      performerResponseAsset,
+    );
+
   return (
     <div aria-hidden="true" className="ww-response-statusbar">
       <span>9:30</span>
       <span className="ww-response-status-icons">
-        <img alt="" src={`${ASSET_ROOT}/status-wifi.svg`} />
-        <img alt="" src={`${ASSET_ROOT}/status-signal.svg`} />
-        <img alt="" src={`${ASSET_ROOT}/status-battery.svg`} />
+        <img alt="" src={wifi} />
+        <img alt="" src={signal} />
+        <img alt="" src={battery} />
       </span>
     </div>
   );
@@ -103,7 +119,7 @@ function StatusBar() {
 function BrandLogo({ type }: { type: BrandLogoType }) {
   return (
     <span aria-hidden="true" className={`ww-response-brand is-${type}`}>
-      <img alt="" src={`${ASSET_ROOT}/brand-${type}.png`} />
+      <img alt="" src={performerResponseAsset(`brand-${type}.png`)} />
     </span>
   );
 }
@@ -118,6 +134,7 @@ function MarketplaceTaskCard({
   const action = onOpen ? (
     <button
       className="ww-response-card-action"
+      data-demo-action="performer-response-open-task"
       onClick={(event) => {
         event.stopPropagation();
         onOpen();
@@ -174,7 +191,7 @@ function BottomNavigation() {
           className={index === 0 ? 'is-active' : undefined}
           key={item.label}
         >
-          <img alt="" src={`${ASSET_ROOT}/${item.icon}`} />
+          <img alt="" src={performerResponseAsset(item.icon)} />
           <small>{item.label}</small>
         </span>
       ))}
@@ -189,17 +206,17 @@ function MarketplaceScreen({ onOpen }: { onOpen: () => void }) {
       className="ww-response-screen ww-response-marketplace"
       onClick={onOpen}
     >
-      <StatusBar />
+      <PerformerStatusBar />
       <header className="ww-response-marketplace-header">
         <div>
           <h1>Главный</h1>
           <span aria-hidden="true" className="ww-response-icon-button">
-            <img alt="" src={`${ASSET_ROOT}/notification.svg`} />
+            <img alt="" src={performerResponseAsset('notification.svg')} />
           </span>
         </div>
         <div className="ww-response-filter-strip">
           <span className="is-icon">
-            <img alt="" src={`${ASSET_ROOT}/filter.svg`} />
+            <img alt="" src={performerResponseAsset('filter.svg')} />
           </span>
           <span>Вид деятельности</span>
           <span>Оплата</span>
@@ -232,54 +249,84 @@ function MarketplaceScreen({ onOpen }: { onOpen: () => void }) {
   );
 }
 
-function DetailHeader({ onBack }: { onBack: () => void }) {
+export function PerformerDetailHeader({
+  title = 'Отклик',
+  onBack,
+}: {
+  title?: string;
+  onBack?: () => void;
+}) {
   return (
     <div className="ww-response-detail-header">
       <button
         aria-label="Вернуться к заданиям"
-        onClick={(event) => {
-          event.stopPropagation();
-          onBack();
-        }}
+        disabled={!onBack}
+        onClick={
+          onBack &&
+          ((event) => {
+            event.stopPropagation();
+            onBack();
+          })
+        }
         type="button"
       >
-        <img alt="" src={`${ASSET_ROOT}/back.svg`} />
+        <img alt="" src={performerResponseAsset('back.svg')} />
       </button>
-      <strong>Отклик</strong>
+      <strong>{title}</strong>
       <span aria-hidden="true" />
     </div>
   );
 }
 
-function TaskSummary({ submitted }: { submitted: boolean }) {
+export function PerformerTaskSummary({
+  title,
+  reward,
+  date,
+  time,
+  duration,
+  address,
+  types,
+  status,
+}: {
+  title: string;
+  reward: string;
+  date: string;
+  time: string;
+  duration: string;
+  address: string;
+  types: readonly string[];
+  status?: { label: string; description: string; tone?: string };
+}) {
   return (
     <article className="ww-response-summary-card">
-      {submitted ? (
+      {status ? (
         <>
-          <div className="ww-response-review-status">
-            <span>На рассмотрении</span>
-            <p>Отклик на рассмотрении у заказчика</p>
+          <div className="ww-response-review-status" data-tone={status.tone}>
+            <span>{status.label}</span>
+            <p>{status.description}</p>
           </div>
           <div className="ww-response-divider" />
         </>
       ) : null}
       <div className="ww-response-role-price">
-        <h2>{TARGET_TASK.role}</h2>
-        <strong>{TARGET_TASK.price}</strong>
+        <h2>{title}</h2>
+        <strong>{reward}</strong>
       </div>
       <div className="ww-response-divider" />
       <div className="ww-response-date-time">
-        <strong>{TARGET_TASK.detailDate}</strong>
+        <strong>{date}</strong>
         <span>
-          {TARGET_TASK.detailTime} <small>({TARGET_TASK.duration})</small>
+          {time} <small>({duration})</small>
         </span>
       </div>
       <div className="ww-response-divider" />
-      <p className="ww-response-address">{TARGET_TASK.address}</p>
+      <p className="ww-response-address">{address}</p>
       <span className="ww-response-map-link">Показать на карте</span>
       <div className="ww-response-divider" />
       <div className="ww-response-chips">
-        <span>СМЗ</span>
+        {types.map((type) => (
+          <span key={type}>{type}</span>
+        ))}
       </div>
     </article>
   );
@@ -292,36 +339,45 @@ function CompanyCard() {
       <div>
         <strong>{TARGET_TASK.company}</strong>
         <span>
-          <img alt="" src={`${ASSET_ROOT}/star.svg`} />
+          <img alt="" src={performerResponseAsset('star.svg')} />
           <b>5,0</b> из 5 <i>37 отзывов</i>
         </span>
       </div>
-      <img alt="" src={`${ASSET_ROOT}/company-chevron.svg`} />
+      <img alt="" src={performerResponseAsset('company-chevron.svg')} />
     </article>
   );
 }
 
-function TaskDetails() {
+export function PerformerTaskDetails({
+  description,
+  legalEntity,
+  orderNumber,
+  publicationDate,
+}: {
+  description: string;
+  legalEntity: string;
+  orderNumber: string;
+  publicationDate: string;
+}) {
   return (
     <dl className="ww-response-details">
       <div className="is-description">
         <dt>Описание работ</dt>
-        <dd>{TASK_DESCRIPTION}</dd>
+        <dd>{description}</dd>
       </div>
       <div>
         <dt>Юридическое лицо</dt>
-        <dd>{TARGET_TASK.legalEntity}</dd>
+        <dd>{legalEntity}</dd>
       </div>
       <div>
         <dt>Номер заказа</dt>
         <dd className="ww-response-order-number">
-          {TARGET_TASK.orderNumber}{' '}
-          <img alt="" src={`${ASSET_ROOT}/copy.svg`} />
+          {orderNumber} <img alt="" src={performerResponseAsset('copy.svg')} />
         </dd>
       </div>
       <div>
         <dt>Дата публикации</dt>
-        <dd>{TARGET_TASK.publicationDate}</dd>
+        <dd>{publicationDate}</dd>
       </div>
     </dl>
   );
@@ -341,11 +397,27 @@ function DetailScreen({
       className={`ww-response-screen ww-response-detail${submitted ? ' is-submitted' : ''}`}
       onClick={onAdvance}
     >
-      <StatusBar />
-      <DetailHeader onBack={onBack} />
+      <PerformerStatusBar />
+      <PerformerDetailHeader onBack={onBack} />
       <main className="ww-response-detail-content">
         <div className="ww-response-detail-top">
-          <TaskSummary submitted={submitted} />
+          <PerformerTaskSummary
+            address={TARGET_TASK.address}
+            date={TARGET_TASK.detailDate}
+            duration={TARGET_TASK.duration}
+            reward={TARGET_TASK.price}
+            status={
+              submitted
+                ? {
+                    label: 'На рассмотрении',
+                    description: 'Отклик на рассмотрении у заказчика',
+                  }
+                : undefined
+            }
+            time={TARGET_TASK.detailTime}
+            title={TARGET_TASK.role}
+            types={['СМЗ']}
+          />
           <CompanyCard />
           {submitted ? (
             <div className="ww-response-submitted-actions">
@@ -354,11 +426,17 @@ function DetailScreen({
             </div>
           ) : null}
         </div>
-        <TaskDetails />
+        <PerformerTaskDetails
+          description={TASK_DESCRIPTION}
+          legalEntity={TARGET_TASK.legalEntity}
+          orderNumber={TARGET_TASK.orderNumber}
+          publicationDate={TARGET_TASK.publicationDate}
+        />
       </main>
       {submitted ? null : (
         <div className="ww-response-bottom-sheet">
           <button
+            data-demo-action="performer-response-submit"
             onClick={(event) => {
               event.stopPropagation();
               onAdvance();

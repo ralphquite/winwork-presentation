@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 import type { DemoFixture } from '../../demos/fixtures/types';
 
 type SceneBase = {
@@ -11,6 +13,7 @@ export type SlideSceneDefinition = SceneBase & {
   demoFlow?: DemoFlowDefinition;
   demoFlows?: readonly DemoFlowDefinition[];
   externalLinks?: readonly SlideExternalLinkDefinition[];
+  nextButtonLabel?: string;
   pencil?: {
     documentPath: string;
     frameId: string;
@@ -61,11 +64,19 @@ export type MediaSceneDefinition = SceneBase & {
   mediaKind: 'video' | 'animation' | 'mobile';
 };
 
+export type ComponentSceneDefinition = SceneBase & {
+  type: 'component';
+  content: ReactNode;
+};
+
 export type PresentationScene =
-  SlideSceneDefinition | DemoSceneDefinition | MediaSceneDefinition;
+  | SlideSceneDefinition
+  | DemoSceneDefinition
+  | MediaSceneDefinition
+  | ComponentSceneDefinition;
 
 export type PresentationConfig = {
-  id: 'enterprise' | 'api' | 'small' | 'court';
+  id: 'enterprise' | 'api' | 'small' | 'court' | 'contracting';
   homePath?: string | null;
   title: string;
   scenes: readonly PresentationScene[];

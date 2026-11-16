@@ -17,6 +17,7 @@ import type {
   DemoFlowId,
 } from '../presentation/engine/types';
 import { DemoFlowModal } from '../presentation/flows/DemoFlowModal';
+import { publicAssetUrl } from '../presentation/publicAssetUrl';
 
 const tracks = [
   {
@@ -37,7 +38,7 @@ const tracks = [
   },
   {
     description:
-      'Полный маршрут из 16 слайдов для подключения WinWork как инфраструктурного слоя.',
+      'Полный маршрут из 8 слайдов для подключения WinWork как инфраструктурного слоя.',
     icon: Code2,
     label: 'Готово к показу',
     path: '/api',
@@ -62,7 +63,7 @@ const demoFlowSteps = {
   'task-payment': 'Маркетплейс → выполнено → действия → SMS → оплачено',
 } as const satisfies Record<DemoFlowId, string>;
 
-export function TrackSelector() {
+export function TrackSelector({ offline = false }: { offline?: boolean }) {
   const navigate = useNavigate();
   const demoTriggerRef = useRef<HTMLButtonElement>(null);
   const [isDemoPanelOpen, setIsDemoPanelOpen] = useState(false);
@@ -73,7 +74,9 @@ export function TrackSelector() {
 
   const startPresentation = (path: string) => {
     if (!document.fullscreenElement) {
-      void document.documentElement.requestFullscreen().catch(() => undefined);
+      void document.documentElement
+        .requestFullscreen?.()
+        .catch(() => undefined);
     }
 
     void navigate(path);
@@ -98,14 +101,16 @@ export function TrackSelector() {
           <img
             alt="WinWork"
             className="track-selector-brand"
-            src="/winwork-logo.svg"
+            src={publicAssetUrl('/winwork-logo.svg')}
           />
-          <form action="/auth/logout" method="post">
-            <button className="track-selector-logout" type="submit">
-              <LogOut aria-hidden="true" size={17} />
-              Выйти
-            </button>
-          </form>
+          {!offline ? (
+            <form action="/auth/logout" method="post">
+              <button className="track-selector-logout" type="submit">
+                <LogOut aria-hidden="true" size={17} />
+                Выйти
+              </button>
+            </form>
+          ) : null}
         </header>
 
         <div className="track-selector-heading">
@@ -151,6 +156,29 @@ export function TrackSelector() {
           <Maximize2 aria-hidden="true" size={16} />F — полноэкранный режим ·
           Esc — выход
         </p>
+
+        <section
+          className="demo-quick-access is-open"
+          aria-label="Онбординг WinWork"
+        >
+          <header className="demo-quick-access-heading">
+            <div>
+              <span>ОНБОРДИНГ</span>
+              <h2>Первые шаги в WinWork</h2>
+            </div>
+            <p>
+              Снижение комиссии, пополнение счёта, профиль компании и первое
+              задание — с интерактивными подсказками.
+            </p>
+            <button
+              className="demo-quick-access-toggle"
+              onClick={() => void navigate('/onboarding')}
+              type="button"
+            >
+              Открыть флоу <ArrowUpRight size={18} />
+            </button>
+          </header>
+        </section>
 
         <section
           className={`demo-quick-access${isDemoPanelOpen ? ' is-open' : ''}`}

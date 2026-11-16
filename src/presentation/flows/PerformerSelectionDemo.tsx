@@ -1,18 +1,15 @@
-import { Check, ChevronLeft, Eye, FileText, Info, Star, X } from 'lucide-react';
-import { useEffect, useRef, useState, type KeyboardEvent } from 'react';
+import { Check, Eye, FileText, Info, Star, X } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 
 import { MARKETPLACE_TASKS, type MarketplaceTask } from './marketplaceData';
 import { MarketplacePage } from './MarketplacePage';
+import {
+  PerformerReviewsDrawer,
+  type PerformerReview,
+} from './PerformerReviewsDrawer';
 import { DesktopShell, ProductButton } from './ProductUI';
 
 const SELECTION_TASK_TITLE = 'Грузчик. Комплектация заказов на складе';
-
-type PerformerReview = {
-  date: string;
-  dateTime: string;
-  rating: number;
-  text: string;
-};
 
 const SELECTION_MARKETPLACE_ROWS: readonly MarketplaceTask[] =
   MARKETPLACE_TASKS.map((task, index) =>
@@ -200,9 +197,6 @@ type DetailsTab = (typeof DETAILS_TABS)[number];
 type ResponseDecision = 'accepted' | 'rejected';
 type ResponseItem = (typeof RESPONSES)[number];
 
-const FOCUSABLE_SELECTOR =
-  'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [contenteditable="true"], [tabindex]:not([tabindex="-1"])';
-
 function TaskDetailsTab() {
   return (
     <div className="ww-payment-tab-content ww-payment-task-details">
@@ -317,6 +311,7 @@ function ResponsesTab({
                 <button
                   aria-label={`${response.reviewCount}, открыть отзывы об исполнителе ${response.name}`}
                   className="ww-selection-reviews-trigger"
+                  data-offline-hint-target="true"
                   onClick={(event) =>
                     onOpenReviews(response, event.currentTarget)
                   }
@@ -356,6 +351,7 @@ function ResponsesTab({
             <div className="ww-selection-response-actions">
               <ProductButton
                 aria-pressed={decision === 'accepted'}
+                data-offline-hint-target="true"
                 onClick={() => decide(response.id, 'accepted')}
               >
                 {decision === 'accepted' ? (
@@ -368,6 +364,7 @@ function ResponsesTab({
               </ProductButton>
               <ProductButton
                 aria-pressed={decision === 'rejected'}
+                data-offline-hint-target="true"
                 onClick={() => decide(response.id, 'rejected')}
                 variant="danger"
               >
@@ -377,122 +374,6 @@ function ResponsesTab({
           </article>
         );
       })}
-    </div>
-  );
-}
-
-function ReviewStars({ rating }: { rating: number }) {
-  return (
-    <span
-      aria-label={`Оценка: ${rating} из 5`}
-      className="ww-selection-review-stars"
-      role="img"
-    >
-      {[1, 2, 3, 4, 5].map((position) => (
-        <Star
-          aria-hidden="true"
-          fill={position <= rating ? 'currentColor' : 'none'}
-          key={position}
-          size={24}
-          strokeWidth={2}
-        />
-      ))}
-    </span>
-  );
-}
-
-function PerformerReviewsDrawer({
-  onClose,
-  response,
-}: {
-  onClose: () => void;
-  response: ResponseItem;
-}) {
-  const backButtonRef = useRef<HTMLButtonElement>(null);
-  const drawerRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    backButtonRef.current?.focus();
-  }, []);
-
-  const closeAndRestoreFocus = () => {
-    onClose();
-  };
-
-  const handleKeyDown = (event: KeyboardEvent<HTMLElement>) => {
-    event.stopPropagation();
-
-    if (event.key === 'Escape') {
-      event.preventDefault();
-      closeAndRestoreFocus();
-      return;
-    }
-
-    if (event.key !== 'Tab' || !drawerRef.current) return;
-
-    const focusableElements = Array.from(
-      drawerRef.current.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR),
-    );
-    const firstElement = focusableElements[0];
-    const lastElement = focusableElements.at(-1);
-
-    if (!firstElement || !lastElement) return;
-
-    if (event.shiftKey && document.activeElement === firstElement) {
-      event.preventDefault();
-      lastElement.focus();
-    } else if (!event.shiftKey && document.activeElement === lastElement) {
-      event.preventDefault();
-      firstElement.focus();
-    }
-  };
-
-  return (
-    <div className="ww-selection-reviews-layer">
-      <button
-        aria-label="Закрыть отзывы об исполнителе"
-        className="ww-selection-reviews-scrim"
-        onClick={closeAndRestoreFocus}
-        tabIndex={-1}
-        type="button"
-      />
-      <aside
-        aria-labelledby={`${response.id}-reviews-title`}
-        aria-modal="true"
-        className="ww-selection-reviews-drawer"
-        onKeyDown={handleKeyDown}
-        ref={drawerRef}
-        role="dialog"
-      >
-        <button
-          className="ww-selection-reviews-back"
-          onClick={closeAndRestoreFocus}
-          ref={backButtonRef}
-          type="button"
-        >
-          <ChevronLeft aria-hidden="true" size={24} strokeWidth={1.8} />
-          Назад
-        </button>
-        <h2 id={`${response.id}-reviews-title`}>
-          Отзывы об исполнителе
-          <span>{response.name}</span>
-        </h2>
-        <div aria-label={`Отзывы об исполнителе ${response.name}`} role="list">
-          {response.reviews.map((review) => (
-            <article
-              className="ww-selection-review"
-              key={review.dateTime}
-              role="listitem"
-            >
-              <header>
-                <ReviewStars rating={review.rating} />
-                <time dateTime={review.dateTime}>{review.date}</time>
-              </header>
-              <p>{review.text}</p>
-            </article>
-          ))}
-        </div>
-      </aside>
     </div>
   );
 }
@@ -551,7 +432,7 @@ function TaskPanel({ onClose }: { onClose: () => void }) {
   };
 
   return (
-    <div className="ww-payment-drawer-layer">
+    <div className="ww-payment-drawer-layer" data-offline-hints="off">
       <button
         aria-label="Закрыть панель задания"
         className="ww-payment-drawer-scrim"

@@ -1,5 +1,5 @@
 {
-  "version": "2.17",
+  "version": "2.22",
   "children": [
     {
       "type": "frame",
@@ -18394,7 +18394,7 @@
                                         {
                                           "type": "image",
                                           "enabled": true,
-                                          "mode": "fill"
+                                          "mode": "cover"
                                         }
                                       ],
                                       "width": 44,
@@ -20452,7 +20452,7 @@
                                         {
                                           "type": "image",
                                           "enabled": true,
-                                          "mode": "fill"
+                                          "mode": "cover"
                                         }
                                       ],
                                       "width": 44,
@@ -20977,7 +20977,7 @@
                                         {
                                           "type": "image",
                                           "enabled": true,
-                                          "mode": "fill"
+                                          "mode": "cover"
                                         }
                                       ],
                                       "width": 44,
@@ -22073,7 +22073,7 @@
                                         {
                                           "type": "image",
                                           "enabled": true,
-                                          "mode": "fill"
+                                          "mode": "cover"
                                         }
                                       ],
                                       "width": 44,
@@ -23793,7 +23793,7 @@
                                         {
                                           "type": "image",
                                           "enabled": true,
-                                          "mode": "fill"
+                                          "mode": "cover"
                                         }
                                       ],
                                       "width": 44,
@@ -30497,7 +30497,7 @@
                                 {
                                   "type": "image",
                                   "enabled": true,
-                                  "mode": "fill"
+                                  "mode": "cover"
                                 }
                               ],
                               "width": 44,
@@ -32510,7 +32510,7 @@
                                     {
                                       "type": "image",
                                       "enabled": true,
-                                      "mode": "fill"
+                                      "mode": "cover"
                                     }
                                   ],
                                   "width": 56,
@@ -32703,7 +32703,7 @@
                                     {
                                       "type": "image",
                                       "enabled": true,
-                                      "mode": "fill"
+                                      "mode": "cover"
                                     }
                                   ],
                                   "width": 56,
@@ -33508,7 +33508,7 @@
                                     {
                                       "type": "image",
                                       "enabled": true,
-                                      "mode": "fill"
+                                      "mode": "cover"
                                     }
                                   ],
                                   "width": 56,
@@ -45886,7 +45886,7 @@
                             "type": "image",
                             "enabled": true,
                             "url": "clipboard-1",
-                            "mode": "fill"
+                            "mode": "cover"
                           },
                           "width": 1144,
                           "height": 549
@@ -50730,7 +50730,7 @@
                         {
                           "type": "image",
                           "enabled": true,
-                          "mode": "fill"
+                          "mode": "cover"
                         }
                       ],
                       "width": 44,
